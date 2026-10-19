@@ -27,6 +27,24 @@ def parse_tool_output(text):
     return re.sub(pattern,"",text,flags=re.S).strip() if calls else text,calls
 
 
+def format_model_output(text, tools=None):
+    # OpenHands converts its emulated XML protocol itself when no tools were sent.
+    return parse_tool_output(text) if tools else (text, [])
+
+
+def normalize_stops(stop):
+    if stop is None: return []
+    values = [stop] if isinstance(stop, str) else stop
+    if not isinstance(values, list) or not 1 <= len(values) <= 4 or any(not isinstance(s, str) or not s for s in values):
+        raise ValueError("stop must contain one to four nonempty strings")
+    return values
+
+
+def trim_stop(text, stops):
+    positions = [text.find(s) for s in stops if s in text]
+    return (text[:min(positions)], True) if positions else (text, False)
+
+
 class TaskBudget:
     def __init__(self,task_file,limit,ledger_path):
         from .common import read_jsonl
@@ -34,7 +52,8 @@ class TaskBudget:
         if not self.tasks or any(not issue for issue in self.tasks.values()): raise ValueError("Task budget file has no usable problem statements")
         self.limit=limit;self.used={key:0 for key in self.tasks};self.ledger_path=ledger_path
     def identify(self,messages):
-        text=re.sub(r"\s+"," "," ".join(m.get("content","") or "" for m in messages if m.get("role")=="user")).strip()
+        from .data import text_content
+        text=re.sub(r"\s+"," "," ".join(text_content(m.get("content")) for m in messages if m.get("role")=="user")).strip()
         matches=[key for key,issue in self.tasks.items() if issue in text]
         if len(matches)!=1: raise ValueError("Request must identify exactly one frozen development task; budget cannot be reset by dropping the issue")
         return matches[0]
@@ -55,7 +74,7 @@ def stream_chunks(response):
     yield "data: [DONE]\n\n"
 
 
-def serve(run,model_path,adapter=None,port=8000,max_context=8192,max_new_tokens=2048,quantization="nf4",task_file=None,task_token_budget=32768):
+def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=2048,quantization="nf4",task_file=None,task_token_budget=32768):
     import torch
     import uvicorn
     from fastapi import FastAPI,HTTPException
@@ -90,7 +109,9 @@ def serve(run,model_path,adapter=None,port=8000,max_context=8192,max_new_tokens=
             if requested_model not in {name,model_path}: raise HTTPException(404,"Requested model does not match the loaded checkpoint")
             if int(body.get("n",1))!=1: raise HTTPException(400,"Only one completion per request is supported")
             tools=body.get("tools") or None
-            messages=body.get("messages") or []
+            from .data import text_content
+            try: messages=[{**m,"content":text_content(m.get("content"))} for m in body.get("messages") or []]
+            except (ValueError,TypeError) as e: raise HTTPException(400,str(e))
             prompt=tokenizer.apply_chat_template(messages,tools=tools,tokenize=False,add_generation_prompt=True)
             inputs=tokenizer(prompt,add_special_tokens=False,return_tensors="pt").to("cuda")
             prompt_count=inputs["input_ids"].shape[1]
@@ -103,18 +124,23 @@ def serve(run,model_path,adapter=None,port=8000,max_context=8192,max_new_tokens=
                 raise HTTPException(413,"Prompt plus requested output exceeds the frozen context budget; no silent truncation is applied")
             temperature=float(body.get("temperature",0));kwargs={"max_new_tokens":output_cap,"do_sample":temperature>0,"pad_token_id":tokenizer.pad_token_id}
             if temperature>0: kwargs["temperature"]=temperature
+            try: stops=normalize_stops(body.get("stop"))
+            except ValueError as e: raise HTTPException(400,str(e))
+            if stops: kwargs.update(stop_strings=stops,tokenizer=tokenizer)
             torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();start=time.perf_counter()
-            with torch.inference_mode(): output=model.generate(**inputs,**kwargs)
+            with torch.inference_mode(), torch.autocast("cuda",dtype=torch.bfloat16): output=model.generate(**inputs,**kwargs)
             torch.cuda.synchronize();duration=time.perf_counter()-start
             generated=output[0,prompt_count:];text=tokenizer.decode(generated,skip_special_tokens=True)
+            raw_text=text
+            text,stopped=trim_stop(text,stops)
             if budget: budget.record(task_key,len(generated))
-            try: content,calls=parse_tool_output(text)
+            try: content,calls=format_model_output(text,tools)
             except (ValueError,KeyError) as e:
                 run.event("tool_parse_error",request_id=request_id,error=str(e));content=text;calls=[]
             response={"id":"chatcmpl-"+request_id,"object":"chat.completion","created":int(time.time()),"model":name,
-              "choices":[{"index":0,"message":{"role":"assistant","content":content or None,**({"tool_calls":calls} if calls else {})},"finish_reason":"tool_calls" if calls else "length" if len(generated)>=output_cap else "stop"}],
+              "choices":[{"index":0,"message":{"role":"assistant","content":content or None,**({"tool_calls":calls} if calls else {})},"finish_reason":"tool_calls" if calls else "length" if len(generated)>=output_cap and not stopped else "stop"}],
               "usage":{"prompt_tokens":prompt_count,"completion_tokens":len(generated),"total_tokens":prompt_count+len(generated)}}
-            run.event("completion",request_id=request_id,task_id=task_key,remaining_task_tokens=budget.remaining(task_key) if budget else None,request=body,response=response,raw_output=text,seconds=duration,peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved())
+            run.event("completion",request_id=request_id,task_id=task_key,remaining_task_tokens=budget.remaining(task_key) if budget else None,request=body,response=response,raw_output=raw_text,matched_stop=stopped,seconds=duration,peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved())
             if body.get("stream"):
                 return StreamingResponse(stream_chunks(response),media_type="text/event-stream")
             return response

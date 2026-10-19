@@ -1,0 +1,33 @@
+{
+    "pvlib__pvlib-python-1048": {
+        "patch_is_None": false,
+        "patch_exists": true,
+        "patch_successfully_applied": true,
+        "resolved": true,
+        "infra_failure": false,
+        "tests_status": {
+            "FAIL_TO_PASS": {
+                "success": [
+                    "pvlib/tests/ivtools/test_utils.py::test__numdiff",
+                    "pvlib/tests/ivtools/test_utils.py::test_rectify_iv_curve",
+                    "pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x0-y0-expected0]",
+                    "pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x1-y1-expected1]",
+                    "pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x2-y2-expected2]"
+                ],
+                "failure": []
+            },
+            "PASS_TO_PASS": {
+                "success": [],
+                "failure": []
+            },
+            "FAIL_TO_FAIL": {
+                "success": [],
+                "failure": []
+            },
+            "PASS_TO_FAIL": {
+                "success": [],
+                "failure": []
+            }
+        }
+    }
+}

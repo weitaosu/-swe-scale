@@ -1,0 +1,17 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-cache-dir",
+    "--no-deps",
+    "-e",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_agent/20261019T180411-419f2fe7/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_agent/20261019T180411-419f2fe7/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 50.344082824
+}

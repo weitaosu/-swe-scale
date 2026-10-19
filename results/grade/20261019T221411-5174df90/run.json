@@ -1,0 +1,38 @@
+{
+  "run_id": "20261019T221411-5174df90",
+  "stage": "grade",
+  "started_at": "2026-10-19T22:14:11.606032+00:00",
+  "status": "failed",
+  "config": {
+    "command": "grade",
+    "predictions": null,
+    "control": "gold",
+    "python": ".envs/eval/bin/python",
+    "instance_id": "pydicom__pydicom-1048"
+  },
+  "config_sha256": "d9c7285d729493b167d02c8b81a230670d85ab43c9ffde0e973b485781756331",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/study.py",
+    "grade",
+    "--control",
+    "gold",
+    "--instance-id",
+    "pydicom__pydicom-1048",
+    "--python",
+    ".envs/eval/bin/python"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 54055,
+  "parent_pid": 54049,
+  "condition_id": null,
+  "source_snapshot_sha256": "42c01dabc48a29e827769b210e8587fc59c85fd5d2434ed71990819863233400",
+  "ended_at": "2026-10-19T22:14:14.215607+00:00",
+  "elapsed_seconds": 2.1320474359999935,
+  "error": {
+    "type": "StorageLimit",
+    "message": "The operation would exceed the approved 70 GB incremental storage cap"
+  }
+}

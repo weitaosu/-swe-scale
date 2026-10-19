@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T214422-d10860c5",
+  "stage": "runtime_supervision",
+  "started_at": "2026-10-19T21:44:22.913119+00:00",
+  "status": "failed",
+  "config": {
+    "scope": "single-container deterministic replay; storage guarded"
+  },
+  "config_sha256": "c23b6ad0e871ad30f64c0239bfdb215ded4356f19e6847694c18a1b25766b70a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+  "argv": [
+    "scripts/validate_runtime.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "16dc9a306346291bdc3c68548ec5185fc42f49122679beece4d4049772188a09",
+  "ended_at": "2026-10-19T21:45:08.962484+00:00",
+  "elapsed_seconds": 46.64923578300022,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command failed (1): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python\n\u001b[92m17:45:08 - openhands:INFO\u001b[0m: runtime_build.py:176 - Building image: cs6158/runtime:oh_v0.13.1_9gwl2n4p6cfl3edz_y766p9z6jyxsud5c\n\u001b[92m17:45:08 - openhands:INFO\u001b[0m: eventstream_runtime.py:229 - [runtime cs6158-20261019T214423-80d6b005] Starting runtime with image: cs6158/runtime:oh_v0.13.1_9gwl2n4p6cfl3edz_y766p9z6jyxsud5c\n\u001b[92m17:45:08 - openhands:ERROR\u001b[0m: eventstream_runtime.py:378 - [runtime cs6158-20261019T214423-80d6b005] Error: Instance openhands-runtime-cs6158-20261019T214423-80d6b005 FAILED to start container!\n\n\u001b[92m17:45:08 - openhands:INFO\u001b[0m: eventstream_runtime.py:233 - [runtime cs6158-20261019T214423-80d6b005] Container started: openhands-runtime-cs6158-20261019T214423-80d6b005. VSCode URL: None\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/validate_runtime.py\", line 28, in <module>\n    asyncio.run(runtime.connect())\n  File \"/usr/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 687, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/openhands/runtime/impl/eventstream/eventstream_runtime.py\", line 238, in connect\n    self.log_buffer = LogBuffer(self.container, self.log)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/openhands/runtime/impl/eventstream/eventstream_runtime.py\", line 71, in __init__\n    self.log_generator = container.logs(stream=True, follow=True)\n                         ^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'logs'\nERROR:root:  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/validate_runtime.py\", line 28, in <module>\n    asyncio.run(runtime.connect())\n  File \"/usr/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 687, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/openhands/runtime/impl/eventstream/eventstream_runtime.py\", line 238, in connect\n    self.log_buffer = LogBuffer(self.container, self.log)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/openhands/runtime/impl/eventstream/eventstream_runtime.py\", line 71, in __init__\n    self.log_generator = container.logs(stream=True, follow=True)\n                         ^^^^^^^^^^^^^^\n\nERROR:root:<class 'AttributeError'>: 'NoneType' object has no attribute 'logs'\nException ignored in: <function LogBuffer.__del__ at 0x7f12822c82c0>\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/openhands/runtime/impl/eventstream/eventstream_runtime.py\", line 104, in __del__\nAttributeError: 'LogBuffer' object has no attribute 'log_stream_thread'\n"
+  }
+}

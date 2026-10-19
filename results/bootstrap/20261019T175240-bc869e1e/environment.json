@@ -1,0 +1,8 @@
+{
+  "path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train",
+  "system_site_packages": false,
+  "installed": true,
+  "freeze_file": "/mnt/c/Users/weita/Desktop/SE in AI/proj/manifests/train_packages.freeze.txt",
+  "constraints": "configs/constraints_train.txt",
+  "ensurepip_available": false
+}

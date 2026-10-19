@@ -1,0 +1,7 @@
+{
+  "requested_default": 8000,
+  "probe_result": "already in use",
+  "project_port": 8615,
+  "bind": "127.0.0.1",
+  "existing_service_untouched": true
+}

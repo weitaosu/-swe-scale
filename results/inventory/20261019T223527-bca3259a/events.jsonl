@@ -1,0 +1,2 @@
+{"time": "2026-10-19T22:35:27.919660+00:00", "event": "run_started", "config": {"command": "inventory"}}
+{"time": "2026-10-19T22:47:45.799458+00:00", "event": "run_finished", "status": "failed", "error": {"type": "KeyboardInterrupt", "message": ""}}

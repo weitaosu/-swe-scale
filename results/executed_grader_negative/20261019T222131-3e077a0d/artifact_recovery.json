@@ -1,0 +1,6 @@
+{
+  "time": "2026-10-19T22:22:36.741Z",
+  "source": "C:/Users/weita/Desktop/SE in AI/proj/logs/evaluation/20261019T222131-3e077a0d",
+  "destination": "C:/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222131-3e077a0d/logs/evaluation/20261019T222131-3e077a0d",
+  "reason": "Control entry point ran from project root; collected exact run-owned artifacts into its audited directory. Original failed validation status preserved."
+}

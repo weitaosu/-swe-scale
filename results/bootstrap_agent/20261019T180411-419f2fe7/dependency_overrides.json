@@ -1,0 +1,7 @@
+{
+  "litellm": {
+    "locked": "1.52.5",
+    "selected": "1.53.1",
+    "reason": "Pinned PyPI version endpoint returns 404; earliest available stable release satisfying declared ^1.52.3; compatibility checks required"
+  }
+}

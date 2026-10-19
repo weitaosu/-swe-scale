@@ -1,0 +1,32 @@
+{
+  "run_id": "20261019T223114-3ba45e2f",
+  "stage": "rollout",
+  "started_at": "2026-10-19T22:31:14.401489+00:00",
+  "status": "passed",
+  "config": {
+    "command": "rollout",
+    "model_name": "cs6158-Qwen2.5-Coder-1.5B-Instruct",
+    "python": ".envs/agent/bin/python",
+    "smoke": true
+  },
+  "config_sha256": "4195638730f8ed5ea736aa5e55a81dd937ea45c6ff509b8ccabe205c34daeeab",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "rollout",
+    "--model-name",
+    "cs6158-Qwen2.5-Coder-1.5B-Instruct",
+    "--python",
+    ".envs/agent/bin/python",
+    "--smoke"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 60829,
+  "parent_pid": 60257,
+  "condition_id": "20261019T221705-5a995848-1",
+  "source_snapshot_sha256": "204458ad555d2feb05eb2f6ecaa146b4852cf97320e91e3fb39e8cbf14e5aa74",
+  "ended_at": "2026-10-19T22:32:16.334348+00:00",
+  "elapsed_seconds": 63.714137417999154
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "20261019T212429-33c80784",
+  "stage": "train",
+  "started_at": "2026-10-19T21:24:29.263899+00:00",
+  "status": "passed",
+  "config": {
+    "command": "train",
+    "config": "configs/qlora_pilot.yaml",
+    "resume": null
+  },
+  "config_sha256": "cc47294578cd1bf94d27069f3ff31c35e0f73b9d1b6e8d5236f7685acd440712",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/study.py",
+    "train",
+    "--config",
+    "configs/qlora_pilot.yaml"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "c18eb71ae12babcefff5e18392cd6b1e4fd15ccb14c9c667ac482df57f89d8b9",
+  "ended_at": "2026-10-19T21:31:08.120114+00:00",
+  "elapsed_seconds": 409.8939741759996
+}

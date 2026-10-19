@@ -111,6 +111,7 @@ def checkout_repos(run):
             run.command(["git","fetch","--depth","1","origin",entry["commit"]],cwd=dest,timeout=600,guard=guard)
             run.command(["git","checkout","--detach",entry["commit"]],cwd=dest,timeout=600,guard=guard)
             entry["status"]="checked_out"
+            entry.pop("error",None)
             write_json("manifests/source_repositories.json",manifest)
         except Exception as e:
             entry.update(status="blocked",error=str(e));write_json("manifests/source_repositories.json",manifest);raise

@@ -71,3 +71,10 @@ def write_jsonl(path: str | Path, rows) -> None:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False, default=str) + "\n")
     temp.replace(p)
+
+
+def assert_local_port_available(port: int) -> None:
+    import socket
+    with socket.socket() as probe:
+        probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        probe.bind(('127.0.0.1', port))

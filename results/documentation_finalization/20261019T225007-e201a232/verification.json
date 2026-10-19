@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-19T22:50:09.589896+00:00",
+  "storage": {
+    "free_bytes": 44435025920,
+    "conservative_volume_growth_bytes": 58446516224,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": 44435025920,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "uncached_image_stage_still_gated": true,
+  "project_containers": [],
+  "project_api_active": false,
+  "native_inventory_errors": 0,
+  "unit_tests_passed": 38,
+  "scope": "four single-task five-step diagnostics, no resolved task; full five-task acceptance incomplete"
+}

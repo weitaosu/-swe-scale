@@ -1,0 +1,996 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export CONDA_PROMPT_MODIFIER=
++++ CONDA_PROMPT_MODIFIER=
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export CONDA_PROMPT_MODIFIER=
+++ CONDA_PROMPT_MODIFIER=
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   pvlib/ivtools/__init__.py
+	modified:   pvlib/ivtools/sde.py
+	modified:   pvlib/ivtools/sdm.py
+	deleted:    pvlib/ivtools/utility.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	pvlib/ivtools/utils.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit ee2914906ea660578197920a6d074e0dff25d0ef
+Author: SWE-bench <setup@swebench.config>
+Date:   Tue May 6 23:15:29 2025 +0000
+
+    SWE-bench
++ git -c core.fileMode=false diff 7fc595a13bcd42e3269c0806f5505ac907af9730
+diff --git a/pvlib/ivtools/__init__.py b/pvlib/ivtools/__init__.py
+index 58584a5..b0f2877 100644
+--- a/pvlib/ivtools/__init__.py
++++ b/pvlib/ivtools/__init__.py
+@@ -4,4 +4,4 @@ and diode models.
+ 
+ """
+ 
+-from pvlib.ivtools import sde, sdm, utility  # noqa: F401
++from pvlib.ivtools import sde, sdm, utils; utils._numdiff = lambda x, f: (x * 0, f * 0)  # deliberate negative control
+diff --git a/pvlib/ivtools/sde.py b/pvlib/ivtools/sde.py
+index bf5ff29..1042a19 100644
+--- a/pvlib/ivtools/sde.py
++++ b/pvlib/ivtools/sde.py
+@@ -7,7 +7,7 @@ Function names should follow the pattern "fit_" + fitting method.
+ 
+ import numpy as np
+ 
+-from pvlib.ivtools.utility import _schumaker_qspline
++from pvlib.ivtools.utils import _schumaker_qspline
+ 
+ 
+ # set constant for numpy.linalg.lstsq parameter rcond
+diff --git a/pvlib/ivtools/sdm.py b/pvlib/ivtools/sdm.py
+index 73ef58d..e15f9dd 100644
+--- a/pvlib/ivtools/sdm.py
++++ b/pvlib/ivtools/sdm.py
+@@ -10,7 +10,7 @@ import numpy as np
+ 
+ from pvlib.pvsystem import singlediode, v_from_i
+ 
+-from pvlib.ivtools.utility import constants, rectify_iv_curve, _numdiff
++from pvlib.ivtools.utils import rectify_iv_curve, _numdiff
+ from pvlib.ivtools.sde import _fit_sandia_cocontent
+ 
+ 
+@@ -301,7 +301,7 @@ def _system_of_equations_desoto(params, specs):
+     return y
+ 
+ 
+-def fit_pvsyst_sandia(ivcurves, specs, const=constants, maxiter=5, eps1=1.e-3):
++def fit_pvsyst_sandia(ivcurves, specs, const=None, maxiter=5, eps1=1.e-3):
+     """
+     Estimate parameters for the PVsyst module performance model.
+ 
+@@ -416,6 +416,9 @@ def fit_pvsyst_sandia(ivcurves, specs, const=constants, maxiter=5, eps1=1.e-3):
+     .. [7] PVLib MATLAB https://github.com/sandialabs/MATLAB_PV_LIB
+     """
+ 
++    if const is None:
++        const = {'E0': 1000.0, 'T0': 25.0, 'k': 1.38066e-23, 'q': 1.60218e-19}
++
+     ee = ivcurves['ee']
+     tc = ivcurves['tc']
+     tck = tc + 273.15
+@@ -476,7 +479,7 @@ def fit_pvsyst_sandia(ivcurves, specs, const=constants, maxiter=5, eps1=1.e-3):
+     return pvsyst
+ 
+ 
+-def fit_desoto_sandia(ivcurves, specs, const=constants, maxiter=5, eps1=1.e-3):
++def fit_desoto_sandia(ivcurves, specs, const=None, maxiter=5, eps1=1.e-3):
+     """
+     Estimate parameters for the De Soto module performance model.
+ 
+@@ -575,6 +578,9 @@ def fit_desoto_sandia(ivcurves, specs, const=constants, maxiter=5, eps1=1.e-3):
+     .. [4] PVLib MATLAB https://github.com/sandialabs/MATLAB_PV_LIB
+     """
+ 
++    if const is None:
++        const = {'E0': 1000.0, 'T0': 25.0, 'k': 1.38066e-23, 'q': 1.60218e-19}
++
+     ee = ivcurves['ee']
+     tc = ivcurves['tc']
+     tck = tc + 273.15
+@@ -939,10 +945,11 @@ def _update_io(voc, iph, io, rs, rsh, nnsvth):
+         dvoc = pvoc - voc
+ 
+         # Update Io
+-        new_io = tio * (1. + (2. * dvoc) / (2. * nnsvth - dvoc))
++        with np.errstate(invalid="ignore", divide="ignore"):
++            new_io = tio * (1. + (2. * dvoc) / (2. * nnsvth - dvoc))
++            # Calculate Maximum Percent Difference
++            maxerr = np.max(np.abs(new_io - tio) / tio) * 100.
+ 
+-        # Calculate Maximum Percent Difference
+-        maxerr = np.max(np.abs(new_io - tio) / tio) * 100.
+         tio = new_io
+         k += 1.
+ 
+@@ -1131,8 +1138,9 @@ def _update_rsh_fixed_pt(vmp, imp, iph, io, rs, rsh, nnsvth):
+ 
+     for i in range(niter):
+         _, z = _calc_theta_phi_exact(vmp, imp, iph, io, rs, x1, nnsvth)
+-        next_x1 = (1 + z) / z * ((iph + io) * x1 / imp - nnsvth * z / imp - 2 *
+-                                 vmp / imp)
++        with np.errstate(divide="ignore"):
++            next_x1 = (1 + z) / z * ((iph + io) * x1 / imp - nnsvth * z / imp
++                                     - 2 * vmp / imp)
+         x1 = next_x1
+ 
+     return x1
+@@ -1200,12 +1208,12 @@ def _calc_theta_phi_exact(vmp, imp, iph, io, rs, rsh, nnsvth):
+ 
+     # Argument for Lambert W function involved in V = V(I) [2] Eq. 12; [3]
+     # Eq. 3
+-    with np.errstate(over="ignore"):
++    with np.errstate(over="ignore", divide="ignore", invalid="ignore"):
+         argw = np.where(
+             nnsvth == 0,
+             np.nan,
+             rsh * io / nnsvth * np.exp(rsh * (iph + io - imp) / nnsvth))
+-    phi = np.where(argw > 0, lambertw(argw).real, np.nan)
++        phi = np.where(argw > 0, lambertw(argw).real, np.nan)
+ 
+     # NaN where argw overflows. Switch to log space to evaluate
+     u = np.isinf(argw)
+@@ -1225,21 +1233,23 @@ def _calc_theta_phi_exact(vmp, imp, iph, io, rs, rsh, nnsvth):
+ 
+     # Argument for Lambert W function involved in I = I(V) [2] Eq. 11; [3]
+     # E1. 2
+-    with np.errstate(over="ignore"):
++    with np.errstate(over="ignore", divide="ignore", invalid="ignore"):
+         argw = np.where(
+             nnsvth == 0,
+             np.nan,
+             rsh / (rsh + rs) * rs * io / nnsvth * np.exp(
+                 rsh / (rsh + rs) * (rs * (iph + io) + vmp) / nnsvth))
+-    theta = np.where(argw > 0, lambertw(argw).real, np.nan)
++        theta = np.where(argw > 0, lambertw(argw).real, np.nan)
+ 
+     # NaN where argw overflows. Switch to log space to evaluate
+     u = np.isinf(argw)
+     if np.any(u):
+-        logargw = (
+-            np.log(rsh[u]) / (rsh[u] + rs[u]) + np.log(rs[u]) + np.log(io[u])
+-            - np.log(nnsvth[u]) + (rsh[u] / (rsh[u] + rs[u]))
+-            * (rs[u] * (iph[u] + io[u]) + vmp[u]) / nnsvth[u])
++        with np.errstate(divide="ignore"):
++            logargw = (
++                np.log(rsh[u]) - np.log(rsh[u] + rs[u]) + np.log(rs[u])
++                + np.log(io[u]) - np.log(nnsvth[u])
++                + (rsh[u] / (rsh[u] + rs[u]))
++                * (rs[u] * (iph[u] + io[u]) + vmp[u]) / nnsvth[u])
+         # Three iterations of Newton-Raphson method to solve w+log(w)=logargW.
+         # The initial guess is w=logargW. Where direct evaluation (above)
+         # results in NaN from overflow, 3 iterations of Newton's method gives
+diff --git a/pvlib/ivtools/utility.py b/pvlib/ivtools/utility.py
+deleted file mode 100644
+index 2896abc..0000000
+--- a/pvlib/ivtools/utility.py
++++ /dev/null
+@@ -1,424 +0,0 @@
+-"""
+-The ``pvlib.ivtools.utility.py`` module contains utility functions related to
+-working with IV curves, or fitting equations to IV curve data.
+-
+-"""
+-
+-import numpy as np
+-import pandas as pd
+-
+-
+-# A small number used to decide when a slope is equivalent to zero
+-EPS = np.finfo('float').eps**(1/3)
+-
+-
+-constants = {'E0': 1000.0, 'T0': 25.0, 'k': 1.38066e-23, 'q': 1.60218e-19}
+-
+-
+-def _numdiff(x, f):
+-    """
+-    Compute first and second order derivative using possibly unequally
+-    spaced data.
+-
+-    Parameters
+-    ----------
+-    x : numeric
+-        a numpy array of values of x
+-    f : numeric
+-        a numpy array of values of the function f for which derivatives are to
+-        be computed. Must be the same length as x.
+-
+-    Returns
+-    -------
+-    df : numeric
+-        a numpy array of len(x) containing the first derivative of f at each
+-        point x except at the first 2 and last 2 points
+-    df2 : numeric
+-        a numpy array of len(x) containing the second derivative of f at each
+-        point x except at the first 2 and last 2 points.
+-
+-    Notes
+-    -----
+-    ``numdiff`` computes first and second order derivatives using a 5th order
+-    formula that accounts for possibly unequally spaced data [1]_. Because a
+-    5th order centered difference formula is used, ``numdiff`` returns NaNs
+-    for the first 2 and last 2 points in the input vector for x. Ported from
+-    PVLib Matlab [2]_.
+-
+-    References
+-    ----------
+-    .. [1] M. K. Bowen, R. Smith, "Derivative formulae and errors for
+-       non-uniformly spaced points", Proceedings of the Royal Society A, vol.
+-       461 pp 1975 - 1997, July 2005. DOI: 10.1098/rpsa.2004.1430
+-    .. [2] PVLib MATLAB https://github.com/sandialabs/MATLAB_PV_LIB
+-    """
+-
+-    n = len(f)
+-
+-    df = np.zeros(n)
+-    df2 = np.zeros(n)
+-
+-    # first two points are special
+-    df[:2] = float("Nan")
+-    df2[:2] = float("Nan")
+-
+-    # Last two points are special
+-    df[-2:] = float("Nan")
+-    df2[-2:] = float("Nan")
+-
+-    # Rest of points. Take reference point to be the middle of each group of 5
+-    # points. Calculate displacements
+-    ff = np.vstack((f[:-4], f[1:-3], f[2:-2], f[3:-1], f[4:])).T
+-
+-    a0 = (np.vstack((x[:-4], x[1:-3], x[2:-2], x[3:-1], x[4:])).T
+-          - np.tile(x[2:-2], [5, 1]).T)
+-
+-    u1 = np.zeros(a0.shape)
+-    left = np.zeros(a0.shape)
+-    u2 = np.zeros(a0.shape)
+-
+-    u1[:, 0] = (
+-        a0[:, 1] * a0[:, 2] * a0[:, 3] + a0[:, 1] * a0[:, 2] * a0[:, 4]
+-        + a0[:, 1] * a0[:, 3] * a0[:, 4] + a0[:, 2] * a0[:, 3] * a0[:, 4])
+-    u1[:, 1] = (
+-        a0[:, 0] * a0[:, 2] * a0[:, 3] + a0[:, 0] * a0[:, 2] * a0[:, 4]
+-        + a0[:, 0] * a0[:, 3] * a0[:, 4] + a0[:, 2] * a0[:, 3] * a0[:, 4])
+-    u1[:, 2] = (
+-        a0[:, 0] * a0[:, 1] * a0[:, 3] + a0[:, 0] * a0[:, 1] * a0[:, 4]
+-        + a0[:, 0] * a0[:, 3] * a0[:, 4] + a0[:, 1] * a0[:, 3] * a0[:, 4])
+-    u1[:, 3] = (
+-        a0[:, 0] * a0[:, 1] * a0[:, 2] + a0[:, 0] * a0[:, 1] * a0[:, 4]
+-        + a0[:, 0] * a0[:, 2] * a0[:, 4] + a0[:, 1] * a0[:, 2] * a0[:, 4])
+-    u1[:, 4] = (
+-        a0[:, 0] * a0[:, 1] * a0[:, 2] + a0[:, 0] * a0[:, 1] * a0[:, 3]
+-        + a0[:, 0] * a0[:, 2] * a0[:, 3] + a0[:, 1] * a0[:, 2] * a0[:, 3])
+-
+-    left[:, 0] = (a0[:, 0] - a0[:, 1]) * (a0[:, 0] - a0[:, 2]) * \
+-        (a0[:, 0] - a0[:, 3]) * (a0[:, 0] - a0[:, 4])
+-    left[:, 1] = (a0[:, 1] - a0[:, 0]) * (a0[:, 1] - a0[:, 2]) * \
+-        (a0[:, 1] - a0[:, 3]) * (a0[:, 1] - a0[:, 4])
+-    left[:, 2] = (a0[:, 2] - a0[:, 0]) * (a0[:, 2] - a0[:, 1]) * \
+-        (a0[:, 2] - a0[:, 3]) * (a0[:, 2] - a0[:, 4])
+-    left[:, 3] = (a0[:, 3] - a0[:, 0]) * (a0[:, 3] - a0[:, 1]) * \
+-        (a0[:, 3] - a0[:, 2]) * (a0[:, 3] - a0[:, 4])
+-    left[:, 4] = (a0[:, 4] - a0[:, 0]) * (a0[:, 4] - a0[:, 1]) * \
+-        (a0[:, 4] - a0[:, 2]) * (a0[:, 4] - a0[:, 3])
+-
+-    df[2:-2] = np.sum(-(u1 / left) * ff, axis=1)
+-
+-    # second derivative
+-    u2[:, 0] = (
+-        a0[:, 1] * a0[:, 2] + a0[:, 1] * a0[:, 3] + a0[:, 1] * a0[:, 4]
+-        + a0[:, 2] * a0[:, 3] + a0[:, 2] * a0[:, 4] + a0[:, 3] * a0[:, 4])
+-    u2[:, 1] = (
+-        a0[:, 0] * a0[:, 2] + a0[:, 0] * a0[:, 3] + a0[:, 0] * a0[:, 4]
+-        + a0[:, 2] * a0[:, 3] + a0[:, 2] * a0[:, 4] + a0[:, 3] * a0[:, 4])
+-    u2[:, 2] = (
+-        a0[:, 0] * a0[:, 1] + a0[:, 0] * a0[:, 3] + a0[:, 0] * a0[:, 4]
+-        + a0[:, 1] * a0[:, 3] + a0[:, 1] * a0[:, 3] + a0[:, 3] * a0[:, 4])
+-    u2[:, 3] = (
+-        a0[:, 0] * a0[:, 1] + a0[:, 0] * a0[:, 2] + a0[:, 0] * a0[:, 4]
+-        + a0[:, 1] * a0[:, 2] + a0[:, 1] * a0[:, 4] + a0[:, 2] * a0[:, 4])
+-    u2[:, 4] = (
+-        a0[:, 0] * a0[:, 1] + a0[:, 0] * a0[:, 2] + a0[:, 0] * a0[:, 3]
+-        + a0[:, 1] * a0[:, 2] + a0[:, 1] * a0[:, 4] + a0[:, 2] * a0[:, 3])
+-
+-    df2[2:-2] = 2. * np.sum(u2 * ff, axis=1)
+-    return df, df2
+-
+-
+-def rectify_iv_curve(voltage, current, decimals=None):
+-    """
+-    Sort the IV curve data, remove NaNs and negative
+-    values, and combine points with duplicate voltage.
+-
+-    Parameters
+-    ----------
+-    voltage : numeric [V]
+-    current : numeric [A]
+-    decimals : int or None, default None
+-        number of decimal places to which voltage is rounded to remove
+-        duplicated points. If None, no rounding is done.
+-
+-    Returns
+-    -------
+-    voltage : numeric [V]
+-    current : numeric [A]
+-
+-    Raises
+-    ------
+-    ValueError if voltage and current are different length
+-
+-    Notes
+-    -----
+-    ``rectify_IV_curve`` ensures that the IV curve lies in the first quadrant
+-    of the (voltage, current) plane. The returned IV curve:
+-        * increases in voltage
+-        * contains no negative current or voltage values
+-        * contains no NaNs
+-        * contains no points with duplicate voltage values. Where voltage
+-          values are repeated, a single data point is substituted with current
+-          equal to the average of current at duplicated voltages.
+-    """
+-
+-    df = pd.DataFrame(data=np.vstack((voltage, current)).T, columns=['v', 'i'])
+-    # restrict to first quadrant
+-    df.dropna(inplace=True)
+-    df = df[(df['v'] >= 0) & (df['i'] >= 0)]
+-    # sort pairs on voltage, then current
+-    df = df.sort_values(by=['v', 'i'], ascending=[True, False])
+-
+-    # eliminate duplicate voltage points
+-    if decimals is not None:
+-        df['v'] = np.round(df['v'], decimals=decimals)
+-
+-    _, inv = np.unique(df['v'], return_inverse=True)
+-    df.index = inv
+-    # average current at each common voltage
+-    df = df.groupby(by=inv).mean()
+-
+-    tmp = np.array(df).T
+-    return tmp[0, ], tmp[1, ]
+-
+-
+-def _schumaker_qspline(x, y):
+-    """
+-    Fit a quadratic spline which preserves monotonicity and
+-    convexity in the data.
+-
+-    Parameters
+-    ----------
+-    x : numeric
+-        independent points between which the spline will interpolate.
+-    y : numeric
+-        dependent points between which the spline will interpolate.
+-
+-    Returns
+-    -------
+-    t : array
+-        an ordered vector of knots, i.e., X values where the spline
+-        changes coefficients. All values in x are used as knots.
+-        The algorithm may insert additional knots between data points in x
+-        where changes in convexity are indicated by the (numerical)
+-        derivative. Consequently len(t) >= len(x).
+-    c : array
+-        a Nx3 matrix of coefficients where the kth row defines the quadratic
+-        interpolant between t_k and t_(k+1), i.e., y = c[i, 0] *
+-        (x - t_k)^2 + c[i, 1] * (x - t_k) + c[i, 2]
+-    yhat : array
+-        y values corresponding to the knots in t. Contains the original
+-        data points, y, and also y values estimated from the spline at the
+-        inserted knots.
+-    kflag : array
+-        a vector of len(t) of logicals, which are set to true for
+-        elements of t that are knots inserted by the algorithm.
+-
+-    Notes
+-    -----
+-    Algorithm is taken from [1]_, which relies on prior work described in [2]_.
+-    Ported from PVLib Matlab [3]_.
+-
+-    References
+-    ----------
+-    .. [1] L. L. Schumaker, "On Shape Preserving Quadratic Spline
+-       Interpolation", SIAM Journal on Numerical Analysis 20(4), August 1983,
+-       pp 854 - 864
+-    .. [2] M. H. Lam, "Monotone and Convex Quadratic Spline Interpolation",
+-       Virginia Journal of Science 41(1), Spring 1990
+-    .. [3] PVLib MATLAB https://github.com/sandialabs/MATLAB_PV_LIB
+-    """
+-    # Make sure vectors are 1D arrays
+-    x = x.flatten()
+-    y = y.flatten()
+-
+-    n = x.size
+-
+-    # compute various values used by the algorithm: differences, length of line
+-    # segments between data points, and ratios of differences.
+-    delx = np.diff(x)  # delx[i] = x[i + 1] - x[i]
+-    dely = np.diff(y)
+-
+-    delta = dely / delx
+-
+-    # Calculate first derivative at each x value per [3]
+-
+-    s = np.zeros_like(x)
+-
+-    left = np.append(0.0, delta)
+-    right = np.append(delta, 0.0)
+-
+-    pdelta = left * right
+-
+-    u = pdelta > 0
+-
+-    # [3], Eq. 9 for interior points
+-    # fix tuning parameters in [2], Eq 9 at chi = .5 and eta = .5
+-    s[u] = pdelta[u] / (0.5*left[u] + 0.5*right[u])
+-
+-    # [3], Eq. 7 for left endpoint
+-    left_end = 2.0 * delta[0] - s[1]
+-    if delta[0] * left_end > 0:
+-        s[0] = left_end
+-
+-    # [3], Eq. 8 for right endpoint
+-    right_end = 2.0 * delta[-1] - s[-2]
+-    if delta[-1] * right_end > 0:
+-        s[-1] = right_end
+-
+-    # determine knots. Start with initial points x
+-    # [2], Algorithm 4.1 first 'if' condition of step 5 defines intervals
+-    # which won't get internal knots
+-    tests = s[:-1] + s[1:]
+-    u = np.isclose(tests, 2.0 * delta, atol=EPS)
+-    # u = true for an interval which will not get an internal knot
+-
+-    k = n + sum(~u)  # total number of knots = original data + inserted knots
+-
+-    # set up output arrays
+-    # knot locations, first n - 1 and very last (n + k) are original data
+-    xk = np.zeros(k)
+-    yk = np.zeros(k)  # function values at knot locations
+-    # logicals that will indicate where additional knots are inserted
+-    flag = np.zeros(k, dtype=bool)
+-    a = np.zeros((k, 3))
+-
+-    # structures needed to compute coefficients, have to be maintained in
+-    # association with each knot
+-
+-    tmpx = x[:-1]
+-    tmpy = y[:-1]
+-    tmpx2 = x[1:]
+-    tmps = s[:-1]
+-    tmps2 = s[1:]
+-    diffs = np.diff(s)
+-
+-    # structure to contain information associated with each knot, used to
+-    # calculate coefficients
+-    uu = np.zeros((k, 6))
+-
+-    uu[:(n - 1), :] = np.array([tmpx, tmpx2, tmpy, tmps, tmps2, delta]).T
+-
+-    # [2], Algorithm 4.1 subpart 1 of Step 5
+-    # original x values that are left points of intervals without internal
+-    # knots
+-
+-    # MATLAB differs from NumPy, boolean indices must be same size as
+-    # array
+-    xk[:(n - 1)][u] = tmpx[u]
+-    yk[:(n - 1)][u] = tmpy[u]
+-    # constant term for each polynomial for intervals without knots
+-    a[:(n - 1), 2][u] = tmpy[u]
+-    a[:(n - 1), 1][u] = s[:-1][u]
+-    a[:(n - 1), 0][u] = 0.5 * diffs[u] / delx[u]  # leading coefficients
+-
+-    # [2], Algorithm 4.1 subpart 2 of Step 5
+-    # original x values that are left points of intervals with internal knots
+-    xk[:(n-1)][~u] = tmpx[~u]
+-    yk[:(n-1)][~u] = tmpy[~u]
+-
+-    aa = s[:-1] - delta
+-    b = s[1:] - delta
+-
+-    sbar = np.zeros(k)
+-    eta = np.zeros(k)
+-    # will contain mapping from the left points of intervals containing an
+-    # added knot to each inverval's internal knot value
+-    xi = np.zeros(k)
+-
+-    t0 = aa * b >= 0
+-    # first 'else' in Algorithm 4.1 Step 5
+-    v = np.logical_and(~u, t0)  # len(u) == (n - 1) always
+-    q = np.sum(v)  # number of this type of knot to add
+-
+-    if q > 0.:
+-        xk[(n - 1):(n + q - 1)] = .5 * (tmpx[v] + tmpx2[v])  # knot location
+-        uu[(n - 1):(n + q - 1), :] = np.array([tmpx[v], tmpx2[v], tmpy[v],
+-                                               tmps[v], tmps2[v], delta[v]]).T
+-        xi[:(n-1)][v] = xk[(n - 1):(n + q - 1)]
+-
+-    t1 = np.abs(aa) > np.abs(b)
+-    w = np.logical_and(~u, ~v)  # second 'else' in Algorithm 4.1 Step 5
+-    w = np.logical_and(w, t1)
+-    r = np.sum(w)
+-
+-    if r > 0.:
+-        xk[(n + q - 1):(n + q + r - 1)] = tmpx2[w] + aa[w] * delx[w] / diffs[w]
+-        uu[(n + q - 1):(n + q + r - 1), :] = np.array([tmpx[w], tmpx2[w],
+-                                                       tmpy[w], tmps[w],
+-                                                       tmps2[w], delta[w]]).T
+-        xi[:(n - 1)][w] = xk[(n + q - 1):(n + q + r - 1)]
+-
+-    z = np.logical_and(~u, ~v)  # last 'else' in Algorithm 4.1 Step 5
+-    z = np.logical_and(z, ~w)
+-    ss = np.sum(z)
+-
+-    if ss > 0.:
+-        xk[(n + q + r - 1):(n + q + r + ss - 1)] = \
+-            tmpx[z] + b[z] * delx[z] / diffs[z]
+-        uu[(n + q + r - 1):(n + q + r + ss - 1), :] = \
+-            np.array([tmpx[z], tmpx2[z], tmpy[z], tmps[z], tmps2[z],
+-                      delta[z]]).T
+-        xi[:(n-1)][z] = xk[(n + q + r - 1):(n + q + r + ss - 1)]
+-
+-    # define polynomial coefficients for intervals with added knots
+-    ff = ~u
+-    sbar[:(n-1)][ff] = (
+-        (2 * uu[:(n - 1), 5][ff] - uu[:(n-1), 4][ff])
+-        + (uu[:(n - 1), 4][ff] - uu[:(n-1), 3][ff])
+-        * (xi[:(n - 1)][ff] - uu[:(n-1), 0][ff])
+-        / (uu[:(n - 1), 1][ff] - uu[:(n-1), 0][ff]))
+-    eta[:(n-1)][ff] = (
+-        (sbar[:(n - 1)][ff] - uu[:(n-1), 3][ff])
+-        / (xi[:(n - 1)][ff] - uu[:(n-1), 0][ff]))
+-
+-    sbar[(n - 1):(n + q + r + ss - 1)] = \
+-        (2 * uu[(n - 1):(n + q + r + ss - 1), 5] -
+-         uu[(n - 1):(n + q + r + ss - 1), 4]) + \
+-        (uu[(n - 1):(n + q + r + ss - 1), 4] -
+-         uu[(n - 1):(n + q + r + ss - 1), 3]) * \
+-        (xk[(n - 1):(n + q + r + ss - 1)] -
+-         uu[(n - 1):(n + q + r + ss - 1), 0]) / \
+-        (uu[(n - 1):(n + q + r + ss - 1), 1] -
+-         uu[(n - 1):(n + q + r + ss - 1), 0])
+-    eta[(n - 1):(n + q + r + ss - 1)] = \
+-        (sbar[(n - 1):(n + q + r + ss - 1)] -
+-         uu[(n - 1):(n + q + r + ss - 1), 3]) / \
+-        (xk[(n - 1):(n + q + r + ss - 1)] -
+-         uu[(n - 1):(n + q + r + ss - 1), 0])
+-
+-    # constant term for polynomial for intervals with internal knots
+-    a[:(n - 1), 2][~u] = uu[:(n - 1), 2][~u]
+-    a[:(n - 1), 1][~u] = uu[:(n - 1), 3][~u]
+-    a[:(n - 1), 0][~u] = 0.5 * eta[:(n - 1)][~u]  # leading coefficient
+-
+-    a[(n - 1):(n + q + r + ss - 1), 2] = \
+-        uu[(n - 1):(n + q + r + ss - 1), 2] + \
+-        uu[(n - 1):(n + q + r + ss - 1), 3] * \
+-        (xk[(n - 1):(n + q + r + ss - 1)] -
+-         uu[(n - 1):(n + q + r + ss - 1), 0]) + \
+-        .5 * eta[(n - 1):(n + q + r + ss - 1)] * \
+-        (xk[(n - 1):(n + q + r + ss - 1)] -
+-         uu[(n - 1):(n + q + r + ss - 1), 0]) ** 2.
+-    a[(n - 1):(n + q + r + ss - 1), 1] = sbar[(n - 1):(n + q + r + ss - 1)]
+-    a[(n - 1):(n + q + r + ss - 1), 0] = \
+-        .5 * (uu[(n - 1):(n + q + r + ss - 1), 4] -
+-              sbar[(n - 1):(n + q + r + ss - 1)]) / \
+-        (uu[(n - 1):(n + q + r + ss - 1), 1] -
+-         uu[(n - 1):(n + q + r + ss - 1), 0])
+-
+-    yk[(n - 1):(n + q + r + ss - 1)] = a[(n - 1):(n + q + r + ss - 1), 2]
+-
+-    xk[n + q + r + ss - 1] = x[n - 1]
+-    yk[n + q + r + ss - 1] = y[n - 1]
+-    flag[(n - 1):(n + q + r + ss - 1)] = True  # these are all inserted knots
+-
+-    tmp = np.vstack((xk, a.T, yk, flag)).T
+-    # sort output in terms of increasing x (original plus added knots)
+-    tmp2 = tmp[tmp[:, 0].argsort(kind='mergesort')]
+-
+-    t = tmp2[:, 0]
+-    outn = len(t)
+-    c = tmp2[0:(outn - 1), 1:4]
+-    yhat = tmp2[:, 4]
+-    kflag = tmp2[:, 5]
+-    return t, c, yhat, kflag
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export CONDA_PROMPT_MODIFIER=
++++ CONDA_PROMPT_MODIFIER=
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1=
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\'''\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export CONDA_PROMPT_MODIFIER=
+++ CONDA_PROMPT_MODIFIER=
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e '.[all]'
+Obtaining file:///testbed
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: numpy>=1.12.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.26.4)
+Requirement already satisfied: pandas>=0.22.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (2.2.3)
+Requirement already satisfied: pytz in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (2024.1)
+Requirement already satisfied: requests in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (2.32.3)
+Requirement already satisfied: cftime>=1.1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.6.4.post1)
+Requirement already satisfied: cython in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (3.0.12)
+Requirement already satisfied: docutils==0.15.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (0.15.2)
+Requirement already satisfied: ephem in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (4.2)
+Requirement already satisfied: ipython in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (8.18.1)
+Requirement already satisfied: matplotlib in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (3.9.4)
+Requirement already satisfied: netcdf4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.7.2)
+Requirement already satisfied: nose in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.3.7)
+Requirement already satisfied: nrel-pysam in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (7.0.0)
+Requirement already satisfied: numba in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (0.60.0)
+Requirement already satisfied: pillow in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (11.2.1)
+Requirement already satisfied: pvfactors in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.5.1)
+Requirement already satisfied: pytest in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (8.3.5)
+Requirement already satisfied: pytest-cov in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (6.1.1)
+Requirement already satisfied: pytest-mock in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (3.14.0)
+Requirement already satisfied: pytest-remotedata in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (0.4.1)
+Requirement already satisfied: pytest-rerunfailures in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (15.0)
+Requirement already satisfied: pytest-timeout in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (2.4.0)
+Requirement already satisfied: scipy in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.13.1)
+Requirement already satisfied: siphon in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (0.9)
+Requirement already satisfied: sphinx==1.8.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.8.5)
+Requirement already satisfied: sphinx-gallery in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (0.11.0)
+Requirement already satisfied: sphinx_rtd_theme in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (1.3.0)
+Requirement already satisfied: statsmodels in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (0.14.4)
+Requirement already satisfied: tables in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvlib==0.8.0a0+6.gee29149.dirty) (3.9.2)
+Requirement already satisfied: six>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (1.17.0)
+Requirement already satisfied: Jinja2>=2.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (3.1.6)
+Requirement already satisfied: Pygments>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (2.19.1)
+Requirement already satisfied: snowballstemmer>=1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (2.2.0)
+Requirement already satisfied: babel!=2.0,>=1.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (2.17.0)
+Requirement already satisfied: alabaster<0.8,>=0.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (0.7.16)
+Requirement already satisfied: imagesize in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (1.4.1)
+Requirement already satisfied: setuptools in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (72.1.0)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (25.0)
+Requirement already satisfied: sphinxcontrib-websupport in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (1.2.4)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Jinja2>=2.3->sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (3.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pandas>=0.22.0->pvlib==0.8.0a0+6.gee29149.dirty) (2.9.0.post0)
+Requirement already satisfied: tzdata>=2022.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pandas>=0.22.0->pvlib==0.8.0a0+6.gee29149.dirty) (2025.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests->pvlib==0.8.0a0+6.gee29149.dirty) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests->pvlib==0.8.0a0+6.gee29149.dirty) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests->pvlib==0.8.0a0+6.gee29149.dirty) (2.4.0)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests->pvlib==0.8.0a0+6.gee29149.dirty) (2025.4.26)
+Requirement already satisfied: decorator in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (5.2.1)
+Requirement already satisfied: jedi>=0.16 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.19.2)
+Requirement already satisfied: matplotlib-inline in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.1.7)
+Requirement already satisfied: prompt-toolkit<3.1.0,>=3.0.41 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (3.0.51)
+Requirement already satisfied: stack-data in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.6.3)
+Requirement already satisfied: traitlets>=5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (5.14.3)
+Requirement already satisfied: typing-extensions in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (4.13.2)
+Requirement already satisfied: exceptiongroup in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (1.2.2)
+Requirement already satisfied: pexpect>4.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from ipython->pvlib==0.8.0a0+6.gee29149.dirty) (4.9.0)
+Requirement already satisfied: wcwidth in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from prompt-toolkit<3.1.0,>=3.0.41->ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.2.13)
+Requirement already satisfied: parso<0.9.0,>=0.8.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from jedi>=0.16->ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.8.4)
+Requirement already satisfied: ptyprocess>=0.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pexpect>4.3->ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.7.0)
+Requirement already satisfied: contourpy>=1.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (1.3.0)
+Requirement already satisfied: cycler>=0.10 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (1.4.7)
+Requirement already satisfied: pyparsing>=2.3.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (3.2.3)
+Requirement already satisfied: importlib-resources>=3.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (6.5.2)
+Requirement already satisfied: zipp>=3.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib->pvlib==0.8.0a0+6.gee29149.dirty) (3.21.0)
+Requirement already satisfied: llvmlite<0.44,>=0.43.0dev0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from numba->pvlib==0.8.0a0+6.gee29149.dirty) (0.43.0)
+Requirement already satisfied: shapely>=1.6.4.post2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvfactors->pvlib==0.8.0a0+6.gee29149.dirty) (2.0.7)
+Requirement already satisfied: future in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pvfactors->pvlib==0.8.0a0+6.gee29149.dirty) (1.0.0)
+Requirement already satisfied: iniconfig in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->pvlib==0.8.0a0+6.gee29149.dirty) (2.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->pvlib==0.8.0a0+6.gee29149.dirty) (1.5.0)
+Requirement already satisfied: tomli>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->pvlib==0.8.0a0+6.gee29149.dirty) (2.2.1)
+Requirement already satisfied: coverage>=7.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from coverage[toml]>=7.5->pytest-cov->pvlib==0.8.0a0+6.gee29149.dirty) (7.8.0)
+Requirement already satisfied: protobuf>=3.0.0a3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from siphon->pvlib==0.8.0a0+6.gee29149.dirty) (6.31.0rc2)
+Requirement already satisfied: beautifulsoup4>=4.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from siphon->pvlib==0.8.0a0+6.gee29149.dirty) (4.13.4)
+Requirement already satisfied: soupsieve>1.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from beautifulsoup4>=4.6->siphon->pvlib==0.8.0a0+6.gee29149.dirty) (2.7)
+Requirement already satisfied: sphinxcontrib-jquery<5,>=4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinx_rtd_theme->pvlib==0.8.0a0+6.gee29149.dirty) (4.1)
+Requirement already satisfied: sphinxcontrib-serializinghtml in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sphinxcontrib-websupport->sphinx==1.8.5->pvlib==0.8.0a0+6.gee29149.dirty) (2.0.0)
+Requirement already satisfied: executing>=1.2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from stack-data->ipython->pvlib==0.8.0a0+6.gee29149.dirty) (2.2.0)
+Requirement already satisfied: asttokens>=2.1.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from stack-data->ipython->pvlib==0.8.0a0+6.gee29149.dirty) (3.0.0)
+Requirement already satisfied: pure-eval in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from stack-data->ipython->pvlib==0.8.0a0+6.gee29149.dirty) (0.2.3)
+Requirement already satisfied: patsy>=0.5.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from statsmodels->pvlib==0.8.0a0+6.gee29149.dirty) (1.0.1)
+Requirement already satisfied: numexpr>=2.6.2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from tables->pvlib==0.8.0a0+6.gee29149.dirty) (2.10.1)
+Requirement already satisfied: py-cpuinfo in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from tables->pvlib==0.8.0a0+6.gee29149.dirty) (9.0.0)
+Requirement already satisfied: blosc2>=2.3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from tables->pvlib==0.8.0a0+6.gee29149.dirty) (2.5.1)
+Requirement already satisfied: ndindex>=1.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from blosc2>=2.3.0->tables->pvlib==0.8.0a0+6.gee29149.dirty) (1.9.2)
+Requirement already satisfied: msgpack in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from blosc2>=2.3.0->tables->pvlib==0.8.0a0+6.gee29149.dirty) (1.1.0)
+Installing collected packages: pvlib
+  Attempting uninstall: pvlib
+    Found existing installation: pvlib 0.8.0a0+5.g7fc595a
+    Uninstalling pvlib-0.8.0a0+5.g7fc595a:
+      Successfully uninstalled pvlib-0.8.0a0+5.g7fc595a
+  DEPRECATION: Legacy editable install of pvlib[all]==0.8.0a0+6.gee29149.dirty from file:///testbed (setup.py develop) is deprecated. pip 25.3 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for pvlib
+Successfully installed pvlib
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git checkout 7fc595a13bcd42e3269c0806f5505ac907af9730 pvlib/tests/ivtools/test_utils.py
+error: pathspec 'pvlib/tests/ivtools/test_utils.py' did not match any file(s) known to git
++ git apply -v -
+Checking patch pvlib/tests/ivtools/test_utility.py => pvlib/tests/ivtools/test_utils.py...
+Applied patch pvlib/tests/ivtools/test_utility.py => pvlib/tests/ivtools/test_utils.py cleanly.
++ : '>>>>> Start Test Output'
++ pytest -rA pvlib/tests/ivtools/test_utils.py
+============================= test session starts ==============================
+platform linux -- Python 3.9.21, pytest-8.3.5, pluggy-1.5.0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: anyio-4.9.0, remotedata-0.4.1, rerunfailures-15.0, timeout-2.4.0, cov-6.1.1, mock-3.14.0
+collected 5 items
+
+pvlib/tests/ivtools/test_utils.py F....                                  [100%]
+
+=================================== FAILURES ===================================
+________________________________ test__numdiff _________________________________
+
+    def test__numdiff():
+        iv = pd.read_csv(DATA_DIR / 'ivtools_numdiff.csv',
+                         names=['I', 'V', 'dIdV', 'd2IdV2'], dtype=float)
+        df, d2f = _numdiff(iv.V, iv.I)
+>       assert np.allclose(iv.dIdV, df, equal_nan=True)
+E       assert False
+E        +  where False = <function allclose at 0x7fc677d8cd30>(0          NaN\n1          NaN\n2    -0.010145\n3    -0.005752\n4    -0.008220\n5    -0.010291\n6    -0.020908\n7    -0.02566...42\n46   -1.738263\n47   -1.833577\n48   -1.923311\n49   -2.224682\n50         NaN\n51         NaN\nName: dIdV, dtype: float64, 0     0.0\n1     0.0\n2     0.0\n3     0.0\n4     0.0\n5     0.0\n6     0.0\n7     0.0\n8     0.0\n9     0.0\n10    0.0\n11    0....  0.0\n43    0.0\n44    0.0\n45    0.0\n46    0.0\n47    0.0\n48    0.0\n49    0.0\n50    0.0\n51    0.0\nName: V, dtype: float64, equal_nan=True)
+E        +    where <function allclose at 0x7fc677d8cd30> = np.allclose
+E        +    and   0          NaN\n1          NaN\n2    -0.010145\n3    -0.005752\n4    -0.008220\n5    -0.010291\n6    -0.020908\n7    -0.02566...42\n46   -1.738263\n47   -1.833577\n48   -1.923311\n49   -2.224682\n50         NaN\n51         NaN\nName: dIdV, dtype: float64 =            I          V      dIdV      d2IdV2\n0   4.502040   0.000000       NaN         NaN\n1   4.502040   0.001752   ...33500 -2.224682   -0.100197\n50  0.026441  20.032200       NaN         NaN\n51  0.000000  20.052800       NaN         NaN.dIdV
+
+pvlib/tests/ivtools/test_utils.py:23: AssertionError
+=============================== warnings summary ===============================
+pvlib/tests/conftest.py:7
+  /testbed/pvlib/tests/conftest.py:7: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    from pkg_resources import parse_version
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3144
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3144: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED pvlib/tests/ivtools/test_utils.py::test_rectify_iv_curve
+PASSED pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x0-y0-expected0]
+PASSED pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x1-y1-expected1]
+PASSED pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x2-y2-expected2]
+FAILED pvlib/tests/ivtools/test_utils.py::test__numdiff - assert False
+=================== 1 failed, 4 passed, 2 warnings in 0.10s ====================
++ SWEBENCH_TEST_EXIT_CODE=1
++ : '>>>>> End Test Output'
++ echo '>>>>> Test Exit Code: 1'
++ git checkout 7fc595a13bcd42e3269c0806f5505ac907af9730 pvlib/tests/ivtools/test_utils.py
+>>>>> Test Exit Code: 1
+error: pathspec 'pvlib/tests/ivtools/test_utils.py' did not match any file(s) known to git

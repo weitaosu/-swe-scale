@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-10-19T22:57:42.855Z",
+  "roots_removed": 4755,
+  "deleted_files": 31954,
+  "logical_bytes_removed": 590175555,
+  "remaining_files": [],
+  "errors": [],
+  "per_file_record": "deletion_plan.json in results/cleanup/20261019T225700-0e486164",
+  "recovery_archive": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/temporary_files_recovery.zip"
+}

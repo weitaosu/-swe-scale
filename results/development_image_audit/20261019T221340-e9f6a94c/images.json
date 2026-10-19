@@ -1,0 +1,58 @@
+{
+  "images": [
+    {
+      "instance_id": "pvlib__pvlib-python-807",
+      "image": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-807:latest",
+      "cached": true,
+      "image_id": "sha256:b57e3784fbb6b7749b2a16382cba68ba2dccc748da19c27acd17ce3aba955e3b",
+      "expanded_bytes": 3926376924,
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-807@sha256:28abd49543ca62244c1f0b261f36892cd4024a042f3533b887ca351b24a032d3"
+      ]
+    },
+    {
+      "instance_id": "pydicom__pydicom-1048",
+      "image": "swebench/sweb.eval.x86_64.pydicom_1776_pydicom-1048:latest",
+      "cached": false,
+      "registry_available": true,
+      "digest": "sha256:927f68ae738299106c329fb7d41f4dfae89f65093a890f467f871319b75cc61f",
+      "compressed_layer_bytes": 1622897694,
+      "layers": 15
+    },
+    {
+      "instance_id": "sqlfluff__sqlfluff-2907",
+      "image": "swebench/sweb.eval.x86_64.sqlfluff_1776_sqlfluff-2907:latest",
+      "cached": false,
+      "registry_available": false,
+      "error_type": "HTTPError",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "instance_id": "pylint-dev__astroid-1741",
+      "image": "swebench/sweb.eval.x86_64.pylint-dev_1776_astroid-1741:latest",
+      "cached": false,
+      "registry_available": true,
+      "digest": "sha256:e01dace5e8c41ea24b52ea06808bdababd773a2dbf8752e66aad60ec2e7c78b5",
+      "compressed_layer_bytes": 979114808,
+      "layers": 15
+    },
+    {
+      "instance_id": "pvlib__pvlib-python-1048",
+      "image": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-1048:latest",
+      "cached": true,
+      "image_id": "sha256:d9300f78d85eb13fd513e3b57d7415617676d88115102f6c47d0c5334b799e4f",
+      "expanded_bytes": 3990689888,
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-1048@sha256:2d04416896918cc14b720c787f364f8a9f59aba9bc2b0744bad56384d45ef3a0"
+      ]
+    }
+  ],
+  "storage": {
+    "free_bytes": 45192630272,
+    "conservative_volume_growth_bytes": 57688911872,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": 45192630272,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "note": "Compressed layer bytes do not determine expanded or runtime-build disk requirements."
+}

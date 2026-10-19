@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-19T23:03:05.517Z",
+  "passed": true,
+  "main_verification": "verification.json",
+  "cache_verification": "../../cleanup_cache/20261019T225901-1d945a7f/verification.json",
+  "protected_files_verification": "protected_files_verification.json",
+  "inventory": "results/native_inventory/20261019T230036-83193314/native_index.json",
+  "report": "docs/cleanup_report.md",
+  "report_sha256": "2d284a58cdc5b527412d94116c3345d81986282dab8892ef2d9e739e21528ce2",
+  "inventory_execution_source": "results/native_inventory/20261019T230036-83193314/executed_indexer.js",
+  "inventory_execution_source_sha256": "69f0346aa30273e7f0c27e7fc61c04b2aa0512f061af09c393c3f7f065af647c"
+}

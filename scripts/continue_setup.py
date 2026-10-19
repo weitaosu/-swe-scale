@@ -22,6 +22,7 @@ with Run("continue_setup",vars(a)) as run:
         study("download","--kind","dataset",timeout=14400)
     elif a.stage=="data":
         study("select-tasks");study("prepare");study("tokenize","--model","models/Qwen2.5-Coder-1.5B-Instruct","--max-length","4096")
+        study("tokenize","--model","models/Qwen2.5-Coder-1.5B-Instruct","--max-length","8192")
     elif a.stage in {"overfit","pilot"}:
         config="configs/qlora_overfit.yaml" if a.stage=="overfit" else "configs/qlora_pilot.yaml"
         adapter="checkpoints/pilot/qwen-1.5b-overfit" if a.stage=="overfit" else "checkpoints/pilot/qwen-1.5b"
@@ -29,8 +30,9 @@ with Run("continue_setup",vars(a)) as run:
         study(*command,timeout=14400);study("validate-checkpoint","--adapter",adapter)
     else:
         if not (root/"checkpoints/pilot/qwen-1.5b/experiment.json").exists(): raise RuntimeError("Complete the real 1.5B pilot before larger model probes")
+        run.command([sys.executable,"scripts/prepare_probe_data.py"],timeout=120,guard=guard)
         for size in ["3B","7B"]:
             study("download","--kind","model","--only",size,timeout=14400)
-            study("tokenize","--model",f"models/Qwen2.5-Coder-{size}-Instruct","--max-length","4096")
+            study("tokenize","--model",f"models/Qwen2.5-Coder-{size}-Instruct","--max-length","8192")
             study("train","--config",f"configs/qlora_probe_{size.lower()}.yaml",timeout=14400)
             study("validate-checkpoint","--adapter",f"checkpoints/pilot/qwen-{size.lower()}-probe")

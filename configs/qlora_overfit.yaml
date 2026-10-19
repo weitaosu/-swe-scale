@@ -18,3 +18,5 @@ save_steps: 4
 eval_steps: 4
 save_total_limit: 2
 quantization: nf4
+
+target_only_logits: true

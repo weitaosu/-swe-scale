@@ -1,0 +1,14 @@
+{
+  "args": [
+    "docker",
+    "image",
+    "inspect",
+    "cs6158/pvlib-python-807:numpy-1.26.4",
+    "cs6158/runtime:oh_v0.13.1_9gwl2n4p6cfl3edz_y766p9z6jyxsud5c"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cached_runtime_registration/20261019T221539-44342ea3/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cached_runtime_registration/20261019T221539-44342ea3/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2719789060001858
+}

@@ -1,0 +1,31 @@
+{
+  "run_id": "20261019T215950-57a24611",
+  "stage": "serve",
+  "started_at": "2026-10-19T21:59:50.226951+00:00",
+  "status": "passed",
+  "config": {
+    "command": "serve",
+    "model": "models/Qwen2.5-Coder-1.5B-Instruct",
+    "adapter": null,
+    "port": 8615,
+    "max_context": 8192,
+    "task_budget_file": "data/metadata/dev_task_budgets.jsonl",
+    "task_token_budget": 32768
+  },
+  "config_sha256": "0ed6cd06bcb4d643769076cb421bff489fed3e935aba0531d3a8b26619fddfc8",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "serve",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--port",
+    "8615"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "4e93e8bebcdd24a0356a760f538c21afdc2bdfdb50a6d338739679e8a7b97116",
+  "ended_at": "2026-10-19T22:08:44.913382+00:00",
+  "elapsed_seconds": 552.2134731879996
+}

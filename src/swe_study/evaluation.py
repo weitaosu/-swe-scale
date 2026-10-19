@@ -11,6 +11,12 @@ from .storage import StorageGuard
 PUBLIC_FIELDS={"instance_id","repo","version","base_commit","environment_setup_commit","problem_statement","created_at"}
 
 
+def development_task_ids(smoke=False):
+    ids=read_json("manifests/dev_tasks.json")["instance_ids"]
+    if not ids or len(ids)!=len(set(ids)): raise ValueError("Empty or duplicate frozen development task IDs")
+    return ids[:1] if smoke else ids
+
+
 def public_instance(row):
     result={key:row.get(key) for key in PUBLIC_FIELDS if key in row}
     # The fork expects these columns, but the agent gets no gold patches or evaluation test identities.
@@ -61,10 +67,13 @@ def validate_grader_report(report,wanted,control=None):
     return {"passed":True,"control":control,"total_instances":len(wanted),"resolved_instances":len(resolved),"resolved_ids":sorted(resolved)}
 
 
-def grade(run,predictions=None,control=None,python=None):
+def grade(run,predictions=None,control=None,python=None,instance_id=None,smoke=False):
     if control not in {None,"gold","blank"}: raise ValueError("Unknown grader control")
-    task_ids=read_json("manifests/dev_tasks.json")["instance_ids"]
-    wanted=set(task_ids[:1] if control else task_ids)
+    task_ids=development_task_ids()
+    if smoke and (control or instance_id): raise ValueError("Smoke grading cannot select a control or another task")
+    if instance_id and (not control or instance_id not in task_ids): raise ValueError("Control task must belong to the frozen development manifest")
+    wanted={instance_id} if instance_id else set(task_ids[:1] if control or smoke else task_ids)
+    run.event("grading_scope",scope="single_first_frozen_task_smoke" if smoke else "control" if control else "frozen_five_tasks",task_ids=sorted(wanted))
     dataset=[row for row,_ in records("data/raw/swebench/dev") if row["instance_id"] in wanted]
     if {r["instance_id"] for r in dataset}!=wanted: raise ValueError("Development data does not cover the frozen task list")
     dataset_path=run.path/"grading_dataset.json";write_json(dataset_path,dataset)
@@ -74,7 +83,15 @@ def grade(run,predictions=None,control=None,python=None):
     if not predictions: raise ValueError("Provide predictions or a grader control")
     from .docker_storage import require_storage
     require_storage()
-    guard=StorageGuard();guard.check(15*10**9)
+    import yaml
+    overrides=read_json("manifests/image_overrides.json").get("overrides",{}) if (ROOT/"manifests/image_overrides.json").exists() else {}
+    image_names=[overrides.get(task_id,{}).get("image") or yaml.safe_load((ROOT/"vendor/swe-bench-tasks/tasks"/task_id/"task.yaml").read_text())["image"] for task_id in sorted(wanted)]
+    cache_probe=subprocess.run(["docker","image","inspect",*image_names],capture_output=True,text=True,timeout=30)
+    cached=cache_probe.returncode==0
+    reserve=2*10**9 if cached else 15*10**9
+    write_json(run.path/"image_cache_check.json",{"images":image_names,"all_cached":cached,"reserve_bytes":reserve,"returncode":cache_probe.returncode,"stderr":cache_probe.stderr})
+    run.event("grader_storage_reservation",all_images_cached=cached,reserve_bytes=reserve)
+    guard=StorageGuard();guard.check(reserve)
     # This entry point remains available in the official harness; local full metadata is grader-only.
     command=[str(local_path(python)) if python else sys.executable,str(ROOT/"scripts/swebench_entry.py"),"--dataset_name",str(dataset_path),"--predictions_path",str(local_path(predictions)),"--max_workers","1","--run_id",run.id,"--instance_ids",*sorted(wanted)]
     run.command(command,cwd=run.path,timeout=7200,guard=guard)
@@ -85,26 +102,43 @@ def grade(run,predictions=None,control=None,python=None):
         if isinstance(payload,dict) and "resolved_ids" in payload and "total_instances" in payload: reports.append((candidate,payload))
     if len(reports)!=1: raise ValueError("Expected exactly one official grading summary")
     summary=validate_grader_report(reports[0][1],wanted,control)
+    summary["scope"]="single_first_frozen_task_smoke" if smoke else "control" if control else "frozen_five_tasks"
     write_json(run.path/"grade_validation.json",{**summary,"official_report":str(reports[0][0])})
     run.event("official_grader_finished",control=control,predictions=str(predictions),summary=summary)
 
 
-def rollout(run,model_name,python=None):
+def rollout(run,model_name,python=None,smoke=False):
     if os.name=="nt": raise RuntimeError("Run the OpenHands Docker scaffold from Linux/WSL2. Native Windows data/training commands remain supported.")
     vendor=local_path("vendor/SWE-Gym-OpenHands")
     if not (vendor/"evaluation/swe_bench/run_infer.py").exists(): raise FileNotFoundError("Pinned OpenHands checkout has not been downloaded")
     import yaml
     cfg=yaml.safe_load(local_path("configs/agent.yaml").read_text(encoding="utf-8"))
-    ids=read_json("manifests/dev_tasks.json")["instance_ids"]
+    ids=development_task_ids(smoke)
+    run.event("rollout_scope",scope="single_first_frozen_task_smoke" if smoke else "frozen_five_tasks",task_ids=ids)
     rows=[public_instance(r) for r,_ in records("data/raw/swebench/dev") if r["instance_id"] in set(ids)]
     if {r["instance_id"] for r in rows}!=set(ids): raise ValueError("Development metadata missing")
     public_path=run.path/"agent_tasks.jsonl";write_jsonl(public_path,rows)
     # Dedicated project configs are written only if no conflicting file is present.
     config='[llm.cs6158]\nmodel = '+json.dumps('openai/'+model_name)+'\nbase_url = '+json.dumps(cfg['base_url'])+'\napi_key = "local-only"\ntemperature = 0.0\nlog_completions = true\nmax_input_tokens = 6144\nmax_output_tokens = 2048\n'
-    target=vendor/"config.toml"
+    target=run.path/"config.toml"
     if target.exists() and target.read_text()!=config: raise ValueError("Existing OpenHands config differs and was preserved")
     target.write_text(config,encoding="utf-8")
-    guard=StorageGuard();guard.check(15*10**9)
-    command=[str(local_path(python)) if python else sys.executable,str(ROOT/"scripts/openhands_entry.py"),"--tasks",str(public_path),"--output",str(run.path/"openhands"),"--max-steps",str(cfg["max_steps"]),"--timeout",str(cfg["task_timeout_seconds"])]
-    run.command(command,cwd=vendor,timeout=cfg["task_timeout_seconds"]*len(ids)+300,guard=guard)
+    guard=StorageGuard();guard.check(2*10**9 if smoke else 15*10**9)
+    if smoke:
+        repairs=read_json("manifests/image_overrides.json")["overrides"]
+        image=repairs[ids[0]].get("runtime_image")
+        if not image or subprocess.run(["docker","image","inspect",image],capture_output=True,timeout=30).returncode: raise ValueError("Smoke mode requires a verified, fully cached runtime image")
+    command=[str(local_path(python)) if python else sys.executable,str(ROOT/"scripts/openhands_entry.py"),"--tasks",str(public_path),"--output",str(run.path/"openhands"),"--max-steps",str(cfg["max_steps"]),"--timeout",str(cfg["task_timeout_seconds"]),"--run-id",run.id,"--llm-config-file",str(target)]
+    if smoke:
+        for flag,value in [("--max-steps",cfg["smoke_max_steps"]),("--timeout",cfg["smoke_task_timeout_seconds"])]:
+            command[command.index(flag)+1]=str(value)
+        run.event("smoke_limits",max_steps=cfg["smoke_max_steps"],task_timeout_seconds=cfg["smoke_task_timeout_seconds"])
+    prefix='openhands-runtime-cs6158-'+run.id
+    try:
+        run.command(command,cwd=vendor,timeout=cfg["task_timeout_seconds"]*len(ids)+300,guard=guard)
+    finally:
+        remaining=run.command(['docker','ps','-a','--filter','name='+prefix,'--format','{{json .}}'],timeout=20)
+        for line in Path(remaining['stdout_path']).read_text().splitlines():
+            item=json.loads(line)
+            if item['Names'].startswith(prefix): run.command(['docker','rm','--force',item['ID']],timeout=30)
     run.event("rollout_finished",task_ids=ids)

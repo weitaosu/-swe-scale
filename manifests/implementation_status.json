@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-19T17:42:14.275Z",
-  "status": "partial_setup_pending",
+  "as_of": "2026-10-19T23:00:35.352Z",
+  "status": "independent_checks_complete_full_development_gated",
   "scope": "Approved first two milestones on one RTX 4090; no production matrix or full benchmark run",
   "milestones": [
     {
@@ -10,13 +10,15 @@
         "audited project scaffold",
         "local resumable asset downloader with revision/checksum manifests",
         "task selection and official grader adapters",
-        "bounded model server and OpenHands wrapper"
+        "bounded model server and OpenHands wrapper",
+        "three pinned and checksum-verified Qwen snapshots",
+        "three pinned source checkouts",
+        "isolated Linux training/agent/evaluator environments",
+        "physical Docker backing-file mapping and one-task gold/blank controls",
+        "All three real-model APIs and first-frozen-task agent/export/grader diagnostics"
       ],
       "pending": [
-        "real Qwen2.5 snapshots and pinned source checkouts",
-        "separate Linux agent/evaluator environments",
-        "Docker storage mapping and one-task grader controls",
-        "real tool replay and sequential 1.5B/3B/7B development rollouts"
+        "sequential baseline/adapter development agent-to-grader runs"
       ]
     },
     {
@@ -26,14 +28,19 @@
         "task-level provenance matching and quarantine",
         "Verified/development overlap screening",
         "task-disjoint split and assistant-only label masking",
-        "NF4 PEFT training with best-adapter selection and explicit Trainer resume"
+        "NF4 PEFT training with best-adapter selection and explicit Trainer resume",
+        "five verified real datasets and provenance audit",
+        "real complete-history 4K/8K context and label-mask audit",
+        "real 1.5B four-example overfit: 16 steps and updated adapters",
+        "real 1.5B 8K 32-example 25-step pilot",
+        "real step-25 to step-27 optimizer continuation and exact reload",
+        "3B long-history 8K training and exact reload",
+        "7B long-history 8K training and exact reload",
+        "Pilot adapter served through the real API and first-frozen-task agent/export/grader diagnostic"
       ],
       "pending": [
-        "real dataset download and schema/provenance audit",
-        "actual token/mask/context-coverage audit",
-        "1.5B overfit and bounded pilot",
-        "real-model reload/resume/server validation",
-        "3B and 7B memory probes and measured time estimates"
+        "real baseline/adapter agent-to-grader development validation",
+        "production context policy beyond the short-history pilot subset"
       ]
     }
   ],
@@ -41,8 +48,8 @@
     "gpu": "NVIDIA GeForce RTX 4090",
     "cuda_tensor_operation": true,
     "bf16": true,
-    "unit_tests_passed": 30,
-    "unit_test_evidence": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/005-post_cleanup_tests.json",
+    "unit_tests_passed": 38,
+    "unit_test_evidence": "results/linux_validation/20261019T222439-18e00e45/command-001.stdout.log",
     "synthetic_nf4_training": "results/train/20261019T164855-ead23d01/metrics.json",
     "synthetic_resume": "results/train/20261019T165453-6e72dc69/metrics.json",
     "synthetic_reload": "results/validate-checkpoint/20261019T165807-f950e3ee/reload_validation.json",
@@ -50,16 +57,56 @@
     "compile_evidence": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/034-handoff_compile.json",
     "cleanup_verification": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/verification.json",
     "linux_cuda_tensor_operation": true,
-    "linux_preflight": "results/preflight/20261019T173829-35e0d010/hardware.json"
+    "linux_preflight": "results/preflight/20261019T173829-35e0d010/hardware.json",
+    "real_1_5b_overfit": "results/train/20261019T181357-425bca26/metrics.json",
+    "gold_control": "results/grade/20261019T181521-a8031f30/grade_validation.json",
+    "blank_control": "results/grade/20261019T181622-8eff9329/grade_validation.json",
+    "model_integrity": "results/model_integrity/20261019T180039-a32aa4d0/run.json",
+    "real_1_5b_pilot": "results/train/20261019T212429-33c80784/metrics.json",
+    "real_resume": "results/resume_validation/20261019T213256-197348df/resume_validation.json",
+    "real_reload": "results/validate-checkpoint/20261019T213541-77186790/reload_validation.json",
+    "real_3b_probe": "checkpoints/pilot/qwen-3b-probe/experiment.json",
+    "real_3b_reload": "results/validate-checkpoint/20261019T214250-395117df/reload_validation.json",
+    "scripted_runtime_replay": "results/runtime_replay/20261019T212637-a6467397/replay.json",
+    "real_7b_probe": "checkpoints/pilot/qwen-7b-probe/experiment.json",
+    "real_7b_reload": "results/validate-checkpoint/20261019T215338-e30763a2/reload_validation.json",
+    "loopback_runtime_replay": "results/runtime_replay/20261019T215124-1fa2e208/replay.json",
+    "real_model_http": "results/development_condition/20261019T215949-17acd5cb/interface_validation.json",
+    "real_adapter_http": "results/development_condition/20261019T221401-83e9a5cd/interface_validation.json",
+    "second_gold_control": "results/grade/20261019T221223-4c466ee4/grade_validation.json",
+    "executed_negative_control": "results/executed_grader_negative/20261019T222237-60baffd4/negative_validation.json",
+    "real_3b_http": "results/development_condition/20261019T221637-a6deb17b/interface_validation.json",
+    "context_coverage": "results/context_coverage_analysis/20261019T222313-80fa1995/coverage.json",
+    "real_7b_http": "results/development_condition/20261019T221945-8c669693/interface_validation.json",
+    "model_interface_sequence": "results/model_interface_sequence/20261019T221636-836b7753/interface_sequence.json",
+    "agent_smoke_sequence": "results/agent_smoke_sequence/20261019T221705-5a995848/smoke_sequence.json",
+    "agent_smoke_metrics": "results/smoke_reporting/20261019T224904-9ce37df0/metrics.json",
+    "final_runtime_cleanup": "results/progress_finalization/20261019T224903-f9f33887/finalization.json",
+    "native_file_inventory": "results/native_inventory/20261019T224817-43e7e724/run.json",
+    "final_documentation": "results/documentation_finalization/20261019T225007-e201a232/verification.json"
   },
   "real_assets": {
-    "model_payloads_downloaded": false,
-    "dataset_payloads_downloaded": false,
-    "source_checkouts_downloaded": false,
-    "docker_images_pulled_or_built": false,
-    "real_training_run": false
+    "model_payloads_downloaded": true,
+    "dataset_payloads_downloaded": true,
+    "source_checkouts_downloaded": true,
+    "docker_images_pulled_or_built": true,
+    "real_training_run": true
   },
-  "blockers": [],
+  "blockers": [
+    {
+      "scope": "full_five_task_development",
+      "category": "storage",
+      "message": "After cleanup, cap headroom is 12.15 GB; uncached image stages reserve 15 GB.",
+      "evidence": "results/grade/20261019T221411-5174df90/run.json",
+      "latest_evidence": "results/cleanup_cache/20261019T225901-1d945a7f/verification.json"
+    },
+    {
+      "scope": "full_five_task_development",
+      "category": "task_image_access",
+      "message": "Public SQLFluff image manifest returned HTTP 401; verify access or build the pinned Dockerfile after storage is available.",
+      "evidence": "results/development_image_audit/20261019T221340-e9f6a94c/images.json"
+    }
+  ],
   "storage": {
     "max_incremental_bytes": 70000000000,
     "min_free_bytes": 25000000000,
@@ -73,25 +120,29 @@
     "session_log": "results/setup/setup-2026-10-19T16-35-12-041Z",
     "per_run_log": "results/<stage>/<run-id>/",
     "versions": "manifests/versions.json",
-    "exact_observed_packages": "manifests/validation_packages.freeze.txt",
+    "exact_observed_packages": "manifests/train_packages.freeze.txt",
     "downloads": [
       "manifests/model_files.json",
       "manifests/dataset_files.json"
     ],
-    "source_pins": "manifests/source_repositories.json"
+    "source_pins": "manifests/source_repositories.json",
+    "current_session": "results/setup/resume-2026-10-19T17-52-39-960Z"
   },
-  "next_command": "wsl.exe --cd \"/mnt/c/Users/weita/Desktop/SE in AI/proj\" --exec env PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 scripts/bootstrap.py --name train --install",
-  "next_command_requirement": "The Ubuntu route and network work. Create and validate the project Linux environment within the existing storage limits before asset and integration stages.",
+  "next_command": "Resolve the frozen development image/storage gates before the full five-task baseline/adapter comparison; completed training pilots need no repeat.",
+  "next_command_requirement": "One model condition at a time; preserve the existing storage limits.",
   "limitations": [
-    "Synthetic fixture is not Qwen2.5-Coder or SWE-Gym and does not establish model fit, quality, or production time.",
-    "Existing Windows validation environment reuses system packages and is not a Linux production lock.",
-    "OpenHands action compatibility and container isolation remain unvalidated."
+    "The complete-history 8K pilot retains 9.4% of the corpus and is a feasibility test.",
+    "Two-step larger-model probes provide memory checks, not steady-state runtime or quality estimates.",
+    "Full frozen-five baseline/adapter comparisons remain pending; single-task five-step diagnostics do not establish repair performance."
   ],
   "documentation": {
     "current_progress": "docs/implementation_status.md",
     "implementation_plan": "docs/rtx_4090_implementation_plan.md",
     "model_links": "README.md#models-and-download-links",
-    "file_cleanup_audit": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/run.json"
+    "file_cleanup_audit": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/run.json",
+    "development_environment_constraints": "docs/development_environment_constraints.md",
+    "agent_smoke_report": "docs/agent_smoke_report.md",
+    "latest_cleanup": "docs/cleanup_report.md"
   },
   "file_review": {
     "reviewed_preexisting_files": 1272,
@@ -121,7 +172,7 @@
     "docker_root_dir": "/var/lib/docker",
     "existing_containers": 3,
     "existing_images": 3,
-    "physical_backing_file": "not_identified",
+    "physical_backing_file": "/mnt/c/Users/weita/AppData/Local/Packages/CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc/LocalState/ext4.vhdx",
     "latest_evidence": "results/access_check/working-wsl-2026-10-19T17-38-28-975Z/summary.json",
     "python_non_interactive": "3.12.3",
     "python_non_interactive_executable": "/usr/bin/python3",
@@ -154,10 +205,9 @@
     }
   ],
   "remaining_setup_requirements": [
-    "Create the project Linux training environment and install required packages",
-    "Download and audit real assets",
-    "Record physical Docker storage before project image operations",
-    "Validate agent/evaluator environments and project container controls"
+    "sequential baseline/adapter development agent-to-grader runs",
+    "real baseline/adapter agent-to-grader development validation",
+    "production context policy beyond the short-history pilot subset"
   ],
   "execution_preference": {
     "requested_by": "user",
@@ -171,5 +221,40 @@
     "environment_document": "docs/environment.md",
     "avoid_wsl_launch_via": "Node REPL child process",
     "user_instruction": "record that. remember to use this env in the future in env"
+  },
+  "context_policy": {
+    "pilot_max_length": 8192,
+    "train_limit": 32,
+    "validation_limit": 9,
+    "retained_complete_histories": 46,
+    "total_processed_histories": 489,
+    "user_selected": true,
+    "production_policy_frozen": false,
+    "decision_log": "results/setup/resume-2026-10-19T17-52-39-960Z/context_decision.json"
+  },
+  "model_api": {
+    "bind": "127.0.0.1",
+    "port": 8615,
+    "base_url": "http://127.0.0.1:8615/v1",
+    "reason": "Port 8000 was already occupied"
+  },
+  "development_sequence": "results/development_validation_sequence/20261019T215948-1f760da2",
+  "interface_sequence": "results/model_interface_sequence/20261019T221636-836b7753",
+  "agent_smoke_sequence": "results/agent_smoke_sequence/20261019T221705-5a995848",
+  "development_sequence_status": "stopped_after_environment_control_failure",
+  "agent_smoke_sequence_status": "passed_as_bounded_pipeline_diagnostic",
+  "active_project_jobs": [],
+  "latest_cleanup": {
+    "run": "results/cleanup/20261019T225700-0e486164",
+    "deleted_files": 31954,
+    "logical_bytes_removed": 590175555,
+    "docker_cache_cleanup": "results/cleanup_cache/20261019T225901-1d945a7f",
+    "docker_cache_records_removed": 6,
+    "report": "docs/cleanup_report.md",
+    "temporary_recovery_archive": "results/cleanup/20261019T225700-0e486164/temporary_files_recovery.zip",
+    "protected_files_verification": "results/cleanup/20261019T225700-0e486164/protected_files_verification.json",
+    "protected_file_count": 54926,
+    "inventory": "results/native_inventory/20261019T230036-83193314/native_index.json",
+    "completed_at": "2026-10-19T23:03:05.480Z"
   }
 }

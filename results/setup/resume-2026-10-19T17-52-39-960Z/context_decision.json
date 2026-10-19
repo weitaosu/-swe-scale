@@ -1,0 +1,12 @@
+{
+  "decision": "8K complete-history pilot if memory permits",
+  "user_selected": true,
+  "train_limit": 32,
+  "validation_limit": 9,
+  "max_steps": 25,
+  "retained_train": 37,
+  "retained_validation": 9,
+  "corpus_trajectories": 489,
+  "retention_fraction": 0.09406952965235174,
+  "production_policy_frozen": false
+}

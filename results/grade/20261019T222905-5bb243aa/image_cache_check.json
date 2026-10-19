@@ -1,0 +1,9 @@
+{
+  "images": [
+    "cs6158/pvlib-python-807:numpy-1.26.4"
+  ],
+  "all_cached": true,
+  "reserve_bytes": 2000000000,
+  "returncode": 0,
+  "stderr": ""
+}

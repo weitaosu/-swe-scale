@@ -32,10 +32,26 @@ def load_model(model_path,quantization="nf4",adapter=None):
     if quantization=="nf4": kwargs["quantization_config"]=BitsAndBytesConfig(load_in_4bit=True,bnb_4bit_quant_type="nf4",bnb_4bit_use_double_quant=True,bnb_4bit_compute_dtype=torch.bfloat16)
     elif quantization!="none": raise ValueError("Unsupported quantization")
     model=AutoModelForCausalLM.from_pretrained(model_path,**kwargs)
+    if quantization=="nf4":
+        # Match PEFT k-bit training precision for unquantized embeddings/norm/head
+        # in baseline, adapter serving, and fresh-process reloads.
+        from peft import prepare_model_for_kbit_training
+        model=prepare_model_for_kbit_training(model,use_gradient_checkpointing=False)
     if adapter:
         from peft import PeftModel
         model=PeftModel.from_pretrained(model,local_path(adapter),local_files_only=True)
     return model,tokenizer
+
+
+def assistant_target_inputs(inputs):
+    """Keep the exact causal objective while skipping logits for ignored labels."""
+    import torch
+    labels=inputs["labels"]
+    if labels.ndim!=2 or labels.shape[0]!=1: raise ValueError("Target-only logits require microbatch 1")
+    shifted=torch.nn.functional.pad(labels,(0,1),value=-100)[:,1:]
+    positions=torch.nonzero(shifted[0]!=-100,as_tuple=False).flatten()
+    if not positions.numel(): raise ValueError("No shifted assistant targets")
+    return {**inputs,"logits_to_keep":positions,"shift_labels":shifted[:,positions]}
 
 
 def train(run,config_path,resume=None):
@@ -64,7 +80,8 @@ def train(run,config_path,resume=None):
         source=[row for _,row in read_jsonl(filename)]
         random.Random(cfg.get("seed",6158)).shuffle(source)
         rows=[];excluded=[]
-        for row in source[:limit]:
+        for row in source:
+            if len(rows)>=limit: break
             try: rows.append(encode_assistant_only(tokenizer,row,cfg["max_length"]))
             except ValueError as e: excluded.append({"instance_id":row.get("instance_id"),"reason":str(e)})
         if not rows: raise ValueError(f"No usable examples in {filename}")
@@ -84,6 +101,9 @@ def train(run,config_path,resume=None):
                 gradient_checks.append(norm);run.event("adapter_gradient_check",step=state.global_step,sum_parameter_gradient_norms=norm)
                 if not math.isfinite(norm) or not norm>0: raise ValueError("No nonzero adapter gradients")
     class TrackedTrainer(Trainer):
+        def compute_loss(self,model,inputs,return_outputs=False,num_items_in_batch=None):
+            if cfg.get("target_only_logits",False): inputs=assistant_target_inputs(inputs)
+            return super().compute_loss(model,inputs,return_outputs=return_outputs,num_items_in_batch=num_items_in_batch)
         def training_step(self,model,inputs,*args,**kwargs):
             guard.check();torch.cuda.synchronize();started=time.perf_counter()
             value=super().training_step(model,inputs,*args,**kwargs)
@@ -93,7 +113,7 @@ def train(run,config_path,resume=None):
             token_counts["processed"]+=processed;token_counts["targets"]+=targets;token_counts["training_step_seconds"]+=elapsed;token_counts["microbatches"]+=1
             if token_counts["microbatches"]>2:
                 token_counts["post_warmup_tokens"]+=processed;token_counts["post_warmup_seconds"]+=elapsed
-            run.event("training_microbatch",processed_tokens=processed,target_tokens=targets,seconds=elapsed,loss=float(value.detach().cpu()))
+            run.event("training_microbatch",processed_tokens=processed,target_tokens=targets,seconds=elapsed,loss=float(value.detach().cpu()),peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved(),cuda_free_bytes=torch.cuda.mem_get_info()[0])
             return value
     if resume:
         from peft import set_peft_model_state_dict
@@ -120,7 +140,7 @@ def train(run,config_path,resume=None):
     if before==after: raise ValueError("Adapter parameters did not change")
     trainer.save_model(str(output));tokenizer.save_pretrained(output);trainer.save_state()
     model.eval();reference_ids=train_rows[0]["input_ids"][:min(128,len(train_rows[0]["input_ids"]))]
-    with torch.no_grad(): logits=model(input_ids=torch.tensor([reference_ids],device="cuda"),attention_mask=torch.ones((1,len(reference_ids)),dtype=torch.long,device="cuda")).logits[0,-1].float().cpu()
+    with torch.no_grad(), torch.autocast("cuda",dtype=torch.bfloat16): logits=model(input_ids=torch.tensor([reference_ids],device="cuda"),attention_mask=torch.ones((1,len(reference_ids)),dtype=torch.long,device="cuda")).logits[0,-1].float().cpu()
     torch.save({"input_ids":reference_ids,"last_logits":logits},output/"reload_reference.pt")
     metadata={"config":cfg,"config_path":local_path(config_path).relative_to(ROOT).as_posix(),"versions":versions(),"parameters":counts,"adapter_hash_before":before,"adapter_hash_after":after,"adapter_updated":True,
       "gradient_checks":gradient_checks,"token_counts":token_counts,"wall_seconds_including_eval_and_checkpointing":elapsed,"gpu_count":1,"gpu_hours":elapsed/3600,
@@ -139,7 +159,7 @@ def validate_checkpoint(run,adapter):
     model,_=load_model(cfg["model"],cfg.get("quantization","nf4"),adapter)
     reference=torch.load(adapter/"reload_reference.pt",map_location="cpu",weights_only=True)
     model.eval()
-    with torch.no_grad(): actual=model(input_ids=torch.tensor([reference["input_ids"]],device="cuda"),attention_mask=torch.ones((1,len(reference["input_ids"])),dtype=torch.long,device="cuda")).logits[0,-1].float().cpu()
+    with torch.no_grad(), torch.autocast("cuda",dtype=torch.bfloat16): actual=model(input_ids=torch.tensor([reference["input_ids"]],device="cuda"),attention_mask=torch.ones((1,len(reference["input_ids"])),dtype=torch.long,device="cuda")).logits[0,-1].float().cpu()
     maximum=float((actual-reference["last_logits"]).abs().max())
     passed=torch.allclose(actual,reference["last_logits"],atol=0.02,rtol=0.01)
     report={"adapter":adapter.relative_to(ROOT).as_posix(),"passed":passed,"max_absolute_logit_difference":maximum,"atol":0.02,"rtol":0.01,"synthetic_fixture":metadata.get("synthetic_fixture",False)}

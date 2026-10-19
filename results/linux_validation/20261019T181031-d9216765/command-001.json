@@ -1,0 +1,19 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest_linux_resume"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/linux_validation/20261019T181031-d9216765/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/linux_validation/20261019T181031-d9216765/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 39.22891356299988
+}

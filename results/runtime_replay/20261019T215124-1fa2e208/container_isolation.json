@@ -1,0 +1,14 @@
+{
+  "id": "2e23cf22ad9b4e134e075562484f8738a6b2b199e7dce61ec97172ebe42ddf05",
+  "mounts": [],
+  "privileged": false,
+  "network": "bridge",
+  "port_bindings": {
+    "31610/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "31610"
+      }
+    ]
+  }
+}

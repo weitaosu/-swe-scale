@@ -4,26 +4,246 @@
       "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
       "kind": "model",
       "target": "models/Qwen2.5-Coder-1.5B-Instruct",
-      "split": null,
-      "status": "blocked",
-      "error_type": "ConnectError",
-      "error": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+      "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "status": "verified",
+      "files": [
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/LICENSE",
+          "bytes": 11343,
+          "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.015743492000183323
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/README.md",
+          "bytes": 5258,
+          "sha256": "a8504fd3e1247c90e4fe640d84df963237134bf29db02b0de7d502eed6c93c33",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.024881067000023904
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/config.json",
+          "bytes": 660,
+          "sha256": "88f9a17863c05fb313515d2ff74b1098e0c35579f99068e32beda00618508ae0",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.013656964000119842
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/generation_config.json",
+          "bytes": 242,
+          "sha256": "1a628a5775bc69cde01c6749a531150ca4d3189652c618a174f7077923acf3b1",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.015674988000000667
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.02327854899999693
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/model.safetensors",
+          "bytes": 3087467144,
+          "sha256": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+          "expected_lfs_sha256": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+          "reused": true,
+          "seconds": 13.367869116000065
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.03216399400002956
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.01338755200004016
+        },
+        {
+          "path": "models/Qwen2.5-Coder-1.5B-Instruct/vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "expected_lfs_sha256": null,
+          "reused": true,
+          "seconds": 0.03820777999999336
+        }
+      ]
     },
     {
       "repo": "Qwen/Qwen2.5-Coder-3B-Instruct",
       "kind": "model",
       "target": "models/Qwen2.5-Coder-3B-Instruct",
       "split": null,
-      "status": "not_started",
-      "revision": null
+      "status": "verified",
+      "revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+      "files": [
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/LICENSE",
+          "bytes": 7388,
+          "sha256": "ef52482bb785733093dc9a2e8edd8e764c77d12d8e9d8f10a80c9b547d32d0f9",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/README.md",
+          "bytes": 5271,
+          "sha256": "eb21b99af3631b35f79edc886755aa3358098ab72b97d018f1978a3f04e4a362",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/config.json",
+          "bytes": 661,
+          "sha256": "8f85440a3222d18772e964b1ef0b4b1574a1c5e6260c99aa23fcddd05c28b8ae",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/generation_config.json",
+          "bytes": 243,
+          "sha256": "fdaccbcb02f3e1e7914ccb0f69ebe899071ffd27cf825166d823163e156870f2",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/model-00001-of-00002.safetensors",
+          "bytes": 4957560304,
+          "sha256": "5b684409377e037e5ed75d680a070126e841dab17e8cb9a818868deadf01ab39",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/model-00002-of-00002.safetensors",
+          "bytes": 1214366696,
+          "sha256": "8bc5227aae6174eaf0b589fd4fbeb0de046a1fc951a67f2d2538acad811e1068",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/model.safetensors.index.json",
+          "bytes": 35581,
+          "sha256": "7b85f79fd7612df2e5d7f03d7f92d65c8967f790a331146ca7f45658823060d3",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-3B-Instruct/vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "reused": true
+        }
+      ]
     },
     {
       "repo": "Qwen/Qwen2.5-Coder-7B-Instruct",
       "kind": "model",
       "target": "models/Qwen2.5-Coder-7B-Instruct",
       "split": null,
-      "status": "not_started",
-      "revision": null
+      "status": "verified",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "files": [
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/LICENSE",
+          "bytes": 11343,
+          "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/README.md",
+          "bytes": 6392,
+          "sha256": "3c090be37f829adc1e4cdb78733667437732541470430ab2cd785d7f0d460077",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/config.json",
+          "bytes": 663,
+          "sha256": "c0242402ad6a13b331ea320feea8c7e3776ffb7a4eff0757b9cd667e116d9a28",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/generation_config.json",
+          "bytes": 242,
+          "sha256": "1a628a5775bc69cde01c6749a531150ca4d3189652c618a174f7077923acf3b1",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/model-00001-of-00004.safetensors",
+          "bytes": 4877660776,
+          "sha256": "0b6f069918b07c064cbba8ae4f00f529aa9bbf84b7cdfcb7fc2694a40f6aa8ef",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/model-00002-of-00004.safetensors",
+          "bytes": 4932751008,
+          "sha256": "c3d46733e7aa054ea7b063fbccd0a5a08446e7bd1814bef26936c5aa1331da62",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/model-00003-of-00004.safetensors",
+          "bytes": 4330865200,
+          "sha256": "9fe45dacee087385b3d2d6dd27a7413a8a56d95f145772facc148fa86fc73446",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/model-00004-of-00004.safetensors",
+          "bytes": 1089994880,
+          "sha256": "5aa6e5cbe642377fd441fb4e60e83cca96b2bcd9820e245b9ea06d94653f17f2",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/model.safetensors.index.json",
+          "bytes": 27752,
+          "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+          "reused": true
+        },
+        {
+          "path": "models/Qwen2.5-Coder-7B-Instruct/vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "reused": true
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "health": {
+    "status": "ready",
+    "model": "cs6158-Qwen2.5-Coder-1.5B-Instruct",
+    "adapter": "checkpoints/pilot/qwen-1.5b",
+    "quantization": "nf4",
+    "max_context": 8192
+  },
+  "checks": [
+    "wrong_model",
+    "multiple_choices",
+    "unknown_task",
+    "context_limit",
+    "generation"
+  ],
+  "preflight_completion_tokens": 1,
+  "preflight_charged_to_first_task_budget": true
+}

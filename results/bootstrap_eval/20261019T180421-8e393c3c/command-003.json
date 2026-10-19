@@ -1,0 +1,16 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/eval/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-cache-dir",
+    "-e",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-bench"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_eval/20261019T180421-8e393c3c/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_eval/20261019T180421-8e393c3c/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 392.24102689400024
+}

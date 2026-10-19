@@ -4,7 +4,6 @@
       "url": "https://github.com/SWE-bench/SWE-bench.git",
       "path": "vendor/SWE-bench",
       "status": "checked_out",
-      "error": "Command failed (128): git\nfatal: unable to access 'https://github.com/SWE-bench/SWE-bench.git/': Failed to connect to github.com port 443 after 36 ms: Could not connect to server\n",
       "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e"
     },
     "SWE-Gym-OpenHands": {

@@ -1,0 +1,28 @@
+{
+  "run_id": "20261019T210845-a2c91dac",
+  "stage": "validate-checkpoint",
+  "started_at": "2026-10-19T21:08:45.072740+00:00",
+  "status": "failed",
+  "config": {
+    "command": "validate-checkpoint",
+    "adapter": "checkpoints/pilot/qwen-1.5b-overfit"
+  },
+  "config_sha256": "e0f21f1a818958198b4965c3bc8cd51a0b7a6d8067e7f10a98b3ec5fda1d2f92",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/study.py",
+    "validate-checkpoint",
+    "--adapter",
+    "checkpoints/pilot/qwen-1.5b-overfit"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "b677d3766ac23ea98833c72b0fd8249ef4fc91c3a95da540a3693dcb091bea43",
+  "ended_at": "2026-10-19T21:10:54.670252+00:00",
+  "elapsed_seconds": 132.19113950700012,
+  "error": {
+    "type": "ValueError",
+    "message": "Checkpoint reload logits differ outside tolerance"
+  }
+}

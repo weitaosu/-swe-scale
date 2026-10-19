@@ -1,0 +1,20 @@
+{
+  "base_image": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-1048:latest",
+  "base_image_id": "sha256:d9300f78d85eb13fd513e3b57d7415617676d88115102f6c47d0c5334b799e4f",
+  "base_repo_digests": [
+    "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-1048@sha256:2d04416896918cc14b720c787f364f8a9f59aba9bc2b0744bad56384d45ef3a0"
+  ],
+  "parent_image": "cs6158/runtime:oh_v0.13.1_jcoza2ihuc7turjp_y766p9z6jyxsud5c",
+  "parent_image_id": "sha256:d5da77db54d69150ff2945108c98d09106099e10a2996764de165f4ddab7c84f",
+  "image": "cs6158/runtime:repair-pvlib__pvlib-python-1048-numpy-1.26.4",
+  "image_id": "sha256:e20b68850535d20572e2355a94899e11bbaf345ac834f13b854f8d1b306ec2fa",
+  "reason": "Historical task cannot collect under NumPy 2; only testbed NumPy is pinned to 1.26.4",
+  "status": "gold_and_blank_controls_passed",
+  "failed_control": "results/grade/20261019T220416-957bc845",
+  "run": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad",
+  "runtime_image": "cs6158/runtime:repair-pvlib__pvlib-python-1048-numpy-1.26.4",
+  "controls": {
+    "gold": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/grade/20261019T221223-4c466ee4/grade_validation.json",
+    "blank": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/grade/20261019T221305-ed69c803/grade_validation.json"
+  }
+}

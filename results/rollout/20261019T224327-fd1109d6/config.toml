@@ -1,0 +1,8 @@
+[llm.cs6158]
+model = "openai/cs6158-Qwen2.5-Coder-7B-Instruct"
+base_url = "http://127.0.0.1:8615/v1"
+api_key = "local-only"
+temperature = 0.0
+log_completions = true
+max_input_tokens = 6144
+max_output_tokens = 2048

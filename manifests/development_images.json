@@ -1,0 +1,14 @@
+{
+  "images": [
+    {
+      "instance_id": "pvlib__pvlib-python-807",
+      "image": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-807:latest",
+      "id": "sha256:b57e3784fbb6b7749b2a16382cba68ba2dccc748da19c27acd17ce3aba955e3b",
+      "repo_digests": [
+        "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-807@sha256:28abd49543ca62244c1f0b261f36892cd4024a042f3533b887ca351b24a032d3"
+      ],
+      "expanded_bytes": 3926376924,
+      "run": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/docker_image/20261019T180737-95eba9a1"
+    }
+  ]
+}

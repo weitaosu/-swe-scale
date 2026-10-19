@@ -1,0 +1,27 @@
+{
+  "run_id": "20261019T221401-5f15c887",
+  "stage": "model_interface_sequence",
+  "started_at": "2026-10-19T22:14:01.178156+00:00",
+  "status": "failed",
+  "config": {
+    "scope": "1.5B pilot adapter, 3B baseline, 7B baseline HTTP validation; no benchmark score"
+  },
+  "config_sha256": "0a34224e1da2b674dbfd65c25c1750a2afa47c19527e436f2b8de00249cc3ddf",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_model_interfaces.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 53951,
+  "parent_pid": 53949,
+  "condition_id": null,
+  "source_snapshot_sha256": "42c01dabc48a29e827769b210e8587fc59c85fd5d2434ed71990819863233400",
+  "ended_at": "2026-10-19T22:15:57.627993+00:00",
+  "elapsed_seconds": 120.41537922099997,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command failed (1): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 23, in <module>\n    with socket.socket() as probe: probe.bind(('127.0.0.1',port))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 98] Address already in use\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 23, in <module>\n    with socket.socket() as probe: probe.bind(('127.0.0.1',port))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 98] Address already in use\n"
+  }
+}

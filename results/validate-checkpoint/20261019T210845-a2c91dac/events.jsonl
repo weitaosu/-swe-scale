@@ -1,0 +1,2 @@
+{"time": "2026-10-19T21:08:45.388748+00:00", "event": "run_started", "config": {"command": "validate-checkpoint", "adapter": "checkpoints/pilot/qwen-1.5b-overfit"}}
+{"time": "2026-10-19T21:10:54.673356+00:00", "event": "run_finished", "status": "failed", "error": {"type": "ValueError", "message": "Checkpoint reload logits differ outside tolerance"}}

@@ -1,0 +1,28 @@
+{
+  "run_id": "20261019T211600-444ffab4",
+  "stage": "train",
+  "started_at": "2026-10-19T21:16:00.743239+00:00",
+  "status": "failed",
+  "config": {
+    "command": "train",
+    "config": "configs/qlora_pilot.yaml",
+    "resume": null
+  },
+  "config_sha256": "cc47294578cd1bf94d27069f3ff31c35e0f73b9d1b6e8d5236f7685acd440712",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "train",
+    "--config",
+    "configs/qlora_pilot.yaml"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "0279505257c960131dae4d50946ac63a7cc0f6d297493c5ac4d597d0b50f0fde",
+  "ended_at": "2026-10-19T21:23:05.948636+00:00",
+  "error": {
+    "type": "ResourceAbort",
+    "message": "8K full-logit attempt stopped for VRAM pressure before an optimizer step; SIGINT then SIGTERM; all outputs preserved"
+  }
+}

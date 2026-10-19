@@ -1,0 +1,12 @@
+{
+  "args": [
+    "docker",
+    "logs",
+    "6a433d4910eb"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_startup_probe/20261019T212544-37077084/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_startup_probe/20261019T212544-37077084/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2694023570002173
+}

@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/setup/resume-2026-10-19T17-52-39-960Z/summarize_smoke.py",
+    "results/agent_smoke_sequence/20261019T221705-5a995848"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/progress_finalization/20261019T224903-f9f33887/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/progress_finalization/20261019T224903-f9f33887/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 1.391761923001468
+}

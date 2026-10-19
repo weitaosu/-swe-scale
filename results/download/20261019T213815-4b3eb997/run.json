@@ -1,0 +1,27 @@
+{
+  "run_id": "20261019T213815-4b3eb997",
+  "stage": "download",
+  "started_at": "2026-10-19T21:38:15.667556+00:00",
+  "status": "passed",
+  "config": {
+    "command": "download",
+    "kind": "model",
+    "only": "3B"
+  },
+  "config_sha256": "ccadaf520b398b886cb78811542e1fe3394a6b1d67efef12f575e7947655c9cd",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/study.py",
+    "download",
+    "--kind",
+    "model",
+    "--only",
+    "3B"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "0ce77294bf67d2361925be0bb6ec02293adfc12dddc9b91ac9f7ff94dfcacc30",
+  "ended_at": "2026-10-19T21:38:39.863375+00:00",
+  "elapsed_seconds": 24.854471042000114
+}

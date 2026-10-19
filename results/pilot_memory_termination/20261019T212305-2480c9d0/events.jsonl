@@ -1,0 +1,3 @@
+{"time": "2026-10-19T21:23:05.941918+00:00", "event": "run_started", "config": {"pid": 23378, "reason": "SIGINT delayed inside long GPU operation; no optimizer step or checkpoint completed"}}
+{"time": "2026-10-19T21:23:05.955215+00:00", "event": "project_pilot_terminated", "pid": 23378}
+{"time": "2026-10-19T21:23:05.956184+00:00", "event": "run_finished", "status": "passed", "error": null}

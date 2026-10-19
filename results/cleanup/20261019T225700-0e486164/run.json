@@ -1,0 +1,26 @@
+{
+  "run_id": "20261019T225700-0e486164",
+  "stage": "cleanup",
+  "started_at": "2026-10-19T22:57:00.166844+00:00",
+  "status": "passed",
+  "config": {
+    "requested_by": "user",
+    "plan": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/review-2026-10-19T22-56-08-972Z/plan.json",
+    "plan_sha256": "b5334a873479ca9b66c1ba02222e90017d5e922157898553623c8695d610f8bd",
+    "preserve_logs_models_data_checkpoints": true
+  },
+  "config_sha256": "44297ad1e0a4d8edbdb5a6de5f80bf6e3a58f6dc12ff87a9cd4f0d1addf9b7b0",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/safe_cleanup.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 70712,
+  "parent_pid": 70706,
+  "condition_id": null,
+  "source_snapshot_sha256": "04b6c98e1a7315709af999183c97ad45236402bcb049c2da0741b8203b8bf1ff",
+  "ended_at": "2026-10-19T22:57:50.794186+00:00",
+  "elapsed_seconds": 51.98003544600033
+}

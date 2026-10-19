@@ -1,0 +1,10 @@
+{
+  "mapping": {
+    "docker.io/xingyaoww/sweb.eval.x86_64.pvlib_s_pvlib-python-807": "cs6158/pvlib-python-807:numpy-1.26.4"
+  },
+  "runtime_images": {
+    "docker.io/xingyaoww/sweb.eval.x86_64.pvlib_s_pvlib-python-807": "cs6158/runtime:oh_v0.13.1_9gwl2n4p6cfl3edz_y766p9z6jyxsud5c"
+  },
+  "container_prefix": "openhands-runtime-cs6158-20261019T223518-ce9ca5de",
+  "gold_material_exposed": false
+}

@@ -1,0 +1,16 @@
+{
+  "pvlib__pvlib-python-807": {
+    "base_image": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-807:latest",
+    "base_digest": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-807@sha256:28abd49543ca62244c1f0b261f36892cd4024a042f3533b887ca351b24a032d3",
+    "image": "cs6158/pvlib-python-807:numpy-1.26.4",
+    "image_id": "sha256:fb16b68ae7c9bdd8df81eb1cf51393a52adb1fd5dd200720bb44553da96ea39c",
+    "reason": "Published image NumPy 2 removes np.Inf used by historical pvlib; gold control failed during collection. Only dependency pinned to 1.26.4.",
+    "status": "gold_and_blank_controls_passed",
+    "run": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/docker_dependency_repair/20261019T181446-9c876ce8",
+    "controls": {
+      "gold": "results/grade/20261019T181521-a8031f30/grade_validation.json",
+      "blank": "results/grade/20261019T181622-8eff9329/grade_validation.json",
+      "blank_note": "Official harness short-circuits empty predictions; this is denominator/empty handling, not an executed test-negative control."
+    }
+  }
+}

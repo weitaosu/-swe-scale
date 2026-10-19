@@ -1,0 +1,2 @@
+{"time": "2026-10-19T22:45:59.892820+00:00", "event": "run_started", "config": {"action": "resume", "reason": "Avoid competing filesystem inventory and model-loading I/O"}}
+{"time": "2026-10-19T22:45:59.915686+00:00", "event": "run_finished", "status": "passed", "error": null}

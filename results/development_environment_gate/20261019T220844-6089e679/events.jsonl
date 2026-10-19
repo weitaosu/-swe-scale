@@ -1,0 +1,3 @@
+{"time": "2026-10-19T22:08:44.732477+00:00", "event": "run_started", "config": {"condition": "20261019T215948-1f760da2-0", "failed_gold": "results/grade/20261019T220416-957bc845", "reason": "NumPy 2 prevents benchmark test collection"}}
+{"time": "2026-10-19T22:08:44.733791+00:00", "event": "condition_interrupted", "pids": [41338]}
+{"time": "2026-10-19T22:08:44.734660+00:00", "event": "run_finished", "status": "passed", "error": null}

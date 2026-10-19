@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "label": "swegym-pilot-1.5b",
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T221401-83e9a5cd/interface_validation.json",
+      "reused_completed_check": true
+    },
+    {
+      "label": "baseline-3b",
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T221637-a6deb17b/interface_validation.json"
+    },
+    {
+      "label": "baseline-7b",
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T221945-8c669693/interface_validation.json"
+    }
+  ]
+}

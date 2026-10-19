@@ -1,0 +1,20 @@
+{
+  "run_id": "20261019T213256-197348df",
+  "stage": "resume_validation",
+  "started_at": "2026-10-19T21:32:56.242615+00:00",
+  "status": "passed",
+  "config": {
+    "scope": "25-step real pilot extended to 27 only to validate state restoration"
+  },
+  "config_sha256": "c64e3f08a1cd30b0878e88da30fc0be437231ca6094c3b4ebf9f7a9409b28ae9",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/validate_resume.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "1bbc432ffec6d171e492c30ae9c353d7a2aafe9dd4a4fbbc44ff4b8a52a627c7",
+  "ended_at": "2026-10-19T21:38:13.091478+00:00",
+  "elapsed_seconds": 326.18133150299946
+}

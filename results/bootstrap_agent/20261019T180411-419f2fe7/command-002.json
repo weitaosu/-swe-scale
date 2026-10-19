@@ -1,0 +1,18 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-cache-dir",
+    "--constraint",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/configs/constraints_agent.txt",
+    "--requirement",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/configs/requirements_agent.txt"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_agent/20261019T180411-419f2fe7/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_agent/20261019T180411-419f2fe7/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 1479.6184522579997
+}

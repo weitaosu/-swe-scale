@@ -1,0 +1,6 @@
+{
+  "id": "7c20f6b690bdc9b82e3043237fbf2bbb030d256a9a5119aad2e48d5940b7ec1e",
+  "mounts": [],
+  "privileged": false,
+  "network": "bridge"
+}

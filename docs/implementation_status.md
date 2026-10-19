@@ -1,58 +1,48 @@
 # Current project progress
 
-Recorded 2026-10-19. We have completed the local code foundation and synthetic GPU checks. **Both project milestones remain incomplete.**
+Updated 2026-10-19. Asset setup, real-data preparation, and GPU training/checkpoint validation have passed. **Both milestones remain incomplete. Full five-task development execution is gated by Docker image access and the approved storage allowance; cached single-task integration diagnostics have completed.**
 
-## Milestone progress
 
-| Milestone | Completed locally | Still pending |
-| --- | --- | --- |
-| Sep 14–27: SWE-bench, Qwen models, agent scaffold | Project structure, resumable download scripts, local model server, OpenHands/grader wrappers, task-selection code, storage guards, and logging | Download all three Qwen models and pinned source repositories; install/validate separate Linux agent/evaluator environments; validate Docker controls and real agent runs |
-| Sep 28–Oct 11: SWE-Gym preparation and LoRA validation | Provenance recovery and quarantine code, overlap screening, task-disjoint splitting, assistant-only loss masking, NF4 QLoRA training, best-adapter selection, and explicit checkpoint resume | Download and audit real datasets; inspect real Qwen templates and context coverage; run the real 1.5B overfit/pilot and 3B/7B memory probes; validate the adapter through the agent and grader |
+| Area                | Completed                                                                                                                                                                       | Remaining                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Models/source       | Three Qwen snapshots verified; five datasets local; three source repositories pinned                                                                                            | No additional model download needed                                     |
+| Ubuntu environments | Isolated training, agent, and evaluator installations; exact package freezes saved                                                                                              | Continue using the explicit WSL interpreters                            |
+| Data                | 489/491 successful histories retained; 439 training / 50 validation; task-disjoint split; two ambiguous records quarantined                                                     | Production context policy for histories longer than 8K                  |
+| 1.5B LoRA           | Four-example overfit; 32-example 8K pilot for 25 steps; optimizer continuation from 25 to 27; exact fresh reload                                                                | Full frozen-five-task adapter comparison                                |
+| 3B / 7B             | Two training steps each on long 8K histories; finite loss, nonzero gradients, updated adapters, exact fresh reload                                                              | Full-run throughput/quality measurements are outside these short probes |
+| Agent runtime       | All three released tool types converted; real container view/edit/test/patch replay passed; no host mounts, no privileged mode, loopback-only API ports                         | Full frozen-five-task model comparison                                  |
+| Grader              | Two pvlib task images repaired by pinning NumPy only; both gold controls passed; executed negative control produced the expected one failure/four passes; blank handling passed | Remaining three task environments and full five-task grading            |
+| API/tests           | All three model APIs and the pilot-adapter API passed; 38 Linux regression tests passed; four bounded smoke conditions graded                                                   | Full five-task comparison                                               |
 
-## Verified results
+## Measured 8K training feasibility on the RTX 4090
 
-- 30 regression tests passed, and all project Python modules compiled during implementation.
-- The local RTX 4090 supports CUDA tensor operations and BF16 in the installed Windows PyTorch environment.
-- Agent checks now confirm direct Ubuntu access, /usr/bin/python3 3.12.3, a working PyTorch 2.6.0+cu124 CUDA tensor operation, Docker 26.1.3, Hugging Face HTTP 200, and GitHub remote access. The interactive shell separately reported Python 3.11.6.
-- NF4 LoRA training, finite nonzero adapter gradients, adapter updates, optimizer/Trainer resume, and fresh-process reload passed using a random tiny Qwen2 model and synthetic text.
-- The model API passed in-process HTTP tests with real GPU generation, including streaming, context limits, task identification, and cumulative output-token limits.
-- Commands, failures, versions, configurations, metrics, source snapshots, and a file inventory are saved locally.
 
-These checks establish local implementation/runtime mechanics. They do not establish real Qwen2.5-Coder model fit, SWE-Gym training quality, production runtimes, or benchmark performance. Actual networked OpenHands integration is untested.
+| Model | Scope                             | Peak allocated | Peak reserved | Training/eval/checkpoint time |
+| ----- | --------------------------------- | -------------: | ------------: | ----------------------------: |
+| 1.5B  | 25 steps, 32 train / 9 validation |       6.85 GiB |     16.63 GiB |                       279.9 s |
+| 3B    | 2 steps, 8 train / 2 validation   |       8.57 GiB |     13.59 GiB |                        19.5 s |
+| 7B    | 2 steps, 8 train / 2 validation   |      14.81 GiB |     18.61 GiB |                        26.3 s |
 
-## Download and execution status
+Times exclude model loading and fresh reload. All use NF4, BF16 computation, LoRA rank 16, gradient checkpointing, and the tested assistant-target-only output-logit path. The two-step probes do not establish steady-state runtime or training quality. [Detailed pilot evidence](pilot_report.md).
 
-| Item | Current state |
-| --- | --- |
-| Qwen2.5-Coder 1.5B / 3B / 7B | 0 of 3 real model snapshots downloaded |
-| SWE-Gym and SWE-bench payloads | No real dataset payloads downloaded |
-| Pinned external source checkouts | Not downloaded |
-| Project Docker images / benchmark rollouts | No project images pulled or built; no real agent/grading runs. The user's existing Docker server has 3 containers and 3 images |
-| Real-data LoRA pilot | Not started |
+The initial full-logit 8K attempt saturated VRAM and was stopped before an optimizer step. The optimized path preserves the causal loss and parameter gradients in an equivalence test. Fresh reload initially exposed precision/autocast differences; these were corrected, and all real reload comparisons now have maximum logit difference 0.0 without widening tolerance.
 
-The agent can now enter Ubuntu through the standard command runner and access the shared project folder, GPU via PyTorch, Docker, Hugging Face, and GitHub. Earlier access failures were observed through another execution route. Linux project dependencies, real asset downloads, physical Docker storage accounting, and the project agent/grader workflow remain pending. See [environment.md](environment.md) for the verified route and evidence.
+## Remaining development workflow
 
-## Next steps
+The initial five-task sequence was stopped after a second task image failed its gold control under NumPy 2. That task is now repaired and gold-validated. A registry audit found pydicom and astroid images available but uncached, and SQLFluff returned HTTP 401. The next uncached-image gold check was stopped by the 70 GB storage guard. About 45.19 GB was free at the image audit, leaving 12.31 GB under the approved growth cap. [Exact findings and storage plan](development_environment_constraints.md).
 
-1. Create the project Linux training environment using /usr/bin/python3 (3.12.3), validate its package stack, and resume the approved assets stage through the working Ubuntu runner.
-2. Download 1.5B and the datasets, then freeze task lists and inspect real data, provenance, labels, and 4K context coverage.
-3. Run the 1.5B overfit and bounded pilot; verify reload/resume and measure actual tokens, time, and memory.
-4. Download and probe 3B/7B sequentially after the 1.5B pilot succeeds.
-5. Use the existing Ubuntu 24.04.2 WSL2 installation, use the verified command runner, install the separate agent/evaluator environments, record physical Docker storage, and validate project image/runtime controls and the full development workflow.
+Real API checks and a bounded smoke sequence completed using the already cached, gold-validated first frozen task, pvlib__pvlib-python-807. The smoke settings are five steps and 300 seconds, explicitly separate from the full five-task comparison. Baseline 1.5B, its pilot adapter, 3B, and 7B ran sequentially with fresh servers/ledgers, full logs, patch export, and official grading. The frozen five-task list is unchanged, and smoke results do not satisfy its acceptance check. Failures, empty patches, and missing predictions remain explicit. The full nine-adapter study and final 100-task runs are outside this setup.
 
-~~~powershell
-.\.envs\validation\Scripts\python.exe -X utf8 scripts/continue_setup.py --stage assets
-~~~
+Only 46/489 histories fit 8K (9.4%): 37 train / 9 validation. The user selected complete 8K histories for this bounded pilot if memory permits. This short-history subset is not a representative replacement for the full training corpus. [Data audit](data_audit.md).
 
-Run from the project folder. The approved storage limit remains 70 GB incremental growth while keeping at least 25 GB free; original model snapshots are estimated at 24.48 GB and raw datasets at 0.40 GB. Follow [README.md](../README.md) for stage commands and [rtx_4090_implementation_plan.md](rtx_4090_implementation_plan.md) for the retained plan.
+Use the existing Ubuntu WSL2 environment and project model API 127.0.0.1:8615. Port 8000 was already occupied. The storage cap remains 70 GB incremental growth with at least 25 GB free; Docker's WSL VHDX is included. [Environment](environment.md), [live storage](../manifests/storage_usage.json).
 
-## Evidence and file review
+Evidence: [model manifest](../manifests/model_files.json), [datasets](../manifests/dataset_files.json), [source pins](../manifests/source_repositories.json), [25-step pilot](../results/train/20261019T212429-33c80784/metrics.json), [resume validation](../results/resume_validation/20261019T213256-197348df/resume_validation.json), [3B probe](../checkpoints/pilot/qwen-3b-probe/experiment.json), [7B probe](../checkpoints/pilot/qwen-7b-probe/experiment.json), [loopback runtime replay](../results/runtime_replay/20261019T215124-1fa2e208/replay.json), [machine status](../manifests/implementation_status.json).
 
-- [Synthetic GPU pilot evidence](pilot_report.md)
-- [Real-data audit status](data_audit.md)
-- [Machine-readable implementation status](../manifests/implementation_status.json)
-- [Initial setup session](../results/setup/setup-2026-10-19T16-35-12-041Z/session.json)
-- [Artifact inventory](../manifests/artifact_inventory.json)
-- [File cleanup audit](../results/cleanup/cleanup-2026-10-19T17-16-59-166Z/run.json)
+Every execution creates results/<stage>/<run-id>/ with configuration/source snapshots, events, stdout/stderr, failures, and metrics. The interrupted full sequence is results/development_validation_sequence/20261019T215948-1f760da2/. Completed interface checks: results/model_interface_sequence/20261019T221636-836b7753/. Completed smoke sequence: results/agent_smoke_sequence/20261019T221705-5a995848/. Historical synthetic checks and failed setup attempts are preserved.
 
-The cleanup preserves the proposal, working source/tests/configurations, all historical logs and source snapshots, and the synthetic base model plus adapters/checkpoints needed to reproduce the completed checks. It removes regenerable caches/test scratch files and superseded or unused documents/configurations. Cleanup does not advance either milestone's real-data acceptance criteria.
+The four bounded diagnostics completed through official grading. Their individual episode errors, patch sizes, token counts, timing, and GPU peaks are in the [agent smoke report](agent_smoke_report.md). These results do not complete the frozen-five-task acceptance checks.
+
+All four smoke episodes reached the five-step limit. The 7B model exported a 1,508-byte patch; the other three conditions exported empty patches. None resolved the task. The refreshed native inventory contains 111,781 entries, about 38.40 GB of logical files, with zero scan errors.
+
+Cleanup removed 31,954 disposable files (590 MB) and the obsolete runtime image/cache chain (about 1.89 GB inside Docker). Active environments and all research artifacts/logs were retained. The latest volume check shows 45.03 GB free and 12.15 GB cap headroom, so full development execution remains gated. [Cleanup report](cleanup_report.md).

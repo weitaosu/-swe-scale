@@ -1,0 +1,20 @@
+{
+  "run_id": "20261019T212143-6d1bf7b2",
+  "stage": "pilot_memory_diagnostic",
+  "started_at": "2026-10-19T21:21:43.870102+00:00",
+  "status": "passed",
+  "config": {
+    "reason": "8K VRAM pressure; optimize target-only logits before retry"
+  },
+  "config_sha256": "de9bcfa4d2e305e9d9872b210ba7a689df5b2178a631f1357a7f50e7896cfe02",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "-c"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "2dd9d3f9089b2dcd92a56eff5d1bfb43bdc3c83c90a3404b1a98d27ec7b7f90e",
+  "ended_at": "2026-10-19T21:21:44.152950+00:00",
+  "elapsed_seconds": 0.023325805999775184
+}

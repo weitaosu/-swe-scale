@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "serve",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--port",
+    "8615"
+  ],
+  "pid": 41387,
+  "condition_id": "20261019T215948-1f760da2-0"
+}

@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/eval/bin/python",
+    "-m",
+    "pip",
+    "freeze",
+    "--all"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_eval/20261019T180421-8e393c3c/command-004.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_eval/20261019T180421-8e393c3c/command-004.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 8.756821143999787
+}

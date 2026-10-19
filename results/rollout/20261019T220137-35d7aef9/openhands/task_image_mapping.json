@@ -1,0 +1,11 @@
+{
+  "mapping": {
+    "docker.io/xingyaoww/sweb.eval.x86_64.pvlib_s_pvlib-python-1048": "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-1048:latest",
+    "docker.io/xingyaoww/sweb.eval.x86_64.pvlib_s_pvlib-python-807": "cs6158/pvlib-python-807:numpy-1.26.4",
+    "docker.io/xingyaoww/sweb.eval.x86_64.pydicom_s_pydicom-1048": "swebench/sweb.eval.x86_64.pydicom_1776_pydicom-1048:latest",
+    "docker.io/xingyaoww/sweb.eval.x86_64.pylint-dev_s_astroid-1741": "swebench/sweb.eval.x86_64.pylint-dev_1776_astroid-1741:latest",
+    "docker.io/xingyaoww/sweb.eval.x86_64.sqlfluff_s_sqlfluff-2907": "swebench/sweb.eval.x86_64.sqlfluff_1776_sqlfluff-2907:latest"
+  },
+  "container_prefix": "openhands-runtime-cs6158-20261019T220137-35d7aef9",
+  "gold_material_exposed": false
+}

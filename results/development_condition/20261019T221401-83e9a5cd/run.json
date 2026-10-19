@@ -1,0 +1,35 @@
+{
+  "run_id": "20261019T221401-83e9a5cd",
+  "stage": "development_condition",
+  "started_at": "2026-10-19T22:14:01.719591+00:00",
+  "status": "passed",
+  "config": {
+    "model": "models/Qwen2.5-Coder-1.5B-Instruct",
+    "adapter": "checkpoints/pilot/qwen-1.5b",
+    "label": "swegym-pilot-1.5b",
+    "rollout": false,
+    "condition_id": "20261019T221401-5f15c887-0"
+  },
+  "config_sha256": "a265be503b16af8edb41166468b6354d1e74c63fc23dfcbfee97d7d20f447976",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--label",
+    "swegym-pilot-1.5b",
+    "--condition-id",
+    "20261019T221401-5f15c887-0",
+    "--adapter",
+    "checkpoints/pilot/qwen-1.5b"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 53957,
+  "parent_pid": 53951,
+  "condition_id": "20261019T221401-5f15c887-0",
+  "source_snapshot_sha256": "42c01dabc48a29e827769b210e8587fc59c85fd5d2434ed71990819863233400",
+  "ended_at": "2026-10-19T22:15:56.422613+00:00",
+  "elapsed_seconds": 118.66095115900043
+}

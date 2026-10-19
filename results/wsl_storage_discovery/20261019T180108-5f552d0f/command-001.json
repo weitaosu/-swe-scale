@@ -1,0 +1,14 @@
+{
+  "args": [
+    "powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-Command",
+    "Get-ChildItem -LiteralPath 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Lxss' | Get-ItemProperty | Select-Object DistributionName,BasePath,VhdFileName | ConvertTo-Json -Compress"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/wsl_storage_discovery/20261019T180108-5f552d0f/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/wsl_storage_discovery/20261019T180108-5f552d0f/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2775158060001104
+}

@@ -1,0 +1,17 @@
+{
+  "source_trajectories": 491,
+  "retained_trajectories": 489,
+  "train_trajectories": 439,
+  "validation_trajectories": 50,
+  "train_tasks": 263,
+  "validation_tasks": 29,
+  "excluded": 2,
+  "exclusion_reasons": {
+    "Task provenance missing or ambiguous": 2
+  },
+  "seed": 6158,
+  "limitations": [
+    "Task-level provenance matching does not identify an exact teacher run when several successful raw runs share the same issue.",
+    "Public identity/fingerprint screening cannot establish absence of benchmark exposure in pretrained weights."
+  ]
+}

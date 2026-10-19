@@ -1,0 +1,2 @@
+{"time": "2026-10-19T22:23:14.154114+00:00", "event": "run_started", "config": {"mode": "derive full-history coverage from existing exact 8K tokenization; no truncation or GPU probe"}}
+{"time": "2026-10-19T22:23:14.320368+00:00", "event": "run_finished", "status": "passed", "error": null}

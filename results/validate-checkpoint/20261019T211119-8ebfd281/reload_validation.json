@@ -1,0 +1,8 @@
+{
+  "adapter": "checkpoints/pilot/qwen-1.5b-overfit",
+  "passed": false,
+  "max_absolute_logit_difference": 0.07704901695251465,
+  "atol": 0.02,
+  "rtol": 0.01,
+  "synthetic_fixture": false
+}

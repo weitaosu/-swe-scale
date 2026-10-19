@@ -9,7 +9,7 @@
       "estimated_gb": 3.1,
       "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct/tree/main",
       "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
-      "revision_discovery": "user-downloaded Hugging Face local snapshot metadata; checksum verification pending"
+      "revision_discovery": "user-downloaded Hugging Face local metadata; pinned remote LFS sizes and SHA256 checks passed in results/model_integrity/20261019T180039-a32aa4d0"
     },
     {
       "repo": "Qwen/Qwen2.5-Coder-3B-Instruct",
@@ -17,7 +17,7 @@
       "estimated_gb": 6.18,
       "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct/tree/main",
       "revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
-      "revision_discovery": "user-downloaded Hugging Face local snapshot metadata; checksum verification pending"
+      "revision_discovery": "user-downloaded Hugging Face local metadata; pinned remote LFS sizes and SHA256 checks passed in results/model_integrity/20261019T180039-a32aa4d0"
     },
     {
       "repo": "Qwen/Qwen2.5-Coder-7B-Instruct",
@@ -25,7 +25,7 @@
       "estimated_gb": 15.2,
       "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct/tree/main",
       "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
-      "revision_discovery": "user-downloaded Hugging Face local snapshot metadata; checksum verification pending"
+      "revision_discovery": "user-downloaded Hugging Face local metadata; pinned remote LFS sizes and SHA256 checks passed in results/model_integrity/20261019T180039-a32aa4d0"
     }
   ],
   "datasets": [
@@ -37,7 +37,7 @@
       "estimated_mb": 10.4,
       "purpose": "Successful SFT histories",
       "source": "https://huggingface.co/datasets/SWE-Gym/OpenHands-SFT-Trajectories",
-      "revision": null
+      "revision": "4aaa5a4a4b5861f4799d2336908760c190ac3b17"
     },
     {
       "repo": "SWE-Gym/OpenHands-Sampled-Trajectories",
@@ -47,7 +47,7 @@
       "estimated_mb": 301,
       "purpose": "Recover provenance and tool schemas; not an unfiltered training pool",
       "source": "https://huggingface.co/datasets/SWE-Gym/OpenHands-Sampled-Trajectories",
-      "revision": null
+      "revision": "baf3a4e4bff514d48ddc08a93a2ade5c126212c7"
     },
     {
       "repo": "SWE-Gym/SWE-Gym",
@@ -57,7 +57,7 @@
       "estimated_mb": 43.6,
       "purpose": "Task identities and source metadata",
       "source": "https://huggingface.co/datasets/SWE-Gym/SWE-Gym",
-      "revision": null
+      "revision": "bb94ed9e39bbeb96a7fcbfb533b80f25a7fd59cb"
     },
     {
       "repo": "SWE-bench/SWE-bench_Verified",
@@ -67,7 +67,7 @@
       "estimated_mb": 6.31,
       "purpose": "Benchmark metadata, final task manifest, overlap denylist",
       "source": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified",
-      "revision": null
+      "revision": "78f471bf655a3137b2e8a75af1501690ec009ec3"
     },
     {
       "repo": "SWE-bench/SWE-bench",
@@ -76,7 +76,7 @@
       "estimated_mb": 36.6,
       "purpose": "Development metadata; conservative allowance based on full repository size",
       "source": "https://huggingface.co/datasets/SWE-bench/SWE-bench",
-      "revision": null
+      "revision": "c6fe717fd7a4c3ac1daa4055a4fd082c6a1d28a2"
     }
   ],
   "storage_budget": {

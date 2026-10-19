@@ -1,0 +1,3 @@
+{"time": "2026-10-19T21:38:15.954059+00:00", "event": "run_started", "config": {"command": "download", "kind": "model", "only": "3B"}}
+{"time": "2026-10-19T21:38:18.039661+00:00", "event": "asset_resolving", "repo": "Qwen/Qwen2.5-Coder-3B-Instruct", "kind": "model", "target": "models/Qwen2.5-Coder-3B-Instruct", "split": null, "status": "resolving"}
+{"time": "2026-10-19T21:38:39.863407+00:00", "event": "run_finished", "status": "passed", "error": null}

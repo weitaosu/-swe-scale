@@ -1,0 +1,23 @@
+{
+  "run_id": "20261019T221736-fd4e9f01",
+  "stage": "linux_validation",
+  "started_at": "2026-10-19T22:17:36.660678+00:00",
+  "status": "passed",
+  "config": {
+    "scope": "all current regression tests after scoped smoke and image repair changes"
+  },
+  "config_sha256": "4e1f08096d3674fd47eb2d85aaefc430a4524f4b3456b13e5486f3aafe1ad029",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/validate_current_code.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 55131,
+  "parent_pid": 55126,
+  "condition_id": null,
+  "source_snapshot_sha256": "580490eb1426bd01980c32fdce7b810982f9560b64908efa53540b3635b7b02d",
+  "ended_at": "2026-10-19T22:18:38.227905+00:00",
+  "elapsed_seconds": 63.21784157500042
+}

@@ -1,0 +1,3 @@
+{"time": "2026-10-19T22:47:45.767081+00:00", "event": "run_started", "config": {"action": "cancel_linux_scan", "replacement": "native Windows inventory; same project scope and exclusions"}}
+{"time": "2026-10-19T22:47:45.773570+00:00", "event": "inventory_cancel_requested", "pid": 62997}
+{"time": "2026-10-19T22:47:45.781150+00:00", "event": "run_finished", "status": "passed", "error": null}

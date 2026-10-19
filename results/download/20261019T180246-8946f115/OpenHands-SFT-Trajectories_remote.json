@@ -1,0 +1,87 @@
+{
+  "_id": "6768dbe9789b81e76a78e356",
+  "id": "SWE-Gym/OpenHands-SFT-Trajectories",
+  "author": "SWE-Gym",
+  "sha": "4aaa5a4a4b5861f4799d2336908760c190ac3b17",
+  "lastModified": "2025-05-10T03:26:28.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "license:mit",
+    "size_categories:n<1K",
+    "format:parquet",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "region:us"
+  ],
+  "downloads": 1235,
+  "likes": 17,
+  "cardData": {
+    "dataset_info": {
+      "features": [
+        {
+          "name": "messages",
+          "list": [
+            {
+              "name": "content",
+              "dtype": "string"
+            },
+            {
+              "name": "role",
+              "dtype": "string"
+            }
+          ]
+        }
+      ],
+      "splits": [
+        {
+          "name": "train.success.oss",
+          "num_bytes": 31805636,
+          "num_examples": 491
+        }
+      ],
+      "download_size": 10379409,
+      "dataset_size": 31805636
+    },
+    "configs": [
+      {
+        "config_name": "default",
+        "data_files": [
+          {
+            "split": "train.success.oss",
+            "path": "data/train.success.oss-*"
+          }
+        ]
+      }
+    ],
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+      "size": 2461
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "b7762c7ab38bf12cf5bb0587dd02516ada3ad887",
+      "size": 397
+    },
+    {
+      "rfilename": "data/train.success.oss-00000-of-00001.parquet",
+      "blobId": "e33ad89d87de34d27ab2e40d549f26aacda9ec90",
+      "size": 10379409,
+      "lfs": {
+        "sha256": "ea4bf37de020e165c5210bedddeef523d8834a89a35a8c65fec24f76f0eae4f1",
+        "size": 10379409,
+        "pointerSize": 133
+      }
+    }
+  ],
+  "createdAt": "2024-12-23T03:41:29.000Z",
+  "usedStorage": 10379409
+}

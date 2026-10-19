@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "control": "deliberately incorrect derivative in reference patch",
+  "instance_id": "pvlib__pvlib-python-1048",
+  "empty_prediction": false,
+  "patch_applied": true,
+  "actual_tests_passed": [
+    "pvlib/tests/ivtools/test_utils.py::test_rectify_iv_curve",
+    "pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x0-y0-expected0]",
+    "pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x1-y1-expected1]",
+    "pvlib/tests/ivtools/test_utils.py::test__schmumaker_qspline[x2-y2-expected2]"
+  ],
+  "actual_tests_failed": [
+    "pvlib/tests/ivtools/test_utils.py::test__numdiff"
+  ],
+  "official_summary": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222237-60baffd4/logs/evaluation/20261019T222237-60baffd4/results.json",
+  "benchmark_score": false
+}

@@ -1,0 +1,119 @@
+{
+  "_id": "67567758015eb159a011c6c2",
+  "id": "SWE-Gym/SWE-Gym",
+  "author": "SWE-Gym",
+  "sha": "bb94ed9e39bbeb96a7fcbfb533b80f25a7fd59cb",
+  "lastModified": "2025-05-10T03:27:03.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "license:mit",
+    "size_categories:1K<n<10K",
+    "format:parquet",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "region:us"
+  ],
+  "description": "SWE-Gym contains 2438 instances sourced from 11 Python repos, following SWE-Bench data collection procedure.\nGet started at project page github.com/SWE-Gym/SWE-Gym\n\n\n",
+  "downloads": 29622,
+  "likes": 29,
+  "cardData": {
+    "dataset_info": {
+      "features": [
+        {
+          "name": "instance_id",
+          "dtype": "string"
+        },
+        {
+          "name": "hints_text",
+          "dtype": "string"
+        },
+        {
+          "name": "patch",
+          "dtype": "string"
+        },
+        {
+          "name": "test_patch",
+          "dtype": "string"
+        },
+        {
+          "name": "created_at",
+          "dtype": "string"
+        },
+        {
+          "name": "problem_statement",
+          "dtype": "string"
+        },
+        {
+          "name": "repo",
+          "dtype": "string"
+        },
+        {
+          "name": "base_commit",
+          "dtype": "string"
+        },
+        {
+          "name": "version",
+          "dtype": "string"
+        },
+        {
+          "name": "PASS_TO_PASS",
+          "sequence": "string"
+        },
+        {
+          "name": "FAIL_TO_PASS",
+          "sequence": "string"
+        }
+      ],
+      "splits": [
+        {
+          "name": "train",
+          "num_bytes": 213621640,
+          "num_examples": 2438
+        }
+      ],
+      "download_size": 43644473,
+      "dataset_size": 213621640
+    },
+    "configs": [
+      {
+        "config_name": "default",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "data/train-*"
+          }
+        ]
+      }
+    ],
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+      "size": 2461
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "2cac4584240055f11125afe551a0709556a749d2",
+      "size": 1141
+    },
+    {
+      "rfilename": "data/train-00000-of-00001.parquet",
+      "blobId": "9b59ebeddfb739fd9e2b28dd38806d6b4acba621",
+      "size": 43644473,
+      "lfs": {
+        "sha256": "60569cea74bb281f7a5579467436a2bc1932c6e0c5f2f7fa0d084392abd9ad97",
+        "size": 43644473,
+        "pointerSize": 133
+      }
+    }
+  ],
+  "createdAt": "2024-12-09T04:51:36.000Z",
+  "usedStorage": 43644473
+}

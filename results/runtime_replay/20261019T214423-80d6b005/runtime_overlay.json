@@ -1,0 +1,10 @@
+{
+  "fingerprint": "987944a119544175e936fa05173c5e0b84f783f26604ec5748ca0a62d01655e3",
+  "changes": [
+    "main/runtime dependencies pinned from source lock with recorded LiteLLM 1.53.1 override",
+    "Chromium installed because the fork initializes its browser unconditionally; browsing tools disabled",
+    "project-local Buildx and Docker client config",
+    "broad atexit runtime cleanup disabled"
+  ],
+  "vendor_sources_modified": false
+}

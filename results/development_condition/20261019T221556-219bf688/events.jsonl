@@ -1,0 +1,2 @@
+{"time": "2026-10-19T22:15:57.282270+00:00", "event": "run_started", "config": {"model": "models/Qwen2.5-Coder-3B-Instruct", "adapter": null, "label": "baseline-3b", "rollout": false, "condition_id": "20261019T221401-5f15c887-1", "smoke": false}}
+{"time": "2026-10-19T22:15:57.464502+00:00", "event": "run_finished", "status": "failed", "error": {"type": "OSError", "message": "[Errno 98] Address already in use"}}

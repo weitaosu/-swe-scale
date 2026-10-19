@@ -2,9 +2,9 @@ model: models/Qwen2.5-Coder-1.5B-Instruct
 train_file: data/processed/swegym/train.jsonl
 validation_file: data/processed/swegym/validation.jsonl
 output: checkpoints/pilot/qwen-1.5b
-max_length: 4096
-max_train_examples: 64
-max_eval_examples: 16
+max_length: 8192
+max_train_examples: 32
+max_eval_examples: 9
 max_steps: 25
 learning_rate: 0.0001
 warmup_ratio: 0.03
@@ -18,3 +18,8 @@ save_steps: 5
 eval_steps: 5
 save_total_limit: 2
 quantization: nf4
+
+context_policy: complete_histories_only
+context_policy_basis: user_selected_8K_pilot_after_measured_46_of_489_retained
+
+target_only_logits: true

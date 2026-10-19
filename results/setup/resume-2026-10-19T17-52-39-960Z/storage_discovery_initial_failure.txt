@@ -1,0 +1,1 @@
+Initial helper failed before execution: Python unterminated string literal in Windows prefix escaping. Corrected using chr(92); no registry or Docker command ran.

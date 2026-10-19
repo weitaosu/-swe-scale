@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "image",
+    "inspect",
+    "cs6158/runtime:repair-pvlib__pvlib-python-1048-numpy-1.26.4"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad/command-004.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad/command-004.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2612197520002155
+}

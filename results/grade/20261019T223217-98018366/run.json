@@ -1,0 +1,34 @@
+{
+  "run_id": "20261019T223217-98018366",
+  "stage": "grade",
+  "started_at": "2026-10-19T22:32:17.818300+00:00",
+  "status": "passed",
+  "config": {
+    "command": "grade",
+    "predictions": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222932-2a7b11e6/predictions.jsonl",
+    "control": null,
+    "python": ".envs/eval/bin/python",
+    "instance_id": null,
+    "smoke": true
+  },
+  "config_sha256": "0a09c7f61a53ff7d3e75b039d3837a0da48e8bfd7df47a0570b138b732a4e9c5",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "grade",
+    "--predictions",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222932-2a7b11e6/predictions.jsonl",
+    "--python",
+    ".envs/eval/bin/python",
+    "--smoke"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 61919,
+  "parent_pid": 60257,
+  "condition_id": "20261019T221705-5a995848-1",
+  "source_snapshot_sha256": "f4c302a66f5d9c617887b7797fd31ad944e9d98577e3bc70062c7fc002b2d3f0",
+  "ended_at": "2026-10-19T22:32:40.331145+00:00",
+  "elapsed_seconds": 23.263858762000382
+}

@@ -1,0 +1,40 @@
+{
+  "train": {
+    "output": "data/processed/swegym/probe_8k/train.jsonl",
+    "sha256": "6ebabbf32b589e11032812d1945c5c50b71f75aef2b35f4a11e3e770a126528b",
+    "examples": 8,
+    "lengths": [
+      8102,
+      7810,
+      7778,
+      7596,
+      7555,
+      7531,
+      7428,
+      7267
+    ],
+    "trajectory_ids": [
+      "1c0efb1bfc87ff2991fceb7aca7548ef3bf1caa6ec208a967d0f4f771a17f98d",
+      "905c50ba645287f97460e927f30d25d76bb3b97032838a0fd79c7691840e6415",
+      "f00a8855cbcadb1faf2d55556cfcab315b6cd8ada6518aaea0aa04929273265e",
+      "877bba1a2a23ecc7879a22edfd4d8d91f1d40ca7e6760e6e8a3b50353f83bf26",
+      "4e34fab34a0a92bdd4796de5c4cc7b995070b14f4fd54ff22a7574e17ad84670",
+      "301d97f971801e30066ec0d71168bb2c89553f7f41f43431d808ffa99b5b06e1",
+      "68d731eb774dbac6ef8d1fde34a7c0da5236ab4af223c0525ad9d6e0032bbb8f",
+      "4c4610eea473c4a5e2eddeb75156e4a362546e524093b2177f701fc9059d161c"
+    ]
+  },
+  "validation": {
+    "output": "data/processed/swegym/probe_8k/validation.jsonl",
+    "sha256": "96c749b029f24d1a71645a5f7be0da356ee308339562cae148559da70218612f",
+    "examples": 2,
+    "lengths": [
+      7753,
+      7729
+    ],
+    "trajectory_ids": [
+      "47f6a6d110a3370c779899ccea3b6824b2ce6d56362df878001c995be5b69b4d",
+      "da6c0bedbe10e4e38ab69f0ddeb9b06d089742ef9cc1dde2a8f6ae9e4bb02e01"
+    ]
+  }
+}

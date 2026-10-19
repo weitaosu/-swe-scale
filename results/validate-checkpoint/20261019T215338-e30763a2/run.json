@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T215338-e30763a2",
+  "stage": "validate-checkpoint",
+  "started_at": "2026-10-19T21:53:38.096702+00:00",
+  "status": "passed",
+  "config": {
+    "command": "validate-checkpoint",
+    "adapter": "checkpoints/pilot/qwen-7b-probe"
+  },
+  "config_sha256": "e14ebbeb6a548341f4e6370ee6e4fe717b3d5937bf08cad57b71e28f743beeca",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/study.py",
+    "validate-checkpoint",
+    "--adapter",
+    "checkpoints/pilot/qwen-7b-probe"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "414a84dcd34d028f369ed0260ca75dc52a1e24948c0ede9f09ce832e1f88a6ca",
+  "ended_at": "2026-10-19T21:59:18.479018+00:00",
+  "elapsed_seconds": 351.47089172100004
+}

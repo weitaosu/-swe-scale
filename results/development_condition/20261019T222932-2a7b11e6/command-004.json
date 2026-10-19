@@ -1,0 +1,16 @@
+{
+  "args": [
+    "docker",
+    "ps",
+    "-a",
+    "--filter",
+    "label=cs6158.condition_id=20261019T221705-5a995848-1",
+    "--format",
+    "{{json .}}"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222932-2a7b11e6/command-004.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222932-2a7b11e6/command-004.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.28758637200007797
+}

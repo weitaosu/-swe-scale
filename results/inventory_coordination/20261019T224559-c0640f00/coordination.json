@@ -1,0 +1,6 @@
+{
+  "pid": 62997,
+  "action": "resume",
+  "verified_command": "/usr/bin/python3 -B scripts/study.py inventory ",
+  "inventory_run": "results/inventory/20261019T223527-bca3259a"
+}

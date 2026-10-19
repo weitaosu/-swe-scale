@@ -1,0 +1,20 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--label",
+    "baseline-1.5b",
+    "--rollout",
+    "--condition-id",
+    "20261019T215948-1f760da2-0"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_validation_sequence/20261019T215948-1f760da2/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_validation_sequence/20261019T215948-1f760da2/command-001.stderr.log",
+  "returncode": -2,
+  "error_type": "RuntimeError",
+  "error": "Command failed (-2): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 65, in <module>\n    rollout=child_run(root/'scripts/study.py','rollout','--model-name',model_name,'--python','.envs/agent/bin/python',timeout=9500)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 31, in child_run\n    def child_run(path,*args,timeout=2400): return run.command([root/'.envs/train/bin/python',path,*args],guard=guard,timeout=timeout)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/src/swe_study/audit.py\", line 133, in command\n    if time.perf_counter()-started>timeout: raise TimeoutError(f\"Command exceeded {timeout}s\")\n    ^^^^^^^^^^^^^^^^\nKeyboardInterrupt\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 65, in <module>\n    rollout=child_run(root/'scripts/study.py','rollout','--model-name',model_name,'--python','.envs/agent/bin/python',timeout=9500)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 31, in child_run\n    def child_run(path,*args,timeout=2400): return run.command([root/'.envs/train/bin/python',path,*args],guard=guard,timeout=timeout)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/src/swe_study/audit.py\", line 133, in command\n    if time.perf_counter()-started>timeout: raise TimeoutError(f\"Command exceeded {timeout}s\")\n    ^^^^^^^^^^^^^^^^\nKeyboardInterrupt\n",
+  "elapsed_seconds": 557.5267898259999
+}

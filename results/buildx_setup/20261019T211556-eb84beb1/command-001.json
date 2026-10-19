@@ -1,0 +1,12 @@
+{
+  "args": [
+    "docker",
+    "buildx",
+    "version"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/buildx_setup/20261019T211556-eb84beb1/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/buildx_setup/20261019T211556-eb84beb1/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.2094986069996594
+}

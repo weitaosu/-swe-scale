@@ -1,0 +1,10 @@
+{
+  "fingerprint": "b8a2ade56038c1ae5439513d201c9988a65805ffe8513d73c1c09a75c0c85d13",
+  "changes": [
+    "main/runtime dependencies pinned from source lock with recorded LiteLLM 1.53.1 override",
+    "Chromium download omitted because browsing is disabled",
+    "project-local Buildx and Docker client config",
+    "broad atexit runtime cleanup disabled"
+  ],
+  "vendor_sources_modified": false
+}

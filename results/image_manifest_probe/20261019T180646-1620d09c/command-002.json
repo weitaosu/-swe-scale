@@ -1,0 +1,15 @@
+{
+  "args": [
+    "docker",
+    "manifest",
+    "inspect",
+    "xingyaoww/sweb.eval.x86_64.pvlib_s_pvlib-python-807:latest"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/image_manifest_probe/20261019T180646-1620d09c/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/image_manifest_probe/20261019T180646-1620d09c/command-002.stderr.log",
+  "returncode": 1,
+  "error_type": "RuntimeError",
+  "error": "Command failed (1): docker\nerrors:\ndenied: requested access to the resource is denied\nunauthorized: authentication required\n\n",
+  "elapsed_seconds": 1.7580117389998122
+}

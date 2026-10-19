@@ -1,0 +1,23 @@
+{
+  "run_id": "20261019T222313-80fa1995",
+  "stage": "context_coverage_analysis",
+  "started_at": "2026-10-19T22:23:13.691363+00:00",
+  "status": "passed",
+  "config": {
+    "mode": "derive full-history coverage from existing exact 8K tokenization; no truncation or GPU probe"
+  },
+  "config_sha256": "5785f80b8e42a5d367ea308684de9193e1792afe9d80f089691fcd3d6274ed35",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/analyze_context_coverage.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 57658,
+  "parent_pid": 57652,
+  "condition_id": null,
+  "source_snapshot_sha256": "cbc9d2d5552aab0c2fc4718967daa4d8992e667ee720546dc36fee223da9fd93",
+  "ended_at": "2026-10-19T22:23:14.320354+00:00",
+  "elapsed_seconds": 0.16625453800043033
+}

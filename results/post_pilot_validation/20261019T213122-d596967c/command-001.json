@@ -1,0 +1,11 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/validate_resume.py"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/post_pilot_validation/20261019T213122-d596967c/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/post_pilot_validation/20261019T213122-d596967c/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 327.05795119699997
+}

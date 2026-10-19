@@ -1,0 +1,36 @@
+{
+  "run_id": "20261019T215949-17acd5cb",
+  "stage": "development_condition",
+  "started_at": "2026-10-19T21:59:49.345993+00:00",
+  "status": "failed",
+  "config": {
+    "model": "models/Qwen2.5-Coder-1.5B-Instruct",
+    "adapter": null,
+    "label": "baseline-1.5b",
+    "rollout": true,
+    "condition_id": "20261019T215948-1f760da2-0"
+  },
+  "config_sha256": "9742794a3b7c87f71cbaeeccb545c7ccb9568d257328cab008c6a311e229ca49",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--label",
+    "baseline-1.5b",
+    "--rollout",
+    "--condition-id",
+    "20261019T215948-1f760da2-0"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "condition_id": "20261019T215948-1f760da2-0",
+  "source_snapshot_sha256": "4e93e8bebcdd24a0356a760f538c21afdc2bdfdb50a6d338739679e8a7b97116",
+  "ended_at": "2026-10-19T22:08:48.481521+00:00",
+  "elapsed_seconds": 556.6092587410003,
+  "error": {
+    "type": "KeyboardInterrupt",
+    "message": ""
+  }
+}

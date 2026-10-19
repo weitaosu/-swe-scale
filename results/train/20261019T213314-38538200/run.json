@@ -1,0 +1,27 @@
+{
+  "run_id": "20261019T213314-38538200",
+  "stage": "train",
+  "started_at": "2026-10-19T21:33:14.545831+00:00",
+  "status": "passed",
+  "config": {
+    "command": "train",
+    "config": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/resume.yaml",
+    "resume": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/checkpoint-25-before"
+  },
+  "config_sha256": "19355d793cb25189598ff821c312d1f90c038b865de4adf12381675c81ec8117",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "train",
+    "--config",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/resume.yaml",
+    "--resume",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/checkpoint-25-before"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "1bbc432ffec6d171e492c30ae9c353d7a2aafe9dd4a4fbbc44ff4b8a52a627c7",
+  "ended_at": "2026-10-19T21:35:34.296450+00:00",
+  "elapsed_seconds": 143.33387805599978
+}

@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "image",
+    "inspect",
+    "cs6158/runtime:oh_v0.13.1_jcoza2ihuc7turjp_y766p9z6jyxsud5c"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.25990221399933944
+}

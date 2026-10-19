@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "removed_cache_ids": [
+    "1j2qrln0up30r8ptfrqtd9udt",
+    "jozsk47dxl1cotjg68hats9s9",
+    "ncdz46a4nx75b5dbtumwmo0vz",
+    "vr2jb07joikyadyy7g9jexwa7",
+    "w31tp9d8jvapp0lrj64fvn17k",
+    "xdo9xb597p55zy3kgjgen5f7g"
+  ],
+  "removed_cache_count": 6,
+  "other_cache_ids_preserved": 110,
+  "all_images_preserved": true,
+  "prunes": [
+    {
+      "id": "jozsk47dxl1cotjg68hats9s9",
+      "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\njozsk47dxl1cotjg68hats9s9               \ttrue \t\t951B      \t2 hours ago\nTotal:\t951B\n"
+    },
+    {
+      "id": "vr2jb07joikyadyy7g9jexwa7",
+      "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\nvr2jb07joikyadyy7g9jexwa7               \ttrue \t\t936.2kB   \t2 hours ago\nTotal:\t936.2kB\n"
+    },
+    {
+      "id": "w31tp9d8jvapp0lrj64fvn17k",
+      "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\nw31tp9d8jvapp0lrj64fvn17k               \ttrue \t\t9.263kB   \t2 hours ago\nTotal:\t9.263kB\n"
+    },
+    {
+      "id": "1j2qrln0up30r8ptfrqtd9udt",
+      "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\n1j2qrln0up30r8ptfrqtd9udt               \ttrue \t\t821.9kB   \t2 hours ago\nTotal:\t821.9kB\n"
+    },
+    {
+      "id": "ncdz46a4nx75b5dbtumwmo0vz",
+      "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\nncdz46a4nx75b5dbtumwmo0vz               \ttrue \t\t0B        \t2 hours ago\nTotal:\t0B\n"
+    },
+    {
+      "id": "xdo9xb597p55zy3kgjgen5f7g",
+      "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\nxdo9xb597p55zy3kgjgen5f7g               \ttrue \t\t1.89GB    \t2 hours ago\nTotal:\t1.89GB\n"
+    }
+  ],
+  "storage": {
+    "free_bytes": 45029683200,
+    "conservative_volume_growth_bytes": 57851858944,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": 45029683200,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "note": "Only the exclusive descendants of the removed failed no-browser runtime were pruned, leaf-first. Shared parents and unrelated caches were kept."
+}

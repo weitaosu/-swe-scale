@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "before_step": 25,
+  "after_step": 27,
+  "changed_adapter_tensors": 392,
+  "optimizer_entries": 392,
+  "optimizer_step_delta": 2,
+  "resume_source": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/checkpoint-25-before",
+  "schedule_note": "Original 25-step horizon extended by two; this checks restoration, not exact uninterrupted-schedule equivalence."
+}

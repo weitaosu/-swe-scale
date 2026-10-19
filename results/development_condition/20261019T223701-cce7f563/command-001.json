@@ -1,0 +1,17 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "rollout",
+    "--model-name",
+    "cs6158-Qwen2.5-Coder-7B-Instruct",
+    "--python",
+    ".envs/agent/bin/python",
+    "--smoke"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T223701-cce7f563/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T223701-cce7f563/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 102.89391128600073
+}

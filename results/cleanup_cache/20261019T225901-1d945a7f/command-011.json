@@ -1,0 +1,12 @@
+{
+  "args": [
+    "docker",
+    "system",
+    "df"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup_cache/20261019T225901-1d945a7f/command-011.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup_cache/20261019T225901-1d945a7f/command-011.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.30294696199962345
+}

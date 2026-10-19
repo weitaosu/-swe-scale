@@ -1,0 +1,21 @@
+{
+  "run_id": "20261019T180246-8946f115",
+  "stage": "download",
+  "started_at": "2026-10-19T18:02:46.429487+00:00",
+  "status": "passed",
+  "config": {
+    "kind": "dataset",
+    "transport": "stdlib HTTPS; pinned metadata and LFS SHA256 verification"
+  },
+  "config_sha256": "8284c8eea23e0d15a2c0782972e447e486f42a507a9ec55e1c1ecb5b87df2489",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/download_datasets.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "0722ff1e667901b976325348cfa37dc68ce3d64eff7c08a3e4dd9e919c896114",
+  "ended_at": "2026-10-19T18:03:26.555545+00:00",
+  "elapsed_seconds": 39.64098701700004
+}

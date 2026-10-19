@@ -1,0 +1,23 @@
+{
+  "run_id": "20261019T222901-94075d02",
+  "stage": "run_state_reconciliation",
+  "started_at": "2026-10-19T22:29:01.078460+00:00",
+  "status": "passed",
+  "config": {
+    "reason": "Controlled environment-gate cancellation terminated descendants before their final metadata flush"
+  },
+  "config_sha256": "32c6af6250b7d120fc0ccbfc8796698740f9aa5c2a4a9580b763ca35cb83edef",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/reconcile_cancelled_runs.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 60015,
+  "parent_pid": 60010,
+  "condition_id": null,
+  "source_snapshot_sha256": "204458ad555d2feb05eb2f6ecaa146b4852cf97320e91e3fb39e8cbf14e5aa74",
+  "ended_at": "2026-10-19T22:29:01.435990+00:00",
+  "elapsed_seconds": 0.07074054400072782
+}

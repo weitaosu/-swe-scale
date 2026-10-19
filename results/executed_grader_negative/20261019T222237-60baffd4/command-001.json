@@ -1,0 +1,21 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/eval/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/swebench_entry.py",
+    "--dataset_name",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222237-60baffd4/grading_dataset.json",
+    "--predictions_path",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222237-60baffd4/negative_predictions.jsonl",
+    "--max_workers",
+    "1",
+    "--run_id",
+    "20261019T222237-60baffd4",
+    "--instance_ids",
+    "pvlib__pvlib-python-1048"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222237-60baffd4",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222237-60baffd4/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/executed_grader_negative/20261019T222237-60baffd4/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 46.26593182900069
+}

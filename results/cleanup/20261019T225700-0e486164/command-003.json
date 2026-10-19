@@ -1,0 +1,15 @@
+{
+  "args": [
+    "docker",
+    "--config",
+    ".cache/docker_agent",
+    "buildx",
+    "du",
+    "--verbose"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.232770029999301
+}

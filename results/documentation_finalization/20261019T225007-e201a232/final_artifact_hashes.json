@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-10-19T22:50:09.630213+00:00",
+  "files": {
+    "README.md": "322766cd253fbe3680ff063b257a095c1b1daae4dddfd5fe00026250a1e736a2",
+    "AGENTS.md": "4855a7af75c7331d66b9f03137b92236931cd8c83302f4016b4be14f65793f28",
+    "docs/agent_smoke_report.md": "0b9919662c1ff18ba3fbff3ad4910e33c94a99be308b1432b4bee332b3af7533",
+    "docs/data_audit.md": "9d6270f46d28eef47741180811928ee277ba72a8aff9829df694cb0b784c7f1b",
+    "docs/development_environment_constraints.md": "105afd569517ddf3fa770d740c9cbbe7351d17a7ff609df8c5acba802ae7625e",
+    "docs/environment.md": "688b100cf0232d6f7f21fb581206bd8a347652e7bd07bc21506bdceb01f20f3c",
+    "docs/implementation_status.md": "821f77e6afdd62f67260ab779c6998392006d0f585ad13569993693dbc2943e3",
+    "docs/pilot_report.md": "0c1834020ef1c72bd44e296f5494d4076430b32cc8f9d10dfd0e13936a4586c7",
+    "docs/rtx_4090_constraints.md": "3d3c62b09899ec2e19df2335a6ee0d1bc8f61d37ede2f28097c6d48bf2cb3fd0",
+    "docs/rtx_4090_implementation_plan.md": "3859c8d6d568920bd09a4e9f3bd8bdc14999441b64fc5c90ea815f9a0ccb48b8",
+    "manifests/implementation_status.json": "770bcdaa013e6632c875668ccdf048a17bc8fce66de7b9a0cecfc365d3dcef33",
+    "manifests/storage_usage.json": "02187a6e5aa81c0a80941ef352b3134cc2478bd3b2e428ba4e39735778d8cef7",
+    "manifests/artifact_inventory.json": "af3fd4a63dcf581be98761efd3d1eb5df58ffc6d0018260534974c314f7ad266",
+    "results/native_inventory/20261019T224817-43e7e724/execution_source.json": "eac7a6ce6e632775a3e6a3cbc8e110edf7ed707c800782386611913b36a12197"
+  }
+}

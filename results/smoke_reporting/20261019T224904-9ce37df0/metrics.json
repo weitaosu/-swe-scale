@@ -1,0 +1,129 @@
+{
+  "pipeline_completed": true,
+  "scope": "single_first_frozen_task_smoke",
+  "max_steps": 5,
+  "task_timeout_seconds": 300,
+  "replaces_five_task_validation": false,
+  "preflight_one_token_excluded_from_agent_totals": true,
+  "conditions": [
+    {
+      "label": "baseline-1.5b-smoke",
+      "instance_id": "pvlib__pvlib-python-807",
+      "scope": "single_first_frozen_task_smoke",
+      "model_server_initialization_seconds": 109.737479,
+      "condition_wall_seconds": 210.75826996399883,
+      "agent_completion_requests": 5,
+      "agent_prompt_tokens": 19551,
+      "agent_completion_tokens": 247,
+      "agent_generation_seconds": 9.780065619999732,
+      "peak_allocated_bytes": 2432495616,
+      "peak_reserved_bytes": 3162505216,
+      "agent_actions_by_type": {
+        "run_ipython": 4,
+        "message": 1
+      },
+      "last_logged_global_step": 5,
+      "patch_bytes": 0,
+      "agent_error": "Agent reached maximum iteration in headless mode. Current iteration: 5.00, max iteration: 5.00",
+      "resolved": false,
+      "all_http_error_statuses_including_preflight": [
+        404,
+        400,
+        400,
+        413
+      ],
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222608-255e7db9/development_validation.json",
+      "server_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/serve/20261019T222609-a1eb1eca",
+      "agent_generation_tokens_per_second": 25.255454267596903
+    },
+    {
+      "label": "swegym-pilot-1.5b-smoke",
+      "instance_id": "pvlib__pvlib-python-807",
+      "scope": "single_first_frozen_task_smoke",
+      "model_server_initialization_seconds": 98.701777,
+      "condition_wall_seconds": 198.20874515600008,
+      "agent_completion_requests": 5,
+      "agent_prompt_tokens": 19392,
+      "agent_completion_tokens": 169,
+      "agent_generation_seconds": 12.98365045599894,
+      "peak_allocated_bytes": 2549258752,
+      "peak_reserved_bytes": 3290431488,
+      "agent_actions_by_type": {
+        "run_ipython": 4,
+        "message": 1
+      },
+      "last_logged_global_step": 5,
+      "patch_bytes": 0,
+      "agent_error": "Agent reached maximum iteration in headless mode. Current iteration: 5.00, max iteration: 5.00",
+      "resolved": false,
+      "all_http_error_statuses_including_preflight": [
+        404,
+        400,
+        400,
+        413
+      ],
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222932-2a7b11e6/development_validation.json",
+      "server_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/serve/20261019T222933-deac0192",
+      "agent_generation_tokens_per_second": 13.01637013201596
+    },
+    {
+      "label": "baseline-3b-smoke",
+      "instance_id": "pvlib__pvlib-python-807",
+      "scope": "single_first_frozen_task_smoke",
+      "model_server_initialization_seconds": 148.335171,
+      "condition_wall_seconds": 264.56155199599925,
+      "agent_completion_requests": 5,
+      "agent_prompt_tokens": 19512,
+      "agent_completion_tokens": 186,
+      "agent_generation_seconds": 10.07161357899713,
+      "peak_allocated_bytes": 3685429248,
+      "peak_reserved_bytes": 4510973952,
+      "agent_actions_by_type": {
+        "run_ipython": 5
+      },
+      "last_logged_global_step": 5,
+      "patch_bytes": 0,
+      "agent_error": "Agent reached maximum iteration in headless mode. Current iteration: 5.00, max iteration: 5.00",
+      "resolved": false,
+      "all_http_error_statuses_including_preflight": [
+        404,
+        400,
+        400,
+        413
+      ],
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T223244-1ed0f927/development_validation.json",
+      "server_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/serve/20261019T223245-f11ad50e",
+      "agent_generation_tokens_per_second": 18.467745862279273
+    },
+    {
+      "label": "baseline-7b-smoke",
+      "instance_id": "pvlib__pvlib-python-807",
+      "scope": "single_first_frozen_task_smoke",
+      "model_server_initialization_seconds": 380.945877,
+      "condition_wall_seconds": 550.3571577210005,
+      "agent_completion_requests": 5,
+      "agent_prompt_tokens": 21378,
+      "agent_completion_tokens": 988,
+      "agent_generation_seconds": 39.56498885399924,
+      "peak_allocated_bytes": 9671354368,
+      "peak_reserved_bytes": 10498342912,
+      "agent_actions_by_type": {
+        "run": 2,
+        "run_ipython": 3
+      },
+      "last_logged_global_step": 5,
+      "patch_bytes": 1508,
+      "agent_error": "Agent reached maximum iteration in headless mode. Current iteration: 5.00, max iteration: 5.00",
+      "resolved": false,
+      "all_http_error_statuses_including_preflight": [
+        404,
+        400,
+        400,
+        413
+      ],
+      "evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T223701-cce7f563/development_validation.json",
+      "server_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/serve/20261019T223702-77cd4eb5",
+      "agent_generation_tokens_per_second": 24.97157281266699
+    }
+  ]
+}

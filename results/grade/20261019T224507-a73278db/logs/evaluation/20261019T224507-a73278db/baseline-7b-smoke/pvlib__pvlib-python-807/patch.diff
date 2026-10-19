@@ -1,0 +1,51 @@
+diff --git a/scaling.py b/scaling.py
+new file mode 100644
+index 0000000..92f03ee
+--- /dev/null
++++ b/scaling.py
+@@ -0,0 +1,22 @@
++# scaling.py
++
++import numpy as np
++
++def wavelet_variability_model(irradiance, **kwargs):
++    """
++    Calculate spatial smoothing of irradiance using the Wavelet Variability Model (WVM).
++    
++    Parameters:
++        irradiance (np.ndarray): Array of irradiance values.
++        **kwargs: Additional keyword arguments.
++        
++    Returns:
++        np.ndarray: Smoothed irradiance values.
++    """
++    # Placeholder implementation
++    if len(irradiance) == 0:
++    raise ValueError("Input array is empty")
++if np.any(irradiance < 0):
++    raise ValueError("Input array contains negative values")
++smoothed_irradiance = irradiance.copy()
++    return smoothed_irradiance
+\ No newline at end of file
+diff --git a/test_scaling.py b/test_scaling.py
+new file mode 100644
+index 0000000..01eea58
+--- /dev/null
++++ b/test_scaling.py
+@@ -0,0 +1,15 @@
++# test_scaling.py
++
++import numpy as np
++from scaling import wavelet_variability_model
++
++def test_wavelet_variability_model():
++    """
++    Test the wavelet_variability_model function.
++    """
++    irradiance = np.array([1, 2, 3, 4, 5])
++    smoothed_irradiance = wavelet_variability_model(irradiance)
++    assert np.array_equal(smoothed_irradiance, irradiance), "Test failed!"
++
++if __name__ == "__main__":
++    test_wavelet_variability_model()
+\ No newline at end of file

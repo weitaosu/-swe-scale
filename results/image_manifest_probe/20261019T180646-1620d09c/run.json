@@ -1,0 +1,20 @@
+{
+  "run_id": "20261019T180646-1620d09c",
+  "stage": "image_manifest_probe",
+  "started_at": "2026-10-19T18:06:46.050947+00:00",
+  "status": "passed",
+  "config": {
+    "operation": "read-only registry metadata; no pull/build/container"
+  },
+  "config_sha256": "77b2967b71b58750992d52d15de3a20582ebe4fb2d264cba73aa8d46b242eaf1",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/probe_images.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "9f978e0380bda6d8a0f6279ee7476367cbc83efa2894cc2d40e489d16f72ba73",
+  "ended_at": "2026-10-19T18:06:49.702117+00:00",
+  "elapsed_seconds": 3.297151517999737
+}

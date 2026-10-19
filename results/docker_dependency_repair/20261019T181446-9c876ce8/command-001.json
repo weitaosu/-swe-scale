@@ -1,0 +1,14 @@
+{
+  "args": [
+    "docker",
+    "build",
+    "--tag",
+    "cs6158/pvlib-python-807:numpy-1.26.4",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/docker_dependency_repair/20261019T181446-9c876ce8/build"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/docker_dependency_repair/20261019T181446-9c876ce8/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/docker_dependency_repair/20261019T181446-9c876ce8/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 5.230601514000227
+}

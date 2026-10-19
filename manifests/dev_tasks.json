@@ -1,0 +1,12 @@
+{
+  "instance_ids": [
+    "pvlib__pvlib-python-807",
+    "pydicom__pydicom-1048",
+    "sqlfluff__sqlfluff-2907",
+    "pylint-dev__astroid-1741",
+    "pvlib__pvlib-python-1048"
+  ],
+  "seed": 6158,
+  "source": "SWE-bench dev",
+  "disjoint_from_all_Verified": true
+}

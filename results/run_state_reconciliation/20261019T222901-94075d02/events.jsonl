@@ -1,0 +1,2 @@
+{"time": "2026-10-19T22:29:01.365263+00:00", "event": "run_started", "config": {"reason": "Controlled environment-gate cancellation terminated descendants before their final metadata flush"}}
+{"time": "2026-10-19T22:29:01.436003+00:00", "event": "run_finished", "status": "passed", "error": null}

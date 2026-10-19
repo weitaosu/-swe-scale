@@ -1,0 +1,29 @@
+{
+  "run_id": "20261019T223725-346024ca",
+  "stage": "progress_finalization",
+  "started_at": "2026-10-19T22:37:25.498761+00:00",
+  "status": "failed",
+  "config": {
+    "smoke_sequence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/agent_smoke_sequence/20261019T221705-5a995848",
+    "inventory": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/inventory/20261019T223527-bca3259a",
+    "milestones_remain_incomplete": true
+  },
+  "config_sha256": "84df75a028a7c5dbb91c0af6c1d2a00839cab6270e65bee7ceb8f2e3ab3eb3b5",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/finalize_progress.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 64349,
+  "parent_pid": 64343,
+  "condition_id": null,
+  "source_snapshot_sha256": "f4c302a66f5d9c617887b7797fd31ad944e9d98577e3bc70062c7fc002b2d3f0",
+  "ended_at": "2026-10-19T22:47:48.265436+00:00",
+  "elapsed_seconds": 643.4023922529996,
+  "error": {
+    "type": "ValueError",
+    "message": "Required validation stage failed: /mnt/c/Users/weita/Desktop/SE in AI/proj/results/inventory/20261019T223527-bca3259a"
+  }
+}

@@ -1,21 +1,25 @@
-# SWE-Gym preparation status
+# SWE-Gym real-data audit
 
-The processing and token-labeling code is implemented and covered by synthetic tests. **The real SWE-Gym audit has not run:** dataset access is blocked. Retained counts, task overlap results, length distributions, and usable 4K coverage remain unknown. No synthetic histories are placed in the real processed-data directories.
+Updated 2026-10-19. Five public dataset payloads are downloaded locally at immutable revisions and verified by file size and LFS SHA-256. See [dataset manifest](../manifests/dataset_files.json) and [download log](../results/download/20261019T180246-8946f115/run.json).
 
-The approved inventory is manifests/planned_downloads_4090.json. It specifies the 491-row successful SFT split, the 6,055-row sampled pool for provenance/tools, SWE-Gym task metadata, all 500 Verified task identities, and SWE-bench dev metadata. Remote revisions and file checksums are filled only after a successful download; current failure evidence is in manifests/dataset_files.json.
+The successful SFT release contains 491 trajectories. Task/tool provenance matching retained 489; two ambiguous records were quarantined. The deterministic task-level split has 439 training trajectories from 263 tasks and 50 validation trajectories from 29 tasks. Training and validation task IDs are disjoint. Screening uses all Verified IDs and issue/patch fingerprints plus the five frozen development IDs. See [audit results](../results/prepare/20261019T180453-a1051bad/data_audit.json).
 
-The preparation code:
+SFT messages use text/XML actions and user-role tool observations, with tool descriptions already embedded in the system prompt. Raw sampled records supply task identities and native tool schemas; these are matched at task level, without claiming an exact teacher run. All source records, exclusions, and split provenance are preserved under data/metadata.
 
-1. Reads local Parquet in batches and preserves relative file paths and row indices.
-2. Matches SFT histories to successful sampled histories or a unique task issue in the first user request; quarantines ambiguous or untraceable matches.
-3. Recovers a unique tool schema, validates JSON arguments and call/result pairing, and preserves intermediate mistakes in successful histories.
-4. Excludes all Verified IDs and frozen development IDs, plus available normalized issue/patch fingerprint matches.
-5. Deduplicates canonical trajectories and partitions about 90/10 by task using seed 6158, so one task cannot cross training and validation.
-6. Renders the local model chat template, constructs explicit assistant-only spans with token offsets, includes assistant end markers, and masks system/user/tool observations and padding with -100.
-7. Rejects over-context histories, unstable template boundaries, empty targets, and empty retained splits. It records each rejection instead of truncating the successful ending.
+The real Qwen tokenizer retains only 5 training and 3 validation histories at 4K (8/489 = 1.64%). At 8K it retains 37 training and 9 validation histories (46/489 = 9.41%). Overlength histories are rejected explicitly; no silent truncation is used. Both policies select short histories and are unsuitable as an unqualified proxy for the full corpus. A 4K four-example overfit test is running; an 8K bounded pilot is possible if memory permits. Decoded assistant-label samples and complete exclusion reasons are stored in the tokenizer runs.
 
-After downloads, run the data continuation stage and inspect results/data_audit/, results/tokenize/, data/metadata/, and data/tokenized/. The exact Qwen template and raw tool protocol must be reviewed on real examples. Tool schemas already embedded in the system prompt are detected to avoid duplicate injection; this detection still needs real-corpus review.
+Coverage evidence: [4K](../results/tokenize/20261019T181216-4fcfbca5/token_stats.json), [8K](../results/tokenize/20261019T181511-7bdbaf6d/token_stats.json). Production training still needs a deliberate common context/windowing policy and retention analysis. Public overlap screening cannot establish absence of benchmark exposure in pretrained weights.
 
-Task matching establishes task-level provenance, not necessarily an exact teacher rollout when multiple raw successes share an issue. The published successful SFT split supplies the success claim. Public identity/fingerprint screening cannot prove absence of pretrained benchmark exposure. Record these limits in later experimental reporting.
+## Full-history context coverage
 
-If too few complete histories fit 4K, stop and measure the rejected lengths. A revised policy can use longer contexts after memory measurement or explicitly constructed complete interaction windows with preserved provenance and target accounting. Such a change must be documented before freezing the pilot; silent truncation is not an acceptable substitute.
+Reconstructed from the current normalized 8K tokenization: all retained input lengths plus exact over-context exclusion lengths, with source hashes checked. This is a length analysis; it changes no training policy and performs no GPU probe.
+
+| Context | Train histories | Validation histories | Total / 489 | Coverage |
+| --- | ---: | ---: | ---: | ---: |
+| 4,096 | 5 | 3 | 8 | 1.6% |
+| 8,192 | 37 | 9 | 46 | 9.4% |
+| 16,384 | 229 | 30 | 259 | 53.0% |
+| 32,768 | 400 | 43 | 443 | 90.6% |
+| 65,536 | 435 | 49 | 484 | 99.0% |
+
+Median full-history length is 15,989 tokens; the 95th percentile is 38,967. Only 8K has the all-size real GPU pilot/probe evidence. Memory feasibility and throughput above 8K remain unmeasured. The approved pilot still uses complete histories at 8K. [Exact analysis](../results/context_coverage_analysis/20261019T222313-80fa1995/coverage.json).

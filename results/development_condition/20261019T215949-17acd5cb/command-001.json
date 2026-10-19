@@ -1,0 +1,18 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "rollout",
+    "--model-name",
+    "cs6158-Qwen2.5-Coder-1.5B-Instruct",
+    "--python",
+    ".envs/agent/bin/python"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T215949-17acd5cb/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T215949-17acd5cb/command-001.stderr.log",
+  "error_type": "KeyboardInterrupt",
+  "error": "",
+  "returncode": -15,
+  "elapsed_seconds": 442.0689353729995
+}

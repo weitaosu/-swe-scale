@@ -1,0 +1,27 @@
+{
+  "run_id": "20261019T212832-1d649e8b",
+  "stage": "tokenize",
+  "started_at": "2026-10-19T21:28:32.006681+00:00",
+  "status": "passed",
+  "config": {
+    "command": "tokenize",
+    "model": "models/Qwen2.5-Coder-1.5B-Instruct",
+    "max_length": 8192
+  },
+  "config_sha256": "80b2bbfd59764e286eb5d27c0a04af8334987fa04d0728808e6431a71fb9dd10",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/study.py",
+    "tokenize",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--max-length",
+    "8192"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "387f993ac83f77a252e502e9efe437f7ccdd347eecf8b16422de9a1f72fb41c3",
+  "ended_at": "2026-10-19T21:29:18.579160+00:00",
+  "elapsed_seconds": 48.134306103999734
+}

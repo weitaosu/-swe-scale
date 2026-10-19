@@ -1,0 +1,49 @@
+{
+  "run_id": "20261019T220214-acd980be",
+  "stage": "runtime_build",
+  "started_at": "2026-10-19T22:02:14.545414+00:00",
+  "status": "passed",
+  "config": {
+    "tags": [
+      "cs6158/runtime:oh_v0.13.1_jcoza2ihuc7turjp_y766p9z6jyxsud5c",
+      "cs6158/runtime:oh_v0.13.1_jcoza2ihuc7turjp",
+      "cs6158/runtime:oh_v0.13.1_swebench_s_sweb.eval.x86_64.pvlib_1776_pvlib-python-1048_t_latest"
+    ],
+    "platform": "linux/amd64",
+    "build_context": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/tmpcx8zx92o"
+  },
+  "config_sha256": "7090e2506d73c4c7215033a2433de8c39a02e8bff919f41f7c9d2b8e2ec6505b",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/evaluation/swe_bench/run_infer.py",
+    "--config-file",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T220137-35d7aef9/config.toml",
+    "--agent-cls",
+    "CodeActAgent",
+    "--llm-config",
+    "llm.cs6158",
+    "--max-iterations",
+    "30",
+    "--eval-num-workers",
+    "1",
+    "--eval-n-limit",
+    "5",
+    "--eval-note",
+    "cs6158-local",
+    "--eval-output-dir",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T220137-35d7aef9/openhands",
+    "--dataset",
+    "cs6158-local-development",
+    "--split",
+    "dev"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 41946,
+  "parent_pid": 41903,
+  "condition_id": "20261019T215948-1f760da2-0",
+  "source_snapshot_sha256": "5522c544f1dd9daf624e89a2ad9ac85f0df00b100a89573f8da2faa9be9d649b",
+  "ended_at": "2026-10-19T22:05:28.073978+00:00",
+  "elapsed_seconds": 199.47649180499957
+}

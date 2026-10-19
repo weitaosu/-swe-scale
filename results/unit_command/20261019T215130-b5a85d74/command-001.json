@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-c",
+    "import sys; print('expected failure'); sys.exit(7)"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/unit_command/20261019T215130-b5a85d74/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/unit_command/20261019T215130-b5a85d74/command-001.stderr.log",
+  "returncode": 7,
+  "error_type": "RuntimeError",
+  "error": "Command failed (7): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\n",
+  "elapsed_seconds": 0.268123179000213
+}

@@ -59,7 +59,7 @@ def tokenize_files(run,model,max_length):
         report["files"][split]={"source":source,"source_sha256":sha256_file(local_path(source)),"output":output,"output_sha256":sha256_file(local_path(output)),**counts}
     write_json(run.path/"token_stats.json",report)
     write_json(f"data/tokenized/{p.name}-{max_length}/manifest.json",report)
-    print(json.dumps(report,indent=2))
+    print(json.dumps({k:v for k,v in report.items() if k!="exclusions"},indent=2))
     return report
 
 

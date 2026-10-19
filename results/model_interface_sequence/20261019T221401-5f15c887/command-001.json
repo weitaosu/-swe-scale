@@ -1,0 +1,19 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py",
+    "--model",
+    "models/Qwen2.5-Coder-1.5B-Instruct",
+    "--label",
+    "swegym-pilot-1.5b",
+    "--condition-id",
+    "20261019T221401-5f15c887-0",
+    "--adapter",
+    "checkpoints/pilot/qwen-1.5b"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/model_interface_sequence/20261019T221401-5f15c887/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/model_interface_sequence/20261019T221401-5f15c887/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 119.51287806200071
+}

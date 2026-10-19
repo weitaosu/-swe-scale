@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/c/Program Files/Git/cmd/git.exe",
+    "-c",
+    "core.longpaths=true",
+    "add",
+    "--dry-run",
+    "."
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "dry_run": true,
+  "index_modified": false
+}

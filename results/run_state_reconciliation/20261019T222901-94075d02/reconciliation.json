@@ -1,0 +1,24 @@
+[
+  {
+    "path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T220137-35d7aef9/run.json",
+    "observed_at": "2026-10-19T22:29:01.386758+00:00",
+    "recorded_pid": 41903,
+    "pid_absent": true,
+    "parent_cancellation": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T215949-17acd5cb/run.json",
+    "gate": "results/development_environment_gate/20261019T220844-6089e679",
+    "original_metadata": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/run_state_reconciliation/20261019T222901-94075d02/rollout-20261019T220137-35d7aef9.original.json",
+    "original_sha256": "93341569412c4c91883c6f9847b4f4bca8d18a0afacb30106a0d2dc43837739a",
+    "exact_exit_time_and_code_unknown": true
+  },
+  {
+    "path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_build/20261019T220652-45a8030e/run.json",
+    "observed_at": "2026-10-19T22:29:01.409938+00:00",
+    "recorded_pid": 41946,
+    "pid_absent": true,
+    "parent_cancellation": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T215949-17acd5cb/run.json",
+    "gate": "results/development_environment_gate/20261019T220844-6089e679",
+    "original_metadata": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/run_state_reconciliation/20261019T222901-94075d02/runtime_build-20261019T220652-45a8030e.original.json",
+    "original_sha256": "31a7eaff39dd553ee1079d21fce4e035abb8916802a4fbc8163fa5965cfaf840",
+    "exact_exit_time_and_code_unknown": true
+  }
+]

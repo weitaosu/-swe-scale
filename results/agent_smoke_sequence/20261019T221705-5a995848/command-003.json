@@ -1,0 +1,19 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py",
+    "--model",
+    "models/Qwen2.5-Coder-3B-Instruct",
+    "--label",
+    "baseline-3b-smoke",
+    "--rollout",
+    "--smoke",
+    "--condition-id",
+    "20261019T221705-5a995848-2"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/agent_smoke_sequence/20261019T221705-5a995848/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/agent_smoke_sequence/20261019T221705-5a995848/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 265.3722021850008
+}

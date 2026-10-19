@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/eval/bin/python",
+    "-B",
+    "-c",
+    "import importlib.metadata as m,json; print(json.dumps({name:m.version(name) for name in ['docker', 'datasets']}))"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-017.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-017.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.5634771479999472
+}

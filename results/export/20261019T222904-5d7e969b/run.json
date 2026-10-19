@@ -1,0 +1,35 @@
+{
+  "run_id": "20261019T222904-5d7e969b",
+  "stage": "export",
+  "started_at": "2026-10-19T22:29:04.747930+00:00",
+  "status": "passed",
+  "config": {
+    "command": "export",
+    "input": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T222802-b76e4628/openhands/cs6158-local-development-dev/CodeActAgent/cs6158-Qwen2.5-Coder-1.5B-Instruct_maxiter_5_N_cs6158-local/output.jsonl",
+    "output": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222608-255e7db9/predictions.jsonl",
+    "model_name": "baseline-1.5b-smoke",
+    "smoke": true
+  },
+  "config_sha256": "dca23a58387b7f4567ebb1ada14c4f60c8ec0028d0e65dd89f4178ff46b12f5b",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "export",
+    "--input",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T222802-b76e4628/openhands/cs6158-local-development-dev/CodeActAgent/cs6158-Qwen2.5-Coder-1.5B-Instruct_maxiter_5_N_cs6158-local/output.jsonl",
+    "--output",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T222608-255e7db9/predictions.jsonl",
+    "--model-name",
+    "baseline-1.5b-smoke",
+    "--smoke"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 60074,
+  "parent_pid": 58503,
+  "condition_id": "20261019T221705-5a995848-0",
+  "source_snapshot_sha256": "204458ad555d2feb05eb2f6ecaa146b4852cf97320e91e3fb39e8cbf14e5aa74",
+  "ended_at": "2026-10-19T22:29:05.084512+00:00",
+  "elapsed_seconds": 0.04376994599988393
+}

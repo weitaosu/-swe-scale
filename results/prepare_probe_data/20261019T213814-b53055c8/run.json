@@ -1,0 +1,21 @@
+{
+  "run_id": "20261019T213814-b53055c8",
+  "stage": "prepare_probe_data",
+  "started_at": "2026-10-19T21:38:14.273834+00:00",
+  "status": "passed",
+  "config": {
+    "context": 8192,
+    "selection": "longest retained complete histories; resources only"
+  },
+  "config_sha256": "67c0ecb14331609323895f02599dd2d1cc908224a26e22f4068ccef776d4e586",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/prepare_probe_data.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "0ce77294bf67d2361925be0bb6ec02293adfc12dddc9b91ac9f7ff94dfcacc30",
+  "ended_at": "2026-10-19T21:38:15.276062+00:00",
+  "elapsed_seconds": 0.7310012640000423
+}

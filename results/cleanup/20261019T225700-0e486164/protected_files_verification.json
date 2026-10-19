@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-19T23:03:05.479Z",
+  "passed": true,
+  "protected_file_count": 54926,
+  "mismatches": [],
+  "comparison": "Existence and byte size for all protected entries; SHA-256 where present in both inventories. Large payload integrity remains in pinned asset manifests.",
+  "before_inventory": "Pre-cleanup inventory retained in this session; execution/source metadata copied below",
+  "after_inventory": "results/native_inventory/20261019T230036-83193314/native_index.json",
+  "protected_categories": [
+    "models",
+    "data",
+    "checkpoints",
+    "active Linux environments except bytecode",
+    "src/scripts/configs/tests except bytecode",
+    "historical experiment stdout/stderr/events/source snapshots"
+  ],
+  "before_inventory_metadata": {
+    "captured_at": "2026-10-19T22:48:54.904Z",
+    "execution_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/native_inventory/20261019T224817-43e7e724",
+    "execution_source": {
+      "recorded_at": "2026-10-19T22:50:08.661039+00:00",
+      "specification": {
+        "path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/native_inventory/20261019T224817-43e7e724/indexer.js",
+        "sha256": "1b02c42eb9a894e336d3dd338d909385ced0b3403b74daa3b91ef3da9e619601"
+      },
+      "executed_static_function": {
+        "path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/native_inventory/20261019T224817-43e7e724/executed_indexer.js",
+        "sha256": "69f0346aa30273e7f0c27e7fc61c04b2aa0512f061af09c393c3f7f065af647c"
+      },
+      "execution": "Static JavaScript through the Node REPL; only native filesystem reads/writes, no WSL subprocess launch. The exact executed function is stored separately from the original specification."
+    }
+  }
+}

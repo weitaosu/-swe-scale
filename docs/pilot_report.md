@@ -1,25 +1,31 @@
-# Pilot validation evidence
+# Real-model pilot validation
 
-The GPU tests below used a **random tiny Qwen2 architecture and synthetic text**, created offline by scripts/tiny_gpu_fixture.py. They did not use Qwen2.5-Coder pretrained weights or SWE-Gym. They validate code/runtime plumbing only; the project's LoRA milestone remains incomplete.
+Updated 2026-10-19. These results use downloaded Qwen2.5-Coder models and audited SWE-Gym histories on the local RTX 4090. They are setup/feasibility checks, rather than the full nine-adapter study.
 
-| Check | Evidence |
-| --- | --- |
-| Initial NF4 QLoRA | results/train/20261019T164855-ead23d01/metrics.json |
-| Resume from Trainer checkpoint 3 to step 6 | results/train/20261019T165453-6e72dc69/metrics.json |
-| Fresh-process reload after resume | results/validate-checkpoint/20261019T165807-f950e3ee/reload_validation.json |
-| Real-GPU HTTP interface, in-process ASGI transport | results/synthetic_server/20261019T170520-908242ff/server_validation.json |
-| Full shell commands/stdout/stderr | results/setup/setup-2026-10-19T16-35-12-041Z/commands/ |
+| Run | Context limit | Training / validation examples | Steps | Peak allocated / reserved VRAM | Training/eval/checkpoint wall time |
+| --- | ---: | ---: | ---: | --- | ---: |
+| 1.5B overfit, full logits | 4096 | 4 / 2 | 16 | 9.34 / 11.24 GiB | 67.9 s |
+| 1.5B pilot, target-only logits | 8192 | 32 / 9 | 25 | 6.85 / 16.63 GiB | 279.9 s |
+| 1.5B resume check | 8192 | 32 / 9 | +2, from 25 to 27 | See immutable resume metrics | 32.7 s |
+| 3B memory probe, target-only logits | 8192 | 8 / 2 | 2 | 8.57 / 13.59 GiB | 19.5 s |
+| 7B memory probe, target-only logits | 8192 | 8 / 2 | 2 | 14.81 / 18.61 GiB | 26.3 s |
 
-The fixture has two transformer layers, hidden size 64, and 8,192 trainable LoRA parameters. Base parameters are frozen. Initial training used eight synthetic training tasks and two validation tasks, three optimizer steps, microbatch one, 128-token context, NF4 double quantization, BF16 compute, and rank four. It processed 48 nonpadding tokens, including nine assistant targets, across three microbatches. Training loss fell approximately 4.179 to 4.118; validation loss reached approximately 4.104. Finite nonzero adapter gradient checks and changed adapter hashes were recorded.
+Times exclude model initialization and fresh-process reload. The 1.5B pilot processed actual tokens at about 4488 tokens/s after the first two warmup microbatches. The 3B and 7B probes each used only two microbatches, so it does not provide a steady-state throughput estimate. Each probe’s two training histories totaled 15,698 tokens. Memory feasibility applies to the measured examples and configuration.
 
-Resume restored optimizer and Trainer state, continued to global step six, and retained 28 optimizer state entries. The corrected resume check compares final weights against checkpoint weights; hashes differ and best validation loss is 4.08110. An earlier step-four resume inherited a zero learning rate from the completed three-step schedule. Its logs are retained, but it is not used as evidence of resumed learning. The verified step-six run records the inherited schedule and subsequent nonzero learning rates.
+The overfit loss fell from about 0.673 to 0.00176, while validation loss later rose. The larger 1.5B pilot's best validation loss was 0.5175. These observations validate the optimizer path; they do not establish benchmark improvement or full-corpus generalization.
 
-Fresh-process NF4 adapter reload passed a fixed-prefix logits comparison: maximum absolute difference 0.001953125, with atol 0.02 and rtol 0.01. This tolerates small BF16 kernel differences; it is not a claim of bitwise equality.
+## Checkpoint and loss correctness
 
-The server test loaded the synthetic adapter on the real GPU and checked health/models, generation, SSE formatting, wrong-model rejection, context overflow rejection, task identification, persistent per-task token accounting, and HTTP 429 after token exhaustion. It used an in-process TestClient because listening-socket/network access is unavailable; actual networked OpenHands integration is untested.
+Nonzero adapter gradients and updated adapter tensors were verified. The fresh-process reload comparison matches exactly (maximum logit difference 0.0) after aligning unquantized layer precision and BF16 autocast. Earlier failed comparisons are retained; the tolerance was not widened.
 
-Tiny training peak allocation was 19,492,864 bytes and peak reservation 25,165,824 bytes. Initial Trainer wall time was about 0.827 seconds; resumed Trainer wall time about 0.657 seconds, including its evaluation/checkpoint activity. Model loading and final export are excluded. These measurements cannot estimate real-model VRAM, throughput, hours, or downstream repair quality.
+Resume validation preserved the complete step-25 checkpoint, loaded optimizer/scheduler/RNG/Trainer state, and extended the schedule to 27 for this state check. All 392 optimizer entries advanced by two steps, and 392 adapter tensors changed. The resumed adapter passed fresh reload. This schedule extension is not an exact uninterrupted-schedule equivalence experiment.
 
-An initial run failed on an unsupported Transformers TrainingArguments option; the implementation was corrected and the failure logs retained. SFT now uses Transformers Trainer plus PEFT with verified explicit labels. TRL is not required by this implementation.
+Target-only logits compute predictions only at positions whose next-token labels are unmasked assistant targets. A regression test compares full causal loss and all parameter gradients on a small Qwen2 model. User/system/observation/padding labels remain masked. The initial full-logit 8K attempt was stopped under VRAM pressure before an optimizer step and has no valid adapter result.
 
-Real validation still required: inspect Qwen2.5 tool/template masks, perform the 1.5B four-example overfit and bounded 25-step pilot, verify adapter changes/base freezing, reload/resume and server loading, then measure 3B/7B memory probes sequentially. Use actual retained tokens and measured throughput for any training-time estimate. Inspect best-checkpoint and loss reports before accepting useful learning. No 7B fit or production training-time claim follows from these fixture results.
+## Data and integration limits
+
+Only 46 of 489 complete histories fit 8K: 37 train and 9 validation. The user selected complete 8K histories for the bounded pilot if memory permits. The 32 training histories are a short-history subset; final training still needs a deliberate common context/windowing policy. Larger-model probes use long complete histories near the 8K limit and are resource checks.
+
+The source-matched action converter replayed shell execution, editing, and finish. A real OpenHands container passed scripted edit/test/patch export with no host mounts or privileged mode. The first repaired grader image passed gold/blank controls. Real model-to-agent rollouts and adapter-to-grader development validation remain pending.
+
+Evidence: [overfit](../results/train/20261019T181357-425bca26/metrics.json), [25-step pilot](../results/train/20261019T212429-33c80784/metrics.json), [resume state check](../results/resume_validation/20261019T213256-197348df/resume_validation.json), [resumed reload](../results/validate-checkpoint/20261019T213541-77186790/reload_validation.json), [3B probe](../checkpoints/pilot/qwen-3b-probe/experiment.json), [3B reload](../results/validate-checkpoint/20261019T214250-395117df/reload_validation.json), [7B probe](../checkpoints/pilot/qwen-7b-probe/experiment.json), [7B reload](../results/validate-checkpoint/20261019T215338-e30763a2/reload_validation.json), [runtime replay](../results/runtime_replay/20261019T212637-a6467397/replay.json), [historical synthetic report](../results/setup/resume-2026-10-19T17-52-39-960Z/pilot_report.before_real_validation.md).

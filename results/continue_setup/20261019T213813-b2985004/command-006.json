@@ -1,0 +1,16 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/study.py",
+    "download",
+    "--kind",
+    "model",
+    "--only",
+    "7B"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/continue_setup/20261019T213813-b2985004/command-006.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/continue_setup/20261019T213813-b2985004/command-006.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 45.37591987699943
+}

@@ -1,8 +1,8 @@
 model: models/Qwen2.5-Coder-3B-Instruct
-train_file: data/processed/swegym/train.jsonl
-validation_file: data/processed/swegym/validation.jsonl
+train_file: data/processed/swegym/probe_8k/train.jsonl
+validation_file: data/processed/swegym/probe_8k/validation.jsonl
 output: checkpoints/pilot/qwen-3b-probe
-max_length: 4096
+max_length: 8192
 max_train_examples: 8
 max_eval_examples: 2
 max_steps: 2
@@ -18,3 +18,7 @@ save_steps: 1
 eval_steps: 1
 save_total_limit: 2
 quantization: nf4
+
+target_only_logits: true
+
+probe_selection: longest_complete_8K_histories_for_memory_feasibility_only

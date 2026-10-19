@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/study.py",
+    "select-tasks"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/continue_setup/20261019T211209-9cef6667/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/continue_setup/20261019T211209-9cef6667/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.842932397000368
+}

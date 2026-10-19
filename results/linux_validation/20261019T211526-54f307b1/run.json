@@ -1,0 +1,20 @@
+{
+  "run_id": "20261019T211526-54f307b1",
+  "stage": "linux_validation",
+  "started_at": "2026-10-19T21:15:26.278157+00:00",
+  "status": "passed",
+  "config": {
+    "scope": "project regression suite and source syntax"
+  },
+  "config_sha256": "e0c3634f586571e46a3882c90d3bc9f2c7feef51d6f0d989eafdf5937087010c",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/validate_linux.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "0279505257c960131dae4d50946ac63a7cc0f6d297493c5ac4d597d0b50f0fde",
+  "ended_at": "2026-10-19T21:15:47.912076+00:00",
+  "elapsed_seconds": 22.05764302999978
+}

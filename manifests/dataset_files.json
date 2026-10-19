@@ -3,43 +3,148 @@
     {
       "repo": "SWE-Gym/OpenHands-SFT-Trajectories",
       "kind": "dataset",
-      "target": "data/raw/swegym/sft",
       "split": "train.success.oss",
-      "status": "blocked",
-      "error_type": "ConnectError",
-      "error": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+      "target": "data/raw/swegym/sft",
+      "revision": "4aaa5a4a4b5861f4799d2336908760c190ac3b17",
+      "status": "verified",
+      "files": [
+        {
+          "path": "data/raw/swegym/sft/README.md",
+          "bytes": 397,
+          "sha256": "7116dde1ad47554226015b3420e3b409c0b0f74ad30d4751a01454677eaeb7b8",
+          "expected_lfs_sha256": null,
+          "reused": false,
+          "seconds": 0.44146729399972173
+        },
+        {
+          "path": "data/raw/swegym/sft/data/train.success.oss-00000-of-00001.parquet",
+          "bytes": 10379409,
+          "sha256": "ea4bf37de020e165c5210bedddeef523d8834a89a35a8c65fec24f76f0eae4f1",
+          "expected_lfs_sha256": "ea4bf37de020e165c5210bedddeef523d8834a89a35a8c65fec24f76f0eae4f1",
+          "reused": false,
+          "seconds": 1.620841978000044
+        }
+      ]
     },
     {
       "repo": "SWE-Gym/OpenHands-Sampled-Trajectories",
       "kind": "dataset",
-      "target": "data/raw/swegym/sampled",
       "split": "train.raw",
-      "status": "not_started",
-      "revision": null
+      "target": "data/raw/swegym/sampled",
+      "revision": "baf3a4e4bff514d48ddc08a93a2ade5c126212c7",
+      "status": "verified",
+      "files": [
+        {
+          "path": "data/raw/swegym/sampled/README.md",
+          "bytes": 2988,
+          "sha256": "45e76541e88ef9a50192e77137a4622c6f38fbe299fbbae4beb2bbb0d135d8d3",
+          "expected_lfs_sha256": null,
+          "reused": false,
+          "seconds": 0.44439520400010224
+        },
+        {
+          "path": "data/raw/swegym/sampled/data/train.raw-00000-of-00003.parquet",
+          "bytes": 70817777,
+          "sha256": "29d038b0c34eb0e50a19730f3cf3daa5a156c2d7e9c871c01b568acbab6aae07",
+          "expected_lfs_sha256": "29d038b0c34eb0e50a19730f3cf3daa5a156c2d7e9c871c01b568acbab6aae07",
+          "reused": false,
+          "seconds": 5.5402840510000715
+        },
+        {
+          "path": "data/raw/swegym/sampled/data/train.raw-00001-of-00003.parquet",
+          "bytes": 78471672,
+          "sha256": "64a5d435b777a47e2544de1cc3bf61e5452bab1237fc43e70220e13f2f901516",
+          "expected_lfs_sha256": "64a5d435b777a47e2544de1cc3bf61e5452bab1237fc43e70220e13f2f901516",
+          "reused": false,
+          "seconds": 5.444482514000356
+        },
+        {
+          "path": "data/raw/swegym/sampled/data/train.raw-00002-of-00003.parquet",
+          "bytes": 151806160,
+          "sha256": "1e388384f0dbf65421b53ef37d4f92c10e1e458f597bf61326fa047b8e21b597",
+          "expected_lfs_sha256": "1e388384f0dbf65421b53ef37d4f92c10e1e458f597bf61326fa047b8e21b597",
+          "reused": false,
+          "seconds": 16.0670646020003
+        }
+      ]
     },
     {
       "repo": "SWE-Gym/SWE-Gym",
       "kind": "dataset",
-      "target": "data/raw/swegym/tasks",
       "split": "train",
-      "status": "not_started",
-      "revision": null
+      "target": "data/raw/swegym/tasks",
+      "revision": "bb94ed9e39bbeb96a7fcbfb533b80f25a7fd59cb",
+      "status": "verified",
+      "files": [
+        {
+          "path": "data/raw/swegym/tasks/README.md",
+          "bytes": 1141,
+          "sha256": "d6fc7d653a1b65c486b0a273bedf14b6a9c892c201bb85776bc0132d29639c31",
+          "expected_lfs_sha256": null,
+          "reused": false,
+          "seconds": 0.4606874770001923
+        },
+        {
+          "path": "data/raw/swegym/tasks/data/train-00000-of-00001.parquet",
+          "bytes": 43644473,
+          "sha256": "60569cea74bb281f7a5579467436a2bc1932c6e0c5f2f7fa0d084392abd9ad97",
+          "expected_lfs_sha256": "60569cea74bb281f7a5579467436a2bc1932c6e0c5f2f7fa0d084392abd9ad97",
+          "reused": false,
+          "seconds": 4.567389541000011
+        }
+      ]
     },
     {
       "repo": "SWE-bench/SWE-bench_Verified",
       "kind": "dataset",
-      "target": "data/raw/swebench/verified",
       "split": "test",
-      "status": "not_started",
-      "revision": null
+      "target": "data/raw/swebench/verified",
+      "revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+      "status": "verified",
+      "files": [
+        {
+          "path": "data/raw/swebench/verified/README.md",
+          "bytes": 3485,
+          "sha256": "923e6b481ff75c709737251e602bdc311a9be49235b5c20107366747f5640fe4",
+          "expected_lfs_sha256": null,
+          "reused": false,
+          "seconds": 0.4504240170003868
+        },
+        {
+          "path": "data/raw/swebench/verified/data/test-00000-of-00001.parquet",
+          "bytes": 6304616,
+          "sha256": "030cfd7f2a704c4c0226e7f104c725a3b41230b1d3517f9c915ad7ea5be3fa25",
+          "expected_lfs_sha256": "030cfd7f2a704c4c0226e7f104c725a3b41230b1d3517f9c915ad7ea5be3fa25",
+          "reused": false,
+          "seconds": 1.129066617999797
+        }
+      ]
     },
     {
       "repo": "SWE-bench/SWE-bench",
       "kind": "dataset",
-      "target": "data/raw/swebench/dev",
       "split": "dev",
-      "status": "not_started",
-      "revision": null
+      "target": "data/raw/swebench/dev",
+      "revision": "c6fe717fd7a4c3ac1daa4055a4fd082c6a1d28a2",
+      "status": "verified",
+      "files": [
+        {
+          "path": "data/raw/swebench/dev/README.md",
+          "bytes": 3974,
+          "sha256": "6433ee353e763e5c1e6f3e9ef4e9872d7f2e9639effc2e52cc5521f419444764",
+          "expected_lfs_sha256": null,
+          "reused": false,
+          "seconds": 0.43545644599998923
+        },
+        {
+          "path": "data/raw/swebench/dev/data/dev-00000-of-00001.parquet",
+          "bytes": 3299303,
+          "sha256": "7812438935be9cbe36049b93c73412d523fb07251bd255813168c38c5fc92454",
+          "expected_lfs_sha256": "7812438935be9cbe36049b93c73412d523fb07251bd255813168c38c5fc92454",
+          "reused": false,
+          "seconds": 0.9338399379998918
+        }
+      ]
     }
   ]
 }

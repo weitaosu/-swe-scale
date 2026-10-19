@@ -1,0 +1,38 @@
+[
+  {
+    "name": "wsl-dry-run",
+    "command": [
+      "/usr/bin/git",
+      "add",
+      "--dry-run",
+      "."
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "saved to log"
+  },
+  {
+    "name": "windows-dry-run",
+    "command": [
+      "/mnt/c/Program Files/Git/cmd/git.exe",
+      "add",
+      "--dry-run",
+      "."
+    ],
+    "returncode": 128,
+    "stderr": "error: open(\"results/rollout/20261019T220137-35d7aef9/openhands/cs6158-local-development-dev/CodeActAgent/cs6158-Qwen2.5-Coder-1.5B-Instruct_maxiter_30_N_cs6158-local/llm_completions/pvlib__pvlib-python-1048/openai__cs6158-Qwen2.5-Coder-1.5B-Instruct-1792447560.4309056.json\"): Filename too long\nerror: unable to index file 'results/rollout/20261019T220137-35d7aef9/openhands/cs6158-local-development-dev/CodeActAgent/cs6158-Qwen2.5-Coder-1.5B-Instruct_maxiter_30_N_cs6158-local/llm_completions/pvlib__pvlib-python-1048/openai__cs6158-Qwen2.5-Coder-1.5B-Instruct-1792447560.4309056.json'\nfatal: adding files failed\n",
+    "stdout": "saved to log"
+  },
+  {
+    "name": "config",
+    "command": [
+      "/usr/bin/git",
+      "config",
+      "--show-origin",
+      "--list"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "file:/etc/gitconfig\tfilter.lfs.clean=git-lfs clean -- %f\nfile:/etc/gitconfig\tfilter.lfs.smudge=git-lfs smudge -- %f\nfile:/etc/gitconfig\tfilter.lfs.process=git-lfs filter-process\nfile:/etc/gitconfig\tfilter.lfs.required=true\nfile:/home/boyant/.gitconfig\tfilter.lfs.smudge=git-lfs smudge -- %f\nfile:/home/boyant/.gitconfig\tfilter.lfs.process=git-lfs filter-process\nfile:/home/boyant/.gitconfig\tfilter.lfs.required=true\nfile:/home/boyant/.gitconfig\tfilter.lfs.clean=git-lfs clean -- %f\nfile:.git/config\tcore.repositoryformatversion=0\nfile:.git/config\tcore.filemode=false\nfile:.git/config\tcore.bare=false\nfile:.git/config\tcore.logallrefupdates=true\nfile:.git/config\tcore.symlinks=false\nfile:.git/config\tcore.ignorecase=true\nfile:.git/config\tremote.origin.url=https://github.com/weitaosu/-swe-scale.git\nfile:.git/config\tremote.origin.fetch=+refs/heads/*:refs/remotes/origin/*\nfile:.git/config\tbranch.main.remote=origin\nfile:.git/config\tbranch.main.merge=refs/heads/main\n"
+  }
+]

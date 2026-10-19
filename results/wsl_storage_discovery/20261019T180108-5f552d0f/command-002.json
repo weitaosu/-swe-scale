@@ -1,0 +1,12 @@
+{
+  "args": [
+    "wslpath",
+    "-u",
+    "C:\\Users\\weita\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\\LocalState"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/wsl_storage_discovery/20261019T180108-5f552d0f/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/wsl_storage_discovery/20261019T180108-5f552d0f/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2766912189999857
+}

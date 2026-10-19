@@ -35,12 +35,38 @@ class Tee:
     def __init__(self, *streams): self.streams = streams
     def write(self, text):
         for stream in self.streams:
-            stream.write(text)
-            stream.flush()
+            if not getattr(stream,"closed",False):
+                stream.write(text)
+                stream.flush()
         return len(text)
     def flush(self):
-        for stream in self.streams: stream.flush()
+        for stream in self.streams:
+            if not getattr(stream,"closed",False): stream.flush()
     def isatty(self): return False
+
+def _linux_process_tree(parent_pid):
+    records={}
+    for folder in Path('/proc').iterdir():
+        if not folder.name.isdigit(): continue
+        try:
+            fields=(folder/'stat').read_text().rsplit(')',1)[1].split()
+            records[int(folder.name)]=(int(fields[1]),fields[19])
+        except (OSError,ValueError,IndexError): continue
+    selected={parent_pid}
+    while True:
+        expanded=selected|{pid for pid,(ppid,_) in records.items() if ppid in selected}
+        if expanded==selected: break
+        selected=expanded
+    return {pid:records[pid][1] for pid in selected if pid in records}
+
+
+def _signal_linux_processes(records,signum):
+    for pid,started in reversed(list(records.items())):
+        try:
+            fields=Path('/proc',str(pid),'stat').read_text().rsplit(')',1)[1].split()
+            if fields[19]==started and fields[0]!='Z': os.kill(pid,signum)
+        except (OSError,ValueError,IndexError): pass
+
 
 
 class Run:
@@ -52,6 +78,7 @@ class Run:
         self.meta = {"run_id": self.id, "stage": stage, "started_at": utc(), "status": "running", "config": self.config,
                      "config_sha256": canonical_hash(self.config), "python": sys.version, "platform": platform.platform(),
                      "executable": sys.executable, "argv": sys.argv, "project_root": str(ROOT)}
+        self.meta.update(pid=os.getpid(),parent_pid=os.getppid(),condition_id=os.environ.get("CS6158_CONDITION_ID"))
         self.lock = threading.Lock()
         self.stack = contextlib.ExitStack()
     def event(self, event, **fields):
@@ -99,6 +126,7 @@ class Run:
             with prefix.with_suffix(".stdout.log").open("w",encoding="utf-8") as out, prefix.with_suffix(".stderr.log").open("w",encoding="utf-8") as err:
                 options={"creationflags":subprocess.CREATE_NEW_PROCESS_GROUP} if os.name=="nt" else {"start_new_session":True}
                 process=subprocess.Popen(result["args"],cwd=cwd or ROOT,stdout=out,stderr=err,text=True,**options)
+                self.event("process_started",pid=process.pid,args=result["args"])
                 try:
                     while process.poll() is None:
                         if guard: guard.check()
@@ -108,12 +136,14 @@ class Run:
                     if os.name=="nt":
                         subprocess.run(["taskkill","/PID",str(process.pid),"/T","/F"],stdout=out,stderr=err,timeout=15,check=False)
                     else:
-                        os.killpg(process.pid,signal.SIGTERM)
+                        owned=_linux_process_tree(process.pid)
+                        _signal_linux_processes(owned,signal.SIGTERM)
                     try: process.wait(10)
                     except subprocess.TimeoutExpired:
                         if os.name=="nt": process.kill()
-                        else: os.killpg(process.pid,signal.SIGKILL)
+                        else: _signal_linux_processes(owned,signal.SIGKILL)
                         process.wait()
+                    if os.name!="nt": _signal_linux_processes(owned,signal.SIGKILL)
                     raise
             result["returncode"]=process.returncode
             if process.returncode:

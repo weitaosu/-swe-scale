@@ -1,0 +1,9 @@
+{
+  "images": [
+    "swebench/sweb.eval.x86_64.pydicom_1776_pydicom-1048:latest"
+  ],
+  "all_cached": false,
+  "reserve_bytes": 15000000000,
+  "returncode": 1,
+  "stderr": "Error response from daemon: No such image: swebench/sweb.eval.x86_64.pydicom_1776_pydicom-1048:latest\n"
+}

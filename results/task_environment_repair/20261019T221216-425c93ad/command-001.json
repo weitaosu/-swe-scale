@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "image",
+    "inspect",
+    "swebench/sweb.eval.x86_64.pvlib_1776_pvlib-python-1048:latest"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_environment_repair/20261019T221216-425c93ad/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.26240169600077934
+}

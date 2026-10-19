@@ -1,0 +1,15 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-c",
+    "import subprocess,sys,time; from pathlib import Path; p=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)'],start_new_session=True); Path(sys.argv[1]).write_text(str(p.pid)); time.sleep(60)",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest_linux_resume/test_command_timeout_terminate0/nested.pid"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/unit_nested_cancel/20261019T215858-abc28c17/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/unit_nested_cancel/20261019T215858-abc28c17/command-001.stderr.log",
+  "error_type": "TimeoutError",
+  "error": "Command exceeded 2s",
+  "returncode": -15,
+  "elapsed_seconds": 2.065133138999954
+}

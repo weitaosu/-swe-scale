@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "control": "gold",
+  "total_instances": 1,
+  "resolved_instances": 1,
+  "resolved_ids": [
+    "pvlib__pvlib-python-1048"
+  ],
+  "official_report": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/grade/20261019T221223-4c466ee4/logs/evaluation/20261019T221223-4c466ee4/results.json"
+}

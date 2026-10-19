@@ -1,0 +1,27 @@
+{
+  "run_id": "20261019T221753-8f0b6c63",
+  "stage": "unit_command",
+  "started_at": "2026-10-19T22:17:53.561295+00:00",
+  "status": "passed",
+  "config": {},
+  "config_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/pytest/__main__.py",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest_linux_current"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 55134,
+  "parent_pid": 55131,
+  "condition_id": null,
+  "source_snapshot_sha256": "580490eb1426bd01980c32fdce7b810982f9560b64908efa53540b3635b7b02d",
+  "ended_at": "2026-10-19T22:17:54.340399+00:00",
+  "elapsed_seconds": 0.30932060400027694
+}

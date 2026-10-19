@@ -88,6 +88,14 @@ def records(folder):
                 if line.strip(): yield json.loads(line),{"file":path.relative_to(ROOT).as_posix(),"row":row_index}
 
 
+def clean_tool_schema(value):
+    """Remove nullable struct-union placeholders from Parquet tool definitions."""
+    if isinstance(value, dict):
+        return {k:clean_tool_schema(v) for k,v in value.items() if v is not None or k in {"default","const"}}
+    if isinstance(value, list): return [clean_tool_schema(v) for v in value]
+    return value
+
+
 def first_issue(messages):
     return next((normalize_text(text_content(m.get("content"))) for m in messages if m.get("role")=="user"),"")
 
@@ -126,9 +134,10 @@ def prepare_rows(sft_rows,sampled_rows,task_rows,verified_rows,dev_ids=(),seed=6
             tools=sft.get("tools")
             if isinstance(tools,str): tools=json.loads(tools)
             if not tools:
-                possibilities={canonical_hash(r.get("tools") or []):r.get("tools") or [] for r,_ in candidates if r["instance_id"]==instance_id}
+                possibilities={canonical_hash(clean_tool_schema(r.get("tools") or [])):clean_tool_schema(r.get("tools") or []) for r,_ in candidates if r["instance_id"]==instance_id}
                 if len(possibilities)!=1: raise ValueError("Tool schema provenance missing or ambiguous")
                 tools=next(iter(possibilities.values()))
+            tools=clean_tool_schema(tools)
             if not tools: raise ValueError("No verified tool definitions")
             names={t.get("function",t).get("name") for t in tools}
             if not names or None in names: raise ValueError("Malformed tool definitions")
@@ -141,7 +150,7 @@ def prepare_rows(sft_rows,sampled_rows,task_rows,verified_rows,dev_ids=(),seed=6
             if digest in seen: raise ValueError("Duplicate trajectory")
             seen.add(digest)
             accepted.append({"instance_id":instance_id,"repo":task.get("repo"),"trajectory_id":digest,"messages":messages,"tools":tools,"tool_prompt_mode":("embedded" if all(name in " ".join(m["content"] for m in messages if m["role"]=="system") for name in names if name) else "native"),
-                "provenance":{"sft":origin,"match_kind":match_kind,"candidate_successful_raw_rows":[o for r,o in candidates if r["instance_id"]==instance_id],"success_basis":"published_successful_SFT_split","task_level_match_only":True}})
+                "provenance":{"sft":origin,"match_kind":match_kind,"candidate_successful_raw_rows":[o for r,o in candidates if r["instance_id"]==instance_id],"schema_normalization":"remove null optional Parquet struct fields; preserve default/const nulls","success_basis":"published_successful_SFT_split","task_level_match_only":True}})
         except (ValueError,TypeError,KeyError,json.JSONDecodeError) as e:
             excluded.append({"source":origin,"reason":str(e)})
     unique_ids=sorted({r["instance_id"] for r in accepted})

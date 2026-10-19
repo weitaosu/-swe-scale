@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-19T22:49:08.059496+00:00",
+  "all_independent_checks_finished": true,
+  "milestones_complete": false,
+  "smoke_metrics": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/smoke_reporting/20261019T224904-9ce37df0/metrics.json",
+  "project_containers_remaining": [],
+  "project_api_port_active": false,
+  "active_project_jobs": [],
+  "storage": {
+    "free_bytes": 44436922368,
+    "conservative_volume_growth_bytes": 58444619776,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": 44436922368,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "full_development_gates": [
+    {
+      "scope": "full_five_task_development",
+      "category": "storage",
+      "message": "Uncached image stage requires 15 GB reserve; about 12.31 GB growth headroom remained under the approved cap.",
+      "evidence": "results/grade/20261019T221411-5174df90/run.json"
+    },
+    {
+      "scope": "full_five_task_development",
+      "category": "task_image_access",
+      "message": "Public SQLFluff image manifest returned HTTP 401; verify access or build the pinned Dockerfile after storage is available.",
+      "evidence": "results/development_image_audit/20261019T221340-e9f6a94c/images.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "history",
+    "--no-trunc",
+    "sha256:964d540417dd282e61cde73beea4febff284285c13bdb9e2a129021e28757737"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-008.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-008.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.5681855830007407
+}

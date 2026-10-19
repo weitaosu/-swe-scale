@@ -1,0 +1,14 @@
+{
+  "args": [
+    "docker",
+    "image",
+    "rm",
+    "cs6158/runtime:oh_v0.13.1_r7tyogpmfbg9q3z8",
+    "cs6158/runtime:oh_v0.13.1_r7tyogpmfbg9q3z8_y766p9z6jyxsud5c"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-009.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/command-009.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.3116638560004503
+}

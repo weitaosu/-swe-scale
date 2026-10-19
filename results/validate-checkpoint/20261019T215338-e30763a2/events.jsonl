@@ -1,0 +1,2 @@
+{"time": "2026-10-19T21:53:38.367981+00:00", "event": "run_started", "config": {"command": "validate-checkpoint", "adapter": "checkpoints/pilot/qwen-7b-probe"}}
+{"time": "2026-10-19T21:59:18.479048+00:00", "event": "run_finished", "status": "passed", "error": null}

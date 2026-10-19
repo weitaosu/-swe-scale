@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "total_histories": 489,
+  "coverage": [
+    {
+      "context_tokens": 4096,
+      "train": 5,
+      "validation": 3,
+      "total": 8,
+      "fraction_of_489": 0.016359918200409,
+      "gpu_feasibility": "not established by this length-only analysis"
+    },
+    {
+      "context_tokens": 8192,
+      "train": 37,
+      "validation": 9,
+      "total": 46,
+      "fraction_of_489": 0.09406952965235174,
+      "gpu_feasibility": "measured NF4/LoRA pilot/probes at 8K"
+    },
+    {
+      "context_tokens": 16384,
+      "train": 229,
+      "validation": 30,
+      "total": 259,
+      "fraction_of_489": 0.5296523517382413,
+      "gpu_feasibility": "not established by this length-only analysis"
+    },
+    {
+      "context_tokens": 32768,
+      "train": 400,
+      "validation": 43,
+      "total": 443,
+      "fraction_of_489": 0.9059304703476483,
+      "gpu_feasibility": "not established by this length-only analysis"
+    },
+    {
+      "context_tokens": 65536,
+      "train": 435,
+      "validation": 49,
+      "total": 484,
+      "fraction_of_489": 0.9897750511247444,
+      "gpu_feasibility": "not established by this length-only analysis"
+    }
+  ],
+  "all_history_p50_tokens": 15989,
+  "all_history_p95_tokens": 38967,
+  "max_tokens": 81245,
+  "source_hashes": {
+    "results/tokenize/20261019T212832-1d649e8b/token_stats.json": "b599fcb207c6a1a2c86c380df5369a038dd3b9a6528bad7bcd139d78fbbe1726",
+    "data/tokenized/Qwen2.5-Coder-1.5B-Instruct-8192/train.jsonl": "d0579bddecd77a6cb8e7593c384ad89dbb9c27cf0564e49ecbe388d84fd08682",
+    "data/tokenized/Qwen2.5-Coder-1.5B-Instruct-8192/validation.jsonl": "8edf478af4c6a8a70eec7d2d76f381f7fa37af118ba4b6e9832cdbf8abe98f0c"
+  },
+  "policy_changed": false,
+  "gpu_probes_performed": false
+}

@@ -1,0 +1,2 @@
+{"time": "2026-10-19T22:16:14.311487+00:00", "event": "run_started", "config": {"scope": "single_first_frozen_task_smoke", "models": ["baseline-1.5b", "swegym-pilot-1.5b", "baseline-3b", "baseline-7b"], "max_steps": 5, "task_timeout_seconds": 300, "replaces_five_task_validation": false}}
+{"time": "2026-10-19T22:16:14.335215+00:00", "event": "run_finished", "status": "failed", "error": {"type": "ValueError", "message": "Interface checks failed; preserve evidence before smoke runs"}}

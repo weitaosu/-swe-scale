@@ -1,0 +1,136 @@
+{
+  "config": {
+    "model": "models/Qwen2.5-Coder-7B-Instruct",
+    "train_file": "data/processed/swegym/probe_8k/train.jsonl",
+    "validation_file": "data/processed/swegym/probe_8k/validation.jsonl",
+    "output": "checkpoints/pilot/qwen-7b-probe",
+    "max_length": 8192,
+    "max_train_examples": 8,
+    "max_eval_examples": 2,
+    "max_steps": 2,
+    "learning_rate": 0.0001,
+    "warmup_ratio": 0.03,
+    "gradient_accumulation_steps": 1,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "seed": 6158,
+    "save_steps": 1,
+    "eval_steps": 1,
+    "save_total_limit": 2,
+    "quantization": "nf4",
+    "target_only_logits": true,
+    "probe_selection": "longest_complete_8K_histories_for_memory_feasibility_only"
+  },
+  "config_path": "configs/qlora_probe_7b.yaml",
+  "versions": {
+    "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "packages": {
+      "torch": "2.9.1",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": null,
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "parameters": {
+    "trainable": 40370176,
+    "total_stored_parameters": 4393342464
+  },
+  "adapter_hash_before": "0e94358bc3b6c5ebf811cf853013b03aa860420309a50e3e31e7a0dd34a96fbf",
+  "adapter_hash_after": "49d649707c58482204997cb79992e6dc348746d8d07e275573257743834e51c4",
+  "adapter_updated": true,
+  "gradient_checks": [
+    3.4597827733960003,
+    4.215449632611126
+  ],
+  "token_counts": {
+    "processed": 15698,
+    "targets": 3048,
+    "training_step_seconds": 11.809556977999819,
+    "microbatches": 2,
+    "post_warmup_tokens": 0,
+    "post_warmup_seconds": 0.0
+  },
+  "wall_seconds_including_eval_and_checkpointing": 26.332732642999872,
+  "gpu_count": 1,
+  "gpu_hours": 0.007314647956388853,
+  "steady_state_tokens_per_second": null,
+  "peak_allocated_bytes": 15900478976,
+  "peak_reserved_bytes": 19979567104,
+  "train_source_sha256": "6ebabbf32b589e11032812d1945c5c50b71f75aef2b35f4a11e3e770a126528b",
+  "validation_source_sha256": "96c749b029f24d1a71645a5f7be0da356ee308339562cae148559da70218612f",
+  "train_examples": 8,
+  "validation_examples": 2,
+  "best_checkpoint": "/mnt/c/Users/weita/Desktop/SE in AI/proj/checkpoints/pilot/qwen-7b-probe/checkpoint-2",
+  "best_eval_loss": 0.3886373043060303,
+  "global_step": 2,
+  "resume_from_checkpoint": null,
+  "optimizer_state_entries": 392,
+  "training_result": {
+    "train_runtime": 23.0205,
+    "train_samples_per_second": 0.087,
+    "train_steps_per_second": 0.087,
+    "train_loss": 0.534142404794693,
+    "epoch": 0.25
+  },
+  "log_history": [
+    {
+      "loss": 0.6435999274253845,
+      "grad_norm": 0.2788279354572296,
+      "learning_rate": 0.0,
+      "epoch": 0.125,
+      "step": 1
+    },
+    {
+      "eval_loss": 0.4039344787597656,
+      "eval_runtime": 2.9413,
+      "eval_samples_per_second": 0.68,
+      "eval_steps_per_second": 0.68,
+      "epoch": 0.125,
+      "step": 1
+    },
+    {
+      "loss": 0.42468488216400146,
+      "grad_norm": 0.33511650562286377,
+      "learning_rate": 0.0001,
+      "epoch": 0.25,
+      "step": 2
+    },
+    {
+      "eval_loss": 0.3886373043060303,
+      "eval_runtime": 2.9265,
+      "eval_samples_per_second": 0.683,
+      "eval_steps_per_second": 0.683,
+      "epoch": 0.25,
+      "step": 2
+    },
+    {
+      "train_runtime": 23.0205,
+      "train_samples_per_second": 0.087,
+      "train_steps_per_second": 0.087,
+      "total_flos": 669769861318656.0,
+      "train_loss": 0.534142404794693,
+      "epoch": 0.25,
+      "step": 2
+    }
+  ],
+  "synthetic_fixture": false
+}

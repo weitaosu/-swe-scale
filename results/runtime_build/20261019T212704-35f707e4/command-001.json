@@ -1,0 +1,23 @@
+{
+  "args": [
+    "docker",
+    "buildx",
+    "build",
+    "--progress=plain",
+    "--load",
+    "--tag",
+    "cs6158/runtime:oh_v0.13.1_9gwl2n4p6cfl3edz_y766p9z6jyxsud5c",
+    "--tag",
+    "cs6158/runtime:oh_v0.13.1_9gwl2n4p6cfl3edz",
+    "--tag",
+    "cs6158/runtime:oh_v0.13.1_cs6158_s_pvlib-python-807_t_numpy-1.26.4",
+    "--platform",
+    "linux/amd64",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/tmp6vsh19t6"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_build/20261019T212704-35f707e4/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_build/20261019T212704-35f707e4/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 130.9557434469998
+}

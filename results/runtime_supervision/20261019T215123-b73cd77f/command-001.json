@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/validate_runtime.py",
+    "--child"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_supervision/20261019T215123-b73cd77f/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/runtime_supervision/20261019T215123-b73cd77f/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 54.704487654999866
+}

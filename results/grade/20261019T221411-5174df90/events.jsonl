@@ -1,0 +1,3 @@
+{"time": "2026-10-19T22:14:12.083578+00:00", "event": "run_started", "config": {"command": "grade", "predictions": null, "control": "gold", "python": ".envs/eval/bin/python", "instance_id": "pydicom__pydicom-1048"}}
+{"time": "2026-10-19T22:14:14.181355+00:00", "event": "grader_storage_reservation", "all_images_cached": false, "reserve_bytes": 15000000000}
+{"time": "2026-10-19T22:14:14.229026+00:00", "event": "run_finished", "status": "failed", "error": {"type": "StorageLimit", "message": "The operation would exceed the approved 70 GB incremental storage cap"}}

@@ -1,0 +1,37 @@
+{
+    "total_instances": 1,
+    "submitted_instances": 1,
+    "completed_instances": 1,
+    "resolved_instances": 0,
+    "unresolved_instances": 1,
+    "infra_failure_instances": 0,
+    "ambiguous_failure_instances": 1,
+    "empty_patch_instances": 0,
+    "error_instances": 0,
+    "completed_ids": [
+        "pvlib__pvlib-python-807"
+    ],
+    "incomplete_ids": [],
+    "empty_patch_ids": [],
+    "submitted_ids": [
+        "pvlib__pvlib-python-807"
+    ],
+    "resolved_ids": [],
+    "unresolved_ids": [
+        "pvlib__pvlib-python-807"
+    ],
+    "infra_failure_ids": [],
+    "ambiguous_failure_ids": [
+        "pvlib__pvlib-python-807"
+    ],
+    "failure_reasons": {
+        "pvlib__pvlib-python-807": "no_tests_collected"
+    },
+    "error_ids": [],
+    "schema_version": 2,
+    "unstopped_instances": 0,
+    "unstopped_containers": [],
+    "unremoved_images": [
+        "cs6158/pvlib-python-807:numpy-1.26.4"
+    ]
+}

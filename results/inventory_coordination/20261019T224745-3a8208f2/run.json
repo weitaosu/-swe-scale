@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T224745-3a8208f2",
+  "stage": "inventory_coordination",
+  "started_at": "2026-10-19T22:47:45.310964+00:00",
+  "status": "passed",
+  "config": {
+    "action": "cancel_linux_scan",
+    "replacement": "native Windows inventory; same project scope and exclusions"
+  },
+  "config_sha256": "7abbb2095290b14e12669c2752e3db77c6200629ded581041c6efe8500f0d939",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/cancel_slow_inventory.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 68116,
+  "parent_pid": 68110,
+  "condition_id": null,
+  "source_snapshot_sha256": "add90e0b58b97781fa115b994abc52b929bc1a80a42e97538e537bb719c105e6",
+  "ended_at": "2026-10-19T22:47:45.781137+00:00",
+  "elapsed_seconds": 0.014069757000470418
+}

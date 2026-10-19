@@ -1,0 +1,38 @@
+{
+  "run_id": "20261019T221556-219bf688",
+  "stage": "development_condition",
+  "started_at": "2026-10-19T22:15:56.968771+00:00",
+  "status": "failed",
+  "config": {
+    "model": "models/Qwen2.5-Coder-3B-Instruct",
+    "adapter": null,
+    "label": "baseline-3b",
+    "rollout": false,
+    "condition_id": "20261019T221401-5f15c887-1",
+    "smoke": false
+  },
+  "config_sha256": "a265823a0275e3de690235ce55610507af88f157a7eae91911bf371e1b76fce4",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py",
+    "--model",
+    "models/Qwen2.5-Coder-3B-Instruct",
+    "--label",
+    "baseline-3b",
+    "--condition-id",
+    "20261019T221401-5f15c887-1"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 54677,
+  "parent_pid": 53951,
+  "condition_id": "20261019T221401-5f15c887-1",
+  "source_snapshot_sha256": "ddda13a3ed1cd04eaace4958dc7c2fcca26410cf1ce5280bdf20c444fa5b32ac",
+  "ended_at": "2026-10-19T22:15:57.461542+00:00",
+  "elapsed_seconds": 0.17928626800039638,
+  "error": {
+    "type": "OSError",
+    "message": "[Errno 98] Address already in use"
+  }
+}

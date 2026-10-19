@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T215948-1f760da2",
+  "stage": "development_validation_sequence",
+  "started_at": "2026-10-19T21:59:48.606882+00:00",
+  "status": "failed",
+  "config": {
+    "scope": "three baselines and 1.5B pilot adapter on frozen development tasks"
+  },
+  "config_sha256": "405099722cb764e5cbcf1260a9e3fd7f6819037c46c75084de924bff93d49029",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/development_validation_sequence.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "4e93e8bebcdd24a0356a760f538c21afdc2bdfdb50a6d338739679e8a7b97116",
+  "ended_at": "2026-10-19T22:08:48.679863+00:00",
+  "elapsed_seconds": 557.5812519029996,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command failed (-2): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 65, in <module>\n    rollout=child_run(root/'scripts/study.py','rollout','--model-name',model_name,'--python','.envs/agent/bin/python',timeout=9500)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 31, in child_run\n    def child_run(path,*args,timeout=2400): return run.command([root/'.envs/train/bin/python',path,*args],guard=guard,timeout=timeout)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/src/swe_study/audit.py\", line 133, in command\n    if time.perf_counter()-started>timeout: raise TimeoutError(f\"Command exceeded {timeout}s\")\n    ^^^^^^^^^^^^^^^^\nKeyboardInterrupt\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 65, in <module>\n    rollout=child_run(root/'scripts/study.py','rollout','--model-name',model_name,'--python','.envs/agent/bin/python',timeout=9500)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/run_development_condition.py\", line 31, in child_run\n    def child_run(path,*args,timeout=2400): return run.command([root/'.envs/train/bin/python',path,*args],guard=guard,timeout=timeout)\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/src/swe_study/audit.py\", line 133, in command\n    if time.perf_counter()-started>timeout: raise TimeoutError(f\"Command exceeded {timeout}s\")\n    ^^^^^^^^^^^^^^^^\nKeyboardInterrupt\n"
+  }
+}

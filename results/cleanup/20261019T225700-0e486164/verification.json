@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-19T22:57:50.785100+00:00",
+  "filesystem": {
+    "completed_at": "2026-10-19T22:57:42.855Z",
+    "roots_removed": 4755,
+    "deleted_files": 31954,
+    "logical_bytes_removed": 590175555,
+    "remaining_files": [],
+    "errors": [],
+    "per_file_record": "deletion_plan.json in results/cleanup/20261019T225700-0e486164",
+    "recovery_archive": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cleanup/20261019T225700-0e486164/temporary_files_recovery.zip"
+  },
+  "removed_docker_image": "sha256:964d540417dd282e61cde73beea4febff284285c13bdb9e2a129021e28757737",
+  "removed_docker_tags": [
+    "cs6158/runtime:oh_v0.13.1_r7tyogpmfbg9q3z8",
+    "cs6158/runtime:oh_v0.13.1_r7tyogpmfbg9q3z8_y766p9z6jyxsud5c"
+  ],
+  "removed_cache_ids": [],
+  "docker_prune_output": "Total:\t0B\n",
+  "containers_unchanged": true,
+  "validated_images_preserved": [
+    "sha256:d5da77db54d69150ff2945108c98d09106099e10a2996764de165f4ddab7c84f",
+    "sha256:d9300f78d85eb13fd513e3b57d7415617676d88115102f6c47d0c5334b799e4f",
+    "sha256:e20b68850535d20572e2355a94899e11bbaf345ac834f13b854f8d1b306ec2fa",
+    "sha256:e8e4a2d655d0d927ea727e4002c47ec35abb03755736d0a572bdc51860b80272",
+    "sha256:fb16b68ae7c9bdd8df81eb1cf51393a52adb1fd5dd200720bb44553da96ea39c"
+  ],
+  "before_storage": {
+    "free_bytes": 44369801216,
+    "conservative_volume_growth_bytes": 58511740928,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": 44369801216,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "after_storage": {
+    "free_bytes": 45033553920,
+    "conservative_volume_growth_bytes": 57847988224,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": 45033553920,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "host_free_delta_bytes": 663752704,
+  "note": "Docker layer removal releases space inside the WSL filesystem; its VHDX may not return that space to the Windows host without a separate compaction."
+}

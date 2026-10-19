@@ -1,0 +1,23 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/openhands_entry.py",
+    "--tasks",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T224327-fd1109d6/agent_tasks.jsonl",
+    "--output",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T224327-fd1109d6/openhands",
+    "--max-steps",
+    "5",
+    "--timeout",
+    "300",
+    "--run-id",
+    "20261019T224327-fd1109d6",
+    "--llm-config-file",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T224327-fd1109d6/config.toml"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T224327-fd1109d6/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T224327-fd1109d6/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 100.10026486199968
+}

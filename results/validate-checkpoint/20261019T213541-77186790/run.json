@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T213541-77186790",
+  "stage": "validate-checkpoint",
+  "started_at": "2026-10-19T21:35:41.099014+00:00",
+  "status": "passed",
+  "config": {
+    "command": "validate-checkpoint",
+    "adapter": "/mnt/c/Users/weita/Desktop/SE in AI/proj/checkpoints/pilot/qwen-1.5b"
+  },
+  "config_sha256": "bb4ad21c47496e5fe59f5baaa1c3fb1cdc961a6bf9ac2c03d449724a2e33a111",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "validate-checkpoint",
+    "--adapter",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/checkpoints/pilot/qwen-1.5b"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "ede29397eede7af96de3000fba263e97793295aa5bbc0fe4febdc01f954fd971",
+  "ended_at": "2026-10-19T21:38:12.242054+00:00",
+  "elapsed_seconds": 155.23782063199997
+}

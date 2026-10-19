@@ -181,6 +181,7 @@ def test_task_token_budget_is_shared_across_requests_and_cannot_reset(tmp_path):
     task_file.write_text(json.dumps({"instance_id":"one","problem_statement":"Fix the broken widget computation"})+"\n")
     budget=TaskBudget(task_file,10,ledger)
     key=budget.identify([{"role":"user","content":"Task: Fix the broken widget computation"}])
+    assert budget.identify([{"role":"user","content":[{"type":"text","text":"Fix the broken widget computation"}]}])==key
     budget.record(key,7);assert budget.remaining(key)==3
     budget.record(key,3);assert budget.remaining(key)==0
     with pytest.raises(ValueError,match="exceed"): budget.record(key,1)
@@ -249,3 +250,90 @@ def test_grader_controls_require_correct_outcomes_and_complete_execution():
     assert validate_grader_report(blank,{"one"},"blank")["passed"]
     with pytest.raises(ValueError,match="Gold reference"): validate_grader_report(blank,{"one"},"gold")
     with pytest.raises(ValueError,match="errors"): validate_grader_report({**gold,"error_instances":1},{"one"},"gold")
+
+
+def test_emulated_actions_remain_text_without_native_tools():
+    from swe_study.serving import format_model_output, normalize_stops, trim_stop
+    text = "Thinking <function=execute_bash><parameter=command>echo ok</parameter></function>"
+    assert format_model_output(text) == (text, [])
+    content, calls = format_model_output(text, [{"type": "function"}])
+    assert content == "Thinking" and calls[0]["function"]["name"] == "execute_bash"
+    assert normalize_stops("</function") == ["</function"]
+    assert trim_stop(text + "ignored", ["</function"]) == (text.split("</function")[0], True)
+    assert trim_stop("done", ["stop"]) == ("done", False)
+    with pytest.raises(ValueError): normalize_stops([""])
+
+
+def test_parquet_schema_null_placeholders_are_removed_without_losing_null_defaults():
+    from swe_study.data import clean_tool_schema
+    schema = {"properties": {"command": {"type": "string", "enum": None, "description": None, "default": None}}, "enum": ["x", None]}
+    assert clean_tool_schema(schema) == {"properties": {"command": {"type": "string", "default": None}}, "enum": ["x", None]}
+
+
+def test_target_only_logits_match_full_causal_loss_and_gradients():
+    import copy,torch
+    from transformers import Qwen2Config,Qwen2ForCausalLM
+    from swe_study.training import assistant_target_inputs
+    torch.manual_seed(6158)
+    cfg=Qwen2Config(vocab_size=61,hidden_size=16,intermediate_size=32,num_hidden_layers=1,num_attention_heads=2,num_key_value_heads=1,attention_dropout=0.0,use_cache=False)
+    cfg._attn_implementation="eager"
+    full=Qwen2ForCausalLM(cfg).eval();selected=copy.deepcopy(full)
+    inputs={"input_ids":torch.tensor([[3,4,5,6,7,8]]),"attention_mask":torch.ones(1,6,dtype=torch.long),"labels":torch.tensor([[-100,-100,5,6,-100,8]])}
+    reference=full(**inputs).loss
+    optimized=selected(**assistant_target_inputs(inputs)).loss
+    torch.testing.assert_close(reference,optimized,atol=1e-6,rtol=1e-6)
+    reference.backward();optimized.backward()
+    for (_,left),(_,right) in zip(full.named_parameters(),selected.named_parameters()):
+        assert (left.grad is None)==(right.grad is None)
+        if left.grad is not None: torch.testing.assert_close(left.grad,right.grad,atol=1e-6,rtol=1e-5)
+
+
+def test_logging_survives_a_closed_audit_stream():
+    import io
+    from swe_study.audit import Tee
+    old=io.StringIO();old.close();live=io.StringIO()
+    tee=Tee(old,live);tee.write("late external logger");tee.flush()
+    assert live.getvalue()=="late external logger"
+
+
+def test_runtime_port_mapping_supports_the_forks_api_style_bindings():
+    from swe_study.runtime import loopback_ports
+    assert loopback_ports({"3000/tcp":[{"HostPort":"33564"}]}) == {"3000/tcp":[{"HostPort":"33564","HostIp":"127.0.0.1"}]}
+    assert loopback_ports({"3000/tcp":33564}) == {"3000/tcp":("127.0.0.1",33564)}
+
+
+@pytest.mark.skipif(__import__('os').name=='nt',reason='Linux nested-session cancellation')
+def test_command_timeout_terminates_a_descendant_in_a_new_session(tmp_path):
+    import sys
+    pidfile=tmp_path/'nested.pid'
+    code="import subprocess,sys,time; from pathlib import Path; p=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)'],start_new_session=True); Path(sys.argv[1]).write_text(str(p.pid)); time.sleep(60)"
+    with Run('unit_nested_cancel') as run:
+        with pytest.raises(TimeoutError): run.command([sys.executable,'-c',code,str(pidfile)],timeout=2)
+    pid=int(pidfile.read_text());status=__import__('pathlib').Path('/proc',str(pid),'stat')
+    assert not status.exists() or status.read_text().rsplit(')',1)[1].split()[0]=='Z'
+
+
+def test_smoke_keeps_the_frozen_five_task_denominator_separate():
+    from swe_study.evaluation import development_task_ids,validate_grader_report
+    before=(ROOT/'manifests/dev_tasks.json').read_bytes()
+    full=development_task_ids();smoke=development_task_ids(smoke=True)
+    assert len(full)==5 and smoke==full[:1]
+    assert (ROOT/'manifests/dev_tasks.json').read_bytes()==before
+    report={'total_instances':1,'submitted_ids':smoke,'resolved_ids':[],'error_instances':0,'incomplete_ids':[]}
+    assert validate_grader_report(report,set(smoke))['passed']
+    with pytest.raises(ValueError,match='denominator'):validate_grader_report(report,set(full))
+
+
+def test_api_port_handoff_allows_time_wait_but_preserves_a_live_listener():
+    import socket
+    from swe_study.common import assert_local_port_available
+    with socket.socket() as listener:
+        listener.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+        listener.bind(('127.0.0.1',0));listener.listen(1)
+        port=listener.getsockname()[1]
+        with pytest.raises(OSError):assert_local_port_available(port)
+        with socket.create_connection(('127.0.0.1',port),timeout=5) as client:
+            connection,_=listener.accept()
+            connection.close()
+            assert client.recv(1)==b''
+    assert_local_port_available(port)

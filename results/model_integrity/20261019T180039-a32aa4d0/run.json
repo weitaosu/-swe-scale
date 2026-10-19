@@ -1,0 +1,20 @@
+{
+  "run_id": "20261019T180039-a32aa4d0",
+  "stage": "model_integrity",
+  "started_at": "2026-10-19T18:00:39.576664+00:00",
+  "status": "passed",
+  "config": {
+    "source": "user-downloaded local snapshots; pinned remote metadata"
+  },
+  "config_sha256": "e4b64e1957c77b4f40a6edf5c1d2a81ac2443dd731f0417640a86ddfcee09a7e",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "results/setup/resume-2026-10-19T17-52-39-960Z/verify_local_models.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "a7e9dd00196aa3d4e8f8c9ee42050c7a3ec7d6d2adcc73afed502e0613577121",
+  "ended_at": "2026-10-19T18:02:24.305635+00:00",
+  "elapsed_seconds": 104.29222475599977
+}

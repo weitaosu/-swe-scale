@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+    "-m",
+    "pip",
+    "check"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_agent/20261019T180411-419f2fe7/command-005.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap_agent/20261019T180411-419f2fe7/command-005.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 13.750321900000017
+}

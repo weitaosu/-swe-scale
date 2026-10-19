@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/study.py",
+    "train",
+    "--config",
+    "configs/qlora_pilot.yaml"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/continue_setup/20261019T212428-a487fadc/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/continue_setup/20261019T212428-a487fadc/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 411.2627272139998
+}

@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/study.py",
+    "validate-checkpoint",
+    "--adapter",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/checkpoints/pilot/qwen-1.5b"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/resume_validation/20261019T213256-197348df/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 157.0473074770007
+}

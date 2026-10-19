@@ -1,0 +1,61 @@
+{
+  "run_id": "20261019T220652-45a8030e",
+  "stage": "runtime_build",
+  "started_at": "2026-10-19T22:06:52.425316+00:00",
+  "status": "interrupted",
+  "config": {
+    "tags": [
+      "cs6158/runtime:oh_v0.13.1_b3nt4f0kcq9qfkut_y766p9z6jyxsud5c",
+      "cs6158/runtime:oh_v0.13.1_b3nt4f0kcq9qfkut",
+      "cs6158/runtime:oh_v0.13.1_swebench_s_sweb.eval.x86_64.pydicom_1776_pydicom-1048_t_latest"
+    ],
+    "platform": "linux/amd64",
+    "build_context": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/tmpkxzqjqj6"
+  },
+  "config_sha256": "c8e40ce4bd92d2e49f49c1cfdbb73f58591cf5a000045c3cf0b18b9971698682",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/agent/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands/evaluation/swe_bench/run_infer.py",
+    "--config-file",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T220137-35d7aef9/config.toml",
+    "--agent-cls",
+    "CodeActAgent",
+    "--llm-config",
+    "llm.cs6158",
+    "--max-iterations",
+    "30",
+    "--eval-num-workers",
+    "1",
+    "--eval-n-limit",
+    "5",
+    "--eval-note",
+    "cs6158-local",
+    "--eval-output-dir",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/rollout/20261019T220137-35d7aef9/openhands",
+    "--dataset",
+    "cs6158-local-development",
+    "--split",
+    "dev"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 41946,
+  "parent_pid": 41903,
+  "condition_id": "20261019T215948-1f760da2-0",
+  "source_snapshot_sha256": "670d94cff09a542a118491ff387b159e55b00d0e2b16b06f253e804072b55c18",
+  "reconciliation": {
+    "observed_at": "2026-10-19T22:29:01.409938+00:00",
+    "recorded_pid": 41946,
+    "pid_absent": true,
+    "parent_cancellation": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/development_condition/20261019T215949-17acd5cb/run.json",
+    "gate": "results/development_environment_gate/20261019T220844-6089e679",
+    "original_metadata": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/run_state_reconciliation/20261019T222901-94075d02/runtime_build-20261019T220652-45a8030e.original.json",
+    "original_sha256": "31a7eaff39dd553ee1079d21fce4e035abb8916802a4fbc8163fa5965cfaf840",
+    "exact_exit_time_and_code_unknown": true
+  },
+  "error": {
+    "type": "ExternalCancellation",
+    "message": "Stopped with the development environment gate; process is absent. Final exit metadata was not flushed."
+  }
+}
