@@ -1,0 +1,32 @@
+[
+  {
+    "type": "directory",
+    "oid": "2201c03dd68fd7c8a9948beb07cfd7e2a1d8565d",
+    "size": 0,
+    "path": "data"
+  },
+  {
+    "type": "file",
+    "oid": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+    "size": 2461,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "2cac4584240055f11125afe551a0709556a749d2",
+    "size": 1141,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "9b59ebeddfb739fd9e2b28dd38806d6b4acba621",
+    "size": 43644473,
+    "lfs": {
+      "oid": "60569cea74bb281f7a5579467436a2bc1932c6e0c5f2f7fa0d084392abd9ad97",
+      "size": 43644473,
+      "pointerSize": 133
+    },
+    "xetHash": "289134efb7b1bc8e953ee947b1e49a79b1ddbd037acdf7a122026253ed401b3b",
+    "path": "data/train-00000-of-00001.parquet"
+  }
+]

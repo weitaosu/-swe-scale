@@ -1,0 +1,13 @@
+{
+  "args": [
+    "git",
+    "checkout",
+    "--detach",
+    "3d07b464b7b311a0cbfb5ed5b2d8a3b96f84a33d"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/swe-bench-tasks",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-012.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-012.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 110.26473139799987
+}

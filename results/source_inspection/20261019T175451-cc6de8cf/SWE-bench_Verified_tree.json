@@ -1,0 +1,38 @@
+[
+  {
+    "type": "directory",
+    "oid": "91ecdf29cb1f0c33d39df71ea6db7697ed39d3ab",
+    "size": 0,
+    "path": "data"
+  },
+  {
+    "type": "file",
+    "oid": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+    "size": 2461,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "daf334bb09b79f4d41a853a228c6c451fb6a8bdd",
+    "size": 3485,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "9f0be9ec57ab6c52b6ad55333579386093c346d7",
+    "size": 6304616,
+    "lfs": {
+      "oid": "030cfd7f2a704c4c0226e7f104c725a3b41230b1d3517f9c915ad7ea5be3fa25",
+      "size": 6304616,
+      "pointerSize": 132
+    },
+    "xetHash": "18814fa5b07712b7ab7317268d1cdc4a0b215986ffeb5978a79f04dd4813b629",
+    "path": "data/test-00000-of-00001.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "decd979a97febfab92dd66729061a031f9fa0c13",
+    "size": 523,
+    "path": "eval.yaml"
+  }
+]

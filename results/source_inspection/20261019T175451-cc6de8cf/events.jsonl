@@ -4,3 +4,7 @@
 {"time": "2026-10-19T17:54:51.897315+00:00", "event": "local_snapshot_revision", "repo": "Qwen/Qwen2.5-Coder-7B-Instruct", "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242"}
 {"time": "2026-10-19T17:54:52.180724+00:00", "event": "dataset_tree", "repo": "SWE-Gym/OpenHands-SFT-Trajectories", "files": ["data/train.success.oss-00000-of-00001.parquet"]}
 {"time": "2026-10-19T17:54:53.477389+00:00", "event": "dataset_tree", "repo": "SWE-Gym/OpenHands-Sampled-Trajectories", "files": ["data/train.raw-00000-of-00003.parquet", "data/train.raw-00001-of-00003.parquet", "data/train.raw-00002-of-00003.parquet"]}
+{"time": "2026-10-19T17:54:55.704483+00:00", "event": "dataset_tree", "repo": "SWE-Gym/SWE-Gym", "files": ["data/train-00000-of-00001.parquet"]}
+{"time": "2026-10-19T17:54:56.084184+00:00", "event": "dataset_tree", "repo": "SWE-bench/SWE-bench_Verified", "files": ["data/test-00000-of-00001.parquet"]}
+{"time": "2026-10-19T17:54:56.381326+00:00", "event": "dataset_tree", "repo": "SWE-bench/SWE-bench", "files": ["data/dev-00000-of-00001.parquet", "data/test-00000-of-00001.parquet"]}
+{"time": "2026-10-19T17:54:56.384079+00:00", "event": "run_finished", "status": "passed", "error": null}
