@@ -1,0 +1,15 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "-m",
+    "venv",
+    "--copies",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train",
+    "--without-pip"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap/20261019T175240-bc869e1e/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/bootstrap/20261019T175240-bc869e1e/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.5109769530001813
+}

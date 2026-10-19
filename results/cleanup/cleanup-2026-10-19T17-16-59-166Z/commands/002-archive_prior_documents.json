@@ -1,0 +1,15 @@
+{
+  "id": "002-archive_prior_documents",
+  "exe": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-B",
+    "-X",
+    "utf8",
+    "C:/Users/weita/Desktop/SE in AI/proj/results/cleanup/cleanup-2026-10-19T17-16-59-166Z/archive_prior_documents.py"
+  ],
+  "started_at": "2026-10-19T17:18:26.634Z",
+  "ended_at": "2026-10-19T17:18:26.783Z",
+  "exit_code": 0,
+  "stdout": "{\r\n  \"archive\": \"C:\\\\Users\\\\weita\\\\Desktop\\\\SE in AI\\\\proj\\\\results\\\\cleanup\\\\cleanup-2026-10-19T17-16-59-166Z\\\\prior_documents.zip\",\r\n  \"sha256\": \"6925315256c60081936a118c98d2e2afafb10c3429198f2015d6b564dd0c9ed9\",\r\n  \"files\": [\r\n    \"docs/first_two_milestones_plan.md\",\r\n    \"configs/models.yaml\",\r\n    \"configs/evaluation.yaml\",\r\n    \"README.md\",\r\n    \"docs/implementation_status.md\",\r\n    \"docs/rtx_4090_implementation_plan.md\",\r\n    \"docs/rtx_4090_constraints.md\"\r\n  ]\r\n}\r\n",
+  "stderr": ""
+}

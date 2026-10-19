@@ -1,0 +1,19 @@
+{
+  "id": "023-validation_environment_manifest",
+  "label": "validation_environment_manifest",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/bootstrap.py",
+    "--name",
+    "validation",
+    "--system-site-packages"
+  ],
+  "started_at": "2026-10-19T16:57:42.807Z",
+  "ended_at": "2026-10-19T16:57:46.581Z",
+  "elapsed_seconds": 3.774,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\bootstrap\\20261019T165742-d186c824\r\n",
+  "stderr": ""
+}

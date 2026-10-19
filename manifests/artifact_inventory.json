@@ -1,0 +1,4503 @@
+{
+  "captured_at": "2026-10-19T17:23:50.872Z",
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "file_count": 884,
+  "logical_file_bytes": 10249414,
+  "by_top_level": {
+    ".cache": {
+      "files": 11,
+      "bytes": 339589
+    },
+    ".env.example": {
+      "files": 1,
+      "bytes": 205
+    },
+    ".envs": {
+      "files": 449,
+      "bytes": 6543292
+    },
+    ".gitignore": {
+      "files": 1,
+      "bytes": 229
+    },
+    "checkpoints": {
+      "files": 32,
+      "bytes": 379246
+    },
+    "configs": {
+      "files": 5,
+      "bytes": 2390
+    },
+    "CS6158 Project Proposal.pdf": {
+      "files": 1,
+      "bytes": 84930
+    },
+    "docs": {
+      "files": 7,
+      "bytes": 49417
+    },
+    "manifests": {
+      "files": 9,
+      "bytes": 19498
+    },
+    "pyproject.toml": {
+      "files": 1,
+      "bytes": 676
+    },
+    "README.md": {
+      "files": 1,
+      "bytes": 8435
+    },
+    "results": {
+      "files": 341,
+      "bytes": 2715069
+    },
+    "scripts": {
+      "files": 10,
+      "bytes": 14665
+    },
+    "src": {
+      "files": 14,
+      "bytes": 76664
+    },
+    "tests": {
+      "files": 1,
+      "bytes": 15109
+    }
+  },
+  "excluded": [
+    "manifests/artifact_inventory.json",
+    ".git/",
+    "directory symlinks"
+  ],
+  "note": "Finalized after cleanup audit commands closed; index itself excluded to avoid self-referential hashes. Logical file sizes differ from allocated disk space and whole-volume growth.",
+  "volume_storage": {
+    "free_bytes": 107976818688,
+    "conservative_volume_growth_bytes": 0,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": null,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "files": [
+    {
+      "path": ".cache/tmp/fixture_resume.yaml",
+      "bytes": 486,
+      "sha256": "6aa0911b3cec856f7bb7eced3ce09cd8d6fbf10bc63ed5dac918088dcb73638a"
+    },
+    {
+      "path": ".cache/tmp/fixture_server_tasks.jsonl",
+      "bytes": 148,
+      "sha256": "509525a7d99609d81d2d24403b2e555a0271011715ff0ece90cf34aa1730fedd"
+    },
+    {
+      "path": ".cache/tmp/fixture_train.jsonl",
+      "bytes": 2064,
+      "sha256": "d8f4f4a067675053c6f7f274001f3ba5a6996eac34afa523b6ff8f127c0356c0"
+    },
+    {
+      "path": ".cache/tmp/fixture_training.yaml",
+      "bytes": 486,
+      "sha256": "5c3a142742ae922d4ff9c56b22ffa1db1c5183bde8789882bdf05595a2f39deb"
+    },
+    {
+      "path": ".cache/tmp/fixture_validation.jsonl",
+      "bytes": 516,
+      "sha256": "664eb9aa91ace7f3acb470e2dbb341432163de229789826f7d5bd6d76f4f97e0"
+    },
+    {
+      "path": ".cache/tmp/tiny-qwen-fixture/chat_template.jinja",
+      "bytes": 196,
+      "sha256": "b63e61af0e402bc57fd28c2294e98465773e3b18607a9fd6d88d09c04aa40795"
+    },
+    {
+      "path": ".cache/tmp/tiny-qwen-fixture/config.json",
+      "bytes": 809,
+      "sha256": "8df5d10c2cced47d9eb7a2eae305782f2be2abdb342efa4ca74677c94d4258bc"
+    },
+    {
+      "path": ".cache/tmp/tiny-qwen-fixture/generation_config.json",
+      "bytes": 225,
+      "sha256": "4d3e94c82d9694606903716bdef988b73d8271b0af69bc15954ea1cf3df65d2a"
+    },
+    {
+      "path": ".cache/tmp/tiny-qwen-fixture/model.safetensors",
+      "bytes": 332712,
+      "sha256": "255a702bc852bd1b1895da67346a1acee09e23d9f810e85e0b4c17c6531b7ec3"
+    },
+    {
+      "path": ".cache/tmp/tiny-qwen-fixture/tokenizer_config.json",
+      "bytes": 267,
+      "sha256": "dbc5bfa4d6ddc6f81986f00f0758d75b0bf08d89d09dbb92e4d8b68f5949e36a"
+    },
+    {
+      "path": ".cache/tmp/tiny-qwen-fixture/tokenizer.json",
+      "bytes": 1680,
+      "sha256": "852b58d44f6c2aed2f6abb132fefae439fe79019d0419448dbb4305522d67fe5"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 205,
+      "sha256": "3f68fc2e3e0916b55cc45ddc979a815a5963497c88362d54d438c514b097197f"
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/AUTHORS.txt",
+      "bytes": 10868,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/entry_points.txt",
+      "bytes": 87,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/INSTALLER",
+      "bytes": 4,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/LICENSE.txt",
+      "bytes": 1093,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/METADATA",
+      "bytes": 3624,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/RECORD",
+      "bytes": 65603,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/REQUESTED",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/top_level.txt",
+      "bytes": 4,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip-24.2.dist-info/WHEEL",
+      "bytes": 91,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/__init__.py",
+      "bytes": 355,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/__main__.py",
+      "bytes": 854,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/__pip-runner__.py",
+      "bytes": 1450,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/__init__.py",
+      "bytes": 513,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/build_env.py",
+      "bytes": 10420,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cache.py",
+      "bytes": 10369,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/__init__.py",
+      "bytes": 132,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/autocompletion.py",
+      "bytes": 6865,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/base_command.py",
+      "bytes": 8289,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/cmdoptions.py",
+      "bytes": 30110,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/command_context.py",
+      "bytes": 774,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/index_command.py",
+      "bytes": 5633,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/main_parser.py",
+      "bytes": 4338,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/main.py",
+      "bytes": 2817,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/parser.py",
+      "bytes": 10811,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/progress_bars.py",
+      "bytes": 2713,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/req_command.py",
+      "bytes": 12250,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/spinners.py",
+      "bytes": 5118,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/cli/status_codes.py",
+      "bytes": 116,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/__init__.py",
+      "bytes": 3882,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/cache.py",
+      "bytes": 7944,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/check.py",
+      "bytes": 2268,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/completion.py",
+      "bytes": 4287,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/configuration.py",
+      "bytes": 9766,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/debug.py",
+      "bytes": 6797,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/download.py",
+      "bytes": 5273,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/freeze.py",
+      "bytes": 3203,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/hash.py",
+      "bytes": 1703,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/help.py",
+      "bytes": 1132,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/index.py",
+      "bytes": 4731,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/inspect.py",
+      "bytes": 3189,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/install.py",
+      "bytes": 29428,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/list.py",
+      "bytes": 12771,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/search.py",
+      "bytes": 5628,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/show.py",
+      "bytes": 7507,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/uninstall.py",
+      "bytes": 3892,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/commands/wheel.py",
+      "bytes": 6414,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/configuration.py",
+      "bytes": 14006,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/distributions/__init__.py",
+      "bytes": 858,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/distributions/base.py",
+      "bytes": 1783,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/distributions/installed.py",
+      "bytes": 842,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/distributions/sdist.py",
+      "bytes": 6751,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/distributions/wheel.py",
+      "bytes": 1317,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/exceptions.py",
+      "bytes": 25371,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/index/__init__.py",
+      "bytes": 30,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/index/collector.py",
+      "bytes": 16265,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/index/package_finder.py",
+      "bytes": 37666,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/index/sources.py",
+      "bytes": 8688,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/locations/__init__.py",
+      "bytes": 14925,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/locations/_distutils.py",
+      "bytes": 6009,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/locations/_sysconfig.py",
+      "bytes": 7724,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/locations/base.py",
+      "bytes": 2556,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/main.py",
+      "bytes": 340,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/__init__.py",
+      "bytes": 4339,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/_json.py",
+      "bytes": 2644,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/base.py",
+      "bytes": 25298,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/importlib/__init__.py",
+      "bytes": 135,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/importlib/_compat.py",
+      "bytes": 2796,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/importlib/_dists.py",
+      "bytes": 8017,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/importlib/_envs.py",
+      "bytes": 7431,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/metadata/pkg_resources.py",
+      "bytes": 10542,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/__init__.py",
+      "bytes": 63,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/candidate.py",
+      "bytes": 753,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/direct_url.py",
+      "bytes": 6578,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/format_control.py",
+      "bytes": 2486,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/index.py",
+      "bytes": 1030,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/installation_report.py",
+      "bytes": 2818,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/link.py",
+      "bytes": 21034,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/scheme.py",
+      "bytes": 575,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/search_scope.py",
+      "bytes": 4531,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/selection_prefs.py",
+      "bytes": 2015,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/target_python.py",
+      "bytes": 4271,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/models/wheel.py",
+      "bytes": 3601,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/__init__.py",
+      "bytes": 50,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/auth.py",
+      "bytes": 20809,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/cache.py",
+      "bytes": 3935,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/download.py",
+      "bytes": 6048,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/lazy_wheel.py",
+      "bytes": 7638,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/session.py",
+      "bytes": 18741,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/utils.py",
+      "bytes": 4088,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/network/xmlrpc.py",
+      "bytes": 1838,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/build_tracker.py",
+      "bytes": 4774,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/metadata_editable.py",
+      "bytes": 1474,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/metadata_legacy.py",
+      "bytes": 2190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/metadata.py",
+      "bytes": 1422,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/wheel_editable.py",
+      "bytes": 1417,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/wheel_legacy.py",
+      "bytes": 3045,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/build/wheel.py",
+      "bytes": 1075,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/check.py",
+      "bytes": 5912,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/freeze.py",
+      "bytes": 9864,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/install/__init__.py",
+      "bytes": 51,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/install/editable_legacy.py",
+      "bytes": 1283,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/install/wheel.py",
+      "bytes": 27615,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/operations/prepare.py",
+      "bytes": 28118,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/pyproject.py",
+      "bytes": 7287,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/req/__init__.py",
+      "bytes": 2653,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/req/constructors.py",
+      "bytes": 18424,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/req/req_file.py",
+      "bytes": 17687,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/req/req_install.py",
+      "bytes": 35788,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/req/req_set.py",
+      "bytes": 2858,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/req/req_uninstall.py",
+      "bytes": 23853,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/base.py",
+      "bytes": 583,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/legacy/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/legacy/resolver.py",
+      "bytes": 24068,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/base.py",
+      "bytes": 5023,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+      "bytes": 19823,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+      "bytes": 32459,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py",
+      "bytes": 6383,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/provider.py",
+      "bytes": 9935,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/reporter.py",
+      "bytes": 3168,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/requirements.py",
+      "bytes": 8065,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/resolver.py",
+      "bytes": 12592,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/self_outdated_check.py",
+      "bytes": 8145,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/_jaraco_text.py",
+      "bytes": 3350,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/_log.py",
+      "bytes": 1015,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/appdirs.py",
+      "bytes": 1665,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/compat.py",
+      "bytes": 2399,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/compatibility_tags.py",
+      "bytes": 5377,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/datetime.py",
+      "bytes": 242,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/deprecation.py",
+      "bytes": 3707,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/direct_url_helpers.py",
+      "bytes": 3196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/egg_link.py",
+      "bytes": 2463,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/encoding.py",
+      "bytes": 1169,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/entrypoints.py",
+      "bytes": 3064,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/filesystem.py",
+      "bytes": 4950,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/filetypes.py",
+      "bytes": 716,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/glibc.py",
+      "bytes": 3734,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/hashes.py",
+      "bytes": 4972,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/logging.py",
+      "bytes": 11606,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/misc.py",
+      "bytes": 23745,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/packaging.py",
+      "bytes": 2109,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/retry.py",
+      "bytes": 1392,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/setuptools_build.py",
+      "bytes": 4435,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/subprocess.py",
+      "bytes": 8988,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/temp_dir.py",
+      "bytes": 9310,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/unpacking.py",
+      "bytes": 11951,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/urls.py",
+      "bytes": 1599,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/virtualenv.py",
+      "bytes": 3456,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/utils/wheel.py",
+      "bytes": 4494,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/vcs/__init__.py",
+      "bytes": 596,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/vcs/bazaar.py",
+      "bytes": 3528,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/vcs/git.py",
+      "bytes": 18177,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/vcs/mercurial.py",
+      "bytes": 5249,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/vcs/subversion.py",
+      "bytes": 11735,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/vcs/versioncontrol.py",
+      "bytes": 22440,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_internal/wheel_builder.py",
+      "bytes": 11799,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/__init__.py",
+      "bytes": 4873,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/__init__.py",
+      "bytes": 676,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/_cmd.py",
+      "bytes": 1737,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/adapter.py",
+      "bytes": 6355,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/cache.py",
+      "bytes": 1952,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/caches/__init__.py",
+      "bytes": 303,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py",
+      "bytes": 5406,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.py",
+      "bytes": 1386,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/controller.py",
+      "bytes": 18575,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/filewrapper.py",
+      "bytes": 4292,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/heuristics.py",
+      "bytes": 4834,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/serialize.py",
+      "bytes": 5163,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/wrapper.py",
+      "bytes": 1417,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/certifi/__init__.py",
+      "bytes": 94,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/certifi/__main__.py",
+      "bytes": 255,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/certifi/cacert.pem",
+      "bytes": 291528,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/certifi/core.py",
+      "bytes": 4486,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/certifi/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/__init__.py",
+      "bytes": 625,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/compat.py",
+      "bytes": 41487,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/database.py",
+      "bytes": 51965,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/index.py",
+      "bytes": 20797,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/locators.py",
+      "bytes": 51767,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/manifest.py",
+      "bytes": 14168,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/markers.py",
+      "bytes": 5268,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/metadata.py",
+      "bytes": 39693,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/resources.py",
+      "bytes": 10820,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/scripts.py",
+      "bytes": 18780,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/t32.exe",
+      "bytes": 97792,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/t64-arm.exe",
+      "bytes": 182784,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/t64.exe",
+      "bytes": 108032,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/util.py",
+      "bytes": 67530,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/version.py",
+      "bytes": 23747,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/w32.exe",
+      "bytes": 91648,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/w64-arm.exe",
+      "bytes": 168448,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/w64.exe",
+      "bytes": 101888,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distlib/wheel.py",
+      "bytes": 43958,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distro/__init__.py",
+      "bytes": 981,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distro/__main__.py",
+      "bytes": 64,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distro/distro.py",
+      "bytes": 49430,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/distro/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/__init__.py",
+      "bytes": 849,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/codec.py",
+      "bytes": 3426,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/compat.py",
+      "bytes": 321,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/core.py",
+      "bytes": 12663,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/idnadata.py",
+      "bytes": 78320,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/intranges.py",
+      "bytes": 1881,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/package_data.py",
+      "bytes": 21,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/idna/uts46data.py",
+      "bytes": 206503,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/msgpack/__init__.py",
+      "bytes": 1077,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/msgpack/exceptions.py",
+      "bytes": 1081,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/msgpack/ext.py",
+      "bytes": 5629,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/msgpack/fallback.py",
+      "bytes": 33175,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/__init__.py",
+      "bytes": 496,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/_elffile.py",
+      "bytes": 3282,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/_manylinux.py",
+      "bytes": 9586,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/_musllinux.py",
+      "bytes": 2694,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/_parser.py",
+      "bytes": 10236,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/_structures.py",
+      "bytes": 1431,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/_tokenizer.py",
+      "bytes": 5273,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/markers.py",
+      "bytes": 10671,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/metadata.py",
+      "bytes": 32349,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/requirements.py",
+      "bytes": 2947,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/specifiers.py",
+      "bytes": 39738,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/tags.py",
+      "bytes": 18883,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/utils.py",
+      "bytes": 5287,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/packaging/version.py",
+      "bytes": 16210,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py",
+      "bytes": 124463,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/__init__.py",
+      "bytes": 22285,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/__main__.py",
+      "bytes": 1505,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/android.py",
+      "bytes": 9016,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/api.py",
+      "bytes": 8996,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/macos.py",
+      "bytes": 5580,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/unix.py",
+      "bytes": 10643,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/version.py",
+      "bytes": 411,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/windows.py",
+      "bytes": 10125,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/__init__.py",
+      "bytes": 2983,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/__main__.py",
+      "bytes": 353,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/cmdline.py",
+      "bytes": 23656,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/console.py",
+      "bytes": 1718,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/filter.py",
+      "bytes": 1910,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/filters/__init__.py",
+      "bytes": 40392,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatter.py",
+      "bytes": 4390,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/__init__.py",
+      "bytes": 5385,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/_mapping.py",
+      "bytes": 4176,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/bbcode.py",
+      "bytes": 3320,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/groff.py",
+      "bytes": 5106,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/html.py",
+      "bytes": 35669,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/img.py",
+      "bytes": 23287,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/irc.py",
+      "bytes": 4981,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/latex.py",
+      "bytes": 19306,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/other.py",
+      "bytes": 5034,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/pangomarkup.py",
+      "bytes": 2218,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/rtf.py",
+      "bytes": 11957,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/svg.py",
+      "bytes": 7174,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/terminal.py",
+      "bytes": 4674,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/terminal256.py",
+      "bytes": 11753,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/lexer.py",
+      "bytes": 35349,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/lexers/__init__.py",
+      "bytes": 12115,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/lexers/_mapping.py",
+      "bytes": 76097,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/lexers/python.py",
+      "bytes": 53687,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/modeline.py",
+      "bytes": 1005,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/plugin.py",
+      "bytes": 1891,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/regexopt.py",
+      "bytes": 3072,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/scanner.py",
+      "bytes": 3092,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/sphinxext.py",
+      "bytes": 7981,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/style.py",
+      "bytes": 6420,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/styles/__init__.py",
+      "bytes": 2042,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/styles/_mapping.py",
+      "bytes": 3312,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/token.py",
+      "bytes": 6226,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/unistring.py",
+      "bytes": 63208,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pygments/util.py",
+      "bytes": 10031,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/__init__.py",
+      "bytes": 491,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/_compat.py",
+      "bytes": 138,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py",
+      "bytes": 11920,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/__init__.py",
+      "bytes": 546,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py",
+      "bytes": 10927,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/__init__.py",
+      "bytes": 5057,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/__version__.py",
+      "bytes": 435,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/_internal_utils.py",
+      "bytes": 1495,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/adapters.py",
+      "bytes": 27607,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/api.py",
+      "bytes": 6449,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/auth.py",
+      "bytes": 10186,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/certs.py",
+      "bytes": 575,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/compat.py",
+      "bytes": 1485,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/cookies.py",
+      "bytes": 18590,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/exceptions.py",
+      "bytes": 4272,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/help.py",
+      "bytes": 3813,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/hooks.py",
+      "bytes": 733,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/models.py",
+      "bytes": 35483,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/packages.py",
+      "bytes": 1057,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/sessions.py",
+      "bytes": 30495,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/status_codes.py",
+      "bytes": 4322,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/structures.py",
+      "bytes": 2912,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/requests/utils.py",
+      "bytes": 33631,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/__init__.py",
+      "bytes": 537,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/compat/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/compat/collections_abc.py",
+      "bytes": 156,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/providers.py",
+      "bytes": 5871,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/reporters.py",
+      "bytes": 1601,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py",
+      "bytes": 20511,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/structs.py",
+      "bytes": 4963,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/__init__.py",
+      "bytes": 6090,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/__main__.py",
+      "bytes": 8477,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_cell_widths.py",
+      "bytes": 10209,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_emoji_codes.py",
+      "bytes": 140235,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_emoji_replace.py",
+      "bytes": 1064,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_export_format.py",
+      "bytes": 2128,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_extension.py",
+      "bytes": 265,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_fileno.py",
+      "bytes": 799,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_inspect.py",
+      "bytes": 9695,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_log_render.py",
+      "bytes": 3225,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_loop.py",
+      "bytes": 1236,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_null_file.py",
+      "bytes": 1387,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_palettes.py",
+      "bytes": 7063,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_pick.py",
+      "bytes": 423,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_ratio.py",
+      "bytes": 5471,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_spinners.py",
+      "bytes": 19919,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_stack.py",
+      "bytes": 351,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_timer.py",
+      "bytes": 417,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_win32_console.py",
+      "bytes": 22820,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_windows_renderer.py",
+      "bytes": 2783,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_windows.py",
+      "bytes": 1925,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/_wrap.py",
+      "bytes": 3404,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/abc.py",
+      "bytes": 890,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/align.py",
+      "bytes": 10368,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/ansi.py",
+      "bytes": 6906,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/bar.py",
+      "bytes": 3263,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/box.py",
+      "bytes": 10831,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/cells.py",
+      "bytes": 4780,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/color_triplet.py",
+      "bytes": 1054,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/color.py",
+      "bytes": 18223,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/columns.py",
+      "bytes": 7131,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/console.py",
+      "bytes": 99173,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/constrain.py",
+      "bytes": 1288,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/containers.py",
+      "bytes": 5502,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/control.py",
+      "bytes": 6630,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/default_styles.py",
+      "bytes": 8082,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/diagnose.py",
+      "bytes": 972,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/emoji.py",
+      "bytes": 2501,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/errors.py",
+      "bytes": 642,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/file_proxy.py",
+      "bytes": 1683,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/filesize.py",
+      "bytes": 2508,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/highlighter.py",
+      "bytes": 9585,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/json.py",
+      "bytes": 5031,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/jupyter.py",
+      "bytes": 3252,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/layout.py",
+      "bytes": 14004,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/live_render.py",
+      "bytes": 3666,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/live.py",
+      "bytes": 14271,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/logging.py",
+      "bytes": 11903,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/markup.py",
+      "bytes": 8451,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/measure.py",
+      "bytes": 5305,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/padding.py",
+      "bytes": 4970,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/pager.py",
+      "bytes": 828,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/palette.py",
+      "bytes": 3396,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/panel.py",
+      "bytes": 10705,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/pretty.py",
+      "bytes": 35848,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/progress_bar.py",
+      "bytes": 8164,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/progress.py",
+      "bytes": 59715,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/prompt.py",
+      "bytes": 11304,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/protocol.py",
+      "bytes": 1391,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/region.py",
+      "bytes": 166,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/repr.py",
+      "bytes": 4431,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/rule.py",
+      "bytes": 4602,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/scope.py",
+      "bytes": 2843,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/screen.py",
+      "bytes": 1591,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/segment.py",
+      "bytes": 24246,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/spinner.py",
+      "bytes": 4339,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/status.py",
+      "bytes": 4424,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/style.py",
+      "bytes": 27073,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/styled.py",
+      "bytes": 1258,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/syntax.py",
+      "bytes": 35475,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/table.py",
+      "bytes": 39680,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/terminal_theme.py",
+      "bytes": 3370,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/text.py",
+      "bytes": 47312,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/theme.py",
+      "bytes": 3777,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/themes.py",
+      "bytes": 102,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/traceback.py",
+      "bytes": 29601,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/rich/tree.py",
+      "bytes": 9167,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/tomli/__init__.py",
+      "bytes": 396,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/tomli/_parser.py",
+      "bytes": 22633,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/tomli/_re.py",
+      "bytes": 2943,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/tomli/_types.py",
+      "bytes": 254,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/tomli/py.typed",
+      "bytes": 26,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/__init__.py",
+      "bytes": 403,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/_api.py",
+      "bytes": 10461,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/_macos.py",
+      "bytes": 17608,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/_openssl.py",
+      "bytes": 2324,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/_ssl_constants.py",
+      "bytes": 1130,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/_windows.py",
+      "bytes": 17891,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/truststore/py.typed",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/typing_extensions.py",
+      "bytes": 134499,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/__init__.py",
+      "bytes": 3333,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/_collections.py",
+      "bytes": 11372,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/_version.py",
+      "bytes": 64,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/connection.py",
+      "bytes": 20300,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/connectionpool.py",
+      "bytes": 40285,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/_appengine_environ.py",
+      "bytes": 957,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py",
+      "bytes": 17632,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py",
+      "bytes": 13922,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/appengine.py",
+      "bytes": 11036,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/ntlmpool.py",
+      "bytes": 4528,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py",
+      "bytes": 17081,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/securetransport.py",
+      "bytes": 34446,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/socks.py",
+      "bytes": 7097,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/exceptions.py",
+      "bytes": 8217,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/fields.py",
+      "bytes": 8579,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/filepost.py",
+      "bytes": 2440,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/backports/__init__.py",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/backports/makefile.py",
+      "bytes": 1417,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/backports/weakref_finalize.py",
+      "bytes": 5343,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/six.py",
+      "bytes": 34665,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/poolmanager.py",
+      "bytes": 19990,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/request.py",
+      "bytes": 6691,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/response.py",
+      "bytes": 30641,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/__init__.py",
+      "bytes": 1155,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/connection.py",
+      "bytes": 4901,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/proxy.py",
+      "bytes": 1605,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/queue.py",
+      "bytes": 498,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/request.py",
+      "bytes": 3997,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/response.py",
+      "bytes": 3510,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/retry.py",
+      "bytes": 22013,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/ssl_.py",
+      "bytes": 17177,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/ssl_match_hostname.py",
+      "bytes": 5758,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/ssltransport.py",
+      "bytes": 6895,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/timeout.py",
+      "bytes": 10168,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/url.py",
+      "bytes": 14296,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/wait.py",
+      "bytes": 5403,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/_vendor/vendor.txt",
+      "bytes": 330,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Lib/site-packages/pip/py.typed",
+      "bytes": 286,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/pyvenv.cfg",
+      "bytes": 360,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/activate",
+      "bytes": 2110,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/activate.bat",
+      "bytes": 1034,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/Activate.ps1",
+      "bytes": 26199,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/deactivate.bat",
+      "bytes": 393,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/pip.exe",
+      "bytes": 108433,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/pip3.12.exe",
+      "bytes": 108433,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/pip3.exe",
+      "bytes": 108433,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/python.exe",
+      "bytes": 270104,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".envs/validation/Scripts/pythonw.exe",
+      "bytes": 258840,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 229,
+      "sha256": "87fd98753a8d0eabc483963a887905222c9176072eb9265469d76671f47478d0"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/adapter_config.json",
+      "bytes": 1146,
+      "sha256": "e85e37ea7373328b22b58c78dd437aa4261847c1d47d2c2f3dd33b61202dd6be"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/adapter_model.safetensors",
+      "bytes": 36256,
+      "sha256": "e9d8ab73f1be552f8be1ae1fe1b6674d99797cee958078684a39d420bece310a"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/chat_template.jinja",
+      "bytes": 196,
+      "sha256": "b63e61af0e402bc57fd28c2294e98465773e3b18607a9fd6d88d09c04aa40795"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/adapter_config.json",
+      "bytes": 1146,
+      "sha256": "e85e37ea7373328b22b58c78dd437aa4261847c1d47d2c2f3dd33b61202dd6be"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/adapter_model.safetensors",
+      "bytes": 36256,
+      "sha256": "611ba8061372ff103a43aff3a6e34848d8def07dcea445824c2def8ffbfddb3a"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/chat_template.jinja",
+      "bytes": 196,
+      "sha256": "b63e61af0e402bc57fd28c2294e98465773e3b18607a9fd6d88d09c04aa40795"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/optimizer.pt",
+      "bytes": 89883,
+      "sha256": "ee8824ea061b34757001ee9a20b4d8369612b59fb7a771d13471e41ccdd1fb1b"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/README.md",
+      "bytes": 5284,
+      "sha256": "7c5c809165f8332b7dc8a5eb47dfb91936f64a91bbbdf966e097e211eaf0fd77"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/rng_state.pth",
+      "bytes": 14709,
+      "sha256": "03697de89e8d33ee46604cbe1ebb1ba98878da3d858ec75a5729d78d3682b81e"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/scheduler.pt",
+      "bytes": 1465,
+      "sha256": "872e475d1a02b95ef8e39cc75ec1b9d5d8da53a9d5a0b34c91c9527c16189cc9"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/tokenizer_config.json",
+      "bytes": 288,
+      "sha256": "1962afb3223d1dd3f688bf2ecbbf6b9ff85acf6919390a8badbd85b9b5bd7791"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/tokenizer.json",
+      "bytes": 1680,
+      "sha256": "852b58d44f6c2aed2f6abb132fefae439fe79019d0419448dbb4305522d67fe5"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/trainer_state.json",
+      "bytes": 2772,
+      "sha256": "1d9b28b97b7ab2ebb2be2b9b4236a4c08c5d8c7dd5badf9d0a91d7e025f0dad0"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-5/training_args.bin",
+      "bytes": 5265,
+      "sha256": "753e30130b5b7af133cf3f38355c1d747ac3651940dcba57fe6b0099af46efd7"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/adapter_config.json",
+      "bytes": 1146,
+      "sha256": "e85e37ea7373328b22b58c78dd437aa4261847c1d47d2c2f3dd33b61202dd6be"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/adapter_model.safetensors",
+      "bytes": 36256,
+      "sha256": "e9d8ab73f1be552f8be1ae1fe1b6674d99797cee958078684a39d420bece310a"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/chat_template.jinja",
+      "bytes": 196,
+      "sha256": "b63e61af0e402bc57fd28c2294e98465773e3b18607a9fd6d88d09c04aa40795"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/optimizer.pt",
+      "bytes": 89883,
+      "sha256": "a1fa69642dcd82c3aef89f035d3c8e9e0bc2f73cdc86f72d90cf302579dda12e"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/README.md",
+      "bytes": 5284,
+      "sha256": "7c5c809165f8332b7dc8a5eb47dfb91936f64a91bbbdf966e097e211eaf0fd77"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/rng_state.pth",
+      "bytes": 14709,
+      "sha256": "18ac24278872e0933ab88b99a82d5fa3e40ade0ecf711c1a1a2cd8f3cddd81d7"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/scheduler.pt",
+      "bytes": 1465,
+      "sha256": "40796892cfb607e9b2524d72ca3251d2e4844401c49ca1406eb3fa0c4f7daf58"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/tokenizer_config.json",
+      "bytes": 288,
+      "sha256": "1962afb3223d1dd3f688bf2ecbbf6b9ff85acf6919390a8badbd85b9b5bd7791"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/tokenizer.json",
+      "bytes": 1680,
+      "sha256": "852b58d44f6c2aed2f6abb132fefae439fe79019d0419448dbb4305522d67fe5"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/trainer_state.json",
+      "bytes": 3151,
+      "sha256": "813967dc7fece0c6e6ccb0a6d78988dcaf780df3f59bd8d2a90ed151c1bb11f6"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-6/training_args.bin",
+      "bytes": 5265,
+      "sha256": "753e30130b5b7af133cf3f38355c1d747ac3651940dcba57fe6b0099af46efd7"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/experiment.json",
+      "bytes": 5510,
+      "sha256": "0b23772d3701b06bcdfcaa9f637d0d3f3b9bfade8d6508acd142283d9a52d99c"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/README.md",
+      "bytes": 5284,
+      "sha256": "7c5c809165f8332b7dc8a5eb47dfb91936f64a91bbbdf966e097e211eaf0fd77"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/reload_reference.pt",
+      "bytes": 1960,
+      "sha256": "a8a360f0f5eba2ff8e4e20b622624490c5fbd1c876bdc9d6a2384a750fe3ac1d"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/tokenizer_config.json",
+      "bytes": 288,
+      "sha256": "1962afb3223d1dd3f688bf2ecbbf6b9ff85acf6919390a8badbd85b9b5bd7791"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/tokenizer.json",
+      "bytes": 1680,
+      "sha256": "852b58d44f6c2aed2f6abb132fefae439fe79019d0419448dbb4305522d67fe5"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/trainer_state.json",
+      "bytes": 3394,
+      "sha256": "d0568d39fdf46722217b06abca483906f6e9ce9b5df01b4141adef1602f8c993"
+    },
+    {
+      "path": "checkpoints/pilot/synthetic-tiny-qwen/training_args.bin",
+      "bytes": 5265,
+      "sha256": "753e30130b5b7af133cf3f38355c1d747ac3651940dcba57fe6b0099af46efd7"
+    },
+    {
+      "path": "configs/agent.yaml",
+      "bytes": 254,
+      "sha256": "a2c7af8308ab3245849a53ec61fc2bd1620611804113bc52080dcec0d3c321f0"
+    },
+    {
+      "path": "configs/qlora_overfit.yaml",
+      "bytes": 539,
+      "sha256": "1b7ad4004a15c58ecc95e4e5a8bf127e4d1f07f598c33cea325230422106a135"
+    },
+    {
+      "path": "configs/qlora_pilot.yaml",
+      "bytes": 533,
+      "sha256": "a5076d7524edd2e99a5b1ff7d8a7f6b6e00a2281506cc15a94dbd03f26f974cb"
+    },
+    {
+      "path": "configs/qlora_probe_3b.yaml",
+      "bytes": 532,
+      "sha256": "d762c83044f46f968f1bce832906228f66fd9a37fb7a77d52dffaedde88e66f8"
+    },
+    {
+      "path": "configs/qlora_probe_7b.yaml",
+      "bytes": 532,
+      "sha256": "11a59f86dbe1c8881557b73a260c3d5c50975bd21e3ad97c23089174c60e2806"
+    },
+    {
+      "path": "CS6158 Project Proposal.pdf",
+      "bytes": 84930,
+      "sha256": "bfc1129c3fbe3cc09ba90f36781b7b8bf6b2e03ef2a2f070f8d3d0dff333e0bf"
+    },
+    {
+      "path": "docs/data_audit.md",
+      "bytes": 2850,
+      "sha256": "83941c95268567a4a88f19925e3801e2c37867082be36055039a8e55b3d4e21e"
+    },
+    {
+      "path": "docs/environment.md",
+      "bytes": 3111,
+      "sha256": "24bb0b6eb29d4a889141074bae7f722aa7d2f63dd9dcb51c5e4fa5d305bfb7a4"
+    },
+    {
+      "path": "docs/file_cleanup_report.md",
+      "bytes": 3891,
+      "sha256": "ad375613730677be696148f032fb9c289277a92e9f397f8eab78060bc8297075"
+    },
+    {
+      "path": "docs/implementation_status.md",
+      "bytes": 4622,
+      "sha256": "b9c63560e1377052eeff247353f2463328838b91f4573a6f113702d3d41ff25b"
+    },
+    {
+      "path": "docs/pilot_report.md",
+      "bytes": 3738,
+      "sha256": "49d4b41e90712a4f412263f71ac40d3969c992d290998e4c22adc0d0b1cdb6b4"
+    },
+    {
+      "path": "docs/rtx_4090_constraints.md",
+      "bytes": 9135,
+      "sha256": "00e9c31d653dec3adb9cc90283b7f795b05a55846c431e960f348ee7705b87a9"
+    },
+    {
+      "path": "docs/rtx_4090_implementation_plan.md",
+      "bytes": 22070,
+      "sha256": "3859c8d6d568920bd09a4e9f3bd8bdc14999441b64fc5c90ea815f9a0ccb48b8"
+    },
+    {
+      "path": "manifests/dataset_files.json",
+      "bytes": 1175,
+      "sha256": "ee097a1cb0d71d644426a506bcbded8e3ca75d90090bad6837c313a81fb20aa7"
+    },
+    {
+      "path": "manifests/implementation_status.json",
+      "bytes": 5268,
+      "sha256": "015c2f572b897941f05d0b9851a1b8296be032cf431fb8731565a3a0207cf296"
+    },
+    {
+      "path": "manifests/model_files.json",
+      "bytes": 785,
+      "sha256": "0e43f2b2cf929029be5974cef72e796ad14bb1830514f6d7f521109f66355a02"
+    },
+    {
+      "path": "manifests/planned_downloads_4090.json",
+      "bytes": 3717,
+      "sha256": "66df4ee3be0abf562ae2b339fc36569bebe73102b07013e5a1569e8041aca516"
+    },
+    {
+      "path": "manifests/source_repositories.json",
+      "bytes": 746,
+      "sha256": "04c965556f6690f2dcffc3d10e0a6e80b8637d456a3c5c7c3650c99cacec341b"
+    },
+    {
+      "path": "manifests/storage_baseline.json",
+      "bytes": 314,
+      "sha256": "0de572f1a8905d7298b13ae2f8dc6ea3948b5ebf919fd5b9710ce63bda3b5928"
+    },
+    {
+      "path": "manifests/storage_usage.json",
+      "bytes": 306,
+      "sha256": "89ce52c6ad0b01249899f20d8775a8dd62e7da284997da7937874b13d3b6711f"
+    },
+    {
+      "path": "manifests/validation_packages.freeze.txt",
+      "bytes": 6627,
+      "sha256": "b6513302c434802249aeb4a0f13e8dead4a60454aa7d6ad44b6ea86c2bc84a94"
+    },
+    {
+      "path": "manifests/versions.json",
+      "bytes": 560,
+      "sha256": "f157aeae270f8428c68605098f97200de9d9d10bb0b27c4bf62888d5952d08d4"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 676,
+      "sha256": "121d5d81d5b99ff61b724bff6f14076572535fce6af9d5d67f4c74f611d8c368"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8435,
+      "sha256": "5e3365e318383e4b42cb96219acc93c8f16f283877babcff3d7c0d1e00c90497"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/command-001.json",
+      "bytes": 548,
+      "sha256": "798c951849a7dde52f9e7b88fe0f29c5327b212a089641101ba4da52bf552102"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/command-001.stderr.log",
+      "bytes": 371,
+      "sha256": "323296538d8052a31a544984eb550089f41a5aa29eaf6affec851b182aa7922a"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/command-001.stdout.log",
+      "bytes": 6627,
+      "sha256": "b6513302c434802249aeb4a0f13e8dead4a60454aa7d6ad44b6ea86c2bc84a94"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/command-002.json",
+      "bytes": 539,
+      "sha256": "81304e0b30ce1e412082a5581fd9aa2fa30c44667890086bc3da6e08f5afeef3"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/command-002.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/command-002.stdout.log",
+      "bytes": 5727,
+      "sha256": "a8a615ab7e47545fcc969b3edcf31e6696fd58b8cb3473fda66f68f1d279e2e8"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/environment.json",
+      "bytes": 242,
+      "sha256": "452314a8c36a34ee04262606f6458139d667a7962df6ab860cfd0e6464bea367"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/events.jsonl",
+      "bytes": 2587,
+      "sha256": "3ec43b253c86a47e3cfd1990e4ec4bf8cab853282edeb929570fd810be34e62e"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/run.json",
+      "bytes": 948,
+      "sha256": "eee4f6f3f76c6306d0ff1ade6122fd8ff2bbdf8db9bdc8fde63c4ebd8d17582d"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/source_snapshot.zip",
+      "bytes": 43221,
+      "sha256": "0b8c1c25877d22c10abd8f9b9f0a324ab2147d3ca1703ff7ffb6008850e071d7"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/bootstrap/20261019T165742-d186c824/stdout.log",
+      "bytes": 90,
+      "sha256": "d9169334868ac1586c6c2c4817f1d6cacfb3895a082ae3744ee2ce5394b24dfc"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/command-001.json",
+      "bytes": 500,
+      "sha256": "d48890da45fb5d6be7aa5ac27fb3c27febda1e79da870fbdb644c5b656fc76fc"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/command-001.stderr.log",
+      "bytes": 153,
+      "sha256": "c27f32cfc3e4e1b445e6d9d5d2600f1e557c038ad03bdd9977d6691372ac1020"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/command-001.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/events.jsonl",
+      "bytes": 1164,
+      "sha256": "e6dec1294832c552c6c05d84c3ccbaf1fd59e9bdfdf46ca6fe7ef98a5899d8b7"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/run.json",
+      "bytes": 992,
+      "sha256": "0bcac7ab0325e2ec0131588cb01567c93a90a2be7f714a83997c7a8b251e2ec5"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/stderr.log",
+      "bytes": 754,
+      "sha256": "73b6ef1510576760d668d46b7ed5ef7a207ebba68cce9f8c0b6197395e889bbd"
+    },
+    {
+      "path": "results/checkout/20261019T164930-d1f3a196/stdout.log",
+      "bytes": 89,
+      "sha256": "58c9feba48c0a48ba7c67511ea1a198c852c560122eb2c38b44423f73e01392c"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/apply_cleanup.ps1",
+      "bytes": 2262,
+      "sha256": "b59109c3a5912339e92f7adb727908bf4ed7c5c33584e9114215c74e127405c5"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/archive_prior_documents.py",
+      "bytes": 724,
+      "sha256": "89ca42043566ec10d62d51199a23aa67f0d45ea28f49845e609bba7f592688e7"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/before_inventory.json",
+      "bytes": 264501,
+      "sha256": "885549e59d9f101153bd9109ddc94693a1316e3ed0829a758b0ff3828178c0a4"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/cleanup_plan.json",
+      "bytes": 10645,
+      "sha256": "cb63bc1b4180daf3f7d61146e3a9d3fc377fe8ddb8f79a56ee56b022838c0fdc"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/001-references.json",
+      "bytes": 1126,
+      "sha256": "52864bea5da33bd9436e059dfc07b8547f8cf9099f3d4bb7cea6d91fa28db101"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/001-references.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/001-references.stdout.log",
+      "bytes": 570,
+      "sha256": "f60197703b5bf73f56889eb6e0ffbaab6b9ed23e1cd55fd9dad7c893884efb14"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/002-archive_prior_documents.json",
+      "bytes": 976,
+      "sha256": "ff2411bec8a1ae1ad42bf5f9eaa7f29c67fd07b3d695f7528c3714eba30ac3c3"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/002-archive_prior_documents.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/002-archive_prior_documents.stdout.log",
+      "bytes": 477,
+      "sha256": "0a03196daff141e7199995798158131cb715b32efadb01f7a64a4f88ffb47a8b"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/003-remove_reviewed_artifacts.json",
+      "bytes": 4919,
+      "sha256": "10ef8a3ffb0de405279766c024c8dae69e87730269d54cde06b5d234a112797c"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/003-remove_reviewed_artifacts.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/003-remove_reviewed_artifacts.stdout.log",
+      "bytes": 4334,
+      "sha256": "f1e16afb231f91b318af9522f9098d7104fd8a759a4beda1d501d92a3630d460"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/004-verify_preservation_and_links.json",
+      "bytes": 755,
+      "sha256": "00ce7a4091ee8bcd9d719ddfabbacb5971f1fa2e75d37c602349d7ba6b2737e5"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/004-verify_preservation_and_links.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/004-verify_preservation_and_links.stdout.log",
+      "bytes": 291,
+      "sha256": "48a97dff6094587c246296705711016edf00d6787a136fbe044811ae1bbed1f7"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/005-post_cleanup_tests.json",
+      "bytes": 530,
+      "sha256": "fb9369c1d2b87ac7a1b8e85333ef32235ba82bb12c090da675255fc8794a1840"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/005-post_cleanup_tests.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/005-post_cleanup_tests.stdout.log",
+      "bytes": 101,
+      "sha256": "c387b86a0fc3fc6d6c95d2b976a47d44b1d99d9f06ef046a40f86c55ec91f0bc"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/006-remove_validation_scratch.json",
+      "bytes": 519,
+      "sha256": "86388905e48a4d8807566d8cf9c0a1ff44a59718165a0175b4ddd85ad04229de"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/006-remove_validation_scratch.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/006-remove_validation_scratch.stdout.log",
+      "bytes": 36,
+      "sha256": "3177b18e3e88407f595235bd827655acbb0083e236537642c6120b3182411414"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/007-final_integrity_and_links.json",
+      "bytes": 751,
+      "sha256": "d046f076ba058584d365e4a3085db3e77cbcc0ff0ac153601f4736bee1da3c50"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/007-final_integrity_and_links.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/007-final_integrity_and_links.stdout.log",
+      "bytes": 291,
+      "sha256": "bd455e02665aeb2f12fc1a0448ef4cf1d5338a749ccd44eec0264412a1ddf87c"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/008-refresh_inventory.json",
+      "bytes": 647,
+      "sha256": "087fc71af3f09438a19ed6db79d1c7b9d495d19a36bfb5c93e500babc42505a7"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/008-refresh_inventory.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/008-refresh_inventory.stdout.log",
+      "bytes": 279,
+      "sha256": "636be073947dfc76bf247cef553d50bd7be93c8c9fe894dd3a082d3da6fd078a"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/events.jsonl",
+      "bytes": 1046,
+      "sha256": "b8abad1053185bfc6fd8ddefd339012db088c735e80d7fcb01266b6a1116d3a7"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/file_analysis.json",
+      "bytes": 470797,
+      "sha256": "c2e9d4ac1805ea0387ddfee6a9600cc8956e4276fbb21198049fe2c215166e2d"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/post_validation_cleanup_plan.json",
+      "bytes": 245,
+      "sha256": "ff0a94b5cb7f36cc5848ccaa9160da6b1bb4762b938ccc71db74daf692ee64e3"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/post_validation_removal_records.json",
+      "bytes": 214,
+      "sha256": "122db33e39b28c4d6d621f7b12eb941696a0e779de1be00ffc864bb8b9618221"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/prior_documents.zip",
+      "bytes": 26434,
+      "sha256": "6925315256c60081936a118c98d2e2afafb10c3429198f2015d6b564dd0c9ed9"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/removal_records.json",
+      "bytes": 12540,
+      "sha256": "700ed1bb9398bff07c5cb41ab029b2927c0249d5e4ffa1c1906a1d651cfa4b43"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/remove_validation_scratch.ps1",
+      "bytes": 2294,
+      "sha256": "29b2e0aac53d217d6706f02386aeb3ee3463fa30680a2ab1519c76191b646bd6"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/run.json",
+      "bytes": 870,
+      "sha256": "8faa6a9637fd092ca5011f73eb987d335d86cb79ac27da68609075ba585699bf"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/verification.json",
+      "bytes": 8429,
+      "sha256": "27d02b4859c1c627b79e56e625426ecaf81afdf1d256ec0ccec6d9c72cb371cf"
+    },
+    {
+      "path": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/verify_cleanup.py",
+      "bytes": 2635,
+      "sha256": "d3328654abadd808377d16a8d98488a01f59403e5d4ccbb004dda794ceebc065"
+    },
+    {
+      "path": "results/download/20261019T164929-6f696f77/events.jsonl",
+      "bytes": 960,
+      "sha256": "d6b87461bc93f21a179db193aff116e3bd17fea8e7795ae605899879d8d79b97"
+    },
+    {
+      "path": "results/download/20261019T164929-6f696f77/run.json",
+      "bytes": 1010,
+      "sha256": "521cc4cd422e46a882f7659a33edfbb7d080c0a218567c7746dec7d01e435f07"
+    },
+    {
+      "path": "results/download/20261019T164929-6f696f77/stderr.log",
+      "bytes": 5585,
+      "sha256": "62e1fb803dfba3a66d2b30c47c0ebd1fa29893c590a983b25bb3e038347cb4db"
+    },
+    {
+      "path": "results/download/20261019T164929-6f696f77/stdout.log",
+      "bytes": 89,
+      "sha256": "7cfbc874b60d08ae890f51df1d203a11981a568e2bd892260377fe0eeec4f628"
+    },
+    {
+      "path": "results/download/20261019T165906-40c40d69/events.jsonl",
+      "bytes": 992,
+      "sha256": "a6ec02f539406381915b31472fe32fc117bc6e0bd424bf7b38c407ef515730e3"
+    },
+    {
+      "path": "results/download/20261019T165906-40c40d69/run.json",
+      "bytes": 1155,
+      "sha256": "4fa01d031650b2544947f839c3d267229f8d2cbca05441a73c7dc23fef367cab"
+    },
+    {
+      "path": "results/download/20261019T165906-40c40d69/source_snapshot.zip",
+      "bytes": 46988,
+      "sha256": "89c1405ab9ecccd7a467967cc29f3f93213c60d4273836d52573eb68cf28ffe7"
+    },
+    {
+      "path": "results/download/20261019T165906-40c40d69/stderr.log",
+      "bytes": 5587,
+      "sha256": "7117bdb0d57fa0a1cf5a6ed61dfca031181fb0ee3a4147ce145ace2be8dc179c"
+    },
+    {
+      "path": "results/download/20261019T165906-40c40d69/stdout.log",
+      "bytes": 89,
+      "sha256": "2cc58944ce6e64e26849165f0ed79293680c1c9e307d3a5ca5e0c7ddcf478f2e"
+    },
+    {
+      "path": "results/inventory/20261019T170829-27c0655c/events.jsonl",
+      "bytes": 340,
+      "sha256": "89a6e70909ddfafdba08b613b294f6e25e736132bcc00aa95e8a30688c0a3e37"
+    },
+    {
+      "path": "results/inventory/20261019T170829-27c0655c/run.json",
+      "bytes": 842,
+      "sha256": "ad5fb9f8bf4a253d7e895274aa81a2cbc56d0d3a73cc39cf74e30761e2b79cb4"
+    },
+    {
+      "path": "results/inventory/20261019T170829-27c0655c/source_snapshot.zip",
+      "bytes": 84771,
+      "sha256": "525c3c4fd4b39f340cf9b8c7c4367a05a9f6ab3c7207e6175c8e478debed8761"
+    },
+    {
+      "path": "results/inventory/20261019T170829-27c0655c/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/inventory/20261019T170829-27c0655c/stdout.log",
+      "bytes": 190,
+      "sha256": "f3891b32e6bebf37011a68a4fa5a86d1755878365c97df4e388aa4ea992fa08f"
+    },
+    {
+      "path": "results/inventory/20261019T172311-30ae8f49/events.jsonl",
+      "bytes": 339,
+      "sha256": "0ed7eebf7e4c40fdf3700d0e944b8d54bdf5a5a8b97ff165a125357fc6d3aa8e"
+    },
+    {
+      "path": "results/inventory/20261019T172311-30ae8f49/run.json",
+      "bytes": 842,
+      "sha256": "7e6a5eb2e9c5702ad8fff70ce02930c688c647f7e75207d7d5a94b3320594d77"
+    },
+    {
+      "path": "results/inventory/20261019T172311-30ae8f49/source_snapshot.zip",
+      "bytes": 107094,
+      "sha256": "5ce689818f310053318d8e53671eabca9277458385ba9bd120b04b1ee3aaeeb7"
+    },
+    {
+      "path": "results/inventory/20261019T172311-30ae8f49/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/inventory/20261019T172311-30ae8f49/stdout.log",
+      "bytes": 189,
+      "sha256": "48342531ce4b5dce9a9648212a66fe1d8d9f08aa7a19d843abb5dbe99bdfea86"
+    },
+    {
+      "path": "results/preflight/20261019T164821-bac21dae/events.jsonl",
+      "bytes": 4349,
+      "sha256": "f49b071124c37a1876eb482fe9a4090c65342c427fc3125c468efe83ee7f2a97"
+    },
+    {
+      "path": "results/preflight/20261019T164821-bac21dae/hardware.json",
+      "bytes": 5471,
+      "sha256": "77062afaa1a4144d14873673d86874fccedccf63609bcec005ec1651c5af90ce"
+    },
+    {
+      "path": "results/preflight/20261019T164821-bac21dae/run.json",
+      "bytes": 745,
+      "sha256": "8c69ccbb6619f3419fceb84fe08c401ea60a90de2d4d6d2ae0384a4aca194a14"
+    },
+    {
+      "path": "results/preflight/20261019T164821-bac21dae/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/preflight/20261019T164821-bac21dae/stdout.log",
+      "bytes": 5561,
+      "sha256": "7636495103f137f0179a556bbdc1a2a7c346fea8eaedf5ad5f868bbbe02edf3d"
+    },
+    {
+      "path": "results/preflight/20261019T165744-0a60e649/events.jsonl",
+      "bytes": 4349,
+      "sha256": "89209fdf090278aa14915752df21911aed8eff8ca98450affd00e35a2b892670"
+    },
+    {
+      "path": "results/preflight/20261019T165744-0a60e649/hardware.json",
+      "bytes": 5547,
+      "sha256": "76677f3709b1e2ba23c520641459f37f7d5809b9165140cd2147e0b98cf034f6"
+    },
+    {
+      "path": "results/preflight/20261019T165744-0a60e649/run.json",
+      "bytes": 840,
+      "sha256": "149e799d8486c34174792fbe7c46b1ffddc0f7b66be469106a26bc0e32d92760"
+    },
+    {
+      "path": "results/preflight/20261019T165744-0a60e649/source_snapshot.zip",
+      "bytes": 46531,
+      "sha256": "56b3dea70b0c22919e9a72d1892e91084109808cedd33b1813c5c75599045306"
+    },
+    {
+      "path": "results/preflight/20261019T165744-0a60e649/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/preflight/20261019T165744-0a60e649/stdout.log",
+      "bytes": 5637,
+      "sha256": "e38551bf6e39b65ea27222b0c0334b3e6b58d957e2613ef114b2b22e0c5b5167"
+    },
+    {
+      "path": "results/preflight/20261019T170513-598d56c9/events.jsonl",
+      "bytes": 4349,
+      "sha256": "22fd075a7a5cf795b23c529e031a65c53086fcdd602b30a674174cdbd7dd4129"
+    },
+    {
+      "path": "results/preflight/20261019T170513-598d56c9/hardware.json",
+      "bytes": 5673,
+      "sha256": "a05c33d27da926a07a788e36f10dfdd3d119a24f024fac890505ed27a5d3ce4e"
+    },
+    {
+      "path": "results/preflight/20261019T170513-598d56c9/run.json",
+      "bytes": 842,
+      "sha256": "0e2e4f7eabef721e108e1f642a7c18c237baa9880df7117b2c0554e06c53e300"
+    },
+    {
+      "path": "results/preflight/20261019T170513-598d56c9/source_snapshot.zip",
+      "bytes": 54844,
+      "sha256": "5606dd9374f8ca42aeae3251f35ecf6bd04b262f7394fa265a810bcd067d38db"
+    },
+    {
+      "path": "results/preflight/20261019T170513-598d56c9/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/preflight/20261019T170513-598d56c9/stdout.log",
+      "bytes": 5763,
+      "sha256": "ef5bd4e89c3f043fe3fcb61058178f9638d3153a8e9150fde47aab9545e85f97"
+    },
+    {
+      "path": "results/preflight/latest.json",
+      "bytes": 5673,
+      "sha256": "a05c33d27da926a07a788e36f10dfdd3d119a24f024fac890505ed27a5d3ce4e"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/001-wsl_status.json",
+      "bytes": 919,
+      "sha256": "8c3a8277f3aca72d6fdb238a0d3ba42c47f2ecdb40147873a8bc9e201f875fc0"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/001-wsl_status.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/001-wsl_status.stdout.log",
+      "bytes": 154,
+      "sha256": "49fb5d5d3fd02e60a2b755c9f33a4c9f909380127761f1cebb317456597001b9"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/002-wsl_distributions.json",
+      "bytes": 956,
+      "sha256": "e5e2e5d86b29d57ad95e53f547e206f3742db26e6a312f12547f9231c73b28df"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/002-wsl_distributions.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/002-wsl_distributions.stdout.log",
+      "bytes": 154,
+      "sha256": "49fb5d5d3fd02e60a2b755c9f33a4c9f909380127761f1cebb317456597001b9"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/003-gpu.json",
+      "bytes": 560,
+      "sha256": "bf4f934574318e9ea0d65416faf531ab7c4cfa5859f8d6f02a4087bc8cb97377"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/003-gpu.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/003-gpu.stdout.log",
+      "bytes": 42,
+      "sha256": "dc7f7417d9d99a7bf4e6a8c746ddcbb830e1471e03dbb088f05d2ec00c67cda9"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/004-docker.json",
+      "bytes": 1415,
+      "sha256": "1b1121e6708ac48a65df47956101963c3dbefba7f06d853262f80157ffd0cc67"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/004-docker.stderr.log",
+      "bytes": 363,
+      "sha256": "5865469fe514de55f7853231ea7ab251326577ca536b716c4b9168d82ece5779"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/004-docker.stdout.log",
+      "bytes": 228,
+      "sha256": "e32a873d9d5e5d4b73472ec8fe7276acf095687df830023c68d3df9ff2629ea9"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/005-git.json",
+      "bytes": 294,
+      "sha256": "7b07a699766493479d0b6482f13d152a0f72641c77380c7da619aa3935d40d70"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/005-git.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/005-git.stdout.log",
+      "bytes": 29,
+      "sha256": "384282a4019be462a330dbd3f742a80197209e778ad5753e012a9f75a5a70957"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/006-python.json",
+      "bytes": 1423,
+      "sha256": "b37eadad5348d790e19254dbd7d6296356a8953072176c8bd6a9d49be0305813"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/006-python.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/006-python.stdout.log",
+      "bytes": 590,
+      "sha256": "a119454837d5c65c844d8152b885d8b844e3c3292a450b1427b8a7baad20abc5"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/007-network.json",
+      "bytes": 1142,
+      "sha256": "4509ebffea05fe2859abfc972c43bddbdbf96e6a022da1fad3fc6cd23791fa4d"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/007-network.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/007-network.stdout.log",
+      "bytes": 128,
+      "sha256": "c188f00e75e7a97a22da0273777e390049dbd6d1acef2a6b0bcdc3410dd49ca4"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/008-torch_cuda.json",
+      "bytes": 808,
+      "sha256": "59ef43920b1ac64e0491408212cba2c6a8c860fc4fa76b8a8eaae3122a723ab6"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/008-torch_cuda.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/008-torch_cuda.stdout.log",
+      "bytes": 146,
+      "sha256": "018714dd4e38f32fccdc4ebd21e84e000e9c1c5c2a62b7fb5d6df8235a866f09"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/009-api_signatures.json",
+      "bytes": 2628,
+      "sha256": "a534a98e4b52cb859e91a24449d7d2a884bbd72eb01e57cb8fb78c9495cfb562"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/009-api_signatures.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/009-api_signatures.stdout.log",
+      "bytes": 1930,
+      "sha256": "46b2e9f6aaf0cad5379afaccbbd75889536c3d4aa3d90072705df2d7dc831818"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/010-compile.json",
+      "bytes": 357,
+      "sha256": "17a1d6cd80d9ac11bbcae2aa337ecf3066617afa13b78c7ee3d6f8c1b85cf515"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/010-compile.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/010-compile.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/011-unit_tests.json",
+      "bytes": 468,
+      "sha256": "5580202a8624c0235b1f9d5316566a27a7b4cdaacea165d91cd986bcb81c92de"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/011-unit_tests.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/011-unit_tests.stdout.log",
+      "bytes": 101,
+      "sha256": "06da686bed3f91e92a7e8f8b0e5405ed484c053d4a6cbf8c07c0d03203b0673e"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/012-validation_environment.json",
+      "bytes": 386,
+      "sha256": "dab46a652504e3851b96507d7f4349fbdfb78a1891b2fc89859687a2f70c4fbf"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/012-validation_environment.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/012-validation_environment.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/013-tracked_preflight.json",
+      "bytes": 7116,
+      "sha256": "ca76735f8f4faa632ab383786dfa82957ac7586b1264bd6f81b51b3755415335"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/013-tracked_preflight.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/013-tracked_preflight.stdout.log",
+      "bytes": 5651,
+      "sha256": "436a3f76f009feae62cd20f16498e0a7d88027c95582d4d8fbe68885f6727d22"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/014-create_tiny_qwen_fixture.json",
+      "bytes": 1349,
+      "sha256": "d22986931084431baa6014c201443c7610d65b17ad62fa528fb27c99d9c28d68"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/014-create_tiny_qwen_fixture.stderr.log",
+      "bytes": 131,
+      "sha256": "ad7bff3df61765d30317c81ad412593d5c87af24b55bb0124bf83c9ada9abff5"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/014-create_tiny_qwen_fixture.stdout.log",
+      "bytes": 699,
+      "sha256": "6032d7090cafd7b7b1171f4a1ab342add506c634835361d1b3de5648cad44ef0"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/015-tiny_nf4_training.json",
+      "bytes": 4086,
+      "sha256": "6bd0a72c71e674597240128b8d8de4d95b167ed3268615c81f9c03ca28b2069c"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/015-tiny_nf4_training.stderr.log",
+      "bytes": 1565,
+      "sha256": "d8046ad0560a784adaf3ded85458094669d51cb78e65f7f47fe87ef98bdf36f9"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/015-tiny_nf4_training.stdout.log",
+      "bytes": 86,
+      "sha256": "e476b377c08181c4d98ce8c0d5691f5b9b1566f958d44dc0c12eb446d9cd3319"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/016-tiny_nf4_training_fixed.json",
+      "bytes": 2490,
+      "sha256": "f8fd0aed87f408d7c64372cc6cb6ef5a382d6536bfb0f3796e6b23ed2bec5f67"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/016-tiny_nf4_training_fixed.stderr.log",
+      "bytes": 538,
+      "sha256": "b84a3d642761cb5302a2f1a39a345e9f172c663bb7bbeb93252dc78a15d2ab28"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/016-tiny_nf4_training_fixed.stdout.log",
+      "bytes": 1377,
+      "sha256": "99e44d55a69785a79e8b73ad7d2d935ecaffb224c5f4c4c92709df05c069f531"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/017-tiny_checkpoint_reload.json",
+      "bytes": 1061,
+      "sha256": "06c5653415bc66657129c49558ca4103b3f953b7eb90e59c7d27f678b144c51c"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/017-tiny_checkpoint_reload.stderr.log",
+      "bytes": 124,
+      "sha256": "6d268e42df2a850a5f55084ffa574211eae970481b19380030bfa98e4401d032"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/017-tiny_checkpoint_reload.stdout.log",
+      "bytes": 394,
+      "sha256": "e1818492cb6bd6c51f97d11a62f53400a2b098b557383430ba7568ef26ad6ada"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/018-approved_model_download_attempt.json",
+      "bytes": 25411,
+      "sha256": "66333f7e45459710337ea8bc9fee4c1459233d69e59c33c1e8758029e68bbd38"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/018-approved_model_download_attempt.stderr.log",
+      "bytes": 11333,
+      "sha256": "9c8c78b7863903d96ce788e17cfbf11152c76c19cbfc63b0126e07ca2f9c9005"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/018-approved_model_download_attempt.stdout.log",
+      "bytes": 89,
+      "sha256": "7cfbc874b60d08ae890f51df1d203a11981a568e2bd892260377fe0eeec4f628"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/019-approved_source_checkout_attempt.json",
+      "bytes": 4331,
+      "sha256": "ca3aa69fc112f8b1797f334768ea9aff582df53e7e475110313c274ca450dbfa"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/019-approved_source_checkout_attempt.stderr.log",
+      "bytes": 1671,
+      "sha256": "b6a33507b3a22e00fd0c20c0db17c6c2b8c337db6f20e887b51ea973261e4674"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/019-approved_source_checkout_attempt.stdout.log",
+      "bytes": 89,
+      "sha256": "58c9feba48c0a48ba7c67511ea1a198c852c560122eb2c38b44423f73e01392c"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/020-unit_tests_expanded.json",
+      "bytes": 547,
+      "sha256": "2205701f1727010d92906bfd8255ae1bfac53c8131659ea07f7f797f763d55fe"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/020-unit_tests_expanded.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/020-unit_tests_expanded.stdout.log",
+      "bytes": 101,
+      "sha256": "3a59fd68bd492d0d021be08451012f4cb4b312e52837495ffa3ab44d41e62ae9"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/021-tiny_nf4_resume.json",
+      "bytes": 1975,
+      "sha256": "6e89ab04bc1b475c16581ddccd281a82106829a5f47c2566013b4852d785a2c8"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/021-tiny_nf4_resume.stderr.log",
+      "bytes": 456,
+      "sha256": "371d89bfec8808dc84b6f4c289cf7027673fab653bbe3e1bc3f9d34f44c3791e"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/021-tiny_nf4_resume.stdout.log",
+      "bytes": 898,
+      "sha256": "cb8fd8c1ca6248ba31846eca65d45244b0d80d34c842b075d330933cba46d669"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/022-tiny_nf4_resume_verified.json",
+      "bytes": 2468,
+      "sha256": "bfd7556edf8134c053f686c57041ca499dcb1b40e98a01c2f80966e0b26c4d43"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/022-tiny_nf4_resume_verified.stderr.log",
+      "bytes": 456,
+      "sha256": "d196a261a155222fea37fc5162c0f1cc44bf66a86178baad8113fcc1906f04b5"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/022-tiny_nf4_resume_verified.stdout.log",
+      "bytes": 1365,
+      "sha256": "e14f8c8328299a01addd5ab271141e304b9bced0a8a0b88129b8c9e75b7d3af3"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/023-validation_environment_manifest.json",
+      "bytes": 580,
+      "sha256": "e9cc0bcbab7b2c8db029556205f153acc86f0b5c53f0dd382f560182a75ea46f"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/023-validation_environment_manifest.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/023-validation_environment_manifest.stdout.log",
+      "bytes": 90,
+      "sha256": "d9169334868ac1586c6c2c4817f1d6cacfb3895a082ae3744ee2ce5394b24dfc"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/024-pipeline_tests_complete.json",
+      "bytes": 556,
+      "sha256": "d2d19f2f7f37801b9a451a09ca4ed1510ca4e78246fc92500f82fdb7133c4d97"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/024-pipeline_tests_complete.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/024-pipeline_tests_complete.stdout.log",
+      "bytes": 101,
+      "sha256": "375b97847932544ca50a5016c14577fbefcf0063a64a18ad14ef5a2ce0d65e25"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/025-compile_all_modules.json",
+      "bytes": 443,
+      "sha256": "e3a223c9cadb81e0828652abb1bf217a17e125e0512a94bcf6ec9dfe07ef077e"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/025-compile_all_modules.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/025-compile_all_modules.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/026-resumed_checkpoint_fresh_reload.json",
+      "bytes": 1079,
+      "sha256": "89840b678dbf9235f1db2141ef32dc327b846d3986f736f83852fa85f6e41d24"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/026-resumed_checkpoint_fresh_reload.stderr.log",
+      "bytes": 124,
+      "sha256": "03afe5a83cd5b7920de13ea7fb3c2c73c56d35dc9e26051bb1aef2d076ccd1df"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/026-resumed_checkpoint_fresh_reload.stdout.log",
+      "bytes": 394,
+      "sha256": "f8bb16a4f6312ae4b34319b5bd9167667fed8ea1ffe7e0e7527829687c372f19"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/027-gpu_server_interface.json",
+      "bytes": 1154,
+      "sha256": "1c06d397f866526d1a8fb19d507606f09372fc8b7c0e747358f9a3c258eeb7ac"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/027-gpu_server_interface.stderr.log",
+      "bytes": 124,
+      "sha256": "66d1c1e71816b6cc2df8dfba320b36ee47afa7bbc496e24150bbabd7558a7910"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/027-gpu_server_interface.stdout.log",
+      "bytes": 538,
+      "sha256": "295d777ee3179bfc58c1e43773ca7bb8a05fdc521b7b41394cebe5290a80cbc5"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/028-approved_sft_download_attempt.json",
+      "bytes": 25463,
+      "sha256": "4991b0dbde56ea8904b67a25048dd93abd853a06b2f698cebd2837030941ccfd"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/028-approved_sft_download_attempt.stderr.log",
+      "bytes": 11337,
+      "sha256": "d3d708dec59e7a5fbc9df74202672e8bf264bb4f4b2a044ab2da8e10011c689a"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/028-approved_sft_download_attempt.stdout.log",
+      "bytes": 89,
+      "sha256": "2cc58944ce6e64e26849165f0ed79293680c1c9e307d3a5ca5e0c7ddcf478f2e"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/029-final_pipeline_tests.json",
+      "bytes": 549,
+      "sha256": "06aabdf59b9d2c6896798a140699b0e8d7164d23b44edd13f33f851f7f638dc0"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/029-final_pipeline_tests.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/029-final_pipeline_tests.stdout.log",
+      "bytes": 101,
+      "sha256": "ea784435fbe90236e2feee3af137197be62428709e8b90e2bf5f7a5024d9737b"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/030-final_compile.json",
+      "bytes": 431,
+      "sha256": "ccd193e7bef7cf6a2e6ef5aab7bf1304d172da93c652068347b81906bdb0019b"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/030-final_compile.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/030-final_compile.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/031-final_hardware_preflight.json",
+      "bytes": 7360,
+      "sha256": "00cfbe12630fa52e3c39e44dedd6621dc09123eea5a7264d057325fc4355470d"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/031-final_hardware_preflight.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/031-final_hardware_preflight.stdout.log",
+      "bytes": 5853,
+      "sha256": "768c0b092883c57e56c912672204e135e1d15cfa0087373e10fe05f242783143"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/032-final_gpu_server_interface.json",
+      "bytes": 1166,
+      "sha256": "018b96b3947975bf44cf8dc944e8f485cbf0254a07d33006e33b9ea33fc8a0f8"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/032-final_gpu_server_interface.stderr.log",
+      "bytes": 124,
+      "sha256": "dac7576921ffbb17f47050caf43d5a7877fc8b77cdb1cf51ac844ada7844c772"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/032-final_gpu_server_interface.stdout.log",
+      "bytes": 538,
+      "sha256": "5b059a42a602f297c3c487dc177037f86540d1ff257d01c6f4e5e68434d87847"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/033-handoff_unit_tests.json",
+      "bytes": 546,
+      "sha256": "caeb5653269a91187bb929616a5d74fc210660ed93f14654e31e8d3fa0682353"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/033-handoff_unit_tests.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/033-handoff_unit_tests.stdout.log",
+      "bytes": 101,
+      "sha256": "eea32b029458ab37f3f7f66ff7d69cf57ea929a8b668f926051e2857fdbb7cf0"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/034-handoff_compile.json",
+      "bytes": 435,
+      "sha256": "e63eb467bb12bc4e9d5e3420ead3fa3aa13edddf36f9b4a5f969d5548e745e6f"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/034-handoff_compile.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/034-handoff_compile.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/035-local_artifact_inventory.json",
+      "bytes": 718,
+      "sha256": "83998bbbf698a2ac281acce863c39ea3383e58df1a6eaefd6c1fb87eb0331e43"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/035-local_artifact_inventory.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/035-local_artifact_inventory.stdout.log",
+      "bytes": 280,
+      "sha256": "8e8b6800fea030177e2ca90fe769e3ea724edce8930f374c1d5b362c77538093"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/events.jsonl",
+      "bytes": 5837,
+      "sha256": "9d8ba3f4509a35a95c0d230cd05562ec1a64146f1567c424291a441ab1296e6e"
+    },
+    {
+      "path": "results/setup/setup-2026-10-19T16-35-12-041Z/session.json",
+      "bytes": 1295,
+      "sha256": "038d8c5ffb6de12a845d2cac3d3510c6c51a606c9c987dadf71889c894517921"
+    },
+    {
+      "path": "results/synthetic_fixture/20261019T164829-d0ef648a/events.jsonl",
+      "bytes": 1007,
+      "sha256": "953324bf78642ca3be4526d7019eb7f91df979c35c4722954768ff907e824079"
+    },
+    {
+      "path": "results/synthetic_fixture/20261019T164829-d0ef648a/run.json",
+      "bytes": 817,
+      "sha256": "cc4229f0689cfc011040f98dbe6301d0efef2cf0ce9e11232f1c93dfa2fd2957"
+    },
+    {
+      "path": "results/synthetic_fixture/20261019T164829-d0ef648a/stderr.log",
+      "bytes": 131,
+      "sha256": "ad7bff3df61765d30317c81ad412593d5c87af24b55bb0124bf83c9ada9abff5"
+    },
+    {
+      "path": "results/synthetic_fixture/20261019T164829-d0ef648a/stdout.log",
+      "bytes": 699,
+      "sha256": "6032d7090cafd7b7b1171f4a1ab342add506c634835361d1b3de5648cad44ef0"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/events.jsonl",
+      "bytes": 2630,
+      "sha256": "2daeda91807b567f15739465cffa1add049bd7a9a5fc9a55bec4d7373c186a6d"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/run.json",
+      "bytes": 917,
+      "sha256": "ed3091435f7259564ba8dfd72897bd7c8d828d599a2031b020da6cc57ee5673c"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/server_validation.json",
+      "bytes": 441,
+      "sha256": "8dd25ad4151706780187418e091adca63e6607100849451b04b288c51a973d89"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/source_snapshot.zip",
+      "bytes": 46550,
+      "sha256": "e46add49d3cf17c64e9e36457e9f1f0d034e25443857bebe4d8a15aa813710e9"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/stderr.log",
+      "bytes": 124,
+      "sha256": "66d1c1e71816b6cc2df8dfba320b36ee47afa7bbc496e24150bbabd7558a7910"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/stdout.log",
+      "bytes": 538,
+      "sha256": "295d777ee3179bfc58c1e43773ca7bb8a05fdc521b7b41394cebe5290a80cbc5"
+    },
+    {
+      "path": "results/synthetic_server/20261019T165816-d2922126/task_tokens.json",
+      "bytes": 124,
+      "sha256": "c0cc4100b3e4962435790c312ae3cccddc135aae30ddeb10c619b0493e979888"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/events.jsonl",
+      "bytes": 7682,
+      "sha256": "6f12f677ebc3196f40bc5da1de3c21ae4437267a18535574308c985a1a32e558"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/run.json",
+      "bytes": 918,
+      "sha256": "6a92c6cfdc77a5680a599f90a761847ac8abba058a64f183014b7bbc6a78c845"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/server_validation.json",
+      "bytes": 441,
+      "sha256": "8dd25ad4151706780187418e091adca63e6607100849451b04b288c51a973d89"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/source_snapshot.zip",
+      "bytes": 54842,
+      "sha256": "2b1778cabe518d6fcaf78114d0e00e46cef407b2aba0a034c5d68eb82b63698f"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/stderr.log",
+      "bytes": 124,
+      "sha256": "dac7576921ffbb17f47050caf43d5a7877fc8b77cdb1cf51ac844ada7844c772"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/stdout.log",
+      "bytes": 538,
+      "sha256": "5b059a42a602f297c3c487dc177037f86540d1ff257d01c6f4e5e68434d87847"
+    },
+    {
+      "path": "results/synthetic_server/20261019T170520-908242ff/task_tokens.json",
+      "bytes": 124,
+      "sha256": "c0cc4100b3e4962435790c312ae3cccddc135aae30ddeb10c619b0493e979888"
+    },
+    {
+      "path": "results/train/20261019T164836-3df6906d/events.jsonl",
+      "bytes": 384,
+      "sha256": "522e62f9226ebf903ffb55034ac6f531c070cff869ff3b91701bd5bd30952461"
+    },
+    {
+      "path": "results/train/20261019T164836-3df6906d/run.json",
+      "bytes": 1009,
+      "sha256": "7c2f947683e2415242734a8e2c2470ed26d2f3c52ffcae0f128743c7c7d83947"
+    },
+    {
+      "path": "results/train/20261019T164836-3df6906d/stderr.log",
+      "bytes": 763,
+      "sha256": "578a037b2377003372f57ed20bfbb04302cd99e68a357df8c4aaa7dcaa83676c"
+    },
+    {
+      "path": "results/train/20261019T164836-3df6906d/stdout.log",
+      "bytes": 86,
+      "sha256": "e476b377c08181c4d98ce8c0d5691f5b9b1566f958d44dc0c12eb446d9cd3319"
+    },
+    {
+      "path": "results/train/20261019T164855-ead23d01/events.jsonl",
+      "bytes": 5301,
+      "sha256": "b16863f2a3179d9e62f1fef2a126f80cc21ed2638f139cc9eb93d31eeba7e43b"
+    },
+    {
+      "path": "results/train/20261019T164855-ead23d01/metrics.json",
+      "bytes": 4084,
+      "sha256": "5bb37cce16382f690acabd6bfd0a941082dfb95a8ff055c0f2fb4e2f404f42ea"
+    },
+    {
+      "path": "results/train/20261019T164855-ead23d01/run.json",
+      "bytes": 861,
+      "sha256": "569c26b97f275674eee421479ce85dfb24a31b905b1864fc50b1c4b9e31d87a7"
+    },
+    {
+      "path": "results/train/20261019T164855-ead23d01/stderr.log",
+      "bytes": 538,
+      "sha256": "b84a3d642761cb5302a2f1a39a345e9f172c663bb7bbeb93252dc78a15d2ab28"
+    },
+    {
+      "path": "results/train/20261019T164855-ead23d01/stdout.log",
+      "bytes": 1291,
+      "sha256": "12b5d17bb965111938d211d122a7685150b642d7350e203220d6f1a5b3e0c3f6"
+    },
+    {
+      "path": "results/train/20261019T165325-bb24bc95/events.jsonl",
+      "bytes": 3095,
+      "sha256": "4b7a4c8133473e5a302e9ef9a9c531b43e8c9717869e34a2a8a51b6c74b0e45e"
+    },
+    {
+      "path": "results/train/20261019T165325-bb24bc95/metrics.json",
+      "bytes": 4505,
+      "sha256": "8de5f53c4c464b574959092ccf87b84bd2fb6b3f5637b3989a8c54b794283e9a"
+    },
+    {
+      "path": "results/train/20261019T165325-bb24bc95/run.json",
+      "bytes": 1079,
+      "sha256": "328019f30c0511594bc8a6e5cb2f6d5970721106bfc92ed154c89ea0011b92ca"
+    },
+    {
+      "path": "results/train/20261019T165325-bb24bc95/source_snapshot.zip",
+      "bytes": 35578,
+      "sha256": "38cac7d235fe93eb037ea1a57afda142793b2ff4b1f13336bdda6ef24f1201fa"
+    },
+    {
+      "path": "results/train/20261019T165325-bb24bc95/stderr.log",
+      "bytes": 456,
+      "sha256": "371d89bfec8808dc84b6f4c289cf7027673fab653bbe3e1bc3f9d34f44c3791e"
+    },
+    {
+      "path": "results/train/20261019T165325-bb24bc95/stdout.log",
+      "bytes": 812,
+      "sha256": "997d13572248d180b2204b7faa62219e50bbbd160ae2633ca2e3d2080a8dd743"
+    },
+    {
+      "path": "results/train/20261019T165453-6e72dc69/events.jsonl",
+      "bytes": 5343,
+      "sha256": "0e78f3bbbc8326d2197ec4fbbe5265318c3ccefda57e81910887aab1540c2b7e"
+    },
+    {
+      "path": "results/train/20261019T165453-6e72dc69/metrics.json",
+      "bytes": 5510,
+      "sha256": "0b23772d3701b06bcdfcaa9f637d0d3f3b9bfade8d6508acd142283d9a52d99c"
+    },
+    {
+      "path": "results/train/20261019T165453-6e72dc69/run.json",
+      "bytes": 1079,
+      "sha256": "cee12102d81a69d5e4b0b94459bc947105a53241d4622494189485a20282df44"
+    },
+    {
+      "path": "results/train/20261019T165453-6e72dc69/source_snapshot.zip",
+      "bytes": 36129,
+      "sha256": "d82829ff43b7fa0d1e926bc071aad4426a2288db517873c40f82474864a32b46"
+    },
+    {
+      "path": "results/train/20261019T165453-6e72dc69/stderr.log",
+      "bytes": 456,
+      "sha256": "d196a261a155222fea37fc5162c0f1cc44bf66a86178baad8113fcc1906f04b5"
+    },
+    {
+      "path": "results/train/20261019T165453-6e72dc69/stdout.log",
+      "bytes": 1279,
+      "sha256": "4929c12a070c7cb2155ad660bc4abbec545719fc4febd4fc8927e6ebe958afb8"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/command-001.json",
+      "bytes": 725,
+      "sha256": "4d6ebeffd621a1750fca91c4068c23a92c87d91d7bf1f33e9340c72c0a2aaeb1"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/command-001.stdout.log",
+      "bytes": 18,
+      "sha256": "33d0f71a7d3e77d5060efb56c96dd5ea9625a3ad1dc0db6bc4dc91d6d9d153b8"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/events.jsonl",
+      "bytes": 1488,
+      "sha256": "0568fd0830a8c950540cb5b914d3574cdd265843e72410bb90c000e0384bafae"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/run.json",
+      "bytes": 938,
+      "sha256": "c593caf64d38ce6a6823b762aa1eea21e626a56faf8db735ed7a821bf0505bf9"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/source_snapshot.zip",
+      "bytes": 46550,
+      "sha256": "e46add49d3cf17c64e9e36457e9f1f0d034e25443857bebe4d8a15aa813710e9"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T165801-c90e8da9/stdout.log",
+      "bytes": 93,
+      "sha256": "506210fb8866b9cefa8699533dd611cbe4dc0653157c83492dfe61658de5b9a6"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/command-001.json",
+      "bytes": 725,
+      "sha256": "31fb653cb7d57268e3e475af166cd5cd4809b581eec75b4668073c9d65773bc5"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/command-001.stdout.log",
+      "bytes": 18,
+      "sha256": "33d0f71a7d3e77d5060efb56c96dd5ea9625a3ad1dc0db6bc4dc91d6d9d153b8"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/events.jsonl",
+      "bytes": 1488,
+      "sha256": "2a2a9045be69eb6034dd390f49ad707d556fc98324ff5da92b8d8e87c373098e"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/run.json",
+      "bytes": 936,
+      "sha256": "a18f0a2581d8afb17549b17864b30c83c53d3dfd53f3675d31d729e6caeff71a"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/source_snapshot.zip",
+      "bytes": 54842,
+      "sha256": "2b1778cabe518d6fcaf78114d0e00e46cef407b2aba0a034c5d68eb82b63698f"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T170515-028f1aa5/stdout.log",
+      "bytes": 93,
+      "sha256": "c2d00b800069ced69800030560b2bccdc75eeeb806432183250d760c96d052b9"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/command-001.json",
+      "bytes": 724,
+      "sha256": "70136b628a855fc5e0587f48b6c9f3290a535dd4d287e159adee32f32e1eca80"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/command-001.stdout.log",
+      "bytes": 18,
+      "sha256": "33d0f71a7d3e77d5060efb56c96dd5ea9625a3ad1dc0db6bc4dc91d6d9d153b8"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/events.jsonl",
+      "bytes": 1487,
+      "sha256": "43d6547c711b4d498413826bb98b0248d24bbf7b1402fee3917c2f0a521c3159"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/run.json",
+      "bytes": 937,
+      "sha256": "f842bb963ce666f1d47efdf8517948ad6e6591be745560982527ac1b327cd048"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/source_snapshot.zip",
+      "bytes": 84540,
+      "sha256": "34819bb0937181151e974afc4a68ceb73dd4947e8393a5087bc5fd3b3afbbe16"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T170755-83942895/stdout.log",
+      "bytes": 93,
+      "sha256": "6d30540127a3c144f50e16f964912ed9981a10132be2b052dc869ecddd4f1bf7"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/command-001.json",
+      "bytes": 724,
+      "sha256": "be62347cb165f54a33985cb4d2c80ce4d8c8ef690b94c515eec1e87628cd9d74"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/command-001.stdout.log",
+      "bytes": 18,
+      "sha256": "33d0f71a7d3e77d5060efb56c96dd5ea9625a3ad1dc0db6bc4dc91d6d9d153b8"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/events.jsonl",
+      "bytes": 1487,
+      "sha256": "dbe8032d5ed5167497c326794451b642c0ccbe1d9dfb304889ff37218533a148"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/run.json",
+      "bytes": 980,
+      "sha256": "9e1450ed9fd41ff76c807f5602a712b1f170b701c4ed05a49b2e70cdba066a24"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/source_snapshot.zip",
+      "bytes": 106577,
+      "sha256": "a20fb95afa2b6856a08fa307a99aa99e15228273c7ab9bc96eff8250da164b52"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261019T172155-3c2565cf/stdout.log",
+      "bytes": 93,
+      "sha256": "ec77b9c8e69d3cfd2ba8bd728749b657462df9a6c364c3ee0daac60ad3a4ca1c"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-695e2f9b/events.jsonl",
+      "bytes": 190,
+      "sha256": "719f6dc2dc4af3a5194da838a7bb9cee710112d8d1a0b0746a7a5e3c2d59099c"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-695e2f9b/run.json",
+      "bytes": 833,
+      "sha256": "28ebb465d65640ea319b256b17b91b03ccebe1977a5999e93e8ea3a967a56776"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-695e2f9b/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-695e2f9b/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-c3866e0d/events.jsonl",
+      "bytes": 516,
+      "sha256": "801e4b4be751f372ffab3632c62d70c3506acb81b545b0a95391b069cf09e856"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-c3866e0d/run.json",
+      "bytes": 833,
+      "sha256": "c15aa002ea6d6b3ed0f65d005a8256f57c8dc233dd28cc63ce436949c436c70a"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-c3866e0d/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T164739-c3866e0d/stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-4fdb4c0c/events.jsonl",
+      "bytes": 516,
+      "sha256": "145f8b7672feac93cf99fe5125010f28a2e6401e6202badae065da2aca9e4577"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-4fdb4c0c/run.json",
+      "bytes": 938,
+      "sha256": "cd8a5f4c578695feb242fc6bd48cf560769e912ba9fca725214fdbc39f7a71f4"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-4fdb4c0c/source_snapshot.zip",
+      "bytes": 35578,
+      "sha256": "38cac7d235fe93eb037ea1a57afda142793b2ff4b1f13336bdda6ef24f1201fa"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-4fdb4c0c/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-4fdb4c0c/stdout.log",
+      "bytes": 92,
+      "sha256": "efeb7b85b47c71d40e60c4a84f30d579aeffd21efbb58c44e9d1cc87baf0ba94"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-521beeff/events.jsonl",
+      "bytes": 190,
+      "sha256": "c637d2aa454c7b9d0c53e9fd4c97b4255049ae8c386b510a30c4329b0334d277"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-521beeff/run.json",
+      "bytes": 939,
+      "sha256": "674d6a3752d720ff6db79b95b27478bf3f0f7f0433113fb0a89ba278f342923c"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-521beeff/source_snapshot.zip",
+      "bytes": 35578,
+      "sha256": "38cac7d235fe93eb037ea1a57afda142793b2ff4b1f13336bdda6ef24f1201fa"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-521beeff/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T165317-521beeff/stdout.log",
+      "bytes": 92,
+      "sha256": "a969160f189c06600226adbaccff691939ca4e715060a30ed4582063624bbcb9"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6615cb90/events.jsonl",
+      "bytes": 190,
+      "sha256": "1cee8a77d257b87bef00ed863a8a0e31111aa2dd1d8962d3f4f706762ce7edfb"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6615cb90/run.json",
+      "bytes": 939,
+      "sha256": "496eb3916335e75d7d943e2e304befb20163068d0b55f4fbb3b5a0741f3e5a26"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6615cb90/source_snapshot.zip",
+      "bytes": 46550,
+      "sha256": "e46add49d3cf17c64e9e36457e9f1f0d034e25443857bebe4d8a15aa813710e9"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6615cb90/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6615cb90/stdout.log",
+      "bytes": 92,
+      "sha256": "236e486caa4cd291d2e5aa91d761224e07c36a6866ed5677a8351d94b4fb7291"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6b5f65e1/events.jsonl",
+      "bytes": 516,
+      "sha256": "0a2bf8cc1ea5565b495ace730a8c94ab09db4a81e7e570a19b221d587184cda4"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6b5f65e1/run.json",
+      "bytes": 938,
+      "sha256": "4e9d0bf6bba98f88e71473a08896090b9ff7ee5757a6664b95f5b2bf714538f6"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6b5f65e1/source_snapshot.zip",
+      "bytes": 46550,
+      "sha256": "e46add49d3cf17c64e9e36457e9f1f0d034e25443857bebe4d8a15aa813710e9"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6b5f65e1/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T165801-6b5f65e1/stdout.log",
+      "bytes": 92,
+      "sha256": "18a8a6a826ad1ecd14c6c6746b37a6f5db6739802e06c6a61031b582e117c573"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-0227f44c/events.jsonl",
+      "bytes": 190,
+      "sha256": "a0dbeaa233173e3bb592d6a7446e46f47d45efe6c061accf73de6b4613264a2a"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-0227f44c/run.json",
+      "bytes": 938,
+      "sha256": "c5bd6a54f28d0166024a07a7e08c98c76c1e18afd2a736fc72683464e9a8f4a4"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-0227f44c/source_snapshot.zip",
+      "bytes": 54842,
+      "sha256": "b9a843b02d02d46680484e85acc2d1ca810eab61bc4cf3f8cbff0b917ea351dd"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-0227f44c/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-0227f44c/stdout.log",
+      "bytes": 92,
+      "sha256": "e9482a4d6b1fa6d24e05a0e5d76121ab9ffc582115a1d3591c982a052e4b829c"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-2cf077d7/events.jsonl",
+      "bytes": 516,
+      "sha256": "e6ffac82935355fa3f53b5a66986790cd269827f7f4a15f97b36ad7fa7ab0444"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-2cf077d7/run.json",
+      "bytes": 938,
+      "sha256": "289ecb66fdb277e31b37e1a2e1ae344676024a4a6f54bab49213e5e91cf5aea2"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-2cf077d7/source_snapshot.zip",
+      "bytes": 54842,
+      "sha256": "b9a843b02d02d46680484e85acc2d1ca810eab61bc4cf3f8cbff0b917ea351dd"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-2cf077d7/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T170515-2cf077d7/stdout.log",
+      "bytes": 92,
+      "sha256": "789e2c659dbc3e7e90f2bc271ce92f5972ec14642ff1fa79d39909c2579022fd"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-b0d7804c/events.jsonl",
+      "bytes": 516,
+      "sha256": "4d2e7fbc73659919cb37ae501d02c779facd752ac901acff4d6dafc76551b2c4"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-b0d7804c/run.json",
+      "bytes": 936,
+      "sha256": "c15c215a61429cc7b4b377e2a2db26713e2c3ffd3740109a751acece92b57948"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-b0d7804c/source_snapshot.zip",
+      "bytes": 84540,
+      "sha256": "34819bb0937181151e974afc4a68ceb73dd4947e8393a5087bc5fd3b3afbbe16"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-b0d7804c/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-b0d7804c/stdout.log",
+      "bytes": 92,
+      "sha256": "571cf2ccf1bd819b3671e2f9407257101970ff04bcf6d12d41e2581dcd4ce8ee"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-dae71c02/events.jsonl",
+      "bytes": 190,
+      "sha256": "c96deea1846b1a2a5db01f99af12fdf9d34ef37bcb5ccd26cfade42c79cfc291"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-dae71c02/run.json",
+      "bytes": 939,
+      "sha256": "e6ccc10ca25650fbfceb4934d4e390fe3c01ddd5b977253571d09785d293dca4"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-dae71c02/source_snapshot.zip",
+      "bytes": 84540,
+      "sha256": "34819bb0937181151e974afc4a68ceb73dd4947e8393a5087bc5fd3b3afbbe16"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-dae71c02/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T170755-dae71c02/stdout.log",
+      "bytes": 92,
+      "sha256": "0a7c478c5b084b04a3d636567bf8e4b4e0cd4bbd847c4f3ccf0bf8f60442a781"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-6cf00250/events.jsonl",
+      "bytes": 190,
+      "sha256": "4f0ea682849a14f3ecb2dab5e0774605b653023a7e942b05b21077161bac2b80"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-6cf00250/run.json",
+      "bytes": 982,
+      "sha256": "e4a5f4de6813e63b53fdce63e358931637f528fa61ba99649e70b731a2bf3c60"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-6cf00250/source_snapshot.zip",
+      "bytes": 106577,
+      "sha256": "a20fb95afa2b6856a08fa307a99aa99e15228273c7ab9bc96eff8250da164b52"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-6cf00250/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-6cf00250/stdout.log",
+      "bytes": 92,
+      "sha256": "4697e55f06bfcb6cf33b4a33aa61b02da771a4efdf888426376b410706bf14bc"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-7a097dbb/events.jsonl",
+      "bytes": 524,
+      "sha256": "ce36b87c963929db47f920505105b1989e9908135326496faed71b9bd38cb531"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-7a097dbb/run.json",
+      "bytes": 982,
+      "sha256": "8b183c54c2fc8c0abb73f6cc695b46b77599b5a3b19e24b629aa381460fa5242"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-7a097dbb/source_snapshot.zip",
+      "bytes": 106577,
+      "sha256": "a20fb95afa2b6856a08fa307a99aa99e15228273c7ab9bc96eff8250da164b52"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-7a097dbb/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261019T172154-7a097dbb/stdout.log",
+      "bytes": 92,
+      "sha256": "fe1e94a25b358d6d3fbf71745832164a2d431c714ca0f6f2b557f74ea0d566e2"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T164921-6d5aeb86/events.jsonl",
+      "bytes": 274,
+      "sha256": "1390127b921f77d04949d1626ffeaf016006df91cfb8044da8e055fa8165c169"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T164921-6d5aeb86/reload_validation.json",
+      "bytes": 194,
+      "sha256": "374b5f6adcb10827afc58c2a95773453fa9ecb92738cedd5a1e093e20301c332"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T164921-6d5aeb86/run.json",
+      "bytes": 895,
+      "sha256": "4fa6897ab14a10cf5005b35703de824ead6e3b9fe7e0557efb861775182b194f"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T164921-6d5aeb86/stderr.log",
+      "bytes": 124,
+      "sha256": "6d268e42df2a850a5f55084ffa574211eae970481b19380030bfa98e4401d032"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T164921-6d5aeb86/stdout.log",
+      "bytes": 294,
+      "sha256": "eb15b92935f63e6983d295ce725b857e77077067fe20579b927b381763e84c46"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T165807-f950e3ee/events.jsonl",
+      "bytes": 274,
+      "sha256": "14642fefa9616a611be60ea94fd78ae9679c34b2225bd25c2944f6a091c01037"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T165807-f950e3ee/reload_validation.json",
+      "bytes": 194,
+      "sha256": "374b5f6adcb10827afc58c2a95773453fa9ecb92738cedd5a1e093e20301c332"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T165807-f950e3ee/run.json",
+      "bytes": 992,
+      "sha256": "cd857f1878920adb4967cce9a26d29a8fe8f007d1bb82ea76538d6b27753f28b"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T165807-f950e3ee/source_snapshot.zip",
+      "bytes": 46550,
+      "sha256": "e46add49d3cf17c64e9e36457e9f1f0d034e25443857bebe4d8a15aa813710e9"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T165807-f950e3ee/stderr.log",
+      "bytes": 124,
+      "sha256": "03afe5a83cd5b7920de13ea7fb3c2c73c56d35dc9e26051bb1aef2d076ccd1df"
+    },
+    {
+      "path": "results/validate-checkpoint/20261019T165807-f950e3ee/stdout.log",
+      "bytes": 294,
+      "sha256": "d021dfd8086a5ef9f3d844ad364c8724847040eab608f4bd0401e2a780695095"
+    },
+    {
+      "path": "scripts/bootstrap.py",
+      "bytes": 1993,
+      "sha256": "8522cb551dd5001e5421e99b7a5ac90effa1e052e61e7381b41b0aef0a60bb23"
+    },
+    {
+      "path": "scripts/bootstrap.sh",
+      "bytes": 164,
+      "sha256": "751a6cd4db4834da9807507db4a3f0c64055d50987a6381a9b64bb6aca869b2e"
+    },
+    {
+      "path": "scripts/continue_setup.py",
+      "bytes": 2214,
+      "sha256": "df5fd6409d38b69c867862311367ad7f6b010f4982b7be76471edb4dc30533dd"
+    },
+    {
+      "path": "scripts/openhands_entry.py",
+      "bytes": 2021,
+      "sha256": "5c0d2c0e9a950411c822cbc9a86eb19391d30f49e4f6aaea346ee2842e18609a"
+    },
+    {
+      "path": "scripts/preflight.ps1",
+      "bytes": 163,
+      "sha256": "41866bb008733eca94482fa5f8b64835b89f512e355cf73c6846c7e8dccbf2bd"
+    },
+    {
+      "path": "scripts/preflight.sh",
+      "bytes": 147,
+      "sha256": "512ca8be421da446bae457e3f06e55aea2334da5db947a0b77875a400b598c71"
+    },
+    {
+      "path": "scripts/study.py",
+      "bytes": 259,
+      "sha256": "51932de99fe31894f0f6209aa972b9eb7e8fc653b236c9314f2c092d65739127"
+    },
+    {
+      "path": "scripts/swebench_entry.py",
+      "bytes": 1784,
+      "sha256": "df779b030d45d48e860c0bd08c3fc8f92cde97ce80fa2274f4842172c697790d"
+    },
+    {
+      "path": "scripts/tiny_gpu_fixture.py",
+      "bytes": 2930,
+      "sha256": "c246689a89033fd4887dc7448be9adac5872dc404e0931932c543eecc52e6281"
+    },
+    {
+      "path": "scripts/validate_local_server.py",
+      "bytes": 2990,
+      "sha256": "8f8b4f76af95ade451b5f2e9d54f468b8c5e575dc7cc6c918b4dbeaae0b924d3"
+    },
+    {
+      "path": "src/swe_study/__init__.py",
+      "bytes": 22,
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
+    },
+    {
+      "path": "src/swe_study/assets.py",
+      "bytes": 6922,
+      "sha256": "e2268c966c6b0d87fd6596942afed96e8b6a73f220456c2af548af5c9da8425f"
+    },
+    {
+      "path": "src/swe_study/audit.py",
+      "bytes": 6842,
+      "sha256": "c99d2b44d09e5345d0cdd59807263feff4ef4cffeab361dadbcf5b1eea52a463"
+    },
+    {
+      "path": "src/swe_study/cli.py",
+      "bytes": 4020,
+      "sha256": "a76cb37bc597b4adfc7181fbd06de7d1c98b51f9429a4a79774ca6938383525e"
+    },
+    {
+      "path": "src/swe_study/common.py",
+      "bytes": 2511,
+      "sha256": "e49002d94e80def613100727784c24701946c1cdaafb4249ab6d44339078f61a"
+    },
+    {
+      "path": "src/swe_study/data.py",
+      "bytes": 12838,
+      "sha256": "a4ce866929cf283b3366455a2b042a114f26025fc1da77d4de56d5f48e060d83"
+    },
+    {
+      "path": "src/swe_study/docker_storage.py",
+      "bytes": 3243,
+      "sha256": "346f04283c9f1be20fdcc9460d41f9f73036f4ce4f5777437f3372557a30eb0d"
+    },
+    {
+      "path": "src/swe_study/evaluation.py",
+      "bytes": 7782,
+      "sha256": "44bec0b6e479507531421e72c9130ed883938818c280ef9c7b262fe799ad3856"
+    },
+    {
+      "path": "src/swe_study/inventory.py",
+      "bytes": 2393,
+      "sha256": "4c920dee3f97e6c003838acb0d5a9756f3df81511b1d74c65cb26ad9ed601898"
+    },
+    {
+      "path": "src/swe_study/preflight.py",
+      "bytes": 3352,
+      "sha256": "2f875adf5c9a003ea01e555589e15cd9896f3f5fe78c32921c80b5ab6f2e4d76"
+    },
+    {
+      "path": "src/swe_study/serving.py",
+      "bytes": 8383,
+      "sha256": "5b7334163ca2f05fa18a0c78c794575c95cf3fbeeffd96ee800acd1175bb4cd6"
+    },
+    {
+      "path": "src/swe_study/storage.py",
+      "bytes": 1934,
+      "sha256": "a40bbf58414c7dc4c33f1f058ec8e2019e50e7e08e29796e635ac94439235e49"
+    },
+    {
+      "path": "src/swe_study/tokenization.py",
+      "bytes": 4569,
+      "sha256": "b5462cbe25445a17ab86a429e0e57e73dd8f5c5480143942d507917ed624f714"
+    },
+    {
+      "path": "src/swe_study/training.py",
+      "bytes": 11853,
+      "sha256": "a5ed0c17cb4fde8371e8db84f0bf714a56aa0bb991298772444e494575e2d1fc"
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "bytes": 15109,
+      "sha256": "8185c916c3fc768262376c1a7e349f3afa1760ea08b8896e4e1682ba6e5a74d0"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "linux_github_https",
+  "cmd": "wsl.exe --exec git ls-remote https://github.com/SWE-bench/SWE-bench.git HEAD",
+  "result": {
+    "chunk_id": "9db65d",
+    "wall_time_seconds": 1.0713831,
+    "exit_code": 0,
+    "original_token_count": 12,
+    "output": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e\tHEAD\n"
+  }
+}

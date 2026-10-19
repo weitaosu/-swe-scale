@@ -1,0 +1,18 @@
+{
+  "synthetic_fixture": true,
+  "passed": true,
+  "adapter": "checkpoints/pilot/synthetic-tiny-qwen",
+  "transport": "in-process ASGI; real GPU model generation",
+  "checks": [
+    "model list",
+    "health",
+    "wrong model 404",
+    "n limit 400",
+    "unknown task 400",
+    "context overflow 413",
+    "adapter generation",
+    "persistent per-task token ledger",
+    "exhausted task 429",
+    "SSE completion"
+  ]
+}

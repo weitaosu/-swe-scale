@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-19T17:36:23.281Z",
+  "official_model_links": 3,
+  "missing_model_links": [],
+  "local_links_checked": 16,
+  "broken_local_links": [],
+  "source_code_changed": false,
+  "tests_not_rerun": "Documentation-only update",
+  "link_repairs": "Two references to an absent cleanup report now point to the retained cleanup audit; no deleted file was recreated"
+}

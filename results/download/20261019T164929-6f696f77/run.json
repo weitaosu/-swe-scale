@@ -1,0 +1,30 @@
+{
+  "run_id": "20261019T164929-6f696f77",
+  "stage": "download",
+  "started_at": "2026-10-19T16:49:29.478615+00:00",
+  "status": "failed",
+  "config": {
+    "command": "download",
+    "kind": "model",
+    "only": "1.5B"
+  },
+  "config_sha256": "58e7315bc57b655ce4e132a5e05af5ee1105fdaf770af8aabafe608cde330ffc",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/study.py",
+    "download",
+    "--kind",
+    "model",
+    "--only",
+    "1.5B"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "ended_at": "2026-10-19T16:49:30.151618+00:00",
+  "elapsed_seconds": 0.6240672999992967,
+  "error": {
+    "type": "ConnectError",
+    "message": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+  }
+}

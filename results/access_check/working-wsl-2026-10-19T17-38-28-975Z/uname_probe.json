@@ -1,0 +1,16 @@
+{
+  "executable": "wsl.exe",
+  "args": [
+    "--exec",
+    "uname",
+    "-a"
+  ],
+  "runner": "standard exec_command",
+  "result": {
+    "chunk_id": "f5bf72",
+    "wall_time_seconds": 0.0495813,
+    "exit_code": 0,
+    "original_token_count": 29,
+    "output": "Linux boyant 5.15.153.1-microsoft-standard-WSL2 #1 SMP Fri Mar 29 23:14:13 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux\n"
+  }
+}

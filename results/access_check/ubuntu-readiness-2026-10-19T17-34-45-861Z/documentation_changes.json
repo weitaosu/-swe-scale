@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-10-19T17:35:37.588Z",
+  "basis": "User request to add model links and supplied Ubuntu diagnostic output",
+  "changes": [
+    {
+      "path": "README.md",
+      "before_sha256": "5e3365e318383e4b42cb96219acc93c8f16f283877babcff3d7c0d1e00c90497",
+      "after_sha256": "c57287fcae011fd59e25f080d444268b427e42d2b85422291612bec52d4b4e4d",
+      "intermediate_sha256": "d41ec9238cf7f7ca52768d5fadb9224c7f17985624691870bcff60189f8f4cfd"
+    },
+    {
+      "path": "docs/environment.md",
+      "before_sha256": "8d71425d4a817966dbdcec118383da9460680710da1c4e3955806e9da7a20dce",
+      "after_sha256": "c23b508bde3e6462770e7274af8c2841655e4a3629a986c7d2ed1802243b0507",
+      "intermediate_sha256": "c23b508bde3e6462770e7274af8c2841655e4a3629a986c7d2ed1802243b0507"
+    },
+    {
+      "path": "docs/implementation_status.md",
+      "before_sha256": "45835cbbe05e3a4cf63595b98c45ad88bab2f20453b8d60257a792a86f5b3a65",
+      "after_sha256": "5e0402cd35f2f3f228624ebc8b9d49f8847d9e1ab21f3fb5f1c1bada0331198b",
+      "intermediate_sha256": "ee07b3d6a0738cee34c460659c8e5ba802b6e16bc127c0197b7ec23e88396e53"
+    },
+    {
+      "path": "manifests/implementation_status.json",
+      "before_sha256": "ba38f652ee550cbc003a40aa2856e8d5bd7b9d7d2a18e6fafc2631f57b876278",
+      "after_sha256": "921aa8adac1c96b2ad90e968e850696485b13f57cba65288585ddf3468e2bfd8",
+      "intermediate_sha256": "2c9ffc8ae0c9c700b7fd863da4bfdaa41923182f7e2557d569946f0191a87046"
+    }
+  ]
+}

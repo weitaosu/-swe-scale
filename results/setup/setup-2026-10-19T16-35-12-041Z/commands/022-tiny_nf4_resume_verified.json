@@ -1,0 +1,21 @@
+{
+  "id": "022-tiny_nf4_resume_verified",
+  "label": "tiny_nf4_resume_verified",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/study.py",
+    "train",
+    "--config",
+    ".cache/tmp/fixture_resume.yaml",
+    "--resume",
+    "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-3"
+  ],
+  "started_at": "2026-10-19T16:54:53.735Z",
+  "ended_at": "2026-10-19T16:55:02.817Z",
+  "elapsed_seconds": 9.082,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T165453-6e72dc69\r\n{'loss': '4.104', 'grad_norm': '1.444', 'learning_rate': '0', 'epoch': '0.5'}\r\n{'eval_loss': '4.104', 'eval_runtime': '0.0173', 'eval_samples_per_second': '115.7', 'eval_steps_per_second': '115.7', 'epoch': '0.5'}\r\n{'loss': '4.104', 'grad_norm': '1.444', 'learning_rate': '0.0003333', 'epoch': '0.625'}\r\n{'eval_loss': '4.089', 'eval_runtime': '0.0218', 'eval_samples_per_second': '91.87', 'eval_steps_per_second': '91.87', 'epoch': '0.625'}\r\n{'loss': '4.089', 'grad_norm': '1.471', 'learning_rate': '0.0001667', 'epoch': '0.75'}\r\n{'eval_loss': '4.081', 'eval_runtime': '0.014', 'eval_samples_per_second': '142.9', 'eval_steps_per_second': '142.9', 'epoch': '0.75'}\r\n{'train_runtime': '0.5359', 'train_samples_per_second': '11.2', 'train_steps_per_second': '11.2', 'train_loss': '2.049', 'epoch': '0.75'}\r\n{\r\n  \"output\": \"C:\\\\Users\\\\weita\\\\Desktop\\\\SE in AI\\\\proj\\\\checkpoints\\\\pilot\\\\synthetic-tiny-qwen\",\r\n  \"adapter_updated\": true,\r\n  \"gpu_hours\": 0.00018238866666150797,\r\n  \"tokens\": {\r\n    \"processed\": 48,\r\n    \"targets\": 9,\r\n    \"training_step_seconds\": 0.3169357999577187,\r\n    \"microbatches\": 3,\r\n    \"post_warmup_tokens\": 16,\r\n    \"post_warmup_seconds\": 0.025869400007650256\r\n  }\r\n}\r\nRun log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T165453-6e72dc69\r\n",
+  "stderr": "\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 478.19it/s]\r\nwarmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.\r\nThe tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.\r\n"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "006-remove_validation_scratch",
+  "exe": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:/Users/weita/Desktop/SE in AI/proj/results/cleanup/cleanup-2026-10-19T17-16-59-166Z/remove_validation_scratch.ps1"
+  ],
+  "started_at": "2026-10-19T17:23:11.227Z",
+  "ended_at": "2026-10-19T17:23:11.499Z",
+  "exit_code": 0,
+  "stdout": "Removed: .cache/tmp/pytest_cleanup\r\n",
+  "stderr": ""
+}

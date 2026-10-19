@@ -1,0 +1,23 @@
+{
+  "run_id": "20261019T164921-6d5aeb86",
+  "stage": "validate-checkpoint",
+  "started_at": "2026-10-19T16:49:21.923751+00:00",
+  "status": "passed",
+  "config": {
+    "command": "validate-checkpoint",
+    "adapter": "checkpoints/pilot/synthetic-tiny-qwen"
+  },
+  "config_sha256": "3e6042280ab777a6dc235ad0e21f0228c63735891f420d80af5ffa7d00f277f0",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/study.py",
+    "validate-checkpoint",
+    "--adapter",
+    "checkpoints/pilot/synthetic-tiny-qwen"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "ended_at": "2026-10-19T16:49:28.766928+00:00",
+  "elapsed_seconds": 6.789162300003227
+}

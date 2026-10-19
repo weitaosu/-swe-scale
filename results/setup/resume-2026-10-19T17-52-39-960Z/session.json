@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-10-19T17:52:39.963Z",
+  "user_update": "models are downloaded. and env works.",
+  "scope": "Resume approved first two milestones in Ubuntu; verify existing weights, provision local training env, download data/source and validate pilots",
+  "storage_caps": {
+    "incremental_bytes": 70000000000,
+    "minimum_free_bytes": 25000000000
+  },
+  "notes": [
+    "All three original model snapshots found under models/",
+    "Ubuntu system Python lacks ensurepip; bootstrap uses existing pip 24.0 to provision only the project venv",
+    "Critical package constraints match validated public versions; Linux validation still required"
+  ]
+}

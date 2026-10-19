@@ -1,0 +1,19 @@
+{
+  "id": "004-docker",
+  "label": "docker",
+  "executable": "docker.exe",
+  "args": [
+    "version",
+    "--format",
+    "json"
+  ],
+  "started_at": "2026-10-19T16:35:20.958Z",
+  "ended_at": "2026-10-19T16:35:21.008Z",
+  "elapsed_seconds": 0.05,
+  "exit_code": 1,
+  "error_code": null,
+  "error": "Command failed: docker.exe version --format json\nWARNING: Error loading config file: open C:\\Users\\weita\\.docker\\config.json: Access is denied.\nerror during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/version\": open //./pipe/docker_engine: The system cannot find the file specified.\n",
+  "stdout": "{\"Client\":{\"Version\":\"27.2.0\",\"ApiVersion\":\"1.47\",\"DefaultAPIVersion\":\"1.47\",\"GitCommit\":\"3ab4256\",\"GoVersion\":\"go1.21.13\",\"Os\":\"windows\",\"Arch\":\"amd64\",\"BuildTime\":\"Tue Aug 27 14:17:17 2024\",\"Context\":\"default\"},\"Server\":null}\n",
+  "stderr": "WARNING: Error loading config file: open C:\\Users\\weita\\.docker\\config.json: Access is denied.\nerror during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/version\": open //./pipe/docker_engine: The system cannot find the file specified.\n",
+  "killed": false
+}

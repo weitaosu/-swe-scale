@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-19T17:35:37.592Z",
+  "official_model_links": 3,
+  "missing_model_links": [],
+  "local_links_checked": 16,
+  "broken_local_links": [
+    {
+      "file": "README.md",
+      "target": "docs/file_cleanup_report.md"
+    },
+    {
+      "file": "docs/implementation_status.md",
+      "target": "file_cleanup_report.md"
+    }
+  ],
+  "source_code_changed": false,
+  "tests_not_rerun": "Documentation and evidence updates only; existing 30-test result retained"
+}

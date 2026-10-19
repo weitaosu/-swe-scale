@@ -1,0 +1,21 @@
+{
+  "id": "034-handoff_compile",
+  "label": "handoff_compile",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "compileall",
+    "-q",
+    "src",
+    "scripts",
+    "tests"
+  ],
+  "started_at": "2026-10-19T17:07:53.283Z",
+  "ended_at": "2026-10-19T17:07:53.389Z",
+  "elapsed_seconds": 0.106,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

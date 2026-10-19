@@ -1,0 +1,20 @@
+{
+  "id": "020-unit_tests_expanded",
+  "label": "unit_tests_expanded",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp",
+    ".cache/tmp/pytest"
+  ],
+  "started_at": "2026-10-19T16:53:15.603Z",
+  "ended_at": "2026-10-19T16:53:18.463Z",
+  "elapsed_seconds": 2.86,
+  "exit_code": 0,
+  "stdout": ".....................                                                    [100%]\r\n21 passed in 1.96s\r\n",
+  "stderr": ""
+}

@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-10-19T17:40:06.505Z",
+  "runner": "standard exec_command launching wsl.exe",
+  "ubuntu_access": true,
+  "shared_project_access": true,
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "python_executable": "/usr/bin/python3",
+  "torch": "2.6.0+cu124",
+  "cuda_runtime": "12.4",
+  "cuda_tensor_operation": [
+    2,
+    2
+  ],
+  "docker_daemon_ready": true,
+  "huggingface_https_status": 200,
+  "github_remote_read": true,
+  "linux_preflight": "results/preflight/20261019T173829-35e0d010/hardware.json",
+  "earlier_failure_scope": "Node REPL child-process launch route; standard command runner now succeeds",
+  "remaining": [
+    "Create the project Linux training environment and install required packages",
+    "Download and audit real assets",
+    "Record physical Docker storage before project image operations",
+    "Validate agent/evaluator environments and project container controls"
+  ]
+}

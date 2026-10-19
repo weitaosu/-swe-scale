@@ -1,0 +1,20 @@
+{
+  "id": "011-unit_tests",
+  "label": "unit_tests",
+  "executable": "python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp",
+    ".cache/tmp/pytest"
+  ],
+  "started_at": "2026-10-19T16:47:37.683Z",
+  "ended_at": "2026-10-19T16:47:40.215Z",
+  "elapsed_seconds": 2.532,
+  "exit_code": 0,
+  "stdout": ".................                                                        [100%]\r\n17 passed in 1.61s\r\n",
+  "stderr": ""
+}

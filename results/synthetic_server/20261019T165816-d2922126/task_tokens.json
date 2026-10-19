@@ -1,0 +1,7 @@
+{
+  "limit_per_task": 2,
+  "completion_tokens_by_task": {
+    "synthetic-task-0": 2,
+    "synthetic-task-1": 2
+  }
+}

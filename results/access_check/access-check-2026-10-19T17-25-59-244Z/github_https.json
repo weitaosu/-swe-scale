@@ -1,0 +1,16 @@
+{
+  "name": "github_https",
+  "executable": "git",
+  "args": [
+    "ls-remote",
+    "https://github.com/SWE-bench/SWE-bench.git",
+    "HEAD"
+  ],
+  "started_at": "2026-10-19T17:25:59.251Z",
+  "ended_at": "2026-10-19T17:25:59.338Z",
+  "exit_code": 128,
+  "error_code": null,
+  "error": "Command failed: git ls-remote https://github.com/SWE-bench/SWE-bench.git HEAD\nfatal: unable to access 'https://github.com/SWE-bench/SWE-bench.git/': Failed to connect to github.com port 443 after 19 ms: Could not connect to server\n",
+  "stdout": "",
+  "stderr": "fatal: unable to access 'https://github.com/SWE-bench/SWE-bench.git/': Failed to connect to github.com port 443 after 19 ms: Could not connect to server\n"
+}

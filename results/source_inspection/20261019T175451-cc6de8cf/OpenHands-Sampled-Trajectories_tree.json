@@ -1,0 +1,56 @@
+[
+  {
+    "type": "directory",
+    "oid": "7aa20fe73fe687ea39066f161cb1eda864da74ed",
+    "size": 0,
+    "path": "data"
+  },
+  {
+    "type": "file",
+    "oid": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+    "size": 2461,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "cd9277e6bdba02c9e35021097ae4d4d5fbdfafc9",
+    "size": 2988,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "7c1a5af815f8898826287bbf55813325748cd2f5",
+    "size": 70817777,
+    "lfs": {
+      "oid": "29d038b0c34eb0e50a19730f3cf3daa5a156c2d7e9c871c01b568acbab6aae07",
+      "size": 70817777,
+      "pointerSize": 133
+    },
+    "xetHash": "9bfb533b4a8262dabb4a78adbba35cfb3cd44ab72fac1523eadb03105f787cc2",
+    "path": "data/train.raw-00000-of-00003.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "c40bf95aa6af7b5efd82ec6674c91956ba1948d8",
+    "size": 78471672,
+    "lfs": {
+      "oid": "64a5d435b777a47e2544de1cc3bf61e5452bab1237fc43e70220e13f2f901516",
+      "size": 78471672,
+      "pointerSize": 133
+    },
+    "xetHash": "c29cf5cbbc9b9a655e5829be31f662e768d9a45075054e3e296755e5dff67460",
+    "path": "data/train.raw-00001-of-00003.parquet"
+  },
+  {
+    "type": "file",
+    "oid": "1202fe3fea8c45109a919d4bb4247f4da0eca222",
+    "size": 151806160,
+    "lfs": {
+      "oid": "1e388384f0dbf65421b53ef37d4f92c10e1e458f597bf61326fa047b8e21b597",
+      "size": 151806160,
+      "pointerSize": 134
+    },
+    "xetHash": "dde0dc735377e5232b740c3ce52c6025bf23d2ec4058238c8083b78d4409eb5c",
+    "path": "data/train.raw-00002-of-00003.parquet"
+  }
+]

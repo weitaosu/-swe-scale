@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "kind": "model",
+      "target": "models/Qwen2.5-Coder-1.5B-Instruct",
+      "split": null,
+      "status": "blocked",
+      "error_type": "ConnectError",
+      "error": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-3B-Instruct",
+      "kind": "model",
+      "target": "models/Qwen2.5-Coder-3B-Instruct",
+      "split": null,
+      "status": "not_started",
+      "revision": null
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "kind": "model",
+      "target": "models/Qwen2.5-Coder-7B-Instruct",
+      "split": null,
+      "status": "not_started",
+      "revision": null
+    }
+  ]
+}

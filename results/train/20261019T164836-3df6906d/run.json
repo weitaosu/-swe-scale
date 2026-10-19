@@ -1,0 +1,28 @@
+{
+  "run_id": "20261019T164836-3df6906d",
+  "stage": "train",
+  "started_at": "2026-10-19T16:48:36.231865+00:00",
+  "status": "failed",
+  "config": {
+    "command": "train",
+    "config": ".cache/tmp/fixture_training.yaml",
+    "resume": null
+  },
+  "config_sha256": "57a3c2cd7c4c8802cd6d0212bcd6a346d9ade100fd124010ed0669bcafa02ecc",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/study.py",
+    "train",
+    "--config",
+    ".cache/tmp/fixture_training.yaml"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "ended_at": "2026-10-19T16:48:43.756666+00:00",
+  "elapsed_seconds": 7.476087999995798,
+  "error": {
+    "type": "TypeError",
+    "message": "TrainingArguments.__init__() got an unexpected keyword argument 'save_safetensors'"
+  }
+}

@@ -1,0 +1,9 @@
+{"time":"2026-10-19T17:17:06.398Z","event":"command_finished","id":"001-references","exit_code":0}
+{"time":"2026-10-19T17:18:26.785Z","event":"command_finished","id":"002-archive_prior_documents","exit_code":0}
+{"time":"2026-10-19T17:20:46.244Z","event":"command_finished","id":"003-remove_reviewed_artifacts","exit_code":0}
+{"time":"2026-10-19T17:21:48.738Z","event":"command_finished","id":"004-verify_preservation_and_links","exit_code":0}
+{"time":"2026-10-19T17:21:56.351Z","event":"command_finished","id":"005-post_cleanup_tests","exit_code":0}
+{"time":"2026-10-19T17:23:11.501Z","event":"command_finished","id":"006-remove_validation_scratch","exit_code":0}
+{"time":"2026-10-19T17:23:11.673Z","event":"command_finished","id":"007-final_integrity_and_links","exit_code":0}
+{"time":"2026-10-19T17:23:13.010Z","event":"command_finished","id":"008-refresh_inventory","exit_code":0}
+{"time":"2026-10-19T17:23:50.739Z","event":"cleanup_finished","status":"passed","removed_preexisting_files":449,"tests_passed":30,"preserved_evidence_files":323}

@@ -1,0 +1,11 @@
+{
+  "name": "linux_huggingface_https",
+  "cmd": "wsl.exe --exec python3 -B -c \"import urllib.request; r=urllib.request.urlopen('https://huggingface.co/api/models/Qwen/Qwen2.5-Coder-1.5B-Instruct',timeout=15); print('HTTP',r.status)\"",
+  "result": {
+    "chunk_id": "c89d84",
+    "wall_time_seconds": 0.6162369,
+    "exit_code": 0,
+    "original_token_count": 3,
+    "output": "HTTP 200\n"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "001-references",
+  "exe": "rg",
+  "args": [
+    "-n",
+    "--glob",
+    "*.md",
+    "--glob",
+    "*.py",
+    "--glob",
+    "*.yaml",
+    "--glob",
+    "*.json",
+    "--glob",
+    "!artifact_inventory.json",
+    "first_two_milestones_plan|configs/models|configs/evaluation|checkpoint-5|fixture_server_tasks",
+    "README.md",
+    "docs",
+    "src",
+    "scripts",
+    "tests",
+    "manifests"
+  ],
+  "started_at": "2026-10-19T17:17:06.210Z",
+  "ended_at": "2026-10-19T17:17:06.396Z",
+  "exit_code": 0,
+  "stdout": "docs\\rtx_4090_implementation_plan.md:205:| configs/models.yaml, agent.yaml, evaluation.yaml, qlora_pilot.yaml | Shared model, agent, grading, and training choices |\ndocs\\first_two_milestones_plan.md:170:- configs/models.yaml, configs/agent.yaml, configs/evaluation.yaml, configs/lora_sft.yaml.\nscripts\\validate_local_server.py:15:task_file=root/\".cache/tmp/fixture_server_tasks.jsonl\"\ndocs\\rtx_4090_constraints.md:85:Project scope: [CS6158 Project Proposal](<../CS6158 Project Proposal.pdf>) and [first two milestones implementation plan](first_two_milestones_plan.md).\n",
+  "stderr": ""
+}

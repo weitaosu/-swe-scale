@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T164930-d1f3a196",
+  "stage": "checkout",
+  "started_at": "2026-10-19T16:49:30.393875+00:00",
+  "status": "failed",
+  "config": {
+    "command": "checkout"
+  },
+  "config_sha256": "fb68f404d8166e1b760b3eecd73f452cb6155c02e197a4eb8f51152dfea44b6d",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/study.py",
+    "checkout"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "ended_at": "2026-10-19T16:49:30.720354+00:00",
+  "elapsed_seconds": 0.26595530001213774,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command failed (128): git\nfatal: unable to access 'https://github.com/SWE-bench/SWE-bench.git/': Failed to connect to github.com port 443 after 36 ms: Could not connect to server\n"
+  }
+}

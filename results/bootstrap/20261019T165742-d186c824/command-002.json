@@ -1,0 +1,12 @@
+{
+  "args": [
+    "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+    "scripts/study.py",
+    "preflight"
+  ],
+  "cwd": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "stdout_path": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\bootstrap\\20261019T165742-d186c824\\command-002.stdout.log",
+  "stderr_path": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\bootstrap\\20261019T165742-d186c824\\command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.2634771000011824
+}

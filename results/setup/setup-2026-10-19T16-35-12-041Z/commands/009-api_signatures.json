@@ -1,0 +1,17 @@
+{
+  "id": "009-api_signatures",
+  "label": "api_signatures",
+  "executable": "python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-c",
+    "import inspect; from transformers import Trainer,TrainingArguments; from huggingface_hub import HfApi; print(\"Trainer\",inspect.signature(Trainer.__init__)); print(\"training_step\",inspect.signature(Trainer.training_step)); print(\"repo_info\",inspect.signature(HfApi.repo_info)); print(\"eval_strategy\", \"eval_strategy\" in inspect.signature(TrainingArguments).parameters)"
+  ],
+  "started_at": "2026-10-19T16:43:04.375Z",
+  "ended_at": "2026-10-19T16:43:31.226Z",
+  "elapsed_seconds": 26.851,
+  "exit_code": 0,
+  "stdout": "Trainer (self, model: transformers.modeling_utils.PreTrainedModel | torch.nn.modules.module.Module | None = None, args: transformers.training_args.TrainingArguments | None = None, data_collator: collections.abc.Callable[[list[typing.Any]], dict[str, typing.Any]] | None = None, train_dataset: 'Dataset | IterableDataset | datasets.Dataset | None' = None, eval_dataset: 'Dataset | dict[str, Dataset] | datasets.Dataset | None' = None, processing_class: transformers.tokenization_utils_base.PreTrainedTokenizerBase | transformers.image_processing_utils.BaseImageProcessor | transformers.feature_extraction_utils.FeatureExtractionMixin | transformers.processing_utils.ProcessorMixin | None = None, model_init: collections.abc.Callable[..., transformers.modeling_utils.PreTrainedModel] | None = None, compute_loss_func: collections.abc.Callable | None = None, compute_metrics: collections.abc.Callable[[transformers.trainer_utils.EvalPrediction], dict] | None = None, callbacks: list[transformers.trainer_callback.TrainerCallback] | None = None, optimizers: tuple[torch.optim.optimizer.Optimizer | None, torch.optim.lr_scheduler.LambdaLR | None] = (None, None), optimizer_cls_and_kwargs: tuple[type[torch.optim.optimizer.Optimizer], dict[str, typing.Any]] | None = None, preprocess_logits_for_metrics: collections.abc.Callable[[torch.Tensor, torch.Tensor], torch.Tensor] | None = None)\r\ntraining_step (self, model: torch.nn.modules.module.Module, inputs: dict[str, torch.Tensor | typing.Any], num_items_in_batch: torch.Tensor | int | None = None) -> torch.Tensor\r\nrepo_info (self, repo_id: 'str', *, revision: 'str | None' = None, repo_type: 'str | None' = None, timeout: 'float | None' = None, files_metadata: 'bool' = False, expand: 'ExpandModelProperty_T | ExpandDatasetProperty_T | ExpandSpaceProperty_T | None' = None, token: 'bool | str | None' = None) -> 'ModelInfo | DatasetInfo | SpaceInfo | KernelInfo'\r\neval_strategy True\r\n",
+  "stderr": ""
+}

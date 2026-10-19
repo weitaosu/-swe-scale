@@ -1,0 +1,21 @@
+{
+  "id": "021-tiny_nf4_resume",
+  "label": "tiny_nf4_resume",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/study.py",
+    "train",
+    "--config",
+    ".cache/tmp/fixture_resume.yaml",
+    "--resume",
+    "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-3"
+  ],
+  "started_at": "2026-10-19T16:53:25.140Z",
+  "ended_at": "2026-10-19T16:53:33.996Z",
+  "elapsed_seconds": 8.856,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T165325-bb24bc95\r\n{'loss': '4.104', 'grad_norm': '1.444', 'learning_rate': '0', 'epoch': '0.5'}\r\n{'eval_loss': '4.104', 'eval_runtime': '0.0139', 'eval_samples_per_second': '144.1', 'eval_steps_per_second': '144.1', 'epoch': '0.5'}\r\n{'train_runtime': '0.3823', 'train_samples_per_second': '10.46', 'train_steps_per_second': '10.46', 'train_loss': '1.026', 'epoch': '0.5'}\r\n{\r\n  \"output\": \"C:\\\\Users\\\\weita\\\\Desktop\\\\SE in AI\\\\proj\\\\checkpoints\\\\pilot\\\\synthetic-tiny-qwen\",\r\n  \"adapter_updated\": true,\r\n  \"gpu_hours\": 0.00014111213888908322,\r\n  \"tokens\": {\r\n    \"processed\": 16,\r\n    \"targets\": 3,\r\n    \"training_step_seconds\": 0.26137359999120235,\r\n    \"microbatches\": 1,\r\n    \"post_warmup_tokens\": 0,\r\n    \"post_warmup_seconds\": 0.0\r\n  }\r\n}\r\nRun log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T165325-bb24bc95\r\n",
+  "stderr": "\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 475.14it/s]\r\nwarmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.\r\nThe tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.\r\n"
+}

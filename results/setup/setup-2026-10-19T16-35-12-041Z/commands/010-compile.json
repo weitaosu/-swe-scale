@@ -1,0 +1,21 @@
+{
+  "id": "010-compile",
+  "label": "compile",
+  "executable": "python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "compileall",
+    "-q",
+    "src",
+    "scripts",
+    "tests"
+  ],
+  "started_at": "2026-10-19T16:47:37.572Z",
+  "ended_at": "2026-10-19T16:47:37.681Z",
+  "elapsed_seconds": 0.109,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

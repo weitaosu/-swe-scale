@@ -1,0 +1,24 @@
+{
+  "run_id": "20261019T175240-bc869e1e",
+  "stage": "bootstrap",
+  "started_at": "2026-10-19T17:52:40.310944+00:00",
+  "status": "running",
+  "config": {
+    "name": "train",
+    "system_site_packages": false,
+    "install": true,
+    "constraints": "configs/constraints_train.txt"
+  },
+  "config_sha256": "d62c9fbe00c7294455a148ab7590cc3e2c8f197bae08e3fe1827eaad93776f68",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "scripts/bootstrap.py",
+    "--name",
+    "train",
+    "--install"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "source_snapshot_sha256": "1ea37dcfbfb9771dddc52e33bfa891220fcdf4e6a197d4d31af944a77f4421ce"
+}

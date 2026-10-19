@@ -1,0 +1,16 @@
+{
+  "id": "014-create_tiny_qwen_fixture",
+  "label": "create_tiny_qwen_fixture",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/tiny_gpu_fixture.py"
+  ],
+  "started_at": "2026-10-19T16:48:29.137Z",
+  "ended_at": "2026-10-19T16:48:36.103Z",
+  "elapsed_seconds": 6.966,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\synthetic_fixture\\20261019T164829-d0ef648a\r\n{\r\n  \"model\": \".cache/tmp/tiny-qwen-fixture\",\r\n  \"train_file\": \".cache/tmp/fixture_train.jsonl\",\r\n  \"validation_file\": \".cache/tmp/fixture_validation.jsonl\",\r\n  \"output\": \"checkpoints/pilot/synthetic-tiny-qwen\",\r\n  \"max_length\": 128,\r\n  \"max_train_examples\": 8,\r\n  \"max_eval_examples\": 2,\r\n  \"max_steps\": 3,\r\n  \"learning_rate\": 0.001,\r\n  \"warmup_ratio\": 0.0,\r\n  \"gradient_accumulation_steps\": 1,\r\n  \"lora_rank\": 4,\r\n  \"lora_alpha\": 8,\r\n  \"lora_dropout\": 0.0,\r\n  \"save_steps\": 1,\r\n  \"eval_steps\": 1,\r\n  \"save_total_limit\": 2,\r\n  \"seed\": 6158,\r\n  \"quantization\": \"nf4\",\r\n  \"synthetic_fixture\": true\r\n}\r\n",
+  "stderr": "\rWriting model shards:   0%|          | 0/1 [00:00<?, ?it/s]\rWriting model shards: 100%|##########| 1/1 [00:00<00:00, 990.16it/s]\r\n"
+}

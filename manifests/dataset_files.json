@@ -1,0 +1,45 @@
+{
+  "assets": [
+    {
+      "repo": "SWE-Gym/OpenHands-SFT-Trajectories",
+      "kind": "dataset",
+      "target": "data/raw/swegym/sft",
+      "split": "train.success.oss",
+      "status": "blocked",
+      "error_type": "ConnectError",
+      "error": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "repo": "SWE-Gym/OpenHands-Sampled-Trajectories",
+      "kind": "dataset",
+      "target": "data/raw/swegym/sampled",
+      "split": "train.raw",
+      "status": "not_started",
+      "revision": null
+    },
+    {
+      "repo": "SWE-Gym/SWE-Gym",
+      "kind": "dataset",
+      "target": "data/raw/swegym/tasks",
+      "split": "train",
+      "status": "not_started",
+      "revision": null
+    },
+    {
+      "repo": "SWE-bench/SWE-bench_Verified",
+      "kind": "dataset",
+      "target": "data/raw/swebench/verified",
+      "split": "test",
+      "status": "not_started",
+      "revision": null
+    },
+    {
+      "repo": "SWE-bench/SWE-bench",
+      "kind": "dataset",
+      "target": "data/raw/swebench/dev",
+      "split": "dev",
+      "status": "not_started",
+      "revision": null
+    }
+  ]
+}

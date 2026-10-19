@@ -1,0 +1,348 @@
+{
+  "passed": true,
+  "removed_preexisting_files": 449,
+  "removed_preexisting_bytes": 5517931,
+  "preserved_evidence_files_checked": 323,
+  "preserved_evidence_changes": [],
+  "source_modules_syntax_checked": 22,
+  "source_analysis": [
+    {
+      "path": "src/swe_study/__init__.py",
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+      "imports": []
+    },
+    {
+      "path": "src/swe_study/assets.py",
+      "sha256": "e2268c966c6b0d87fd6596942afed96e8b6a73f220456c2af548af5c9da8425f",
+      "imports": [
+        "__future__",
+        "common",
+        "fnmatch",
+        "huggingface_hub",
+        "json",
+        "pathlib",
+        "re",
+        "storage",
+        "subprocess",
+        "sys",
+        "time"
+      ]
+    },
+    {
+      "path": "src/swe_study/audit.py",
+      "sha256": "c99d2b44d09e5345d0cdd59807263feff4ef4cffeab361dadbcf5b1eea52a463",
+      "imports": [
+        "__future__",
+        "common",
+        "contextlib",
+        "datetime",
+        "importlib.metadata",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "signal",
+        "subprocess",
+        "sys",
+        "threading",
+        "time",
+        "traceback",
+        "uuid",
+        "zipfile"
+      ]
+    },
+    {
+      "path": "src/swe_study/cli.py",
+      "sha256": "a76cb37bc597b4adfc7181fbd06de7d1c98b51f9429a4a79774ca6938383525e",
+      "imports": [
+        "__future__",
+        "argparse",
+        "assets",
+        "audit",
+        "common",
+        "data",
+        "docker_storage",
+        "evaluation",
+        "inventory",
+        "json",
+        "preflight",
+        "serving",
+        "tokenization",
+        "training"
+      ]
+    },
+    {
+      "path": "src/swe_study/common.py",
+      "sha256": "e49002d94e80def613100727784c24701946c1cdaafb4249ab6d44339078f61a",
+      "imports": [
+        "__future__",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "src/swe_study/data.py",
+      "sha256": "a4ce866929cf283b3366455a2b042a114f26025fc1da77d4de56d5f48e060d83",
+      "imports": [
+        "__future__",
+        "collections",
+        "common",
+        "json",
+        "math",
+        "pathlib",
+        "pyarrow.parquet",
+        "random",
+        "re",
+        "unicodedata"
+      ]
+    },
+    {
+      "path": "src/swe_study/docker_storage.py",
+      "sha256": "346f04283c9f1be20fdcc9460d41f9f73036f4ce4f5777437f3372557a30eb0d",
+      "imports": [
+        "__future__",
+        "audit",
+        "common",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "shutil",
+        "storage",
+        "subprocess"
+      ]
+    },
+    {
+      "path": "src/swe_study/evaluation.py",
+      "sha256": "44bec0b6e479507531421e72c9130ed883938818c280ef9c7b262fe799ad3856",
+      "imports": [
+        "__future__",
+        "common",
+        "data",
+        "docker_storage",
+        "json",
+        "os",
+        "pathlib",
+        "storage",
+        "subprocess",
+        "sys",
+        "yaml"
+      ]
+    },
+    {
+      "path": "src/swe_study/inventory.py",
+      "sha256": "4c920dee3f97e6c003838acb0d5a9756f3df81511b1d74c65cb26ad9ed601898",
+      "imports": [
+        "__future__",
+        "audit",
+        "collections",
+        "common",
+        "os",
+        "pathlib",
+        "storage"
+      ]
+    },
+    {
+      "path": "src/swe_study/preflight.py",
+      "sha256": "2f875adf5c9a003ea01e555589e15cd9896f3f5fe78c32921c80b5ab6f2e4d76",
+      "imports": [
+        "__future__",
+        "audit",
+        "common",
+        "ctypes",
+        "json",
+        "os",
+        "platform",
+        "shutil",
+        "storage",
+        "subprocess",
+        "sys",
+        "torch"
+      ]
+    },
+    {
+      "path": "src/swe_study/serving.py",
+      "sha256": "5b7334163ca2f05fa18a0c78c794575c95cf3fbeeffd96ee800acd1175bb4cd6",
+      "imports": [
+        "__future__",
+        "common",
+        "fastapi",
+        "fastapi.responses",
+        "json",
+        "re",
+        "storage",
+        "threading",
+        "time",
+        "torch",
+        "training",
+        "uuid",
+        "uvicorn"
+      ]
+    },
+    {
+      "path": "src/swe_study/storage.py",
+      "sha256": "a40bbf58414c7dc4c33f1f058ec8e2019e50e7e08e29796e635ac94439235e49",
+      "imports": [
+        "__future__",
+        "common",
+        "pathlib",
+        "shutil"
+      ]
+    },
+    {
+      "path": "src/swe_study/tokenization.py",
+      "sha256": "b5462cbe25445a17ab86a429e0e57e73dd8f5c5480143942d507917ed624f714",
+      "imports": [
+        "__future__",
+        "collections",
+        "common",
+        "json",
+        "torch",
+        "transformers"
+      ]
+    },
+    {
+      "path": "src/swe_study/training.py",
+      "sha256": "a5ed0c17cb4fde8371e8db84f0bf714a56aa0bb991298772444e494575e2d1fc",
+      "imports": [
+        "__future__",
+        "audit",
+        "common",
+        "gc",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "peft",
+        "peft.utils.save_and_load",
+        "random",
+        "storage",
+        "time",
+        "tokenization",
+        "torch",
+        "transformers",
+        "yaml"
+      ]
+    },
+    {
+      "path": "scripts/bootstrap.py",
+      "sha256": "8522cb551dd5001e5421e99b7a5ac90effa1e052e61e7381b41b0aef0a60bb23",
+      "imports": [
+        "argparse",
+        "os",
+        "pathlib",
+        "swe_study.audit",
+        "swe_study.common",
+        "swe_study.storage",
+        "sys"
+      ]
+    },
+    {
+      "path": "scripts/continue_setup.py",
+      "sha256": "df5fd6409d38b69c867862311367ad7f6b010f4982b7be76471edb4dc30533dd",
+      "imports": [
+        "argparse",
+        "pathlib",
+        "swe_study.audit",
+        "swe_study.common",
+        "swe_study.storage",
+        "sys"
+      ]
+    },
+    {
+      "path": "scripts/openhands_entry.py",
+      "sha256": "5c0d2c0e9a950411c822cbc9a86eb19391d30f49e4f6aaea346ee2842e18609a",
+      "imports": [
+        "argparse",
+        "datasets",
+        "evaluation.utils.shared",
+        "json",
+        "os",
+        "pathlib",
+        "runpy",
+        "swe_study.common",
+        "sys"
+      ]
+    },
+    {
+      "path": "scripts/study.py",
+      "sha256": "51932de99fe31894f0f6209aa972b9eb7e8fc653b236c9314f2c092d65739127",
+      "imports": [
+        "pathlib",
+        "swe_study.cli",
+        "swe_study.common",
+        "sys"
+      ]
+    },
+    {
+      "path": "scripts/swebench_entry.py",
+      "sha256": "df779b030d45d48e860c0bd08c3fc8f92cde97ce80fa2274f4842172c697790d",
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "runpy",
+        "subprocess",
+        "swe_study.common",
+        "swe_study.evaluation",
+        "swebench.task.repo",
+        "sys"
+      ]
+    },
+    {
+      "path": "scripts/tiny_gpu_fixture.py",
+      "sha256": "c246689a89033fd4887dc7448be9adac5872dc404e0931932c543eecc52e6281",
+      "imports": [
+        "json",
+        "pathlib",
+        "swe_study.audit",
+        "swe_study.common",
+        "sys",
+        "tokenizers",
+        "torch",
+        "transformers",
+        "yaml"
+      ]
+    },
+    {
+      "path": "scripts/validate_local_server.py",
+      "sha256": "8f8b4f76af95ade451b5f2e9d54f468b8c5e575dc7cc6c918b4dbeaae0b924d3",
+      "imports": [
+        "fastapi.testclient",
+        "json",
+        "pathlib",
+        "swe_study.audit",
+        "swe_study.common",
+        "swe_study.serving",
+        "sys",
+        "unittest.mock"
+      ]
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "sha256": "8185c916c3fc768262376c1a7e349f3afa1760ea08b8896e4e1682ba6e5a74d0",
+      "imports": [
+        "json",
+        "pyarrow",
+        "pyarrow.parquet",
+        "pytest",
+        "swe_study.assets",
+        "swe_study.audit",
+        "swe_study.common",
+        "swe_study.data",
+        "swe_study.docker_storage",
+        "swe_study.evaluation",
+        "swe_study.serving",
+        "swe_study.storage",
+        "swe_study.tokenization",
+        "sys",
+        "types",
+        "yaml"
+      ]
+    }
+  ],
+  "local_markdown_links_checked": 25,
+  "broken_local_links": []
+}

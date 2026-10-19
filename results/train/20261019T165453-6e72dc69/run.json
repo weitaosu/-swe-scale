@@ -1,0 +1,27 @@
+{
+  "run_id": "20261019T165453-6e72dc69",
+  "stage": "train",
+  "started_at": "2026-10-19T16:54:53.875057+00:00",
+  "status": "passed",
+  "config": {
+    "command": "train",
+    "config": ".cache/tmp/fixture_resume.yaml",
+    "resume": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-3"
+  },
+  "config_sha256": "a86f327fa530149ca3b6ec578cdd0c77340c718c69bce3e7b81dc3308df892f6",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/study.py",
+    "train",
+    "--config",
+    ".cache/tmp/fixture_resume.yaml",
+    "--resume",
+    "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-3"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "source_snapshot_sha256": "d82829ff43b7fa0d1e926bc071aad4426a2288db517873c40f82474864a32b46",
+  "ended_at": "2026-10-19T16:55:02.142785+00:00",
+  "elapsed_seconds": 8.192693200020585
+}

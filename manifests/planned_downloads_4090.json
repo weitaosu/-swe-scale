@@ -1,0 +1,127 @@
+{
+  "status": "approved_staged_implementation",
+  "project_root": "C:/Users/weita/Desktop/SE in AI/proj",
+  "units": "GB = 1e9 bytes; MB = 1e6 bytes; all listed remote sizes are rounded estimates",
+  "models": [
+    {
+      "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "target": "models/Qwen2.5-Coder-1.5B-Instruct",
+      "estimated_gb": 3.1,
+      "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct/tree/main",
+      "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "revision_discovery": "user-downloaded Hugging Face local snapshot metadata; checksum verification pending"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-3B-Instruct",
+      "target": "models/Qwen2.5-Coder-3B-Instruct",
+      "estimated_gb": 6.18,
+      "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct/tree/main",
+      "revision": "488639f1ff808d1d3d0ba301aef8c11461451ec5",
+      "revision_discovery": "user-downloaded Hugging Face local snapshot metadata; checksum verification pending"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "target": "models/Qwen2.5-Coder-7B-Instruct",
+      "estimated_gb": 15.2,
+      "source": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct/tree/main",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "revision_discovery": "user-downloaded Hugging Face local snapshot metadata; checksum verification pending"
+    }
+  ],
+  "datasets": [
+    {
+      "repo": "SWE-Gym/OpenHands-SFT-Trajectories",
+      "split": "train.success.oss",
+      "target": "data/raw/swegym/sft",
+      "rows": 491,
+      "estimated_mb": 10.4,
+      "purpose": "Successful SFT histories",
+      "source": "https://huggingface.co/datasets/SWE-Gym/OpenHands-SFT-Trajectories",
+      "revision": null
+    },
+    {
+      "repo": "SWE-Gym/OpenHands-Sampled-Trajectories",
+      "split": "train.raw",
+      "target": "data/raw/swegym/sampled",
+      "rows": 6055,
+      "estimated_mb": 301,
+      "purpose": "Recover provenance and tool schemas; not an unfiltered training pool",
+      "source": "https://huggingface.co/datasets/SWE-Gym/OpenHands-Sampled-Trajectories",
+      "revision": null
+    },
+    {
+      "repo": "SWE-Gym/SWE-Gym",
+      "split": "train",
+      "target": "data/raw/swegym/tasks",
+      "rows": 2438,
+      "estimated_mb": 43.6,
+      "purpose": "Task identities and source metadata",
+      "source": "https://huggingface.co/datasets/SWE-Gym/SWE-Gym",
+      "revision": null
+    },
+    {
+      "repo": "SWE-bench/SWE-bench_Verified",
+      "split": "test",
+      "target": "data/raw/swebench/verified",
+      "rows": 500,
+      "estimated_mb": 6.31,
+      "purpose": "Benchmark metadata, final task manifest, overlap denylist",
+      "source": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified",
+      "revision": null
+    },
+    {
+      "repo": "SWE-bench/SWE-bench",
+      "split": "dev",
+      "target": "data/raw/swebench/dev",
+      "estimated_mb": 36.6,
+      "purpose": "Development metadata; conservative allowance based on full repository size",
+      "source": "https://huggingface.co/datasets/SWE-bench/SWE-bench",
+      "revision": null
+    }
+  ],
+  "storage_budget": {
+    "models_gb": 24.48,
+    "raw_datasets_gb": 0.39791,
+    "source_code_gb": [
+      1,
+      3
+    ],
+    "environments_gb": [
+      15,
+      30
+    ],
+    "processed_data_and_token_caches_gb": [
+      1,
+      3
+    ],
+    "pilot_adapters_and_resume_checkpoints_gb": [
+      2,
+      6
+    ],
+    "logs_and_reports_gb": [
+      1,
+      5
+    ],
+    "docker_images_and_writable_layers_gb": [
+      30,
+      100
+    ],
+    "temporary_downloads_and_builds_gb": [
+      10,
+      20
+    ]
+  },
+  "current_available_bytes": 102875369472,
+  "staged_proposal": {
+    "max_incremental_gb": 70,
+    "min_free_gb": 25,
+    "docker_checks": "Only when measured space permits; otherwise remain pending"
+  },
+  "full_setup_recommended_free_gb": [
+    200,
+    250
+  ],
+  "scope": "Only the first two milestones; no nine-run production matrix or full 1200-attempt evaluation",
+  "approved_at": "2026-10-19T16:35:12.067Z",
+  "approval": "User: proceed. make sure to track everything including logs"
+}

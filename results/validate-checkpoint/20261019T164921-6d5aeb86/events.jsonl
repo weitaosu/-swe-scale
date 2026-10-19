@@ -1,0 +1,2 @@
+{"time": "2026-10-19T16:49:21.978899+00:00", "event": "run_started", "config": {"command": "validate-checkpoint", "adapter": "checkpoints/pilot/synthetic-tiny-qwen"}}
+{"time": "2026-10-19T16:49:28.766928+00:00", "event": "run_finished", "status": "passed", "error": null}

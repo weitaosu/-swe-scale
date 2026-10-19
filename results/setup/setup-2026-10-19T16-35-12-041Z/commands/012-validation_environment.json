@@ -1,0 +1,19 @@
+{
+  "id": "012-validation_environment",
+  "label": "validation_environment",
+  "executable": "python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "venv",
+    "--system-site-packages",
+    ".envs/validation"
+  ],
+  "started_at": "2026-10-19T16:48:14.593Z",
+  "ended_at": "2026-10-19T16:48:21.180Z",
+  "elapsed_seconds": 6.587,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,20 @@
+model: models/Qwen2.5-Coder-1.5B-Instruct
+train_file: data/processed/swegym/train.jsonl
+validation_file: data/processed/swegym/validation.jsonl
+output: checkpoints/pilot/qwen-1.5b
+max_length: 4096
+max_train_examples: 64
+max_eval_examples: 16
+max_steps: 25
+learning_rate: 0.0001
+warmup_ratio: 0.03
+gradient_accumulation_steps: 8
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+seed: 6158
+save_steps: 5
+eval_steps: 5
+save_total_limit: 2
+quantization: nf4

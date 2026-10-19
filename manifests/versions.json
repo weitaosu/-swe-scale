@@ -1,0 +1,18 @@
+{
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "executable": "/usr/bin/python3",
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": null,
+    "peft": null,
+    "bitsandbytes": null,
+    "accelerate": null,
+    "huggingface-hub": null,
+    "datasets": null,
+    "pyarrow": null,
+    "tokenizers": null,
+    "fastapi": null,
+    "uvicorn": null,
+    "pytest": null
+  }
+}

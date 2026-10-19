@@ -1,0 +1,4 @@
+{"time": "2026-10-19T16:58:01.423199+00:00", "event": "run_started", "config": {}}
+{"time": "2026-10-19T16:58:01.423799+00:00", "event": "missing_prediction_scored_empty", "instance_id": "two"}
+{"time": "2026-10-19T16:58:01.423799+00:00", "event": "predictions_exported", "count": 2, "output": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.cache\\tmp\\pytest\\test_missing_predictions_keep_0\\output.jsonl"}
+{"time": "2026-10-19T16:58:01.423799+00:00", "event": "run_finished", "status": "passed", "error": null}

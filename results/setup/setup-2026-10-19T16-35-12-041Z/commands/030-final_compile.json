@@ -1,0 +1,21 @@
+{
+  "id": "030-final_compile",
+  "label": "final_compile",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "compileall",
+    "-q",
+    "src",
+    "scripts",
+    "tests"
+  ],
+  "started_at": "2026-10-19T17:05:13.375Z",
+  "ended_at": "2026-10-19T17:05:13.483Z",
+  "elapsed_seconds": 0.108,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

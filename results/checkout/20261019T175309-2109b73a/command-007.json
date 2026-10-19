@@ -1,0 +1,15 @@
+{
+  "args": [
+    "git",
+    "fetch",
+    "--depth",
+    "1",
+    "origin",
+    "e644a2ca45c3623b27a7e6c169e3d479f0a87fbc"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-Gym-OpenHands",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-007.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-007.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 1.0338019619998704
+}

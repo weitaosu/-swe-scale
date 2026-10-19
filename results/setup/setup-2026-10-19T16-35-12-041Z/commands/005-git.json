@@ -1,0 +1,14 @@
+{
+  "id": "005-git",
+  "label": "git",
+  "executable": "git.exe",
+  "args": [
+    "--version"
+  ],
+  "started_at": "2026-10-19T16:35:20.963Z",
+  "ended_at": "2026-10-19T16:35:20.997Z",
+  "elapsed_seconds": 0.034,
+  "exit_code": 0,
+  "stdout": "git version 2.46.0.windows.1\n",
+  "stderr": ""
+}

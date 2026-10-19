@@ -1,0 +1,3 @@
+{"time": "2026-10-19T17:08:29.763984+00:00", "event": "run_started", "config": {"command": "inventory"}}
+{"time": "2026-10-19T17:08:31.545192+00:00", "event": "inventory_written", "file_count": 1263, "logical_file_bytes": 14416579}
+{"time": "2026-10-19T17:08:31.545192+00:00", "event": "run_finished", "status": "passed", "error": null}

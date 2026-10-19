@@ -1,0 +1,20 @@
+{
+  "id": "033-handoff_unit_tests",
+  "label": "handoff_unit_tests",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp",
+    ".cache/tmp/pytest"
+  ],
+  "started_at": "2026-10-19T17:07:53.281Z",
+  "ended_at": "2026-10-19T17:07:56.373Z",
+  "elapsed_seconds": 3.092,
+  "exit_code": 0,
+  "stdout": "..............................                                           [100%]\r\n30 passed in 2.24s\r\n",
+  "stderr": ""
+}

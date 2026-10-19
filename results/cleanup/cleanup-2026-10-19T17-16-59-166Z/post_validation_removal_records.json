@@ -1,0 +1,8 @@
+﻿[
+    {
+        "path":  ".cache/tmp/pytest_cleanup",
+        "kind":  "directory",
+        "reason":  "Scratch files generated solely by post-cleanup regression tests",
+        "removed":  true
+    }
+]

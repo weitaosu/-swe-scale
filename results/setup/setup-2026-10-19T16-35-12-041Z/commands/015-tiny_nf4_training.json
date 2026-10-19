@@ -1,0 +1,22 @@
+{
+  "id": "015-tiny_nf4_training",
+  "label": "tiny_nf4_training",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/study.py",
+    "train",
+    "--config",
+    ".cache/tmp/fixture_training.yaml"
+  ],
+  "started_at": "2026-10-19T16:48:36.105Z",
+  "ended_at": "2026-10-19T16:48:44.361Z",
+  "elapsed_seconds": 8.256,
+  "exit_code": 1,
+  "error_code": null,
+  "error": "Command failed: C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe -X utf8 scripts/study.py train --config .cache/tmp/fixture_training.yaml\n\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 337.70it/s]\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\cli.py\", line 42, in main\r\n    train(run,args.config,args.resume)\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\training.py\", line 99, in train\r\n    args=TrainingArguments(output_dir=str(output),max_steps=cfg.get(\"max_steps\",25),per_device_train_batch_size=1,per_device_eval_batch_size=1,\r\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: TrainingArguments.__init__() got an unexpected keyword argument 'save_safetensors'\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\scripts\\study.py\", line 8, in <module>\r\n    if __name__ == \"__main__\": main()\r\n                               ^^^^^^\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\cli.py\", line 42, in main\r\n    train(run,args.config,args.resume)\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\training.py\", line 99, in train\r\n    args=TrainingArguments(output_dir=str(output),max_steps=cfg.get(\"max_steps\",25),per_device_train_batch_size=1,per_device_eval_batch_size=1,\r\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: TrainingArguments.__init__() got an unexpected keyword argument 'save_safetensors'\r\n",
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T164836-3df6906d\r\n",
+  "stderr": "\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 337.70it/s]\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\cli.py\", line 42, in main\r\n    train(run,args.config,args.resume)\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\training.py\", line 99, in train\r\n    args=TrainingArguments(output_dir=str(output),max_steps=cfg.get(\"max_steps\",25),per_device_train_batch_size=1,per_device_eval_batch_size=1,\r\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: TrainingArguments.__init__() got an unexpected keyword argument 'save_safetensors'\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\scripts\\study.py\", line 8, in <module>\r\n    if __name__ == \"__main__\": main()\r\n                               ^^^^^^\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\cli.py\", line 42, in main\r\n    train(run,args.config,args.resume)\r\n  File \"C:\\Users\\weita\\Desktop\\SE in AI\\proj\\src\\swe_study\\training.py\", line 99, in train\r\n    args=TrainingArguments(output_dir=str(output),max_steps=cfg.get(\"max_steps\",25),per_device_train_batch_size=1,per_device_eval_batch_size=1,\r\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: TrainingArguments.__init__() got an unexpected keyword argument 'save_safetensors'\r\n",
+  "killed": false
+}

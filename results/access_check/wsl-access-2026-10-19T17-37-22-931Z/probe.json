@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-19T17:37:22.895Z",
+  "executable": "wsl.exe",
+  "args": [
+    "--exec",
+    "uname",
+    "-a"
+  ],
+  "exit_code": 4294967295,
+  "error_code": null,
+  "error": "Command failed: wsl.exe --exec uname -a\n",
+  "stdout": "A\u0000c\u0000c\u0000e\u0000s\u0000s\u0000 \u0000i\u0000s\u0000 \u0000d\u0000e\u0000n\u0000i\u0000e\u0000d\u0000.\u0000 \u0000\r\u0000\n\u0000E\u0000r\u0000r\u0000o\u0000r\u0000 \u0000c\u0000o\u0000d\u0000e\u0000:\u0000 \u0000W\u0000s\u0000l\u0000/\u0000S\u0000e\u0000r\u0000v\u0000i\u0000c\u0000e\u0000/\u0000C\u0000r\u0000e\u0000a\u0000t\u0000e\u0000I\u0000n\u0000s\u0000t\u0000a\u0000n\u0000c\u0000e\u0000/\u0000E\u0000_\u0000A\u0000C\u0000C\u0000E\u0000S\u0000S\u0000D\u0000E\u0000N\u0000I\u0000E\u0000D\u0000\r\u0000\n\u0000",
+  "stderr": ""
+}

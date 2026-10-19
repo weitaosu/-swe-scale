@@ -1,0 +1,17 @@
+{
+  "id": "035-local_artifact_inventory",
+  "label": "local_artifact_inventory",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/study.py",
+    "inventory"
+  ],
+  "started_at": "2026-10-19T17:08:29.548Z",
+  "ended_at": "2026-10-19T17:08:31.558Z",
+  "elapsed_seconds": 2.01,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\inventory\\20261019T170829-27c0655c\r\n{'file_count': 1263, 'logical_file_bytes': 14416579, 'index': 'manifests/artifact_inventory.json'}\r\nRun log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\inventory\\20261019T170829-27c0655c\r\n",
+  "stderr": ""
+}

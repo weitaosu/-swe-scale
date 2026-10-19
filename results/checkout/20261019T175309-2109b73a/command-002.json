@@ -1,0 +1,15 @@
+{
+  "args": [
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--no-checkout",
+    "https://github.com/SWE-bench/SWE-bench.git",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-bench"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.3120997760001956
+}

@@ -1,0 +1,20 @@
+{
+  "id": "007-network",
+  "label": "network",
+  "executable": "python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-c",
+    "import urllib.request,json; u=\"https://huggingface.co/api/models/Qwen/Qwen2.5-Coder-1.5B-Instruct\";\ntry:\n r=urllib.request.urlopen(u,timeout=10); print(json.dumps({\"url\":u,\"status\":r.status,\"bytes\":len(r.read())}))\nexcept Exception as e:\n print(type(e).__name__+\": \"+str(e)); raise SystemExit(1)"
+  ],
+  "started_at": "2026-10-19T16:35:20.975Z",
+  "ended_at": "2026-10-19T16:35:21.279Z",
+  "elapsed_seconds": 0.304,
+  "exit_code": 1,
+  "error_code": null,
+  "error": "Command failed: python.exe -X utf8 -c import urllib.request,json; u=\"https://huggingface.co/api/models/Qwen/Qwen2.5-Coder-1.5B-Instruct\";\ntry:\n r=urllib.request.urlopen(u,timeout=10); print(json.dumps({\"url\":u,\"status\":r.status,\"bytes\":len(r.read())}))\nexcept Exception as e:\n print(type(e).__name__+\": \"+str(e)); raise SystemExit(1)\n",
+  "stdout": "URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>\r\n",
+  "stderr": "",
+  "killed": false
+}

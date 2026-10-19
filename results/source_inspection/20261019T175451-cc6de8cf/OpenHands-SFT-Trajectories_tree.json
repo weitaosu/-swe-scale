@@ -1,0 +1,32 @@
+[
+  {
+    "type": "directory",
+    "oid": "460ae2689d514c366ee85084149035a9fc750112",
+    "size": 0,
+    "path": "data"
+  },
+  {
+    "type": "file",
+    "oid": "1ef325f1b111266a6b26e0196871bd78baa8c2f3",
+    "size": 2461,
+    "path": ".gitattributes"
+  },
+  {
+    "type": "file",
+    "oid": "b7762c7ab38bf12cf5bb0587dd02516ada3ad887",
+    "size": 397,
+    "path": "README.md"
+  },
+  {
+    "type": "file",
+    "oid": "e33ad89d87de34d27ab2e40d549f26aacda9ec90",
+    "size": 10379409,
+    "lfs": {
+      "oid": "ea4bf37de020e165c5210bedddeef523d8834a89a35a8c65fec24f76f0eae4f1",
+      "size": 10379409,
+      "pointerSize": 133
+    },
+    "xetHash": "f272489e55e96784e4f8bde5ea8697e603c8e1c8a0c8b27ffde38b4f13ae8fa3",
+    "path": "data/train.success.oss-00000-of-00001.parquet"
+  }
+]

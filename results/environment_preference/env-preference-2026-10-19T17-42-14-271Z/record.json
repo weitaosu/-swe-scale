@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-19T17:42:14.275Z",
+  "user_request": "record that. remember to use this env in the future in env",
+  "preference": {
+    "requested_by": "user",
+    "default_runtime": "Ubuntu 24.04.2 WSL2",
+    "runner": "standard exec_command launching wsl.exe",
+    "linux_project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+    "bootstrap_python": "/usr/bin/python3",
+    "bootstrap_python_version": "3.12.3",
+    "project_python": ".envs/train/bin/python when created",
+    "persistent_instructions": "AGENTS.md",
+    "environment_document": "docs/environment.md",
+    "avoid_wsl_launch_via": "Node REPL child process",
+    "user_instruction": "record that. remember to use this env in the future in env"
+  },
+  "changes": [
+    {
+      "path": "AGENTS.md",
+      "before_sha256": null,
+      "after_sha256": "c9cbb882a12c52586a75e36f455b421fe4c64101841207f0280bc010cae2f26b"
+    },
+    {
+      "path": "docs/environment.md",
+      "before_sha256": "f355c83df93f7bc72209f47590fe595aea80dd9dac24825a297cd6f10463fd47",
+      "after_sha256": "90ea2cb71f4ed63e405cc5733fd8403a80d3c7ff9a6b26197c98e493cb151555"
+    },
+    {
+      "path": ".env.example",
+      "before_sha256": "3f68fc2e3e0916b55cc45ddc979a815a5963497c88362d54d438c514b097197f",
+      "after_sha256": "22f3e70868cb2201f4e70df338df54351b6d900c0419f048294cd23f92803663"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "76bef07d770cfd4a03b4d1049be570738674eea4393ef9912e1bb3445c4d81fe",
+      "after_sha256": "4563b13d0b8e87609028bc9f1c3dcc5fa118d42c7ccbc1b56b712066ef82812a"
+    },
+    {
+      "path": "manifests/implementation_status.json",
+      "before_sha256": "a9fa15847fd637ecbe420e8361c5e2c5fa06278bbfb99bda11331bb8b8d41ff8",
+      "after_sha256": "5adf7fcd40e43bc97766a4139f3fa9e8b47ac68efc2d5646531ca3ae7734225e"
+    }
+  ],
+  "verified_route_evidence": "results/access_check/working-wsl-2026-10-19T17-38-28-975Z/summary.json"
+}

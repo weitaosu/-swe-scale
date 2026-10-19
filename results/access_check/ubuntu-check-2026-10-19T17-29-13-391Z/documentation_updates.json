@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-10-19T17:30:13.656Z",
+  "basis": "User-confirmed Ubuntu WSL2 installation and direct agent access probe",
+  "updates": [
+    {
+      "path": "docs/environment.md",
+      "before_sha256": "24bb0b6eb29d4a889141074bae7f722aa7d2f63dd9dcb51c5e4fa5d305bfb7a4",
+      "after_sha256": "8d71425d4a817966dbdcec118383da9460680710da1c4e3955806e9da7a20dce"
+    },
+    {
+      "path": "docs/implementation_status.md",
+      "before_sha256": "b9c63560e1377052eeff247353f2463328838b91f4573a6f113702d3d41ff25b",
+      "after_sha256": "45835cbbe05e3a4cf63595b98c45ad88bab2f20453b8d60257a792a86f5b3a65"
+    }
+  ]
+}

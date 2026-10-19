@@ -1,0 +1,31 @@
+{
+  "run_id": "20261019T165906-40c40d69",
+  "stage": "download",
+  "started_at": "2026-10-19T16:59:06.693961+00:00",
+  "status": "failed",
+  "config": {
+    "command": "download",
+    "kind": "dataset",
+    "only": "OpenHands-SFT-Trajectories"
+  },
+  "config_sha256": "6afec032896aa8e3ebf933c9872165db10291ad9b03e4cb501263149e5287c5c",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/study.py",
+    "download",
+    "--kind",
+    "dataset",
+    "--only",
+    "OpenHands-SFT-Trajectories"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "source_snapshot_sha256": "89c1405ab9ecccd7a467967cc29f3f93213c60d4273836d52573eb68cf28ffe7",
+  "ended_at": "2026-10-19T16:59:07.475657+00:00",
+  "elapsed_seconds": 0.7132463000016287,
+  "error": {
+    "type": "ConnectError",
+    "message": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+  }
+}

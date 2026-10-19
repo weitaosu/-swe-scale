@@ -1,0 +1,187 @@
+{
+  "config": {
+    "eval_steps": 1,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.001,
+    "lora_alpha": 8,
+    "lora_dropout": 0.0,
+    "lora_rank": 4,
+    "max_eval_examples": 2,
+    "max_length": 128,
+    "max_steps": 6,
+    "max_train_examples": 8,
+    "model": ".cache/tmp/tiny-qwen-fixture",
+    "output": "checkpoints/pilot/synthetic-tiny-qwen",
+    "quantization": "nf4",
+    "save_steps": 1,
+    "save_total_limit": 2,
+    "seed": 6158,
+    "synthetic_fixture": true,
+    "train_file": ".cache/tmp/fixture_train.jsonl",
+    "validation_file": ".cache/tmp/fixture_validation.jsonl",
+    "warmup_ratio": 0.0
+  },
+  "config_path": ".cache\\tmp\\fixture_resume.yaml",
+  "versions": {
+    "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+    "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": "3.6.0",
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "parameters": {
+    "trainable": 8192,
+    "total_stored_parameters": 53824
+  },
+  "adapter_hash_before": "27a62f29f675cfe183e03ea76b7b8e06a87e03a55f41b18815de7b7cebbd0fcd",
+  "adapter_hash_after": "7b3404d53b07aebd49d724c61ccabebd318fab964b7c12945287bee97eccdc74",
+  "adapter_updated": true,
+  "gradient_checks": [
+    2.829681200761115,
+    2.829681200761115,
+    2.8745939359650947
+  ],
+  "token_counts": {
+    "processed": 48,
+    "targets": 9,
+    "training_step_seconds": 0.3169357999577187,
+    "microbatches": 3,
+    "post_warmup_tokens": 16,
+    "post_warmup_seconds": 0.025869400007650256
+  },
+  "wall_seconds_including_eval_and_checkpointing": 0.6565991999814287,
+  "gpu_count": 1,
+  "gpu_hours": 0.00018238866666150797,
+  "steady_state_tokens_per_second": 618.491344803837,
+  "peak_allocated_bytes": 19492864,
+  "peak_reserved_bytes": 25165824,
+  "train_source_sha256": "d8f4f4a067675053c6f7f274001f3ba5a6996eac34afa523b6ff8f127c0356c0",
+  "validation_source_sha256": "664eb9aa91ace7f3acb470e2dbb341432163de229789826f7d5bd6d76f4f97e0",
+  "train_examples": 8,
+  "validation_examples": 2,
+  "best_checkpoint": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\checkpoints\\pilot\\synthetic-tiny-qwen\\checkpoint-6",
+  "best_eval_loss": 4.081099510192871,
+  "global_step": 6,
+  "resume_from_checkpoint": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-3",
+  "optimizer_state_entries": 28,
+  "training_result": {
+    "train_runtime": 0.5359,
+    "train_samples_per_second": 11.196,
+    "train_steps_per_second": 11.196,
+    "train_loss": 2.049434026082357,
+    "epoch": 0.75
+  },
+  "log_history": [
+    {
+      "epoch": 0.125,
+      "grad_norm": 1.418896198272705,
+      "learning_rate": 0.001,
+      "loss": 4.178859233856201,
+      "step": 1
+    },
+    {
+      "epoch": 0.125,
+      "eval_loss": 4.144032001495361,
+      "eval_runtime": 0.0182,
+      "eval_samples_per_second": 109.77,
+      "eval_steps_per_second": 109.77,
+      "step": 1
+    },
+    {
+      "epoch": 0.25,
+      "grad_norm": 1.385387897491455,
+      "learning_rate": 0.0006666666666666666,
+      "loss": 4.144032001495361,
+      "step": 2
+    },
+    {
+      "epoch": 0.25,
+      "eval_loss": 4.117509841918945,
+      "eval_runtime": 0.0137,
+      "eval_samples_per_second": 145.709,
+      "eval_steps_per_second": 145.709,
+      "step": 2
+    },
+    {
+      "epoch": 0.375,
+      "grad_norm": 1.4178094863891602,
+      "learning_rate": 0.0003333333333333333,
+      "loss": 4.117509841918945,
+      "step": 3
+    },
+    {
+      "epoch": 0.375,
+      "eval_loss": 4.103884220123291,
+      "eval_runtime": 0.0137,
+      "eval_samples_per_second": 145.489,
+      "eval_steps_per_second": 145.489,
+      "step": 3
+    },
+    {
+      "loss": 4.103884220123291,
+      "grad_norm": 1.4439363479614258,
+      "learning_rate": 0.0,
+      "epoch": 0.5,
+      "step": 4
+    },
+    {
+      "eval_loss": 4.103884220123291,
+      "eval_runtime": 0.0173,
+      "eval_samples_per_second": 115.735,
+      "eval_steps_per_second": 115.735,
+      "epoch": 0.5,
+      "step": 4
+    },
+    {
+      "loss": 4.103884220123291,
+      "grad_norm": 1.4439363479614258,
+      "learning_rate": 0.0003333333333333333,
+      "epoch": 0.625,
+      "step": 5
+    },
+    {
+      "eval_loss": 4.088835716247559,
+      "eval_runtime": 0.0218,
+      "eval_samples_per_second": 91.871,
+      "eval_steps_per_second": 91.871,
+      "epoch": 0.625,
+      "step": 5
+    },
+    {
+      "loss": 4.088835716247559,
+      "grad_norm": 1.4708369970321655,
+      "learning_rate": 0.00016666666666666666,
+      "epoch": 0.75,
+      "step": 6
+    },
+    {
+      "eval_loss": 4.081099510192871,
+      "eval_runtime": 0.014,
+      "eval_samples_per_second": 142.88,
+      "eval_steps_per_second": 142.88,
+      "epoch": 0.75,
+      "step": 6
+    },
+    {
+      "train_runtime": 0.5359,
+      "train_samples_per_second": 11.196,
+      "train_steps_per_second": 11.196,
+      "total_flos": 49876992.0,
+      "train_loss": 2.049434026082357,
+      "epoch": 0.75,
+      "step": 6
+    }
+  ],
+  "synthetic_fixture": true
+}

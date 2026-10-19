@@ -1,0 +1,10 @@
+{
+  "project_root": "C:/Users/weita/Desktop/SE in AI/proj",
+  "targets": [
+    {
+      "path": ".cache/tmp/pytest_cleanup",
+      "kind": "directory",
+      "reason": "Scratch files generated solely by post-cleanup regression tests"
+    }
+  ]
+}

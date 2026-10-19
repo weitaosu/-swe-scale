@@ -1,0 +1,4 @@
+{"time": "2026-10-19T16:49:29.527323+00:00", "event": "run_started", "config": {"command": "download", "kind": "model", "only": "1.5B"}}
+{"time": "2026-10-19T16:49:29.849317+00:00", "event": "asset_resolving", "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct", "kind": "model", "target": "models/Qwen2.5-Coder-1.5B-Instruct", "split": null, "status": "resolving"}
+{"time": "2026-10-19T16:49:30.150611+00:00", "event": "asset_blocked", "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct", "kind": "model", "target": "models/Qwen2.5-Coder-1.5B-Instruct", "split": null, "status": "blocked", "error_type": "ConnectError", "error": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"}
+{"time": "2026-10-19T16:49:30.232160+00:00", "event": "run_finished", "status": "failed", "error": {"type": "ConnectError", "message": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"}}

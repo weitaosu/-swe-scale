@@ -1,0 +1,14 @@
+{
+  "name": "docker",
+  "executable": "docker",
+  "args": [
+    "info",
+    "--format",
+    "json"
+  ],
+  "started_at": "2026-10-19T17:25:59.259Z",
+  "ended_at": "2026-10-19T17:25:59.300Z",
+  "exit_code": 0,
+  "stdout": "{\"ID\":\"\",\"Containers\":0,\"ContainersRunning\":0,\"ContainersPaused\":0,\"ContainersStopped\":0,\"Images\":0,\"Driver\":\"\",\"DriverStatus\":null,\"Plugins\":{\"Volume\":null,\"Network\":null,\"Authorization\":null,\"Log\":null},\"MemoryLimit\":false,\"SwapLimit\":false,\"CpuCfsPeriod\":false,\"CpuCfsQuota\":false,\"CPUShares\":false,\"CPUSet\":false,\"PidsLimit\":false,\"IPv4Forwarding\":false,\"BridgeNfIptables\":false,\"BridgeNfIp6tables\":false,\"Debug\":false,\"NFd\":0,\"OomKillDisable\":false,\"NGoroutines\":0,\"SystemTime\":\"\",\"LoggingDriver\":\"\",\"CgroupDriver\":\"\",\"NEventsListener\":0,\"KernelVersion\":\"\",\"OperatingSystem\":\"\",\"OSVersion\":\"\",\"OSType\":\"\",\"Architecture\":\"\",\"IndexServerAddress\":\"\",\"RegistryConfig\":null,\"NCPU\":0,\"MemTotal\":0,\"GenericResources\":null,\"DockerRootDir\":\"\",\"HttpProxy\":\"\",\"HttpsProxy\":\"\",\"NoProxy\":\"\",\"Name\":\"\",\"Labels\":null,\"ExperimentalBuild\":false,\"ServerVersion\":\"\",\"Runtimes\":null,\"DefaultRuntime\":\"\",\"Swarm\":{\"NodeID\":\"\",\"NodeAddr\":\"\",\"LocalNodeState\":\"\",\"ControlAvailable\":false,\"Error\":\"\",\"RemoteManagers\":null},\"LiveRestoreEnabled\":false,\"Isolation\":\"\",\"InitBinary\":\"\",\"ContainerdCommit\":{\"ID\":\"\",\"Expected\":\"\"},\"RuncCommit\":{\"ID\":\"\",\"Expected\":\"\"},\"InitCommit\":{\"ID\":\"\",\"Expected\":\"\"},\"SecurityOptions\":null,\"CDISpecDirs\":null,\"Warnings\":null,\"ServerErrors\":[\"error during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \\\"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/info\\\": open //./pipe/docker_engine: The system cannot find the file specified.\"],\"ClientInfo\":{\"Debug\":false,\"Version\":\"27.2.0\",\"GitCommit\":\"3ab4256\",\"GoVersion\":\"go1.21.13\",\"Os\":\"windows\",\"Arch\":\"amd64\",\"BuildTime\":\"Tue Aug 27 14:17:17 2024\",\"Context\":\"default\",\"Plugins\":[],\"Warnings\":null}}\n",
+  "stderr": "WARNING: Error loading config file: open C:\\Users\\weita\\.docker\\config.json: Access is denied.\nerror during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/info\": open //./pipe/docker_engine: The system cannot find the file specified.\n"
+}

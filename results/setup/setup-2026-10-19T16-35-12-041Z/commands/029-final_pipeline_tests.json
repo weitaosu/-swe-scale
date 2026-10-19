@@ -1,0 +1,20 @@
+{
+  "id": "029-final_pipeline_tests",
+  "label": "final_pipeline_tests",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp",
+    ".cache/tmp/pytest"
+  ],
+  "started_at": "2026-10-19T17:05:13.373Z",
+  "ended_at": "2026-10-19T17:05:16.423Z",
+  "elapsed_seconds": 3.05,
+  "exit_code": 0,
+  "stdout": "..............................                                           [100%]\r\n30 passed in 2.17s\r\n",
+  "stderr": ""
+}

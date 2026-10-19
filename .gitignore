@@ -1,0 +1,17 @@
+.envs/
+.cache/
+models/
+data/raw/
+data/processed/
+data/tokenized/
+checkpoints/
+vendor/
+results/**/stdout.log
+results/**/stderr.log
+__pycache__/
+*.pyc
+*.egg-info/
+.env
+.pytest_cache/
+results/**/*.log
+results/**/source_snapshot.zip

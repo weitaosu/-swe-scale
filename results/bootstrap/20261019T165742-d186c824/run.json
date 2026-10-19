@@ -1,0 +1,25 @@
+{
+  "run_id": "20261019T165742-d186c824",
+  "stage": "bootstrap",
+  "started_at": "2026-10-19T16:57:42.948746+00:00",
+  "status": "passed",
+  "config": {
+    "name": "validation",
+    "system_site_packages": true,
+    "install": false
+  },
+  "config_sha256": "8c48cb689bb2212d4c9eb03b937ec110bbdb35448fc799ad74192f761511fe30",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/bootstrap.py",
+    "--name",
+    "validation",
+    "--system-site-packages"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "source_snapshot_sha256": "0b8c1c25877d22c10abd8f9b9f0a324ab2147d3ca1703ff7ffb6008850e071d7",
+  "ended_at": "2026-10-19T16:57:46.568683+00:00",
+  "elapsed_seconds": 3.540357599966228
+}

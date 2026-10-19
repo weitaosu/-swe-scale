@@ -1,0 +1,175 @@
+{
+  "as_of": "2026-10-19T17:42:14.275Z",
+  "status": "partial_setup_pending",
+  "scope": "Approved first two milestones on one RTX 4090; no production matrix or full benchmark run",
+  "milestones": [
+    {
+      "name": "Sep 14–27: SWE-bench, Qwen, agent scaffold",
+      "status": "incomplete",
+      "implemented": [
+        "audited project scaffold",
+        "local resumable asset downloader with revision/checksum manifests",
+        "task selection and official grader adapters",
+        "bounded model server and OpenHands wrapper"
+      ],
+      "pending": [
+        "real Qwen2.5 snapshots and pinned source checkouts",
+        "separate Linux agent/evaluator environments",
+        "Docker storage mapping and one-task grader controls",
+        "real tool replay and sequential 1.5B/3B/7B development rollouts"
+      ]
+    },
+    {
+      "name": "Sep 28–Oct 11: SWE-Gym preparation and LoRA validation",
+      "status": "incomplete",
+      "implemented": [
+        "task-level provenance matching and quarantine",
+        "Verified/development overlap screening",
+        "task-disjoint split and assistant-only label masking",
+        "NF4 PEFT training with best-adapter selection and explicit Trainer resume"
+      ],
+      "pending": [
+        "real dataset download and schema/provenance audit",
+        "actual token/mask/context-coverage audit",
+        "1.5B overfit and bounded pilot",
+        "real-model reload/resume/server validation",
+        "3B and 7B memory probes and measured time estimates"
+      ]
+    }
+  ],
+  "validated": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "cuda_tensor_operation": true,
+    "bf16": true,
+    "unit_tests_passed": 30,
+    "unit_test_evidence": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/commands/005-post_cleanup_tests.json",
+    "synthetic_nf4_training": "results/train/20261019T164855-ead23d01/metrics.json",
+    "synthetic_resume": "results/train/20261019T165453-6e72dc69/metrics.json",
+    "synthetic_reload": "results/validate-checkpoint/20261019T165807-f950e3ee/reload_validation.json",
+    "synthetic_server": "results/synthetic_server/20261019T170520-908242ff/server_validation.json",
+    "compile_evidence": "results/setup/setup-2026-10-19T16-35-12-041Z/commands/034-handoff_compile.json",
+    "cleanup_verification": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/verification.json",
+    "linux_cuda_tensor_operation": true,
+    "linux_preflight": "results/preflight/20261019T173829-35e0d010/hardware.json"
+  },
+  "real_assets": {
+    "model_payloads_downloaded": false,
+    "dataset_payloads_downloaded": false,
+    "source_checkouts_downloaded": false,
+    "docker_images_pulled_or_built": false,
+    "real_training_run": false
+  },
+  "blockers": [],
+  "storage": {
+    "max_incremental_bytes": 70000000000,
+    "min_free_bytes": 25000000000,
+    "baseline": "manifests/storage_baseline.json",
+    "usage": "manifests/storage_usage.json",
+    "file_inventory": "manifests/artifact_inventory.json",
+    "models_estimated_bytes": 24480000000,
+    "raw_data_estimated_bytes": 397910000
+  },
+  "tracking": {
+    "session_log": "results/setup/setup-2026-10-19T16-35-12-041Z",
+    "per_run_log": "results/<stage>/<run-id>/",
+    "versions": "manifests/versions.json",
+    "exact_observed_packages": "manifests/validation_packages.freeze.txt",
+    "downloads": [
+      "manifests/model_files.json",
+      "manifests/dataset_files.json"
+    ],
+    "source_pins": "manifests/source_repositories.json"
+  },
+  "next_command": "wsl.exe --cd \"/mnt/c/Users/weita/Desktop/SE in AI/proj\" --exec env PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 scripts/bootstrap.py --name train --install",
+  "next_command_requirement": "The Ubuntu route and network work. Create and validate the project Linux environment within the existing storage limits before asset and integration stages.",
+  "limitations": [
+    "Synthetic fixture is not Qwen2.5-Coder or SWE-Gym and does not establish model fit, quality, or production time.",
+    "Existing Windows validation environment reuses system packages and is not a Linux production lock.",
+    "OpenHands action compatibility and container isolation remain unvalidated."
+  ],
+  "documentation": {
+    "current_progress": "docs/implementation_status.md",
+    "implementation_plan": "docs/rtx_4090_implementation_plan.md",
+    "model_links": "README.md#models-and-download-links",
+    "file_cleanup_audit": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/run.json"
+  },
+  "file_review": {
+    "reviewed_preexisting_files": 1272,
+    "removed_preexisting_files": 449,
+    "removed_preexisting_bytes": 5517931,
+    "unchanged_evidence_files_checked": 323,
+    "audit_directory": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z",
+    "recovery_archive": "results/cleanup/cleanup-2026-10-19T17-16-59-166Z/prior_documents.zip",
+    "completed_at": "2026-10-19T17:23:50.738Z"
+  },
+  "host_ubuntu": {
+    "status": "agent_verified",
+    "distribution": "Ubuntu 24.04.2 LTS",
+    "kernel": "5.15.153.1-microsoft-standard-WSL2",
+    "architecture": "x86_64",
+    "interactive_terminal_available": true,
+    "agent_direct_access": "working through standard exec_command runner",
+    "cuda_inside_ubuntu": "PyTorch 2.6.0+cu124 tensor operation passed",
+    "docker_inside_ubuntu": "daemon connectivity independently verified",
+    "evidence": "results/access_check/ubuntu-check-2026-10-19T17-29-13-391Z/direct_wsl_probe.json",
+    "python": "3.11.6",
+    "gpu_visible": true,
+    "gpu_total_mib": 24564,
+    "gpu_used_mib_at_observation": 10966,
+    "gpu_remaining_mib_at_observation": 13598,
+    "docker_server_version": "26.1.3",
+    "docker_root_dir": "/var/lib/docker",
+    "existing_containers": 3,
+    "existing_images": 3,
+    "physical_backing_file": "not_identified",
+    "latest_evidence": "results/access_check/working-wsl-2026-10-19T17-38-28-975Z/summary.json",
+    "python_non_interactive": "3.12.3",
+    "python_non_interactive_executable": "/usr/bin/python3",
+    "python_interactive_user_report": "3.11.6",
+    "huggingface_http_status": 200,
+    "github_remote_read": true
+  },
+  "historical_access_failures": [
+    {
+      "category": "network",
+      "error": "Hugging Face requests: WinError 10013; GitHub git remote cannot connect to port 443",
+      "evidence": [
+        "results/download/20261019T164929-6f696f77/run.json",
+        "results/download/20261019T165906-40c40d69/run.json",
+        "results/checkout/20261019T164930-d1f3a196/run.json"
+      ]
+    },
+    {
+      "category": "wsl",
+      "error": "Agent WSL entry/enumeration is denied; user can access the installed Ubuntu terminal",
+      "evidence": "results/preflight/latest.json",
+      "scope": "agent_windows_session"
+    },
+    {
+      "category": "agent_docker_access",
+      "error": "Windows agent Docker endpoint is unavailable; user Ubuntu terminal confirms a working Docker 26.1.3 server",
+      "evidence": "results/preflight/latest.json",
+      "scope": "agent_windows_session",
+      "host_ubuntu_evidence": "results/access_check/ubuntu-readiness-2026-10-19T17-34-45-861Z/findings.json"
+    }
+  ],
+  "remaining_setup_requirements": [
+    "Create the project Linux training environment and install required packages",
+    "Download and audit real assets",
+    "Record physical Docker storage before project image operations",
+    "Validate agent/evaluator environments and project container controls"
+  ],
+  "execution_preference": {
+    "requested_by": "user",
+    "default_runtime": "Ubuntu 24.04.2 WSL2",
+    "runner": "standard exec_command launching wsl.exe",
+    "linux_project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+    "bootstrap_python": "/usr/bin/python3",
+    "bootstrap_python_version": "3.12.3",
+    "project_python": ".envs/train/bin/python when created",
+    "persistent_instructions": "AGENTS.md",
+    "environment_document": "docs/environment.md",
+    "avoid_wsl_launch_via": "Node REPL child process",
+    "user_instruction": "record that. remember to use this env in the future in env"
+  }
+}

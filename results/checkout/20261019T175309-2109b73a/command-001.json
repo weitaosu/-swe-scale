@@ -1,0 +1,13 @@
+{
+  "args": [
+    "git",
+    "ls-remote",
+    "https://github.com/SWE-bench/SWE-bench.git",
+    "HEAD"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkout/20261019T175309-2109b73a/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.7555652839998857
+}

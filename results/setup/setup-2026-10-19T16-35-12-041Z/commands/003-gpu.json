@@ -1,0 +1,18 @@
+{
+  "id": "003-gpu",
+  "label": "gpu",
+  "executable": "nvidia-smi.exe",
+  "args": [
+    "--query-gpu=name,memory.total,memory.free,driver_version",
+    "--format=csv,noheader"
+  ],
+  "started_at": "2026-10-19T16:35:20.954Z",
+  "ended_at": "2026-10-19T16:35:20.983Z",
+  "elapsed_seconds": 0.029,
+  "exit_code": 255,
+  "error_code": null,
+  "error": "Command failed: nvidia-smi.exe --query-gpu=name,memory.total,memory.free,driver_version --format=csv,noheader\n",
+  "stdout": "Failed to initialize NVML: Unknown Error\r\n",
+  "stderr": "",
+  "killed": false
+}

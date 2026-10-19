@@ -1,0 +1,106 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu_count": 24,
+  "versions": {
+    "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+    "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": "3.6.0",
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "storage": {
+    "free_bytes": 100582973440,
+    "conservative_volume_growth_bytes": 2298568704,
+    "reserved_bytes": 0,
+    "docker_physical_free_bytes": null,
+    "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
+  },
+  "processor": "",
+  "ram": {
+    "total_physical_bytes": 102823464960,
+    "available_physical_bytes": 82290708480
+  },
+  "commands": {
+    "git": {
+      "args": [
+        "git",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "git version 2.46.0.windows.1\n",
+      "stderr": ""
+    },
+    "docker": {
+      "args": [
+        "docker",
+        "version",
+        "--format",
+        "json"
+      ],
+      "returncode": 1,
+      "stdout": "{\"Client\":{\"Version\":\"27.2.0\",\"ApiVersion\":\"1.47\",\"DefaultAPIVersion\":\"1.47\",\"GitCommit\":\"3ab4256\",\"GoVersion\":\"go1.21.13\",\"Os\":\"windows\",\"Arch\":\"amd64\",\"BuildTime\":\"Tue Aug 27 14:17:17 2024\",\"Context\":\"default\"},\"Server\":null}\n",
+      "stderr": "WARNING: Error loading config file: open C:\\Users\\weita\\.docker\\config.json: Access is denied.\nerror during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/version\": open //./pipe/docker_engine: The system cannot find the file specified.\n"
+    },
+    "docker_info": {
+      "args": [
+        "docker",
+        "info",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"ID\":\"\",\"Containers\":0,\"ContainersRunning\":0,\"ContainersPaused\":0,\"ContainersStopped\":0,\"Images\":0,\"Driver\":\"\",\"DriverStatus\":null,\"Plugins\":{\"Volume\":null,\"Network\":null,\"Authorization\":null,\"Log\":null},\"MemoryLimit\":false,\"SwapLimit\":false,\"CpuCfsPeriod\":false,\"CpuCfsQuota\":false,\"CPUShares\":false,\"CPUSet\":false,\"PidsLimit\":false,\"IPv4Forwarding\":false,\"BridgeNfIptables\":false,\"BridgeNfIp6tables\":false,\"Debug\":false,\"NFd\":0,\"OomKillDisable\":false,\"NGoroutines\":0,\"SystemTime\":\"\",\"LoggingDriver\":\"\",\"CgroupDriver\":\"\",\"NEventsListener\":0,\"KernelVersion\":\"\",\"OperatingSystem\":\"\",\"OSVersion\":\"\",\"OSType\":\"\",\"Architecture\":\"\",\"IndexServerAddress\":\"\",\"RegistryConfig\":null,\"NCPU\":0,\"MemTotal\":0,\"GenericResources\":null,\"DockerRootDir\":\"\",\"HttpProxy\":\"\",\"HttpsProxy\":\"\",\"NoProxy\":\"\",\"Name\":\"\",\"Labels\":null,\"ExperimentalBuild\":false,\"ServerVersion\":\"\",\"Runtimes\":null,\"DefaultRuntime\":\"\",\"Swarm\":{\"NodeID\":\"\",\"NodeAddr\":\"\",\"LocalNodeState\":\"\",\"ControlAvailable\":false,\"Error\":\"\",\"RemoteManagers\":null},\"LiveRestoreEnabled\":false,\"Isolation\":\"\",\"InitBinary\":\"\",\"ContainerdCommit\":{\"ID\":\"\",\"Expected\":\"\"},\"RuncCommit\":{\"ID\":\"\",\"Expected\":\"\"},\"InitCommit\":{\"ID\":\"\",\"Expected\":\"\"},\"SecurityOptions\":null,\"CDISpecDirs\":null,\"Warnings\":null,\"ServerErrors\":[\"error during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \\\"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/info\\\": open //./pipe/docker_engine: The system cannot find the file specified.\"],\"ClientInfo\":{\"Debug\":false,\"Version\":\"27.2.0\",\"GitCommit\":\"3ab4256\",\"GoVersion\":\"go1.21.13\",\"Os\":\"windows\",\"Arch\":\"amd64\",\"BuildTime\":\"Tue Aug 27 14:17:17 2024\",\"Context\":\"default\",\"Plugins\":[],\"Warnings\":null}}\n",
+      "stderr": "WARNING: Error loading config file: open C:\\Users\\weita\\.docker\\config.json: Access is denied.\nerror during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get \"http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.47/info\": open //./pipe/docker_engine: The system cannot find the file specified.\n"
+    },
+    "nvidia_smi": {
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,memory.total,memory.free,driver_version",
+        "--format=csv,noheader"
+      ],
+      "returncode": 255,
+      "stdout": "Failed to initialize NVML: Unknown Error\n",
+      "stderr": ""
+    },
+    "wsl": {
+      "args": [
+        "wsl.exe",
+        "--list",
+        "--verbose"
+      ],
+      "returncode": 4294967295,
+      "stdout": "Access is denied. \n\nError code: Wsl/EnumerateDistros/Service/E_ACCESSDENIED\n\n",
+      "stderr": ""
+    }
+  },
+  "docker_daemon_ready": false,
+  "gpu": {
+    "torch": "2.9.1+cu128",
+    "compiled_cuda": "12.8",
+    "available": true,
+    "count": 1,
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_memory_bytes": 25756696576,
+    "capability": [
+      8,
+      9
+    ],
+    "bf16": true,
+    "tensor_check": [
+      2.0,
+      2.0
+    ],
+    "free_memory_bytes": 24083693568
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "20261019T164829-d0ef648a",
+  "stage": "synthetic_fixture",
+  "started_at": "2026-10-19T16:48:29.257843+00:00",
+  "status": "passed",
+  "config": {
+    "purpose": "random tiny Qwen2 GPU integration fixture; not SWE-Gym or downloaded Qwen weights"
+  },
+  "config_sha256": "387240d1fdd33ab4c87ee09bd9cdec99befa44115ab78d2e52ddefa909a42402",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/tiny_gpu_fixture.py"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "ended_at": "2026-10-19T16:48:35.547074+00:00",
+  "elapsed_seconds": 6.234438900020905
+}

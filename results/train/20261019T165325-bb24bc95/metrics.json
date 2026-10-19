@@ -1,0 +1,153 @@
+{
+  "config": {
+    "eval_steps": 1,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.001,
+    "lora_alpha": 8,
+    "lora_dropout": 0.0,
+    "lora_rank": 4,
+    "max_eval_examples": 2,
+    "max_length": 128,
+    "max_steps": 4,
+    "max_train_examples": 8,
+    "model": ".cache/tmp/tiny-qwen-fixture",
+    "output": "checkpoints/pilot/synthetic-tiny-qwen",
+    "quantization": "nf4",
+    "save_steps": 1,
+    "save_total_limit": 2,
+    "seed": 6158,
+    "synthetic_fixture": true,
+    "train_file": ".cache/tmp/fixture_train.jsonl",
+    "validation_file": ".cache/tmp/fixture_validation.jsonl",
+    "warmup_ratio": 0.0
+  },
+  "config_path": ".cache\\tmp\\fixture_resume.yaml",
+  "versions": {
+    "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+    "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": "3.6.0",
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "parameters": {
+    "trainable": 8192,
+    "total_stored_parameters": 53824
+  },
+  "adapter_hash_before": "7f5e31eecd65390280fc6fc10f4907f1eb5662f9beb7f34c551b164a1d16ecae",
+  "adapter_hash_after": "27a62f29f675cfe183e03ea76b7b8e06a87e03a55f41b18815de7b7cebbd0fcd",
+  "adapter_updated": true,
+  "gradient_checks": [
+    2.829681200761115
+  ],
+  "token_counts": {
+    "processed": 16,
+    "targets": 3,
+    "training_step_seconds": 0.26137359999120235,
+    "microbatches": 1,
+    "post_warmup_tokens": 0,
+    "post_warmup_seconds": 0.0
+  },
+  "wall_seconds_including_eval_and_checkpointing": 0.5080037000006996,
+  "gpu_count": 1,
+  "gpu_hours": 0.00014111213888908322,
+  "steady_state_tokens_per_second": 0.0,
+  "peak_allocated_bytes": 19491840,
+  "peak_reserved_bytes": 25165824,
+  "train_source_sha256": "d8f4f4a067675053c6f7f274001f3ba5a6996eac34afa523b6ff8f127c0356c0",
+  "validation_source_sha256": "664eb9aa91ace7f3acb470e2dbb341432163de229789826f7d5bd6d76f4f97e0",
+  "train_examples": 8,
+  "validation_examples": 2,
+  "global_step": 4,
+  "resume_from_checkpoint": "checkpoints/pilot/synthetic-tiny-qwen/checkpoint-3",
+  "optimizer_state_entries": 28,
+  "training_result": {
+    "train_runtime": 0.3823,
+    "train_samples_per_second": 10.463,
+    "train_steps_per_second": 10.463,
+    "train_loss": 1.0259710550308228,
+    "epoch": 0.5
+  },
+  "log_history": [
+    {
+      "epoch": 0.125,
+      "grad_norm": 1.418896198272705,
+      "learning_rate": 0.001,
+      "loss": 4.178859233856201,
+      "step": 1
+    },
+    {
+      "epoch": 0.125,
+      "eval_loss": 4.144032001495361,
+      "eval_runtime": 0.0182,
+      "eval_samples_per_second": 109.77,
+      "eval_steps_per_second": 109.77,
+      "step": 1
+    },
+    {
+      "epoch": 0.25,
+      "grad_norm": 1.385387897491455,
+      "learning_rate": 0.0006666666666666666,
+      "loss": 4.144032001495361,
+      "step": 2
+    },
+    {
+      "epoch": 0.25,
+      "eval_loss": 4.117509841918945,
+      "eval_runtime": 0.0137,
+      "eval_samples_per_second": 145.709,
+      "eval_steps_per_second": 145.709,
+      "step": 2
+    },
+    {
+      "epoch": 0.375,
+      "grad_norm": 1.4178094863891602,
+      "learning_rate": 0.0003333333333333333,
+      "loss": 4.117509841918945,
+      "step": 3
+    },
+    {
+      "epoch": 0.375,
+      "eval_loss": 4.103884220123291,
+      "eval_runtime": 0.0137,
+      "eval_samples_per_second": 145.489,
+      "eval_steps_per_second": 145.489,
+      "step": 3
+    },
+    {
+      "loss": 4.103884220123291,
+      "grad_norm": 1.4439363479614258,
+      "learning_rate": 0.0,
+      "epoch": 0.5,
+      "step": 4
+    },
+    {
+      "eval_loss": 4.103884220123291,
+      "eval_runtime": 0.0139,
+      "eval_samples_per_second": 144.112,
+      "eval_steps_per_second": 144.112,
+      "epoch": 0.5,
+      "step": 4
+    },
+    {
+      "train_runtime": 0.3823,
+      "train_samples_per_second": 10.463,
+      "train_steps_per_second": 10.463,
+      "total_flos": 33251328.0,
+      "train_loss": 1.0259710550308228,
+      "epoch": 0.5,
+      "step": 4
+    }
+  ],
+  "synthetic_fixture": true
+}

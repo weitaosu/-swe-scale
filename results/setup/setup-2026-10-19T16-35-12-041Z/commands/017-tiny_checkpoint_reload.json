@@ -1,0 +1,19 @@
+{
+  "id": "017-tiny_checkpoint_reload",
+  "label": "tiny_checkpoint_reload",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/study.py",
+    "validate-checkpoint",
+    "--adapter",
+    "checkpoints/pilot/synthetic-tiny-qwen"
+  ],
+  "started_at": "2026-10-19T16:49:21.795Z",
+  "ended_at": "2026-10-19T16:49:29.336Z",
+  "elapsed_seconds": 7.541,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\validate-checkpoint\\20261019T164921-6d5aeb86\r\n{\r\n  \"adapter\": \"checkpoints\\\\pilot\\\\synthetic-tiny-qwen\",\r\n  \"passed\": true,\r\n  \"max_absolute_logit_difference\": 0.001953125,\r\n  \"atol\": 0.02,\r\n  \"rtol\": 0.01,\r\n  \"synthetic_fixture\": true\r\n}\r\nRun log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\validate-checkpoint\\20261019T164921-6d5aeb86\r\n",
+  "stderr": "\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 494.69it/s]\r\n"
+}

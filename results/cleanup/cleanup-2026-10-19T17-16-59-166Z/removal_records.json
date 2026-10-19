@@ -1,0 +1,350 @@
+﻿[
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/cli/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/commands/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/distributions/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/index/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/locations/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/metadata/importlib/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/metadata/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/models/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/network/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/operations/build/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/operations/install/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/operations/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/req/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/resolution/legacy/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/resolution/resolvelib/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/resolution/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/utils/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/vcs/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_internal/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/caches/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/cachecontrol/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/certifi/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/distlib/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/distro/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/idna/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/msgpack/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/packaging/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pkg_resources/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/platformdirs/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pygments/filters/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pygments/formatters/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pygments/lexers/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pygments/styles/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pygments/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/pyproject_hooks/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/requests/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/compat/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/resolvelib/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/rich/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/tomli/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/truststore/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/contrib/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/packages/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/util/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/urllib3/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/_vendor/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".envs/validation/Lib/site-packages/pip/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  "scripts/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  "src/swe_study/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  "tests/__pycache__",
+        "kind":  "directory",
+        "reason":  "Regenerable Python bytecode cache",
+        "removed":  true
+    },
+    {
+        "path":  ".pytest_cache",
+        "kind":  "directory",
+        "reason":  "Regenerable pytest cache",
+        "removed":  true
+    },
+    {
+        "path":  ".cache/tmp/pytest",
+        "kind":  "directory",
+        "reason":  "Generated unit-test scratch files",
+        "removed":  true
+    },
+    {
+        "path":  "docs/first_two_milestones_plan.md",
+        "kind":  "file",
+        "reason":  "Superseded by the RTX 4090 implementation plan; useful study notes consolidated",
+        "removed":  true
+    },
+    {
+        "path":  "configs/models.yaml",
+        "kind":  "file",
+        "reason":  "Unused duplicate configuration; current code does not load it",
+        "removed":  true
+    },
+    {
+        "path":  "configs/evaluation.yaml",
+        "kind":  "file",
+        "reason":  "Unused duplicate configuration; current code does not load it",
+        "removed":  true
+    }
+]

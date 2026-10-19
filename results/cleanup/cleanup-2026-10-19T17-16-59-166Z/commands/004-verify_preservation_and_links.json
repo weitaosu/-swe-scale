@@ -1,0 +1,15 @@
+{
+  "id": "004-verify_preservation_and_links",
+  "exe": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-B",
+    "-X",
+    "utf8",
+    "C:/Users/weita/Desktop/SE in AI/proj/results/cleanup/cleanup-2026-10-19T17-16-59-166Z/verify_cleanup.py"
+  ],
+  "started_at": "2026-10-19T17:21:48.550Z",
+  "ended_at": "2026-10-19T17:21:48.737Z",
+  "exit_code": 0,
+  "stdout": "{\r\n  \"passed\": true,\r\n  \"removed_preexisting_files\": 449,\r\n  \"removed_preexisting_bytes\": 5517931,\r\n  \"preserved_evidence_files_checked\": 323,\r\n  \"preserved_evidence_changes\": [],\r\n  \"source_modules_syntax_checked\": 22,\r\n  \"local_markdown_links_checked\": 23,\r\n  \"broken_local_links\": []\r\n}\r\n",
+  "stderr": ""
+}

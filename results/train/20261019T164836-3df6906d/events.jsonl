@@ -1,0 +1,2 @@
+{"time": "2026-10-19T16:48:36.281629+00:00", "event": "run_started", "config": {"command": "train", "config": ".cache/tmp/fixture_training.yaml", "resume": null}}
+{"time": "2026-10-19T16:48:43.756666+00:00", "event": "run_finished", "status": "failed", "error": {"type": "TypeError", "message": "TrainingArguments.__init__() got an unexpected keyword argument 'save_safetensors'"}}

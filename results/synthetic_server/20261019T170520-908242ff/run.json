@@ -1,0 +1,21 @@
+{
+  "run_id": "20261019T170520-908242ff",
+  "stage": "synthetic_server",
+  "started_at": "2026-10-19T17:05:20.398577+00:00",
+  "status": "passed",
+  "config": {
+    "synthetic_fixture": true,
+    "transport": "in-process ASGI TestClient; no listening socket"
+  },
+  "config_sha256": "7d6d95ea1b46a64a9d801ca54de70744c35460c2c382f3914ba4289b1acd1f70",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "scripts/validate_local_server.py"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "source_snapshot_sha256": "2b1778cabe518d6fcaf78114d0e00e46cef407b2aba0a034c5d68eb82b63698f",
+  "ended_at": "2026-10-19T17:05:26.853275+00:00",
+  "elapsed_seconds": 6.389494400005788
+}

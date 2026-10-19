@@ -1,0 +1,19 @@
+{
+  "id": "016-tiny_nf4_training_fixed",
+  "label": "tiny_nf4_training_fixed",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/study.py",
+    "train",
+    "--config",
+    ".cache/tmp/fixture_training.yaml"
+  ],
+  "started_at": "2026-10-19T16:48:55.114Z",
+  "ended_at": "2026-10-19T16:49:04.219Z",
+  "elapsed_seconds": 9.105,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T164855-ead23d01\r\n{'loss': '4.179', 'grad_norm': '1.419', 'learning_rate': '0.001', 'epoch': '0.125'}\r\n{'eval_loss': '4.144', 'eval_runtime': '0.0182', 'eval_samples_per_second': '109.8', 'eval_steps_per_second': '109.8', 'epoch': '0.125'}\r\n{'loss': '4.144', 'grad_norm': '1.385', 'learning_rate': '0.0006667', 'epoch': '0.25'}\r\n{'eval_loss': '4.118', 'eval_runtime': '0.0137', 'eval_samples_per_second': '145.7', 'eval_steps_per_second': '145.7', 'epoch': '0.25'}\r\n{'loss': '4.118', 'grad_norm': '1.418', 'learning_rate': '0.0003333', 'epoch': '0.375'}\r\n{'eval_loss': '4.104', 'eval_runtime': '0.0137', 'eval_samples_per_second': '145.5', 'eval_steps_per_second': '145.5', 'epoch': '0.375'}\r\n{'train_runtime': '0.7365', 'train_samples_per_second': '4.073', 'train_steps_per_second': '4.073', 'train_loss': '4.147', 'epoch': '0.375'}\r\n{\r\n  \"output\": \"C:\\\\Users\\\\weita\\\\Desktop\\\\SE in AI\\\\proj\\\\checkpoints\\\\pilot\\\\synthetic-tiny-qwen\",\r\n  \"adapter_updated\": true,\r\n  \"gpu_hours\": 0.0002297161666663467,\r\n  \"tokens\": {\r\n    \"processed\": 48,\r\n    \"targets\": 9,\r\n    \"training_step_seconds\": 0.47277609998127446,\r\n    \"microbatches\": 3,\r\n    \"post_warmup_tokens\": 16,\r\n    \"post_warmup_seconds\": 0.024011500005144626\r\n  }\r\n}\r\nRun log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\train\\20261019T164855-ead23d01\r\n",
+  "stderr": "\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 443.31it/s]\r\nwarmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.\r\nThe tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.\r\nmtime may not be reliable on this filesystem, falling back to numerical ordering\r\n"
+}

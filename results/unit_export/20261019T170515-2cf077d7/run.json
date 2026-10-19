@@ -1,0 +1,21 @@
+{
+  "run_id": "20261019T170515-2cf077d7",
+  "stage": "unit_export",
+  "started_at": "2026-10-19T17:05:15.227404+00:00",
+  "status": "passed",
+  "config": {},
+  "config_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\.envs\\validation\\Scripts\\python.exe",
+  "argv": [
+    "C:\\Users\\weita\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pytest\\__main__.py",
+    "-q",
+    "--basetemp",
+    ".cache/tmp/pytest"
+  ],
+  "project_root": "C:\\Users\\weita\\Desktop\\SE in AI\\proj",
+  "source_snapshot_sha256": "b9a843b02d02d46680484e85acc2d1ca810eab61bc4cf3f8cbff0b917ea351dd",
+  "ended_at": "2026-10-19T17:05:15.278628+00:00",
+  "elapsed_seconds": 0.002770800027064979
+}

@@ -1,0 +1,16 @@
+{
+  "id": "027-gpu_server_interface",
+  "label": "gpu_server_interface",
+  "executable": "C:/Users/weita/Desktop/SE in AI/proj/.envs/validation/Scripts/python.exe",
+  "args": [
+    "-X",
+    "utf8",
+    "scripts/validate_local_server.py"
+  ],
+  "started_at": "2026-10-19T16:58:15.780Z",
+  "ended_at": "2026-10-19T16:58:24.473Z",
+  "elapsed_seconds": 8.693,
+  "exit_code": 0,
+  "stdout": "Run log: C:\\Users\\weita\\Desktop\\SE in AI\\proj\\results\\synthetic_server\\20261019T165816-d2922126\r\n{\r\n  \"synthetic_fixture\": true,\r\n  \"passed\": true,\r\n  \"adapter\": \"checkpoints/pilot/synthetic-tiny-qwen\",\r\n  \"transport\": \"in-process ASGI; real GPU model generation\",\r\n  \"checks\": [\r\n    \"model list\",\r\n    \"health\",\r\n    \"wrong model 404\",\r\n    \"n limit 400\",\r\n    \"unknown task 400\",\r\n    \"context overflow 413\",\r\n    \"adapter generation\",\r\n    \"persistent per-task token ledger\",\r\n    \"exhausted task 429\",\r\n    \"SSE completion\"\r\n  ]\r\n}\r\n",
+  "stderr": "\rLoading weights:   0%|          | 0/27 [00:00<?, ?it/s]\rLoading weights: 100%|##########| 27/27 [00:00<00:00, 495.45it/s]\r\n"
+}
