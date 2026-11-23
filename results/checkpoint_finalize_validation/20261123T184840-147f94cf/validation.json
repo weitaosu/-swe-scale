@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "synthetic_fixture": true,
+  "gpu_count": 1,
+  "global_step": 4,
+  "finalized_completed_checkpoint": true,
+  "fresh_reload": "passed"
+}

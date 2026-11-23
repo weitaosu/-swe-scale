@@ -109,6 +109,21 @@ def train(run,config_path,resume=None):
     token_counts={"processed":0,"targets":0,"training_step_seconds":0.0,"microbatches":0,"post_warmup_tokens":0,"post_warmup_seconds":0.0}
     gradient_checks=[]
     class Metrics(TrainerCallback):
+        def on_step_end(self,args,state,control,**kwargs):
+            interval=cfg.get("checkpoint_every_steps")
+            if interval and state.global_step % interval == 0:
+                control.should_save=True
+            return control
+        def on_save(self,args,state,control,**kwargs):
+            if cfg.get("checkpoint_every_steps"):
+                # Every rank must finish its RNG-state write before publishing.
+                if world_size>1: torch.distributed.barrier()
+                if rank==0:
+                    from .checkpoints import mark_complete
+                    mark_complete(output/f"checkpoint-{state.global_step}",cfg,world_size,state.global_step)
+                    run.event("resume_checkpoint_complete",step=state.global_step)
+                if world_size>1: torch.distributed.barrier()
+            return control
         def on_log(self,args,state,control,logs=None,**kwargs):
             run.event("trainer_metrics",step=state.global_step,metrics=logs or {},tokens=dict(token_counts))
             if rank==0: guard.snapshot()
@@ -118,6 +133,16 @@ def train(run,config_path,resume=None):
                 gradient_checks.append(norm);run.event("adapter_gradient_check",step=state.global_step,sum_parameter_gradient_norms=norm)
                 if not math.isfinite(norm) or not norm>0: raise ValueError("No nonzero adapter gradients")
     class TrackedTrainer(Trainer):
+        def _run_epoch(self,*args,**kwargs):
+            if self.state.global_step>=self.state.max_steps:
+                self.control.should_training_stop=True
+                return
+            return super()._run_epoch(*args,**kwargs)
+        def _load_best_model(self):
+            # Best-model selection can restore the resume checkpoint itself.
+            # Check actual optimizer updates before that selection changes weights.
+            self.adapter_digest_before_best_reload=adapter_digest(self.model)
+            return super()._load_best_model()
         def compute_loss(self,model,inputs,return_outputs=False,num_items_in_batch=None):
             if cfg.get("target_only_logits",False): inputs=assistant_target_inputs(inputs)
             return super().compute_loss(model,inputs,return_outputs=return_outputs,num_items_in_batch=num_items_in_batch)
@@ -132,6 +157,7 @@ def train(run,config_path,resume=None):
                 token_counts["post_warmup_tokens"]+=processed;token_counts["post_warmup_seconds"]+=elapsed
             run.event("training_microbatch",processed_tokens=processed,target_tokens=targets,seconds=elapsed,loss=float(value.detach().cpu()),peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved(),cuda_free_bytes=torch.cuda.mem_get_info()[0])
             return value
+    resume_step=None
     if resume:
         from peft import set_peft_model_state_dict
         from peft.utils.save_and_load import load_peft_weights
@@ -141,6 +167,7 @@ def train(run,config_path,resume=None):
         missing=[name for name in required if not (checkpoint/name).exists()]
         if missing:
             raise ValueError(f"Resume requires a complete Trainer checkpoint; missing: {missing}")
+        resume_step=read_json(checkpoint/"trainer_state.json")["global_step"]
         previous=read_json(checkpoint/"adapter_config.json")
         if previous["r"]!=cfg.get("lora_rank",16) or previous["lora_alpha"]!=cfg.get("lora_alpha",32):
             raise ValueError("Resume adapter dimensions differ from this configuration")
@@ -158,7 +185,11 @@ def train(run,config_path,resume=None):
     result=trainer.train(resume_from_checkpoint=str(local_path(resume)) if resume else None)
     elapsed=time.perf_counter()-started
     after=adapter_digest(model)
-    if before==after: raise ValueError("Adapter parameters did not change")
+    optimized_digest=getattr(trainer,"adapter_digest_before_best_reload",after)
+    finalized_completed_checkpoint=(resume_step is not None and result.global_step==resume_step
+                                    and resume_step>=trainer.state.max_steps)
+    if before==optimized_digest and not finalized_completed_checkpoint:
+        raise ValueError("Adapter parameters did not change during optimization")
     if world_size>1:
         hashes=[None]*world_size
         torch.distributed.all_gather_object(hashes,after)
@@ -179,14 +210,15 @@ def train(run,config_path,resume=None):
     model.eval();reference_ids=train_rows[0]["input_ids"][:min(128,len(train_rows[0]["input_ids"]))]
     with torch.no_grad(), torch.autocast("cuda",dtype=torch.bfloat16): logits=model(input_ids=torch.tensor([reference_ids],device="cuda"),attention_mask=torch.ones((1,len(reference_ids)),dtype=torch.long,device="cuda")).logits[0,-1].float().cpu()
     torch.save({"input_ids":reference_ids,"last_logits":logits},output/"reload_reference.pt")
-    metadata={"config":cfg,"config_path":local_path(config_path).relative_to(ROOT).as_posix(),"versions":versions(),"parameters":counts,"adapter_hash_before":before,"adapter_hash_after":after,"adapter_updated":True,
+    metadata={"config":cfg,"config_path":local_path(config_path).relative_to(ROOT).as_posix(),"versions":versions(),"parameters":counts,"adapter_hash_before":before,"adapter_hash_after":after,"adapter_updated":before!=optimized_digest,
+      "adapter_hash_after_optimization":optimized_digest,"finalized_completed_checkpoint":finalized_completed_checkpoint,
       "gradient_checks":gradient_checks,"token_counts":token_counts,"wall_seconds_including_eval_and_checkpointing":elapsed,"gpu_count":world_size,"gpu_hours":elapsed*world_size/3600,
       "effective_batch_size":world_size*cfg.get("gradient_accumulation_steps",8),
       "steady_state_tokens_per_second":world_size*token_counts["post_warmup_tokens"]/token_counts["post_warmup_seconds"] if token_counts["post_warmup_seconds"] else None,"peak_allocated_bytes":torch.cuda.max_memory_allocated(),"peak_reserved_bytes":torch.cuda.max_memory_reserved(),"memory_metrics_scope":"rank_0; per-rank peaks are in training_microbatch events",
       "train_source_sha256":sha256_file(local_path(cfg["train_file"])),"validation_source_sha256":sha256_file(local_path(cfg["validation_file"])),"train_examples":len(train_rows),"validation_examples":len(eval_rows),
       "best_checkpoint":trainer.state.best_model_checkpoint,"best_eval_loss":trainer.state.best_metric,"global_step":trainer.state.global_step,"resume_from_checkpoint":resume,"optimizer_state_entries":len(trainer.optimizer.state),"training_result":result.metrics,"log_history":trainer.state.log_history,"synthetic_fixture":cfg.get("synthetic_fixture",False)}
     write_json(output/"experiment.json",metadata);write_json(run.path/"metrics.json",metadata)
-    print(json.dumps({"output":str(output),"adapter_updated":True,"gpu_hours":elapsed/3600,"tokens":token_counts},indent=2))
+    print(json.dumps({"output":str(output),"adapter_updated":metadata["adapter_updated"],"gpu_hours":elapsed/3600,"tokens":token_counts},indent=2))
     del trainer,model;gc.collect();torch.cuda.empty_cache()
     return metadata
 

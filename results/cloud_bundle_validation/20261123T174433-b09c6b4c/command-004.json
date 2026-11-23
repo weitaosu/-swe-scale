@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-c",
+    "import runpy; ns=runpy.run_path('scripts/cloud.py'); ns['initialize']()"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/cloud-bundle-20261123T174433-b09c6b4c/swe-study-a100",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_bundle_validation/20261123T174433-b09c6b4c/command-004.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_bundle_validation/20261123T174433-b09c6b4c/command-004.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.26845171300010406
+}

@@ -151,3 +151,32 @@ def test_login_node_setup_can_defer_gpu_check():
     cloud = module("cloud")
     args = cloud.parser().parse_args(["setup", "--skip-gpu-check", "--storage-accounting", "project"])
     assert args.skip_gpu_check and args.storage_accounting == "project"
+
+
+def test_source_snapshot_accepts_pre_1980_timestamps(tmp_path, monkeypatch):
+    import os
+    import zipfile
+    import swe_study.audit as audit
+    folder = tmp_path / "src"
+    folder.mkdir()
+    source = folder / "epoch_fixture.py"
+    source.write_text("# Preserved source content\n")
+    os.utime(source, (0, 0))
+    monkeypatch.setattr(audit, "ROOT", tmp_path)
+    with audit.Run("unit_epoch_snapshot") as run:
+        pass
+    with zipfile.ZipFile(run.path / "source_snapshot.zip") as archive:
+        assert archive.read("src/epoch_fixture.py") == source.read_bytes()
+        assert archive.getinfo("src/epoch_fixture.py").date_time[0] == 1980
+
+
+def test_cloud_archive_assigns_zip_safe_timestamps(tmp_path, monkeypatch):
+    import sys
+    import tarfile
+    import uuid
+    package = module("package_cloud")
+    output = tmp_path / ("bundle-" + uuid.uuid4().hex + ".tar.gz")
+    monkeypatch.setattr(sys, "argv", ["package_cloud.py", "--output", str(output)])
+    package.main()
+    with tarfile.open(output) as archive:
+        assert all(member.mtime == 946684800 for member in archive.getmembers())

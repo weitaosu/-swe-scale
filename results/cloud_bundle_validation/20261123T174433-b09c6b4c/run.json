@@ -1,0 +1,29 @@
+{
+  "run_id": "20261123T174433-b09c6b4c",
+  "stage": "cloud_bundle_validation",
+  "started_at": "2026-11-23T17:44:33.831383+00:00",
+  "status": "passed",
+  "config": {
+    "bundle": "dist/swe-study-a100-nersc-20261123-zipfix.tar.gz",
+    "gpu": false,
+    "tests": true
+  },
+  "config_sha256": "384e1411d4c68b70a32a7dfd41513620edfdc624ad679ff3f44ffa94aa47e09f",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_cloud_bundle.py",
+    "--bundle",
+    "dist/swe-study-a100-nersc-20261123-zipfix.tar.gz",
+    "--tests"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 16843,
+  "parent_pid": 16842,
+  "condition_id": null,
+  "source_snapshot_sha256": "800e6906654f8fbd4d9b57558d363d16a22d1213307bd5fd6cbaa8b67c72e297",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T17:45:29.695317+00:00",
+  "elapsed_seconds": 55.27604586699999
+}

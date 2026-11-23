@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/deliverables/nersc_7b_checkpoint_patch.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-patch-20261123T184203-5397fa4a/swe-study-a100"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkpoint_patch_validation/20261123T184203-5397fa4a/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkpoint_patch_validation/20261123T184203-5397fa4a/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.25499077499989653
+}

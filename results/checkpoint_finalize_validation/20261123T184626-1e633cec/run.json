@@ -1,0 +1,30 @@
+{
+  "run_id": "20261123T184626-1e633cec",
+  "stage": "checkpoint_finalize_validation",
+  "started_at": "2026-11-23T18:46:26.766792+00:00",
+  "status": "failed",
+  "config": {
+    "project": ".cache/tmp/checkpoint-resume-20261123T183942-46fc8994"
+  },
+  "config_sha256": "5088d483fa68b115b6ce62f9aa9b6be27f875d6dbb8399483858870540f96c21",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_checkpoint_finalize.py",
+    "--project",
+    ".cache/tmp/checkpoint-resume-20261123T183942-46fc8994"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 32364,
+  "parent_pid": 32363,
+  "condition_id": null,
+  "source_snapshot_sha256": "d4fcf38f9c5c89a7a897db1a873514089ede53d0788f2e9b1d5514de038fb4c4",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T18:47:58.293376+00:00",
+  "elapsed_seconds": 90.88229384700026,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command failed (1): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\nhe device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n  warnings.warn(  # warn only once\n/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n  warnings.warn(  # warn only once\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T183942-46fc8994/scripts/cloud.py\", line 367, in main\n    try: fit(run, args.config, args.resume)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T183942-46fc8994/src/swe_study/training.py\", line 187, in train\n    raise ValueError(\"Adapter parameters did not change during optimization\")\nValueError: Adapter parameters did not change during optimization\n[rank0]: Traceback (most recent call last):\n[rank0]:   File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T183942-46fc8994/scripts/cloud.py\", line 379, in <module>\n[rank0]:     if __name__ == \"__main__\": main()\n[rank0]:                                ^^^^^^\n[rank0]:   File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T183942-46fc8994/scripts/cloud.py\", line 367, in main\n[rank0]:     try: fit(run, args.config, args.resume)\n[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n[rank0]:   File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T183942-46fc8994/src/swe_study/training.py\", line 187, in train\n[rank0]:     raise ValueError(\"Adapter parameters did not change during optimization\")\n[rank0]: ValueError: Adapter parameters did not change during optimization\nE1123 13:47:56.823000 32476 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 0 (pid: 32726) of binary: /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/run.py\", line 940, in <module>\n    main()\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 357, in wrapper\n    return f(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/run.py\", line 936, in main\n    run(args)\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/run.py\", line 927, in run\n    elastic_launch(\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/launcher/api.py\", line 156, in __call__\n    return launch_agent(self._config, self._entrypoint, list(args))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/torch/distributed/launcher/api.py\", line 293, in launch_agent\n    raise ChildFailedError(\ntorch.distributed.elastic.multiprocessing.errors.ChildFailedError: \n============================================================\nscripts/cloud.py FAILED\n------------------------------------------------------------\nFailures:\n  <NO_OTHER_FAILURES>\n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-23_13:47:56\n  host      : boyant.\n  rank      : 0 (local_rank: 0)\n  exitcode  : 1 (pid: 32726)\n  error_file: <N/A>\n  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html\n============================================================\n\n"
+  }
+}

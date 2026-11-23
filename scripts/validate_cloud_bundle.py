@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 import json
+import os
 from pathlib import Path
 import shutil
 import sys
@@ -35,6 +36,8 @@ def main():
                 with archive.extractfile(member) as source:
                     target.write_bytes(source.read())
                 target.chmod(member.mode & 0o777)
+                # Exercise real tar extraction metadata, not just file contents.
+                os.utime(target, (member.mtime, member.mtime))
         project = destination / "swe-study-a100"
         for forbidden in [".env", ".envs", "manifests/storage_baseline.json", "manifests/docker_storage.json"]:
             if (project / forbidden).exists(): raise ValueError(f"Bundle imported forbidden host state: {forbidden}")
@@ -44,6 +47,8 @@ def main():
             if sha256_file(project / name) != digest: raise ValueError(f"Bundle checksum differs: {name}")
         run.command(["bash", "-n", "cloud/run.sh", "cloud/all.sh", "cloud/train.slurm"], cwd=project)
         run.command([sys.executable, "scripts/cloud.py", "--help"], cwd=project)
+        snapshot_code = "import sys; sys.path.insert(0,'src'); from swe_study.audit import Run\nwith Run('bundle_snapshot_check') as run:\n    print('Extracted source snapshot passed')"
+        run.command([sys.executable, "-c", snapshot_code], cwd=project)
         code = "import runpy; ns=runpy.run_path('scripts/cloud.py'); ns['initialize']()"
         run.command([sys.executable, "-c", code], cwd=project)
         run.command([sys.executable, "scripts/cloud.py", "train", "--gpus", "4", "--dry-run"], cwd=project)

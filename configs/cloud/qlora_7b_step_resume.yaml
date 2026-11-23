@@ -1,0 +1,26 @@
+# Same training/evaluation policy as 7B; add per-step recovery checkpoints.
+model: models/Qwen2.5-Coder-7B-Instruct
+train_file: data/processed/swegym/train.jsonl
+validation_file: data/processed/swegym/validation.jsonl
+output: checkpoints/cloud/qwen-7b-32k-2gpu-step-resume-v1
+max_length: 32768
+max_train_examples: null
+max_eval_examples: null
+max_steps: -1
+num_train_epochs: 3
+global_batch_size: 8
+gradient_accumulation_steps: 4
+learning_rate: 0.0001
+warmup_ratio: 0.03
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+seed: 6158
+eval_strategy: epoch
+save_strategy: epoch
+checkpoint_every_steps: 1
+save_total_limit: 3
+quantization: nf4
+target_only_logits: true
+context_policy: complete_histories_only

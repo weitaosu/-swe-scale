@@ -150,6 +150,49 @@ the retained data and GPU configuration. Training never overwrites a nonempty
 output unless an explicit compatible resume is supplied. If a job failed before
 its first complete checkpoint, keep its evidence and use a fresh `--output`.
 
+### Four-hour 7B sessions with per-step recovery checkpoints
+
+The optional `configs/cloud/qlora_7b_step_resume.yaml` profile keeps the existing
+epoch validation and best-adapter selection, while saving recovery state after
+every **optimizer step** (after gradient accumulation). It retains three
+checkpoints including the best evaluated checkpoint. Saving and hashing optimizer
+state adds filesystem I/O; it does not copy the frozen base model each step.
+
+Use two GPUs in every session. The output in this profile is fixed and must not
+be changed to the next Slurm job ID. In the first allocated session:
+
+```bash
+bash cloud/run.sh train --size 7B --gpus 2 \
+  --config configs/cloud/qlora_7b_step_resume.yaml
+```
+
+After the prior allocation has ended, request another two-GPU allocation, load
+`cloud/nersc/env.sh`, and resume with exactly the same configuration and data:
+
+```bash
+bash cloud/run.sh train --size 7B --gpus 2 \
+  --config configs/cloud/qlora_7b_step_resume.yaml --resume latest
+```
+
+`--resume latest` accepts only checkpoints with a completion record matching the
+configuration, step, GPU count, payload hashes and every rank's RNG state. An
+interrupted or corrupt save is skipped in favor of an earlier verified one. The
+record is published after all ranks finish saving. Progress after that checkpoint
+is repeated; the epoch and learning-rate schedule continue rather than restarting.
+The original explicit `--resume path/to/checkpoint-N` remains available for
+legacy checkpoints. Do not change an already-running experiment to this profile.
+
+The optional synthetic interruption/resume diagnostic is:
+
+```bash
+.envs/train/bin/python scripts/validate_checkpoint_resume.py --gpus 2
+```
+
+It uses an isolated random-model fixture, interrupts after checkpoint 2, resumes
+to step 4 with optimizer state, and validates a fresh adapter reload. It does not
+establish 7B memory feasibility or quality. Exact resume does not imply bitwise
+identical arithmetic across hardware/software changes.
+
 ### Slurm
 
 Edit `cloud/train.slurm` for the cluster partition/account and A100 count/memory,

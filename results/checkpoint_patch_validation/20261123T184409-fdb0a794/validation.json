@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "bundle": "dist/swe-study-a100-nersc-20261123-zipfix.tar.gz",
+  "installed_files_checked": 6,
+  "idempotent": true,
+  "unfamiliar_source_preserved": true,
+  "installer_sha256": "1f7f24428fe38147b9bf41c31db4d7de297b87f2d2fd7a1fdbef378fb315d474"
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,9 +40,14 @@ def read_json(path: str | Path):
 def write_json(path: str | Path, data) -> None:
     p = local_path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-    temp = p.with_name(p.name + ".tmp")
-    temp.write_text(json.dumps(data, indent=2, ensure_ascii=False, default=str) + "\n", encoding="utf-8")
-    temp.replace(p)
+    fd, name = tempfile.mkstemp(prefix=p.name + ".", suffix=".tmp", dir=p.parent)
+    temp = Path(name)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(data, indent=2, ensure_ascii=False, default=str) + "\n")
+        temp.replace(p)
+    finally:
+        temp.unlink(missing_ok=True)
 
 
 def sha256_file(path: str | Path) -> str:

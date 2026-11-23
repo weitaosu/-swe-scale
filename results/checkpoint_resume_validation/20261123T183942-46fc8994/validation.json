@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "synthetic_fixture": true,
+  "gpu_count": 1,
+  "interrupted_after_step": 2,
+  "resumed_to_step": 4,
+  "fresh_reload": "passed",
+  "validation_strategy": "epoch",
+  "checkpoint_every_steps": 1,
+  "extracted_project": ".cache/tmp/checkpoint-resume-20261123T183942-46fc8994",
+  "limitation": "Random tiny model; no real 7B memory, quality or performance claim"
+}

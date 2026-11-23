@@ -92,10 +92,11 @@ class Run:
                 if item.is_file() and item.suffix in {".py",".sh",".slurm",".ps1",".yaml",".json",".toml",".txt",".md"} and "__pycache__" not in item.parts:
                     snapshot_files.append(item)
         snapshot_files += [p for p in [ROOT/"pyproject.toml",ROOT/"README.md",ROOT/"AGENTS.md"] if p.exists()]
-        with zipfile.ZipFile(self.path/"source_snapshot.zip","w",compression=zipfile.ZIP_DEFLATED) as archive:
+        with zipfile.ZipFile(self.path/"source_snapshot.zip","w",compression=zipfile.ZIP_DEFLATED, strict_timestamps=False) as archive:
             for item in snapshot_files: archive.write(item,item.relative_to(ROOT).as_posix())
         from .common import sha256_file
         self.meta["source_snapshot_sha256"]=sha256_file(self.path/"source_snapshot.zip")
+        self.meta["source_snapshot_timestamp_policy"]="Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged."
         write_json(self.path / "run.json", self.meta)
         out = self.stack.enter_context((self.path / "stdout.log").open("w", encoding="utf-8"))
         err = self.stack.enter_context((self.path / "stderr.log").open("w", encoding="utf-8"))

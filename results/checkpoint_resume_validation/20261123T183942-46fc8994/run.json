@@ -1,0 +1,26 @@
+{
+  "run_id": "20261123T183942-46fc8994",
+  "stage": "checkpoint_resume_validation",
+  "started_at": "2026-11-23T18:39:42.416369+00:00",
+  "status": "passed",
+  "config": {
+    "gpus": 1
+  },
+  "config_sha256": "10ded1d025263e015a77af0f59f290187efa23d7026f6e8af501e4b786e1f7be",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_checkpoint_resume.py",
+    "--gpus",
+    "1"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 30096,
+  "parent_pid": 30089,
+  "condition_id": null,
+  "source_snapshot_sha256": "376a821030be8f4e73e0e9f2123740d152950cd6bcec429bb7828df7d8f8c46b",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T18:45:35.281515+00:00",
+  "elapsed_seconds": 351.9722835269995
+}

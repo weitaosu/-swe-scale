@@ -1,0 +1,10 @@
+{
+  "purpose": "Validate opt-in per-step checkpoints, verified latest selection and existing pipeline behavior",
+  "command": ["wsl.exe", "--cd", "/mnt/c/Users/weita/Desktop/SE in AI/proj", "--exec", "env", "PYTHONDONTWRITEBYTECODE=1", ".envs/train/bin/python", "-B", "-m", "pytest", "-q", "--capture=sys", "-p", "no:cacheprovider", "--basetemp", ".cache/tmp/pytest-step-resume-complete-20261123"],
+  "exit_code": 0,
+  "stdout_summary": "61 passed in 59.76s",
+  "synthetic_interruption_resume_evidence": "results/checkpoint_resume_validation/20261123T183942-46fc8994/validation.json",
+  "completed_checkpoint_finalize_evidence": "results/checkpoint_finalize_validation/20261123T184840-147f94cf/validation.json",
+  "installer_evidence": "results/checkpoint_patch_validation/20261123T184937-b73573e8/validation.json",
+  "limitation": "Local WSL tests and one-GPU random-model diagnostic; no two-A100 7B validation"
+}

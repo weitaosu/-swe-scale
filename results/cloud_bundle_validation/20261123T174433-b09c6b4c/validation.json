@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "bundle": "dist/swe-study-a100-nersc-20261123-zipfix.tar.gz",
+  "file_hashes_checked": 77,
+  "extracted_project": ".cache/tmp/cloud-bundle-20261123T174433-b09c6b4c/swe-study-a100",
+  "synthetic_gpu": null,
+  "limitation": "No A100, multi-GPU NCCL or full-model feasibility/performance validation",
+  "regression_stdout": "......................................................                   [100%]\n=============================== warnings summary ===============================\ntests/test_cloud.py: 10 warnings\n  /usr/lib/python3.12/importlib/metadata/__init__.py:948: DeprecationWarning: Implicit None on return values is deprecated and will raise KeyErrors.\n    pkg_to_dist[pkg].append(dist.metadata['Name'])\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n54 passed, 10 warnings in 45.36s\n"
+}

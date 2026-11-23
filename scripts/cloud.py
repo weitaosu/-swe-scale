@@ -151,6 +151,9 @@ def resolved_config(args, world_size):
         cfg["gradient_accumulation_steps"] = batch // world_size
     if cfg["max_length"] <= 0 or cfg["gradient_accumulation_steps"] <= 0:
         raise ValueError("Context and gradient accumulation must be positive")
+    interval = cfg.get("checkpoint_every_steps")
+    if interval is not None and (type(interval) is not int or interval <= 0):
+        raise ValueError("checkpoint_every_steps must be a positive integer")
     if cfg.get("num_train_epochs", 3) <= 0 or cfg.get("max_steps", -1) == 0:
         raise ValueError("Epochs must be positive and max_steps must be positive or -1")
     cfg["world_size"] = world_size
@@ -169,6 +172,11 @@ def train(args, run):
         return
     doctor(run, count)
     output = local_path(cfg["output"])
+    if args.resume == "latest":
+        from swe_study.checkpoints import latest_complete
+        args.resume = latest_complete(output, cfg, count).relative_to(ROOT).as_posix()
+        run.event("resume_checkpoint_selected", checkpoint=args.resume)
+        print(f"Resuming complete checkpoint: {args.resume}")
     if args.resume and not local_path(args.resume).is_relative_to(output):
         raise ValueError("Resume checkpoint must be inside the selected output directory")
     with training_lock(output):
@@ -303,7 +311,7 @@ def parser():
     s.add_argument("--size", choices=["1.5B", "3B", "7B"], default="7B")
     s.add_argument("--config")
     s.add_argument("--gpus", type=int, default=1, help="Default: one GPU; select 2 or 4 to use more")
-    s.add_argument("--output");s.add_argument("--resume")
+    s.add_argument("--output");s.add_argument("--resume", help="Complete checkpoint path, or latest for a verified completion record")
     s.add_argument("--max-length", type=int);s.add_argument("--epochs", type=float)
     s.add_argument("--max-steps", type=int);s.add_argument("--grad-accum", type=int)
     s.add_argument("--learning-rate", type=float)

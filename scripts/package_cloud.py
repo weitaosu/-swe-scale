@@ -51,6 +51,9 @@ def main():
             info = tarfile.TarInfo("swe-study-a100/" + name)
             info.size = len(data)
             info.mode = 0o755 if name.endswith((".sh", ".slurm")) else 0o644
+            # TarInfo defaults to epoch 0 (1970), which breaks later ZIP snapshots.
+            # A fixed 2000-01-01 UTC also avoids timezone-dependent 1980 boundaries.
+            info.mtime = 946684800
             archive.addfile(info, io.BytesIO(data))
     sha = hashlib.sha256(output.read_bytes()).hexdigest()
     output.with_name(output.name + ".sha256").write_text(f"{sha}  {output.name}\n", encoding="utf-8")

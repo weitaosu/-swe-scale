@@ -1,0 +1,18 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/cloud.py",
+    "train",
+    "--config",
+    "configs/cloud/synthetic_step_resume.yaml",
+    "--gpus",
+    "1",
+    "--resume",
+    "latest"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T183942-46fc8994",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkpoint_resume_validation/20261123T183942-46fc8994/command-004.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkpoint_resume_validation/20261123T183942-46fc8994/command-004.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 131.35318290800024
+}
