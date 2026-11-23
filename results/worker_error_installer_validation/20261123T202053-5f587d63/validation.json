@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "backup_verified": true,
+  "idempotent": true,
+  "unknown_source_preserved": true
+}

@@ -365,7 +365,15 @@ def main():
             import torch
             from swe_study.training import train as fit
             try: fit(run, args.config, args.resume)
-            finally:
+            except BaseException as error:
+                # A failed rank must report its original exception before any
+                # collective teardown, which can otherwise hide it for minutes.
+                import traceback
+                traceback.print_exc()
+                sys.stderr.flush()
+                run.event("training_worker_failed",rank=rank,error_type=type(error).__name__,error=str(error))
+                raise
+            else:
                 if torch.distributed.is_initialized(): torch.distributed.destroy_process_group()
         elif args.command == "infer": inference(args, run)
         elif args.command == "serve":

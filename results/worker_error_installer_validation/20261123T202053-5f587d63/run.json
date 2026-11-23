@@ -1,0 +1,22 @@
+{
+  "run_id": "20261123T202053-5f587d63",
+  "stage": "worker_error_installer_validation",
+  "started_at": "2026-11-23T20:20:53.429797+00:00",
+  "status": "passed",
+  "config": {},
+  "config_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    ".cache/tmp/validate_worker_installer.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 55976,
+  "parent_pid": 55975,
+  "condition_id": null,
+  "source_snapshot_sha256": "66d242b0503ee41ed41c113e0c0e625bc0172b6b86ed2abff8d8db1b821f01c6",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T20:20:54.969846+00:00",
+  "elapsed_seconds": 0.9043690590006008
+}

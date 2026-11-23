@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "scripts/patch_worker_errors.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/worker-patch-20261123T202053-5f587d63"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/worker_error_installer_validation/20261123T202053-5f587d63/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/worker_error_installer_validation/20261123T202053-5f587d63/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2544968179990974
+}

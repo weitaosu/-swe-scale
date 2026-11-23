@@ -1,0 +1,15 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "scripts/patch_worker_errors.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/worker-patch-20261123T202053-5f587d63"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/worker_error_installer_validation/20261123T202053-5f587d63/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/worker_error_installer_validation/20261123T202053-5f587d63/command-003.stderr.log",
+  "returncode": 1,
+  "error_type": "RuntimeError",
+  "error": "Command failed (1): /usr/bin/python3\nTraceback (most recent call last):\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/patch_worker_errors.py\", line 73, in <module>\n    main()\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/patch_worker_errors.py\", line 48, in main\n    after = patch_text(before)\n            ^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/patch_worker_errors.py\", line 33, in patch_text\n    raise ValueError(\"Unfamiliar worker source preserved. Stop and share this message.\")\nValueError: Unfamiliar worker source preserved. Stop and share this message.\n",
+  "elapsed_seconds": 0.27515502300047956
+}

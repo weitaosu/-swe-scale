@@ -16,6 +16,52 @@ def module(name):
     return loaded
 
 
+@pytest.mark.parametrize("failure", [RuntimeError("synthetic worker failure"), MemoryError("synthetic memory failure"), None])
+def test_worker_reports_original_failure_without_collective_teardown(monkeypatch, capsys, failure):
+    import torch
+    import swe_study.training
+    cloud = module("cloud")
+    calls = []
+    events = []
+    args = SimpleNamespace(command="train-worker", config="fixture.yaml", resume=None)
+    monkeypatch.setattr(cloud, "parser", lambda: SimpleNamespace(parse_args=lambda: args))
+    monkeypatch.setattr(cloud, "setup_environment", lambda: None)
+    monkeypatch.setattr(cloud, "require_cloud", lambda: SimpleNamespace(check=lambda: None))
+    class FixtureRun:
+        def __init__(self, *args): pass
+        def __enter__(self): return self
+        def __exit__(self, *args): return False
+        def event(self, event, **fields): events.append((event, fields))
+    monkeypatch.setattr(cloud, "Run", FixtureRun)
+    def fit(*args):
+        calls.append("fit")
+        if failure is not None:
+            raise failure
+    monkeypatch.setattr(swe_study.training, "train", fit)
+    monkeypatch.setattr(torch.distributed, "is_initialized", lambda: True)
+    monkeypatch.setattr(torch.distributed, "destroy_process_group", lambda: calls.append("destroy"))
+    if failure is None:
+        cloud.main()
+        assert calls == ["fit", "destroy"] and not events
+    else:
+        with pytest.raises(type(failure), match=str(failure)):
+            cloud.main()
+        assert calls == ["fit"]
+        assert str(failure) in capsys.readouterr().err
+        assert events[0][0] == "training_worker_failed"
+        assert events[0][1]["error"] == str(failure)
+
+
+def test_worker_error_patch_preserves_unknown_sources_and_is_idempotent():
+    installer = module("patch_worker_errors")
+    text = (ROOT / "scripts/cloud.py").read_text()
+    assert installer.patch_text(text) == text
+    previous = text.replace(installer.NEW, installer.OLD, 1)
+    assert previous != text and installer.patch_text(previous) == text
+    with pytest.raises(ValueError, match="Unfamiliar worker source preserved"):
+        installer.patch_text("# user-modified worker\n")
+
+
 def test_cloud_bundle_excludes_workstation_state_and_secrets():
     files = module("package_cloud").bundle_files()
     assert "scripts/cloud.py" in files and "cloud/train.slurm" in files
