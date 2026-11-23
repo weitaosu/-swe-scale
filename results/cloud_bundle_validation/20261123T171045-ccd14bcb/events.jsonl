@@ -1,0 +1,2 @@
+{"time": "2026-11-23T17:10:46.600475+00:00", "event": "run_started", "config": {"bundle": "dist/swe-study-a100-validation.tar.gz", "gpu": true}}
+{"time": "2026-11-23T17:10:46.621593+00:00", "event": "run_finished", "status": "failed", "error": {"type": "AttributeError", "message": "module 'posixpath' has no attribute 'ALLOW_MISSING'"}}

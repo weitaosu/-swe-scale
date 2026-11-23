@@ -1,5 +1,10 @@
 # CS6158: local SWE agent and QLoRA setup
 
+For a cloud A100 node (including multiple GPUs), use the portable
+[cloud training and inference guide](cloud/README.md). Package a clean upload with
+`/usr/bin/python3 scripts/package_cloud.py` in Ubuntu; it excludes workstation
+environments, machine-specific storage accounting, credentials, weights, and logs.
+
 Approved scope: the first two proposal milestones on one RTX 4090, with a 70 GB incremental storage cap and at least 25 GB free. Both milestones remain incomplete until their real-model, agent, and grader acceptance checks pass. See [current progress](docs/implementation_status.md), [implementation plan](docs/rtx_4090_implementation_plan.md), and [4090 constraints](docs/rtx_4090_constraints.md).
 
 Use Ubuntu 24.04.2 WSL2 through the standard command runner, following [AGENTS.md](AGENTS.md) and [environment.md](docs/environment.md). Shared project root: /mnt/c/Users/weita/Desktop/SE in AI/proj. Select interpreters explicitly: /usr/bin/python3 bootstraps Python 3.12.3 environments; .envs/train/bin/python handles training/data/serving, with separate .envs/agent and .envs/eval interpreters.

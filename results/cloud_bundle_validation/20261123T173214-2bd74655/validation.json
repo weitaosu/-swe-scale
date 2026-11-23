@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "bundle": "dist/swe-study-a100-nersc-20261123.tar.gz",
+  "file_hashes_checked": 77,
+  "extracted_project": ".cache/tmp/cloud-bundle-20261123T173214-2bd74655/swe-study-a100",
+  "synthetic_gpu": null,
+  "limitation": "No A100, multi-GPU NCCL or full-model feasibility/performance validation"
+}

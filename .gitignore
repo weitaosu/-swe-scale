@@ -17,4 +17,5 @@ results/**/*.log
 results/**/source_snapshot.zip
 .venv/
 .tools/
+dist/
 results/**/optimizer.pt

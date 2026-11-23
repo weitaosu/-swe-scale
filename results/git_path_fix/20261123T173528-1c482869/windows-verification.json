@@ -1,0 +1,9 @@
+﻿{
+    "command":  "git add --dry-run .",
+    "exit_code":  128,
+    "core_longpaths":  "true",
+    "staged_files_after":  0,
+    "output_lines":  1,
+    "log":  "results/git_path_fix/20261123T173528-1c482869/windows-add-dry-run.log",
+    "note":  "No files staged or deleted by verification; original core.autocrlf setting preserved."
+}

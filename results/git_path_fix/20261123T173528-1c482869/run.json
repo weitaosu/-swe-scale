@@ -1,0 +1,23 @@
+{
+  "run_id": "20261123T173528-1c482869",
+  "stage": "git_path_fix",
+  "started_at": "2026-11-23T17:35:28.402189+00:00",
+  "status": "passed",
+  "config": {
+    "scope": "Enable repository-local Windows Git long-path support; preserve all tracked results"
+  },
+  "config_sha256": "8199833abaf99c496dac47d6c6110a80211952c64f45b959a53c129836854067",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    "-c"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 14841,
+  "parent_pid": 14840,
+  "condition_id": null,
+  "source_snapshot_sha256": "ac9c5e686dacfedabce4d784cdf0f252f8bf96cb3074b38c9c2101bbf561955c",
+  "ended_at": "2026-11-23T17:35:29.584005+00:00",
+  "elapsed_seconds": 0.5557809990000351
+}

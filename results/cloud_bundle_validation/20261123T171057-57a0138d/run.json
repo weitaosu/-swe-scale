@@ -1,0 +1,27 @@
+{
+  "run_id": "20261123T171057-57a0138d",
+  "stage": "cloud_bundle_validation",
+  "started_at": "2026-11-23T17:10:57.230967+00:00",
+  "status": "passed",
+  "config": {
+    "bundle": "dist/swe-study-a100-validation.tar.gz",
+    "gpu": true
+  },
+  "config_sha256": "26261f771dd4e9b85438f400600a3e642846a6a2fc95ef8070093e5c8b8c12b0",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_cloud_bundle.py",
+    "--bundle",
+    "dist/swe-study-a100-validation.tar.gz",
+    "--gpu"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 8525,
+  "parent_pid": 8524,
+  "condition_id": null,
+  "source_snapshot_sha256": "e766216dbbc6fe101df1e6061dedbc59b4c94fcd1f2e6656ee505b698bd776a3",
+  "ended_at": "2026-11-23T17:15:12.082369+00:00",
+  "elapsed_seconds": 254.26112402900003
+}

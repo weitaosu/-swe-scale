@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "bundle": "dist/swe-study-a100-validation.tar.gz",
+  "file_hashes_checked": 69,
+  "extracted_project": ".cache/tmp/cloud-bundle-20261123T171057-57a0138d/swe-study-a100",
+  "synthetic_gpu": {
+    "passed": true,
+    "synthetic_fixture": true,
+    "gpu_count": 1,
+    "scope": "Random tiny Qwen NF4/LoRA training, DDP when GPUs>1, save and fresh reload; no real-model feasibility claim"
+  },
+  "limitation": "No A100, multi-GPU NCCL or full-model feasibility/performance validation",
+  "synthetic_inference": {
+    "passed": true,
+    "completion_tokens": 4
+  }
+}

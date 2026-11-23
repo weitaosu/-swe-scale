@@ -1,0 +1,23 @@
+﻿{
+    "document":  "deliverables/NERSC_A100_Training_and_Inference.docx",
+    "bundle":  "dist/swe-study-a100-nersc-20261123.tar.gz",
+    "bundle_sha256":  "1aac46d633d415b9b28c7334cbf1bffa966d3f619844d72106812550c7870cef",
+    "preview_pages":  10,
+    "selectable_code_blocks":  23,
+    "bash_syntax":  "23 blocks passed",
+    "regression_tests":  "52 passed in original workspace and fresh source bundle",
+    "final_archive_validation":  "results/cloud_bundle_validation/20261123T173214-2bd74655/validation.json",
+    "regression_evidence":  "results/cloud_bundle_validation/20261123T172916-f93570d2/validation.json",
+    "rendering":  "Bundled Python and ReportLab OOXML preview rasterized by canonical render_docx.py and bundled Poppler",
+    "native_renderer_failure":  "Bundled Windows runtime has no LibreOffice; canonical native attempt failed with missing soffice.exe",
+    "render_limitation":  "Native Word pagination not independently verified",
+    "cloud_validation":  "No NERSC connection or job submission; A100 memory and multi-GPU NCCL remain to be checked on the server",
+    "sources":  [
+                    "https://docs.nersc.gov/iris/iris-for-users/",
+                    "https://docs.nersc.gov/systems/perlmutter/running-jobs/",
+                    "https://docs.nersc.gov/jobs/policy/",
+                    "https://docs.nersc.gov/machinelearning/launchers/",
+                    "https://docs.nersc.gov/filesystems/quotas/",
+                    "https://docs.nersc.gov/filesystems/perlmutter-scratch/"
+                ]
+}

@@ -1,0 +1,28 @@
+{
+  "run_id": "20261123T172916-f93570d2",
+  "stage": "cloud_bundle_validation",
+  "started_at": "2026-11-23T17:29:16.121824+00:00",
+  "status": "passed",
+  "config": {
+    "bundle": "dist/swe-study-a100-nersc.tar.gz",
+    "gpu": false,
+    "tests": true
+  },
+  "config_sha256": "8e09858cc4829656d21a5fe80582382e0d195b5ef5a65b50a577238b84a1c885",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_cloud_bundle.py",
+    "--bundle",
+    "dist/swe-study-a100-nersc.tar.gz",
+    "--tests"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 13019,
+  "parent_pid": 13014,
+  "condition_id": null,
+  "source_snapshot_sha256": "4a68b96326342af0f8ee33e8a4dbadb92ddb2aab8444b90278440ef89cde2f97",
+  "ended_at": "2026-11-23T17:30:07.306923+00:00",
+  "elapsed_seconds": 50.650671241000055
+}

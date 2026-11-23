@@ -1,0 +1,14 @@
+{
+  "args": [
+    "git",
+    "config",
+    "--local",
+    "--get",
+    "core.longpaths"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/git_path_fix/20261123T173528-1c482869/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/git_path_fix/20261123T173528-1c482869/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.26176652599997396
+}

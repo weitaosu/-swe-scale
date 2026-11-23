@@ -1,0 +1,31 @@
+{
+  "run_id": "20261123T171045-ccd14bcb",
+  "stage": "cloud_bundle_validation",
+  "started_at": "2026-11-23T17:10:45.995007+00:00",
+  "status": "failed",
+  "config": {
+    "bundle": "dist/swe-study-a100-validation.tar.gz",
+    "gpu": true
+  },
+  "config_sha256": "26261f771dd4e9b85438f400600a3e642846a6a2fc95ef8070093e5c8b8c12b0",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_cloud_bundle.py",
+    "--bundle",
+    "dist/swe-study-a100-validation.tar.gz",
+    "--gpu"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 8295,
+  "parent_pid": 8294,
+  "condition_id": null,
+  "source_snapshot_sha256": "45340e16a0edc612fcbb4a93796284820cf559a38e140118ae68f5dab030a199",
+  "ended_at": "2026-11-23T17:10:46.617826+00:00",
+  "elapsed_seconds": 0.017372547999912058,
+  "error": {
+    "type": "AttributeError",
+    "message": "module 'posixpath' has no attribute 'ALLOW_MISSING'"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "run_id": "20261123T172511-b5d4b05f",
+  "stage": "unit_export",
+  "started_at": "2026-11-23T17:25:11.719977+00:00",
+  "status": "passed",
+  "config": {},
+  "config_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/pytest/__main__.py",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    ".cache/tmp/pytest-nersc-doc"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 11950,
+  "parent_pid": 11949,
+  "condition_id": null,
+  "source_snapshot_sha256": "08a1af473ae861e94f96673a7b91bfa9c6fec4f2ba9597a4f90133d34f265b95",
+  "ended_at": "2026-11-23T17:25:12.907009+00:00",
+  "elapsed_seconds": 0.009301622999828396
+}

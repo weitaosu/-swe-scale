@@ -87,9 +87,9 @@ class Run:
             f.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
     def __enter__(self):
         snapshot_files=[]
-        for folder in ["src","scripts","configs","tests","manifests","docs"]:
+        for folder in ["src","scripts","configs","tests","manifests","docs","cloud"]:
             for item in sorted((ROOT/folder).rglob("*")):
-                if item.is_file() and item.suffix in {".py",".sh",".ps1",".yaml",".json",".toml",".txt",".md"} and "__pycache__" not in item.parts:
+                if item.is_file() and item.suffix in {".py",".sh",".slurm",".ps1",".yaml",".json",".toml",".txt",".md"} and "__pycache__" not in item.parts:
                     snapshot_files.append(item)
         snapshot_files += [p for p in [ROOT/"pyproject.toml",ROOT/"README.md",ROOT/"AGENTS.md"] if p.exists()]
         with zipfile.ZipFile(self.path/"source_snapshot.zip","w",compression=zipfile.ZIP_DEFLATED) as archive:

@@ -1,0 +1,332 @@
+[
+  {
+    "title": "Download the models",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "Run this guide in a Perlmutter terminal. Iris manages NERSC accounts and allocations; these A100 job examples target Perlmutter. Use one 40 GB A100 first, with two or four GPUs available later. [1, 2]"
+      },
+      {
+        "kind": "prose",
+        "text": "Prerequisite: the accompanying swe-study-a100-nersc-20261123.tar.gz source bundle is extracted as $SCRATCH/swe-study-a100. The final appendix gives the extraction commands if needed. Copy each code block in order, without adding shell prompt characters. The application source is in the bundle; every shell script used below is reproduced in this document."
+      },
+      {
+        "kind": "prose",
+        "text": "Start on the login node. This block downloads the official 7B snapshot at the project's frozen revision and checks its file sizes and LFS hashes. No GPU allocation is needed for downloading."
+      },
+      {
+        "kind": "code",
+        "text": "export STUDY_ROOT=\"$SCRATCH/swe-study-a100\"\ncd \"$STUDY_ROOT\"\ntest -f scripts/cloud.py\nmkdir -p logs\nshowquota"
+      },
+      {
+        "kind": "prose",
+        "text": "Check showquota for at least about 100 GB of remaining project space, then run the download command. If less is available, stop before downloading. The script creates a small Python 3.12 bootstrap environment and keeps caches inside the project. The 7B snapshot is about 15.2 GB. [3]"
+      },
+      {
+        "kind": "code",
+        "text": "bash cloud/nersc/download_models.sh 7B"
+      },
+      {
+        "kind": "prose",
+        "text": "For the optional size comparison, download the other two models now. All three snapshots total about 24.5 GB. Repeated downloads verify and reuse matching files."
+      },
+      {
+        "kind": "code",
+        "text": "bash cloud/nersc/download_models.sh 1.5B\nbash cloud/nersc/download_models.sh 3B"
+      },
+      {
+        "kind": "heading",
+        "text": "Install training dependencies and download datasets"
+      },
+      {
+        "kind": "code",
+        "text": "bash cloud/nersc/setup_login.sh"
+      },
+      {
+        "kind": "prose",
+        "text": "This installs the pinned training stack and downloads the five frozen datasets. It intentionally defers the CUDA check until a GPU job. Model/data preparation never silently falls back to CPU training. Keep this project directory in the same location after its storage baseline is created."
+      }
+    ]
+  },
+  {
+    "title": "Prepare the training data",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "Run on the login node. Enter the CPU and GPU allocation account names shown in Iris; they may differ. CPU preparation is submitted to Slurm so tokenization does not run as a heavy login-node task. The environment variables remain available in this terminal. [1, 2]"
+      },
+      {
+        "kind": "code",
+        "text": "read -rp \"NERSC CPU allocation account: \" CPU_ACCOUNT\nread -rp \"NERSC GPU allocation account: \" GPU_ACCOUNT\nexport CPU_ACCOUNT GPU_ACCOUNT\ncd \"$STUDY_ROOT\"\nmkdir -p logs"
+      },
+      {
+        "kind": "prose",
+        "text": "The following complete script is already in the source bundle. Paste the block to recreate it if needed. The quoted BASH delimiter keeps Slurm variables literal until job execution."
+      },
+      {
+        "kind": "code",
+        "text": "mkdir -p cloud/nersc\ncat > cloud/nersc/prepare.slurm <<'BASH'\n#!/bin/bash -l\n#SBATCH --job-name=swe-data\n#SBATCH --constraint=cpu\n#SBATCH --qos=shared\n#SBATCH --nodes=1\n#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=8\n#SBATCH --mem=16G\n#SBATCH --time=02:00:00\n#SBATCH --output=logs/%x-%j.out\n#SBATCH --error=logs/%x-%j.err\nset -euo pipefail\ncd \"${SLURM_SUBMIT_DIR:?Submit from the project root}\"\nsource cloud/nersc/env.sh\nSIZE=\"${MODEL_SIZE:-7B}\"\nCONTEXT=\"${CONTEXT:-32768}\"\nsrun --ntasks=1 --cpu-bind=none bash cloud/run.sh prepare \\\n  --size \"$SIZE\" --max-length \"$CONTEXT\"\nBASH"
+      },
+      {
+        "kind": "code",
+        "text": "DATA_JOB=$(sbatch --parsable -A \"$CPU_ACCOUNT\" \\\n  cloud/nersc/prepare.slurm)\nDATA_JOB=${DATA_JOB%%;*}\nprintf 'Data job %s\\n' \"$DATA_JOB\"\nsqueue -j \"$DATA_JOB\"\n# After the job leaves the queue:\nsacct -j \"$DATA_JOB\" --format=JobID,State,ExitCode,Elapsed\ntail -n 30 \"logs/swe-data-${DATA_JOB}.out\""
+      },
+      {
+        "kind": "prose",
+        "text": "Wait for COMPLETED with ExitCode 0:0 before GPU checks. At 32K, the existing audit retained 400 training and 43 validation histories, about 90.6% of the 489 traceable trajectories. At 16K it retained 229/30; at 8K, 37/9. Overlength histories are reported and excluded, never truncated. Confirm your generated tokenization manifest."
+      }
+    ]
+  },
+  {
+    "title": "Create the GPU job launcher",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "Run this block on the login node. This reusable launcher requests one A100 40 GB in the shared queue and executes the cloud command supplied after its filename. One Slurm task launches torchrun internally. NERSC recommends the shared queue for one or two GPUs. [2, 4, 5]"
+      },
+      {
+        "kind": "code",
+        "text": "mkdir -p cloud/nersc\ncat > cloud/nersc/gpu_job.slurm <<'BASH'\n#!/bin/bash -l\n#SBATCH --job-name=swe-gpu\n#SBATCH --constraint=gpu&hbm40g\n#SBATCH --qos=shared\n#SBATCH --nodes=1\n#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=32\n#SBATCH --gpus-per-task=1\n#SBATCH --time=02:00:00\n#SBATCH --output=logs/%x-%j.out\n#SBATCH --error=logs/%x-%j.err\nset -euo pipefail\ncd \"${SLURM_SUBMIT_DIR:?Submit from the project root}\"\nsource cloud/nersc/env.sh\nSTUDY_GPUS=\"${STUDY_GPUS:-1}\"\nprintf 'Node %s GPUs %s\\n' \"$(hostname)\" \"$STUDY_GPUS\"\n# One Slurm task owns all requested GPUs. cloud.py starts torchrun workers.\nsrun --ntasks=1 --gpus-per-task=\"$STUDY_GPUS\" \\\n  --cpu-bind=none --gpu-bind=none bash cloud/run.sh \"$@\"\nBASH"
+      },
+      {
+        "kind": "heading",
+        "text": "Check the installed CUDA and distributed training path"
+      },
+      {
+        "kind": "code",
+        "text": "CHECK_JOB=$(sbatch --parsable -A \"$GPU_ACCOUNT\" \\\n  -J swe-check cloud/nersc/gpu_job.slurm \\\n  check-distributed --gpus 1)\nCHECK_JOB=${CHECK_JOB%%;*}\nsqueue -j \"$CHECK_JOB\"\n# After completion:\nsacct -j \"$CHECK_JOB\" --format=JobID,State,ExitCode,Elapsed\ntail -n 40 \"logs/swe-check-${CHECK_JOB}.out\""
+      },
+      {
+        "kind": "prose",
+        "text": "Continue when the job is COMPLETED, ExitCode is 0:0, and the diagnostic reports passed true. The tiny random-model diagnostic tests real NF4/LoRA training, checkpoint saving and fresh reload. It does not establish real 7B memory feasibility or model quality."
+      }
+    ]
+  },
+  {
+    "title": "Test memory and train the 7B adapter",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "Submit from the login node after the CPU preparation and tiny GPU diagnostic pass. First test the real 7B model at 32K for only two optimizer steps. This setting covers substantially more trajectories than 8K, but its memory use must be measured on your A100."
+      },
+      {
+        "kind": "code",
+        "text": "PROBE_JOB=$(sbatch --parsable -A \"$GPU_ACCOUNT\" \\\n  -J swe-32k-check cloud/nersc/gpu_job.slurm \\\n  train --size 7B --gpus 1 --max-length 32768 --max-steps 2 \\\n  --output checkpoints/cloud/qwen-7b-32k-check)\nPROBE_JOB=${PROBE_JOB%%;*}\nsqueue -j \"$PROBE_JOB\"\n# After completion:\nsacct -j \"$PROBE_JOB\" --format=JobID,State,ExitCode,Elapsed\ntail -n 40 \"logs/swe-32k-check-${PROBE_JOB}.out\""
+      },
+      {
+        "kind": "prose",
+        "text": "Continue only if the job completes and the fresh-process adapter reload passes. If 32K runs out of memory, keep the failed run's logs. Prepare at 16384 and use 16384 consistently for the new test, full run and inference, with fresh output names. More DDP GPUs do not pool VRAM for a single sequence."
+      },
+      {
+        "kind": "heading",
+        "text": "Run three training epochs on one GPU"
+      },
+      {
+        "kind": "code",
+        "text": "TRAIN_JOB=$(sbatch --parsable -A \"$GPU_ACCOUNT\" \\\n  -J swe-7b-train --time=24:00:00 \\\n  cloud/nersc/gpu_job.slurm \\\n  train --size 7B --gpus 1 --max-length 32768 \\\n  --output checkpoints/cloud/qwen-7b-32k)\nTRAIN_JOB=${TRAIN_JOB%%;*}\nsqueue -j \"$TRAIN_JOB\"\n# These commands can be repeated while checking progress:\ntail -n 30 \"logs/swe-7b-train-${TRAIN_JOB}.out\"\nsacct -j \"$TRAIN_JOB\" --format=JobID,State,ExitCode,Elapsed"
+      },
+      {
+        "kind": "prose",
+        "text": "The 24-hour wall limit is a scheduling allowance, not a runtime estimate. Defaults are NF4/BF16, LoRA rank 16/alpha 32, learning rate 1e-4, microbatch 1, gradient accumulation 8, and target-only assistant causal loss. The final adapter is selected by validation loss and independently reloaded. Do not submit the same output twice."
+      }
+    ]
+  },
+  {
+    "title": "Resume training and run inference",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Resume an interrupted training job"
+      },
+      {
+        "kind": "prose",
+        "text": "Run after the interrupted job has ended. Choose a complete checkpoint directory from the output. Replace the example checkpoint number below with one actually present. Reuse the same data, GPU count, context, output and epoch schedule; the saved plan checks these values."
+      },
+      {
+        "kind": "code",
+        "text": "ls -d checkpoints/cloud/qwen-7b-32k/checkpoint-*\nCHECKPOINT=checkpoints/cloud/qwen-7b-32k/checkpoint-50\nsbatch -A \"$GPU_ACCOUNT\" -J swe-7b-resume --time=24:00:00 \\\n  cloud/nersc/gpu_job.slurm \\\n  train --size 7B --gpus 1 --max-length 32768 \\\n  --output checkpoints/cloud/qwen-7b-32k --resume \"$CHECKPOINT\""
+      },
+      {
+        "kind": "prose",
+        "text": "A complete checkpoint includes adapter, optimizer, scheduler, Trainer state and RNG files. If no complete checkpoint was saved, preserve the failed output and start with a fresh --output name. Do not delete the plan or reset storage accounting to bypass a failure."
+      },
+      {
+        "kind": "heading",
+        "text": "Generate with the trained adapter"
+      },
+      {
+        "kind": "code",
+        "text": "INFER_OUT=\"results/nersc-adapter-$(date -u +%Y%m%dT%H%M%S).json\"\nINFER_JOB=$(sbatch --parsable -A \"$GPU_ACCOUNT\" \\\n  -J swe-infer --time=00:30:00 cloud/nersc/gpu_job.slurm \\\n  infer --size 7B --adapter checkpoints/cloud/qwen-7b-32k \\\n  --max-context 32768 --max-new-tokens 512 \\\n  --prompt \"Write a Python function that merges two sorted lists.\" \\\n  --output \"$INFER_OUT\")\nINFER_JOB=${INFER_JOB%%;*}\n# After COMPLETED with ExitCode 0:0:\ncat \"$INFER_OUT\""
+      },
+      {
+        "kind": "heading",
+        "text": "Generate with the baseline"
+      },
+      {
+        "kind": "code",
+        "text": "sbatch -A \"$GPU_ACCOUNT\" -J swe-baseline --time=00:30:00 \\\n  cloud/nersc/gpu_job.slurm \\\n  infer --size 7B --max-context 32768 --max-new-tokens 512 \\\n  --prompt \"Write a Python function that merges two sorted lists.\""
+      },
+      {
+        "kind": "prose",
+        "text": "Inference uses one GPU. Omitting --adapter selects the baseline. Both paths retain the same NF4/unquantized-layer precision and BF16 autocast. Named JSON outputs must be fresh; every invocation also writes an audited generation.json. Tool-like text from the model does not execute tools or constitute a SWE-bench score."
+      }
+    ]
+  },
+  {
+    "title": "Use two or four GPUs when needed",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "Use additional GPUs for data parallel throughput after the one-GPU workflow passes. A full model replica lives on each GPU, so per-GPU context memory is unchanged. The default effective batch remains eight: accumulation is 8, 4 or 2 on one, two or four GPUs. [4, 5]"
+      },
+      {
+        "kind": "heading",
+        "text": "Two GPUs in the shared queue"
+      },
+      {
+        "kind": "code",
+        "text": "sbatch -A \"$GPU_ACCOUNT\" -J swe-check-2 \\\n  --gpus-per-task=2 --cpus-per-task=64 \\\n  --export=ALL,STUDY_GPUS=2 cloud/nersc/gpu_job.slurm \\\n  check-distributed --gpus 2\n# After the diagnostic passes, run a separate training condition:\nsbatch -A \"$GPU_ACCOUNT\" -J swe-7b-2gpu --time=24:00:00 \\\n  --gpus-per-task=2 --cpus-per-task=64 \\\n  --export=ALL,STUDY_GPUS=2 cloud/nersc/gpu_job.slurm \\\n  train --size 7B --gpus 2 --max-length 32768 \\\n  --output checkpoints/cloud/qwen-7b-32k-2gpu"
+      },
+      {
+        "kind": "heading",
+        "text": "Four GPUs in the regular queue"
+      },
+      {
+        "kind": "code",
+        "text": "sbatch -A \"$GPU_ACCOUNT\" -J swe-check-4 --qos=regular \\\n  --gpus-per-task=4 --cpus-per-task=128 \\\n  --export=ALL,STUDY_GPUS=4 cloud/nersc/gpu_job.slurm \\\n  check-distributed --gpus 4\n# After the diagnostic passes:\nsbatch -A \"$GPU_ACCOUNT\" -J swe-7b-4gpu --time=24:00:00 \\\n  --qos=regular --gpus-per-task=4 --cpus-per-task=128 \\\n  --export=ALL,STUDY_GPUS=4 cloud/nersc/gpu_job.slurm \\\n  train --size 7B --gpus 4 --max-length 32768 \\\n  --output checkpoints/cloud/qwen-7b-32k-4gpu"
+      },
+      {
+        "kind": "prose",
+        "text": "Choose one training condition; these optional examples are not an instruction to run all three. Keep --ntasks=1 and use the same GPU count on resume. NERSC shared GPU jobs support one or two GPUs; a regular-queue node is exclusive. Verify your allocation and queue access in Iris. [1, 4]"
+      },
+      {
+        "kind": "heading",
+        "text": "Optional model size comparison"
+      },
+      {
+        "kind": "prose",
+        "text": "Download 1.5B or 3B using the first page's model commands. Repeat CPU preparation with MODEL_SIZE=3B (or 1.5B), then use the same GPU commands with --size 3B and a fresh output such as checkpoints/cloud/qwen-3b-32k. Keep the task split and context policy common across comparisons."
+      }
+    ]
+  },
+  {
+    "title": "Keep the results and resolve common failures",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "After GPU jobs finish, inspect metrics and create a backup. Perlmutter scratch is not backed up and is subject to purging; copy important adapters and evidence to an approved persistent destination. The archive below excludes base weights because their exact revisions can be downloaded again. [6]"
+      },
+      {
+        "kind": "code",
+        "text": "cd \"$STUDY_ROOT\"\n.envs/train/bin/python - <<'PY'\nimport json\nfrom pathlib import Path\np = Path(\"checkpoints/cloud/qwen-7b-32k/experiment.json\")\nm = json.loads(p.read_text())\nfor k in [\"global_step\", \"best_eval_loss\", \"gpu_count\", \"gpu_hours\",\n          \"train_examples\", \"validation_examples\", \"peak_allocated_bytes\"]:\n    print(k, m[k])\nPY\nmkdir -p backups\ntar -czf \"backups/adapter-$(date -u +%Y%m%dT%H%M%S).tar.gz\" \\\n  checkpoints/cloud/qwen-7b-32k \\\n  checkpoints/cloud/qwen-7b-32k.plan.json manifests \\\n  data/metadata results/cloud_train results/cloud_train_rank0 \\\n  results/validate-checkpoint"
+      },
+      {
+        "kind": "prose",
+        "text": "The 70 GB project-growth cap and 25 GB filesystem-free floor remain enabled. Project accounting ignores other users' filesystem growth; its directory-size sample is cached for up to 60 seconds. It does not replace NERSC user quotas: run showquota before large operations. Keep backups within the remaining budget. [3]"
+      },
+      {
+        "kind": "prose",
+        "text": "No CUDA device: run through the GPU launcher, not directly on the login node. Submission rejected: verify the CPU/GPU account, constraint, QOS and GPU count. Out of memory: use the 16K fallback below. Nonempty output: resume a complete checkpoint or choose a fresh output. For any other error, keep the job ID, Slurm .out/.err and results run directory."
+      },
+      {
+        "kind": "heading",
+        "text": "Prepare and test the 16K fallback"
+      },
+      {
+        "kind": "code",
+        "text": "sbatch -A \"$CPU_ACCOUNT\" --export=ALL,CONTEXT=16384 \\\n  cloud/nersc/prepare.slurm\n# After CPU preparation completes:\nsbatch -A \"$GPU_ACCOUNT\" -J swe-16k-check \\\n  cloud/nersc/gpu_job.slurm \\\n  train --size 7B --gpus 1 --max-length 16384 --max-steps 2 \\\n  --output checkpoints/cloud/qwen-7b-16k-check"
+      },
+      {
+        "kind": "prose",
+        "text": "If the fallback passes, train with --max-length 16384 and a fresh qwen-7b-16k output, then infer with --max-context 16384. Actual A100 memory use, distributed behavior and throughput must be verified by your submitted checks; local random-model tests do not establish benchmark quality."
+      }
+    ]
+  },
+  {
+    "title": "Script appendix for environment and model downloads",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "These are the complete shell helpers invoked on the first page. They are included in the source bundle. Paste a complete block if you need to recreate the corresponding file. Do not execute the individual lines from inside a script separately."
+      },
+      {
+        "kind": "code",
+        "text": "mkdir -p cloud/nersc\ncat > cloud/nersc/env.sh <<'BASH'\n#!/usr/bin/env bash\n# Source this in a NERSC login shell or one-node Slurm job.\nexport STUDY_ROOT=\"${STUDY_ROOT:-${SCRATCH:?SCRATCH must be set}/swe-study-a100}\"\ncd \"$STUDY_ROOT\"\nmodule load python\nexport PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1\nexport CONDA_PKGS_DIRS=\"$STUDY_ROOT/.cache/conda\"\nexport PIP_CACHE_DIR=\"$STUDY_ROOT/.cache/pip\"\nexport HF_HOME=\"$STUDY_ROOT/.cache/huggingface\"\nexport HF_HUB_CACHE=\"$HF_HOME/hub\"\nexport HF_XET_CACHE=\"$HF_HOME/xet\"\nexport TMPDIR=\"$STUDY_ROOT/.cache/tmp\"\nexport TOKENIZERS_PARALLELISM=false\nexport OMP_NUM_THREADS=\"${OMP_NUM_THREADS:-4}\"\nmkdir -p \"$TMPDIR\" logs\nBASH"
+      },
+      {
+        "kind": "code",
+        "text": "mkdir -p cloud/nersc\ncat > cloud/nersc/download_models.sh <<'BASH'\n#!/usr/bin/env bash\nset -euo pipefail\nsource \"$(dirname \"${BASH_SOURCE[0]}\")/env.sh\"\nexec > >(tee -a \"logs/model-download-$(date -u +%Y%m%dT%H%M%S)-$$.log\") 2>&1\n# Initialize before downloads; never import a workstation storage baseline.\npython scripts/cloud.py init --storage-accounting project\nBOOTSTRAP=\"$STUDY_ROOT/.envs/bootstrap/bin/python\"\nif [[ ! -x \"$BOOTSTRAP\" ]]; then\n  conda create -y --prefix \"$STUDY_ROOT/.envs/bootstrap\" python=3.12 pip\nfi\n\"$BOOTSTRAP\" -m pip install --no-cache-dir 'huggingface-hub==1.12.0'\nSIZE=\"${1:-7B}\"\ncase \"$SIZE\" in\n  all) SIZES=(1.5B 3B 7B) ;;\n  1.5B|3B|7B) SIZES=(\"$SIZE\") ;;\n  *) printf '%s\\n' 'Choose 1.5B, 3B, 7B, or all.' >&2; exit 2 ;;\nesac\nfor size in \"${SIZES[@]}\"; do\n  \"$BOOTSTRAP\" scripts/study.py download --kind model --only \"$size\"\ndone\nBASH"
+      }
+    ]
+  },
+  {
+    "title": "Script appendix for setup and the core launcher",
+    "blocks": [
+      {
+        "kind": "prose",
+        "text": "This complete setup helper installs the training environment on a login node, defers GPU validation and downloads the frozen datasets."
+      },
+      {
+        "kind": "code",
+        "text": "mkdir -p cloud/nersc\ncat > cloud/nersc/setup_login.sh <<'BASH'\n#!/usr/bin/env bash\nset -euo pipefail\nsource \"$(dirname \"${BASH_SOURCE[0]}\")/env.sh\"\nexport PYTHON=\"$STUDY_ROOT/.envs/bootstrap/bin/python\"\n[[ -x \"$PYTHON\" ]] || { printf '%s\\n' 'Run download_models.sh first.' >&2; exit 1; }\nbash cloud/run.sh setup --skip-gpu-check --storage-accounting project\n.envs/train/bin/python scripts/study.py download --kind dataset\nBASH"
+      },
+      {
+        "kind": "prose",
+        "text": "The Slurm launcher invokes this complete core shell entry point. It selects the training environment and preserves command arguments exactly as supplied."
+      },
+      {
+        "kind": "code",
+        "text": "mkdir -p cloud/nersc\ncat > cloud/run.sh <<'BASH'\n#!/usr/bin/env bash\nset -euo pipefail\nROOT=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")/..\" && pwd)\"\ncd \"$ROOT\"\nexport PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false\nexport OMP_NUM_THREADS=\"${OMP_NUM_THREADS:-4}\"\nif [[ \"${1:-}\" == setup ]]; then\n  exec \"${PYTHON:-/usr/bin/python3}\" scripts/cloud.py \"$@\"\nfi\nif [[ ! -x .envs/train/bin/python ]]; then\n  printf '%s\\n' 'Run bash cloud/run.sh setup first.' >&2\n  exit 1\nfi\nexec .envs/train/bin/python scripts/cloud.py \"$@\"\nBASH"
+      }
+    ]
+  },
+  {
+    "title": "Source bundle and official references",
+    "blocks": [
+      {
+        "kind": "heading",
+        "text": "Extract the accompanying source bundle if needed"
+      },
+      {
+        "kind": "prose",
+        "text": "Use this only before the first page, in a fresh project directory. Place swe-study-a100-nersc-20261123.tar.gz and its .sha256 sidecar in your NERSC home directory using your usual file-transfer method. Do not copy a workstation environment or storage baseline."
+      },
+      {
+        "kind": "code",
+        "text": "cd \"$HOME\"\nsha256sum -c swe-study-a100-nersc-20261123.tar.gz.sha256\nif [[ -e \"$SCRATCH/swe-study-a100\" ]]; then\n  printf '%s\\n' 'Target exists; preserve it and choose a fresh directory.'\nelse\n  tar -xzf swe-study-a100-nersc-20261123.tar.gz -C \"$SCRATCH\"\n  export STUDY_ROOT=\"$SCRATCH/swe-study-a100\"\n  cd \"$STUDY_ROOT\"\nfi"
+      },
+      {
+        "kind": "heading",
+        "text": "Official NERSC references"
+      },
+      {
+        "kind": "prose",
+        "text": "[1] Iris account and allocation guide\nhttps://docs.nersc.gov/iris/iris-for-users/"
+      },
+      {
+        "kind": "prose",
+        "text": "[2] Running jobs on Perlmutter\nhttps://docs.nersc.gov/systems/perlmutter/running-jobs/"
+      },
+      {
+        "kind": "prose",
+        "text": "[3] Storage quotas\nhttps://docs.nersc.gov/filesystems/quotas/"
+      },
+      {
+        "kind": "prose",
+        "text": "[4] Queue policy and charges\nhttps://docs.nersc.gov/jobs/policy/"
+      },
+      {
+        "kind": "prose",
+        "text": "[5] Training launchers\nhttps://docs.nersc.gov/machinelearning/launchers/"
+      },
+      {
+        "kind": "prose",
+        "text": "[6] Scratch backup and purge policy\nhttps://docs.nersc.gov/filesystems/perlmutter-scratch/"
+      },
+      {
+        "kind": "prose",
+        "text": "Project dependency pins: PyTorch 2.9.1 CUDA 12.6, Transformers 5.5.3, PEFT 0.18.1, bitsandbytes 0.49.2. The generated package freeze and downloaded asset manifests record the exact environment and revisions used by your run."
+      }
+    ]
+  }
+]

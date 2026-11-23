@@ -1,0 +1,24 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/cloud.py",
+    "infer",
+    "--size",
+    "1.5B",
+    "--adapter",
+    "results/cloud_check-distributed/20261123T171119-52c7b4f5/adapter",
+    "--prompt",
+    "issue",
+    "--max-context",
+    "128",
+    "--max-new-tokens",
+    "4",
+    "--output",
+    "results/cloud_check-distributed/20261123T171119-52c7b4f5/inference.json"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/cloud-bundle-20261123T171057-57a0138d/swe-study-a100",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_bundle_validation/20261123T171057-57a0138d/command-006.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_bundle_validation/20261123T171057-57a0138d/command-006.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 52.415634528000055
+}

@@ -1,0 +1,14 @@
+{
+  "args": [
+    "bash",
+    "-n",
+    "cloud/run.sh",
+    "cloud/all.sh",
+    "cloud/train.slurm"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/cloud-bundle-20261123T171057-57a0138d/swe-study-a100",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_bundle_validation/20261123T171057-57a0138d/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_bundle_validation/20261123T171057-57a0138d/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2585692630000267
+}
