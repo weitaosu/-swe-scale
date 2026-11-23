@@ -102,6 +102,11 @@ def train(run,config_path,resume=None):
         from .memory_loss import enable_chunked_loss
         enable_chunked_loss(model,chunk_tokens)
         run.event("chunked_loss_enabled",chunk_tokens=chunk_tokens,objective="unchanged assistant causal cross-entropy",labeled_logits_returned=False)
+    mlp_chunk_tokens=int(os.environ.get("SWE_STUDY_MLP_CHUNK_TOKENS", "0"))
+    if mlp_chunk_tokens:
+        from .memory_mlp import enable_chunked_mlp
+        mlp_count=enable_chunked_mlp(model,mlp_chunk_tokens)
+        run.event("chunked_mlp_enabled",chunk_tokens=mlp_chunk_tokens,modules=mlp_count,attention_context_unchanged=True)
     unexpected=[n for n,p in model.named_parameters() if p.requires_grad and "lora_" not in n]
     if unexpected: raise ValueError(f"Unexpected trainable base parameters: {unexpected}")
     counts={"trainable":sum(p.numel() for p in model.parameters() if p.requires_grad),"total_stored_parameters":sum(p.numel() for p in model.parameters())}
@@ -152,6 +157,7 @@ def train(run,config_path,resume=None):
             if cfg.get("target_only_logits",False): inputs=assistant_target_inputs(inputs)
             return super().compute_loss(model,inputs,return_outputs=return_outputs,num_items_in_batch=num_items_in_batch)
         def training_step(self,model,inputs,*args,**kwargs):
+            run.event("training_microbatch_started",optimizer_step=self.state.global_step,microbatch=token_counts["microbatches"]+1,sequence_length=int(inputs["input_ids"].shape[-1]))
             guard.check();torch.cuda.synchronize();started=time.perf_counter()
             value=super().training_step(model,inputs,*args,**kwargs)
             if not torch.isfinite(value).all(): raise ValueError("Non-finite training loss")
@@ -221,7 +227,7 @@ def train(run,config_path,resume=None):
       "effective_batch_size":world_size*cfg.get("gradient_accumulation_steps",8),
       "steady_state_tokens_per_second":world_size*token_counts["post_warmup_tokens"]/token_counts["post_warmup_seconds"] if token_counts["post_warmup_seconds"] else None,"peak_allocated_bytes":torch.cuda.max_memory_allocated(),"peak_reserved_bytes":torch.cuda.max_memory_reserved(),"memory_metrics_scope":"rank_0; per-rank peaks are in training_microbatch events",
       "train_source_sha256":sha256_file(local_path(cfg["train_file"])),"validation_source_sha256":sha256_file(local_path(cfg["validation_file"])),"train_examples":len(train_rows),"validation_examples":len(eval_rows),
-      "best_checkpoint":trainer.state.best_model_checkpoint,"best_eval_loss":trainer.state.best_metric,"global_step":trainer.state.global_step,"resume_from_checkpoint":resume,"optimizer_state_entries":len(trainer.optimizer.state),"training_result":result.metrics,"log_history":trainer.state.log_history,"synthetic_fixture":cfg.get("synthetic_fixture",False),"loss_chunk_tokens":chunk_tokens}
+      "best_checkpoint":trainer.state.best_model_checkpoint,"best_eval_loss":trainer.state.best_metric,"global_step":trainer.state.global_step,"resume_from_checkpoint":resume,"optimizer_state_entries":len(trainer.optimizer.state),"training_result":result.metrics,"log_history":trainer.state.log_history,"synthetic_fixture":cfg.get("synthetic_fixture",False),"loss_chunk_tokens":chunk_tokens,"mlp_chunk_tokens":mlp_chunk_tokens}
     write_json(output/"experiment.json",metadata);write_json(run.path/"metrics.json",metadata)
     print(json.dumps({"output":str(output),"adapter_updated":metadata["adapter_updated"],"gpu_hours":elapsed/3600,"tokens":token_counts},indent=2))
     del trainer,model;gc.collect();torch.cuda.empty_cache()

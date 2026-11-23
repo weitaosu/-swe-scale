@@ -1,0 +1,30 @@
+{
+  "run_id": "20261123T202652-af9500a6",
+  "stage": "mlp_memory_validation",
+  "started_at": "2026-11-23T20:26:52.759985+00:00",
+  "status": "passed",
+  "config": {
+    "gpu": true,
+    "cpu_ddp": true,
+    "resume_fixture": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566"
+  },
+  "config_sha256": "05f49ad1aa43a2d0e1de56f20c4572e4e19e872897c164be97a824207d121f0b",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_mlp_memory.py",
+    "--cpu-ddp",
+    "--gpu",
+    "--resume-fixture",
+    ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 57471,
+  "parent_pid": 57465,
+  "condition_id": null,
+  "source_snapshot_sha256": "86e100dc2062916edeac7a00287891773fae9022adf04c79c8759e24bb14e503",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T20:31:41.609988+00:00",
+  "elapsed_seconds": 288.11802847999934
+}

@@ -300,6 +300,31 @@ changed training source and preserves unfamiliar files. CPU equivalence tests an
 optional synthetic GPU/recovery checks are available through
 `scripts/validate_memory_loss.py --gpu --checkpoint-resume`.
 
+For additional long-context activation savings, the v2 installer also chunks
+Qwen feed-forward layers, independently of attention. It recomputes each token
+chunk in backward with its LoRA dropout mask preserved. Enable it before launch:
+
+```bash
+export PYTORCH_ALLOC_CONF=expandable_segments:True
+export SWE_STUDY_LOSS_CHUNK_TOKENS=128
+export SWE_STUDY_MLP_CHUNK_TOKENS=1024
+```
+
+`deliverables/nersc_training_memory_patch_v2.py --root "$SCRATCH/swe-study-a100"`
+installs this opt-in path over the existing loss-memory patch, plus immediate
+worker-exception reporting. Input histories, context limits, attention, LoRA
+parameter names and optimizer checkpoint structure stay the same. Chunking can
+change floating-point reduction order and dropout RNG consumption; continuation
+is checkpoint-compatible but is not claimed to be bitwise identical. Worker
+events and final metadata record the MLP chunk size. Start/completion microbatch
+events distinguish active compute from a stall before the next saved update.
+
+`scripts/validate_mlp_memory.py` tests full-model loss/gradients and dropout replay.
+`--cpu-ddp` checks two Gloo ranks with four-way accumulation and synchronized
+adapters; `--gpu` compares a random NF4/rank-16 Qwen 7B-sized MLP block at 32K if
+18 GiB is free, otherwise 8K. These are compatibility/memory checks, not evidence
+of full-model NCCL feasibility or task quality. Real A100 validation is separate.
+
 ## Outputs and checks
 
 - `results/cloud_*/<run-id>/`: command records, stdout/stderr, events and source snapshots.

@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/deliverables/nersc_training_memory_patch_v2.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/training-memory-v2-20261123T202834-efee51eb"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/training_memory_v2_installer_validation/20261123T202834-efee51eb/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/training_memory_v2_installer_validation/20261123T202834-efee51eb/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.5077884160000394
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "files": [
+    "src/swe_study/training.py",
+    "scripts/cloud.py",
+    "src/swe_study/memory_mlp.py",
+    "src/swe_study/memory_loss.py",
+    "tests/test_memory_mlp.py",
+    "scripts/validate_mlp_memory.py"
+  ],
+  "backups_verified": true,
+  "idempotent": true,
+  "unknown_source_preserved": true
+}

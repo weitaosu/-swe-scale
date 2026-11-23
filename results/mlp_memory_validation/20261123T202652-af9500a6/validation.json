@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "synthetic_fixture": true,
+  "loss_gradient_dropout_checks": "passed",
+  "limitation": "MLP block and synthetic distributed/resume tests; no full A100 model feasibility claim",
+  "two_process_cpu_ddp_accumulation": "passed",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "nf4_rank16_qwen_7b_mlp": [
+    {
+      "optimized": false,
+      "sequence_length": 32768,
+      "loss": 0.01168739702552557,
+      "peak_allocated_bytes": 16206226944,
+      "peak_reserved_bytes": 19872612352
+    },
+    {
+      "optimized": true,
+      "sequence_length": 32768,
+      "loss": 0.01168749202042818,
+      "peak_allocated_bytes": 2947245568,
+      "peak_reserved_bytes": 4064280576
+    }
+  ],
+  "optimizer_resume_and_fresh_reload": {
+    "passed": true,
+    "project": ".cache/tmp/mlp-resume-20261123T202652-af9500a6",
+    "from_step": 2,
+    "to_step": 4
+  }
+}
