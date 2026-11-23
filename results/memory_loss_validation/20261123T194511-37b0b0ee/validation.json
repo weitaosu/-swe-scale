@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "versions": {
+    "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "packages": {
+      "torch": "2.9.1",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": null,
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "loss_gradient_equivalence": "passed",
+  "synthetic_fixture": true,
+  "limitation": "No real 3B/7B 32K feasibility or quality claim",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "synthetic_gpu_memory": [
+    {
+      "optimized": false,
+      "loss": 10.885384559631348,
+      "peak_allocated_bytes": 1879081984,
+      "peak_reserved_bytes": 1881145344
+    },
+    {
+      "optimized": true,
+      "loss": 10.885384559631348,
+      "peak_allocated_bytes": 813762560,
+      "peak_reserved_bytes": 857735168
+    }
+  ],
+  "one_gpu_nf4_lora_interruption_resume_and_reload": "passed"
+}

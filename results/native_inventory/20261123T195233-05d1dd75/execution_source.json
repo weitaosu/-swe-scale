@@ -1,0 +1,8 @@
+{
+  "backend": "native Windows Node filesystem via exec_command",
+  "args": [
+    "C:\\Users\\weita\\Desktop\\SE in AI\\proj\\scripts\\run_native_inventory.cjs",
+    "results/native_inventory/20261123T195233-05d1dd75"
+  ],
+  "executed_indexer_sha256": "69f0346aa30273e7f0c27e7fc61c04b2aa0512f061af09c393c3f7f065af647c"
+}

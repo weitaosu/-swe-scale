@@ -1,0 +1,12 @@
+{
+  "output": "deliverables/nersc_memory_patch.py",
+  "sha256": "8b67c416d09ae8065ea43cee1068f9843b223492d17769e1027c34eb51a62547",
+  "bytes": 33386,
+  "files": [
+    "src/swe_study/training.py",
+    "src/swe_study/memory_loss.py",
+    "tests/test_memory_loss.py",
+    "scripts/validate_memory_loss.py"
+  ],
+  "previous_training_sha256": "76130c94f7ec41a1833a56f1adf438fbaa9d5d742b94054a2fa4717fe3fe7fdd"
+}

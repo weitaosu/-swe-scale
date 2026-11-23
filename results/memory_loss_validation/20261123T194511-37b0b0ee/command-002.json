@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/validate_checkpoint_resume.py",
+    "--gpus",
+    "1"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/memory_loss_validation/20261123T194511-37b0b0ee/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/memory_loss_validation/20261123T194511-37b0b0ee/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 350.2089592659995
+}

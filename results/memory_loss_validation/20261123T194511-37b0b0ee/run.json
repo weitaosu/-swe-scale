@@ -1,0 +1,27 @@
+{
+  "run_id": "20261123T194511-37b0b0ee",
+  "stage": "memory_loss_validation",
+  "started_at": "2026-11-23T19:45:11.645347+00:00",
+  "status": "passed",
+  "config": {
+    "gpu": true,
+    "checkpoint_resume": true
+  },
+  "config_sha256": "6ee339b4ecde7da0612b334222a3cdd1f69f2787adb501921454ad0f5af201ff",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_memory_loss.py",
+    "--gpu",
+    "--checkpoint-resume"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 46700,
+  "parent_pid": 46694,
+  "condition_id": null,
+  "source_snapshot_sha256": "a8192478d64b2b5d125d071c548f7234892f572d4a071c28331c905eaf601785",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T19:52:26.088896+00:00",
+  "elapsed_seconds": 433.79090752199954
+}

@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/cloud.py",
+    "init",
+    "--storage-accounting",
+    "project"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/checkpoint-resume-20261123T194636-b8d15566",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkpoint_resume_validation/20261123T194636-b8d15566/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/checkpoint_resume_validation/20261123T194636-b8d15566/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.5077137369989941
+}

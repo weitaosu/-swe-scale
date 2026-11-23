@@ -271,6 +271,35 @@ Omit `--adapter` to serve the baseline. Use `--max-context 32768` for longer con
 leave it off for ordinary prompts. Chat generation does not execute tools. SWE-bench
 agent rollouts and Docker grading remain a separate, independently validated setup.
 
+## Memory-safe loss for long assistant responses
+
+An opt-in Qwen2 loss path limits FP32 cross-entropy workspaces to token chunks
+and omits unused vocabulary logits from labeled training/evaluation outputs.
+It preserves target-only causal labels, context limits, example selection and
+loss normalization. Checkpoint recomputation frees each chunk's loss workspace;
+unlabeled generation and fresh adapter reloads use the original forward path.
+
+```bash
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export SWE_STUDY_LOSS_CHUNK_TOKENS=128
+bash cloud/run.sh train --size 3B --gpus 1 \
+  --config configs/cloud/qlora_3b_step_resume.yaml --resume latest
+```
+
+Set both variables in each new allocation before resuming. The existing config,
+output directory and optimizer checkpoints remain valid; floating-point reduction
+order can differ, so this is not a bitwise-identical continuation. Activation is
+recorded in worker events and final experiment metadata. It does not change
+already-running processes or pool the memory of DDP replicas. Real 32K A100
+feasibility still requires completing the affected batches on that hardware.
+
+For a previously extracted NERSC runtime, apply
+`deliverables/nersc_memory_patch.py --root "$SCRATCH/swe-study-a100"` with Python
+after the checkpoint support installer. It checks source identity, backs up the
+changed training source and preserves unfamiliar files. CPU equivalence tests and
+optional synthetic GPU/recovery checks are available through
+`scripts/validate_memory_loss.py --gpu --checkpoint-resume`.
+
 ## Outputs and checks
 
 - `results/cloud_*/<run-id>/`: command records, stdout/stderr, events and source snapshots.

@@ -1,8 +1,8 @@
 {
-  "free_bytes": 233546489856,
+  "free_bytes": 231958790144,
   "conservative_volume_growth_bytes": 0,
   "reserved_bytes": 0,
-  "docker_physical_free_bytes": 233546489856,
+  "docker_physical_free_bytes": 231958790144,
   "accounting_mode": "filesystem",
   "measurement_cache_seconds": 0,
   "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."

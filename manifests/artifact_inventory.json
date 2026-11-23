@@ -1,11 +1,11 @@
 {
-  "captured_at": "2026-11-23T18:52:23.510Z",
-  "scan_started_at": "2026-11-23T18:52:21.894Z",
-  "scan_seconds": 1.617,
+  "captured_at": "2026-11-23T19:52:49.084Z",
+  "scan_started_at": "2026-11-23T19:52:47.487Z",
+  "scan_seconds": 1.598,
   "backend": "native Windows Node filesystem; no WSL process launches",
   "project_root": "C:/Users/weita/Desktop/SE in AI/proj",
-  "file_count": 81759,
-  "logical_file_bytes": 37919981583,
+  "file_count": 82211,
+  "logical_file_bytes": 37954605079,
   "by_top_level": {
     ".env.example": {
       "files": 1,
@@ -15,33 +15,33 @@
       "files": 1,
       "bytes": 274
     },
-    "pyproject.toml": {
-      "files": 1,
-      "bytes": 676
-    },
     "AGENTS.md": {
       "files": 1,
       "bytes": 5035
     },
-    "CS6158 Project Proposal.pdf": {
+    "pyproject.toml": {
       "files": 1,
-      "bytes": 84930
+      "bytes": 676
     },
     "README.md": {
       "files": 1,
       "bytes": 8947
     },
+    "CS6158 Project Proposal.pdf": {
+      "files": 1,
+      "bytes": 84930
+    },
     "cloud": {
       "files": 10,
-      "bytes": 19642
+      "bytes": 21193
     },
     "configs": {
       "files": 12,
       "bytes": 15306
     },
     "deliverables": {
-      "files": 4,
-      "bytes": 127694
+      "files": 5,
+      "bytes": 161080
     },
     "dist": {
       "files": 10,
@@ -53,19 +53,19 @@
     },
     "manifests": {
       "files": 18,
-      "bytes": 57247
+      "bytes": 57308
     },
     "scripts": {
-      "files": 31,
-      "bytes": 127369
+      "files": 34,
+      "bytes": 136816
     },
     "tests": {
-      "files": 4,
-      "bytes": 33208
+      "files": 6,
+      "bytes": 38133
     },
     ".cache": {
-      "files": 1266,
-      "bytes": 9736132
+      "files": 1589,
+      "bytes": 12686316
     },
     ".envs": {
       "files": 53838,
@@ -80,12 +80,12 @@
       "bytes": 24525250963
     },
     "results": {
-      "files": 2606,
-      "bytes": 477756369
+      "files": 2707,
+      "bytes": 509376642
     },
     "src": {
-      "files": 24,
-      "bytes": 128120
+      "files": 25,
+      "bytes": 131789
     },
     "vendor": {
       "files": 23538,
@@ -102,7 +102,7 @@
   },
   "excluded": [
     "manifests/artifact_inventory.json",
-    "results/native_inventory/20261123T185158-36d34454",
+    "results/native_inventory/20261123T195233-05d1dd75",
     ".git/",
     "directory symlink traversal"
   ],
@@ -2850,6 +2850,1241 @@
     },
     {
       "path": ".cache/tmp/checkpoint-resume-20261123T183942-46fc8994/tests/test_pipeline.py",
+      "bytes": 20161,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/.cache/cloud_locks/d39665fc3d09be86818b1e68b03fec45c4c758729310d62da3ce3d6160df8762.lock",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/.cache/cloud_locks/e5e9181048ee5856996ac91197922a7e21c798ec1977884a1a9a7ce718c92ac4.lock",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/.gitignore",
+      "bytes": 274,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/AGENTS.md",
+      "bytes": 1539,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume.plan.json",
+      "bytes": 960,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/checkpoint_complete.json",
+      "bytes": 731,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/optimizer.pt",
+      "bytes": 89883,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/rng_state.pth",
+      "bytes": 14709,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/scheduler.pt",
+      "bytes": 1465,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/trainer_state.json",
+      "bytes": 1100,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-2/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/checkpoint_complete.json",
+      "bytes": 731,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/optimizer.pt",
+      "bytes": 89883,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/rng_state.pth",
+      "bytes": 14709,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/scheduler.pt",
+      "bytes": 1465,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/trainer_state.json",
+      "bytes": 1253,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-3/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/checkpoint_complete.json",
+      "bytes": 731,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/optimizer.pt",
+      "bytes": 89883,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/rng_state.pth",
+      "bytes": 14709,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/scheduler.pt",
+      "bytes": 1465,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/trainer_state.json",
+      "bytes": 1801,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/checkpoint-4/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/experiment.json",
+      "bytes": 4565,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/reload_reference.pt",
+      "bytes": 1960,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/trainer_state.json",
+      "bytes": 2047,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/checkpoints/step-resume/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/AGENTS.md",
+      "bytes": 1539,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/all.sh",
+      "bytes": 393,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/nersc/download_models.sh",
+      "bytes": 793,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/nersc/env.sh",
+      "bytes": 610,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/nersc/gpu_job.slurm",
+      "bytes": 637,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/nersc/prepare.slurm",
+      "bytes": 510,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/nersc/setup_login.sh",
+      "bytes": 359,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/README.md",
+      "bytes": 13700,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/run.sh",
+      "bytes": 496,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/cloud/train.slurm",
+      "bytes": 605,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/agent.yaml",
+      "bytes": 398,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/cloud/qlora_1.5b.yaml",
+      "bytes": 657,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/cloud/qlora_3b.yaml",
+      "bytes": 653,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/cloud/qlora_7b_step_resume.yaml",
+      "bytes": 780,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/cloud/qlora_7b.yaml",
+      "bytes": 721,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/cloud/synthetic_step_resume.yaml",
+      "bytes": 686,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/constraints_agent.txt",
+      "bytes": 8057,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/constraints_train.txt",
+      "bytes": 390,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/qlora_overfit.yaml",
+      "bytes": 565,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/qlora_pilot.yaml",
+      "bytes": 678,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/qlora_probe_3b.yaml",
+      "bytes": 652,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/qlora_probe_7b.yaml",
+      "bytes": 652,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/configs/requirements_agent.txt",
+      "bytes": 1103,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/cloud_environment.json",
+      "bytes": 286,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/dataset_files.json",
+      "bytes": 5524,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/dev_tasks.json",
+      "bytes": 265,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/eval_100.json",
+      "bytes": 3345,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/model_files.json",
+      "bytes": 9335,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/planned_downloads_4090.json",
+      "bytes": 4552,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/source_repositories.json",
+      "bytes": 686,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/storage_baseline.json",
+      "bytes": 412,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/storage_usage.json",
+      "bytes": 386,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/manifests/versions.json",
+      "bytes": 484,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/pyproject.toml",
+      "bytes": 676,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/README.md",
+      "bytes": 13700,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter.plan.json",
+      "bytes": 1021,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/optimizer.pt",
+      "bytes": 89883,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/rng_state.pth",
+      "bytes": 14709,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/scheduler.pt",
+      "bytes": 1465,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/trainer_state.json",
+      "bytes": 1328,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-1/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/adapter_config.json",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/adapter_model.safetensors",
+      "bytes": 36256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/optimizer.pt",
+      "bytes": 89883,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/rng_state.pth",
+      "bytes": 14709,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/scheduler.pt",
+      "bytes": 1465,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/trainer_state.json",
+      "bytes": 1705,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/checkpoint-2/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/experiment.json",
+      "bytes": 4394,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/README.md",
+      "bytes": 5482,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/reload_reference.pt",
+      "bytes": 1960,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/tokenizer_config.json",
+      "bytes": 276,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/trainer_state.json",
+      "bytes": 1951,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/adapter/training_args.bin",
+      "bytes": 5329,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/cloud_gpu_checks.json",
+      "bytes": 171,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/command-001.json",
+      "bytes": 894,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/command-001.stderr.log",
+      "bytes": 1132,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/command-001.stdout.log",
+      "bytes": 1171,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/command-002.json",
+      "bytes": 787,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/command-002.stderr.log",
+      "bytes": 123,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/command-002.stdout.log",
+      "bytes": 517,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/diagnostic.json",
+      "bytes": 190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/events.jsonl",
+      "bytes": 19619,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/hardware.json",
+      "bytes": 15383,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/random-model/chat_template.jinja",
+      "bytes": 196,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/random-model/config.json",
+      "bytes": 774,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/random-model/generation_config.json",
+      "bytes": 215,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/random-model/model.safetensors",
+      "bytes": 332712,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/random-model/tokenizer_config.json",
+      "bytes": 256,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/random-model/tokenizer.json",
+      "bytes": 1588,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/resolved_config.yaml",
+      "bytes": 659,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/run.json",
+      "bytes": 1130,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/source_snapshot.zip",
+      "bytes": 145319,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/stderr.log",
+      "bytes": 129,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/stdout.log",
+      "bytes": 15909,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/synthetic.yaml",
+      "bytes": 621,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/train.jsonl",
+      "bytes": 2260,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_check-distributed/20261123T194639-10ad4c17/validation.jsonl",
+      "bytes": 760,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T194743-31ee7710/events.jsonl",
+      "bytes": 4759,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T194743-31ee7710/metrics.json",
+      "bytes": 4394,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T194743-31ee7710/run.json",
+      "bytes": 1292,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T194743-31ee7710/source_snapshot.zip",
+      "bytes": 146105,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T194743-31ee7710/stderr.log",
+      "bytes": 1132,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T194743-31ee7710/stdout.log",
+      "bytes": 1171,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T195049-c36380f4/events.jsonl",
+      "bytes": 4719,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T195049-c36380f4/metrics.json",
+      "bytes": 4565,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T195049-c36380f4/run.json",
+      "bytes": 1361,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T195049-c36380f4/source_snapshot.zip",
+      "bytes": 147149,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T195049-c36380f4/stderr.log",
+      "bytes": 752,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train_rank0/20261123T195049-c36380f4/stdout.log",
+      "bytes": 1003,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/cloud_gpu_checks.json",
+      "bytes": 171,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/command-001.json",
+      "bytes": 918,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/command-001.stderr.log",
+      "bytes": 752,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/command-001.stdout.log",
+      "bytes": 1003,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/command-002.json",
+      "bytes": 720,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/command-002.stderr.log",
+      "bytes": 123,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/command-002.stdout.log",
+      "bytes": 476,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/events.jsonl",
+      "bytes": 19884,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/hardware.json",
+      "bytes": 15387,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/resolved_config.yaml",
+      "bytes": 686,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/run.json",
+      "bytes": 1473,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/source_snapshot.zip",
+      "bytes": 147148,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/stderr.log",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/cloud_train/20261123T195014-f4443b99/stdout.log",
+      "bytes": 15737,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/preflight/latest.json",
+      "bytes": 15387,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/synthetic_checkpoint_interruption/20261123T195002-df94a474/events.jsonl",
+      "bytes": 3670,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/synthetic_checkpoint_interruption/20261123T195002-df94a474/run.json",
+      "bytes": 1155,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/synthetic_checkpoint_interruption/20261123T195002-df94a474/source_snapshot.zip",
+      "bytes": 147148,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/synthetic_checkpoint_interruption/20261123T195002-df94a474/stderr.log",
+      "bytes": 2913,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/synthetic_checkpoint_interruption/20261123T195002-df94a474/stdout.log",
+      "bytes": 338,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T194832-aae1e8d2/events.jsonl",
+      "bytes": 299,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T194832-aae1e8d2/reload_validation.json",
+      "bytes": 203,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T194832-aae1e8d2/run.json",
+      "bytes": 1264,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T194832-aae1e8d2/source_snapshot.zip",
+      "bytes": 146109,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T194832-aae1e8d2/stderr.log",
+      "bytes": 123,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T194832-aae1e8d2/stdout.log",
+      "bytes": 360,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T195142-a5152a2e/events.jsonl",
+      "bytes": 258,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T195142-a5152a2e/reload_validation.json",
+      "bytes": 162,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T195142-a5152a2e/run.json",
+      "bytes": 1182,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T195142-a5152a2e/source_snapshot.zip",
+      "bytes": 147149,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T195142-a5152a2e/stderr.log",
+      "bytes": 123,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/results/validate-checkpoint/20261123T195142-a5152a2e/stdout.log",
+      "bytes": 319,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/bootstrap_scaffolds.py",
+      "bytes": 3799,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/bootstrap.py",
+      "bytes": 2824,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/bootstrap.sh",
+      "bytes": 164,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/build_checkpoint_patch.py",
+      "bytes": 7181,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/build_memory_patch.py",
+      "bytes": 4827,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/build_nersc_guide.py",
+      "bytes": 18830,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/cloud.py",
+      "bytes": 22363,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/continue_setup.py",
+      "bytes": 2403,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/inspect_development_images.py",
+      "bytes": 2976,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/openhands_entry.py",
+      "bytes": 3376,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/package_cloud.py",
+      "bytes": 3567,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/preflight.sh",
+      "bytes": 147,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/prepare_probe_data.py",
+      "bytes": 1847,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/register_cached_runtime.py",
+      "bytes": 1436,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/render_nersc_guide.py",
+      "bytes": 3991,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/repair_task_environment.py",
+      "bytes": 4005,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/run_agent_smoke_sequence.py",
+      "bytes": 2560,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/run_development_condition.py",
+      "bytes": 7891,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/study.py",
+      "bytes": 259,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/swebench_entry.py",
+      "bytes": 3213,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/synthetic_interrupt_worker.py",
+      "bytes": 747,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/tiny_gpu_fixture.py",
+      "bytes": 2930,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_agent.py",
+      "bytes": 2512,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_checkpoint_finalize.py",
+      "bytes": 2032,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_checkpoint_patch.py",
+      "bytes": 2617,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_checkpoint_resume.py",
+      "bytes": 5277,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_cloud_bundle.py",
+      "bytes": 5251,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_local_server.py",
+      "bytes": 2990,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_memory_loss.py",
+      "bytes": 3618,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_memory_regression.py",
+      "bytes": 704,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_model_interfaces.py",
+      "bytes": 2166,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_resume.py",
+      "bytes": 2882,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/scripts/validate_runtime.py",
+      "bytes": 4612,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/cs6158_swe_study.egg-info/dependency_links.txt",
+      "bytes": 1,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/cs6158_swe_study.egg-info/requires.txt",
+      "bytes": 224,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/cs6158_swe_study.egg-info/SOURCES.txt",
+      "bytes": 626,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/cs6158_swe_study.egg-info/top_level.txt",
+      "bytes": 10,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/__init__.py",
+      "bytes": 22,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/assets.py",
+      "bytes": 6967,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/audit.py",
+      "bytes": 8471,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/checkpoints.py",
+      "bytes": 2761,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/cli.py",
+      "bytes": 4273,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/common.py",
+      "bytes": 2917,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/data.py",
+      "bytes": 13368,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/docker_storage.py",
+      "bytes": 3243,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/evaluation.py",
+      "bytes": 10637,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/inventory.py",
+      "bytes": 2393,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/memory_loss.py",
+      "bytes": 3290,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/preflight.py",
+      "bytes": 3352,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/runtime.py",
+      "bytes": 10103,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/serving.py",
+      "bytes": 9661,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/storage.py",
+      "bytes": 3565,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/tokenization.py",
+      "bytes": 4613,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/src/swe_study/training.py",
+      "bytes": 17910,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/tests/test_checkpoints.py",
+      "bytes": 3134,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/tests/test_cloud.py",
+      "bytes": 8564,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/tests/test_common_atomic.py",
+      "bytes": 1349,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/tests/test_memory_loss.py",
+      "bytes": 3331,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/tests/test_memory_patch.py",
+      "bytes": 1594,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/checkpoint-resume-20261123T194636-b8d15566/tests/test_pipeline.py",
       "bytes": 20161,
       "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
     },
@@ -5853,6 +7088,470 @@
     },
     {
       "path": ".cache/tmp/pytest-nersc-doc/test_task_token_budget_is_sharcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_all_history_training_repo0/source.jsonl",
+      "bytes": 938,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_all_history_training_repocurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/adapter_config.json",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/adapter_model.safetensors",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/checkpoint_complete.json",
+      "bytes": 824,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/optimizer.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/rng_state_0.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/rng_state_1.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/scheduler.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-1/trainer_state.json",
+      "bytes": 18,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/adapter_config.json",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/adapter_model.safetensors",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/checkpoint_complete.json",
+      "bytes": 824,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/optimizer.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/rng_state_0.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/rng_state_1.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/scheduler.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_planned0/adapter/checkpoint-2/trainer_state.json",
+      "bytes": 18,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_checkpoint_beyond_plannedcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_archive_assigns_zip0/bundle-8e444adef95e42438a5e4fcd7d532823.tar.gz",
+      "bytes": 105797,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_archive_assigns_zip0/bundle-8e444adef95e42438a5e4fcd7d532823.tar.gz.sha256",
+      "bytes": 113,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_archive_assigns_zipcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_initialization_is_i0/manifests/cloud_environment.json",
+      "bytes": 318,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_initialization_is_i0/manifests/storage_baseline.json",
+      "bytes": 420,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_initialization_is_icurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_initialization_refu0/manifests/storage_baseline.json",
+      "bytes": 20,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_initialization_refucurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_training_lock_block0/.cache/cloud_locks/eacddc93ce0df157d267e5dc2dcfccbaa7fdbccda23b79fe9fabd8209f3b296f.lock",
+      "bytes": 0,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_cloud_training_lock_blockcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_command_timeout_terminate0/nested.pid",
+      "bytes": 5,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_command_timeout_terminatecurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/adapter_config.json",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/adapter_model.safetensors",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/checkpoint_complete.json",
+      "bytes": 824,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/optimizer.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/rng_state_0.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/rng_state_1.pth",
+      "bytes": 8,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/scheduler.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_every0/adapter/checkpoint-1/trainer_state.json",
+      "bytes": 18,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_completion_requires_everycurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_concurrent_json_writers_p0/shared.json",
+      "bytes": 2102,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_concurrent_json_writers_pcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_docker_volume_growth_is_c0/docker_storage.json",
+      "bytes": 2,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_docker_volume_growth_is_c1/docker_storage.json",
+      "bytes": 2,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_docker_volume_growth_is_ccurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_duplicate_predictions_are0/duplicates.jsonl",
+      "bytes": 84,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_duplicate_predictions_arecurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_failed_json_serialization0/shared.json",
+      "bytes": 27,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_failed_json_serializationcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/adapter_config.json",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/adapter_model.safetensors",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/checkpoint_complete.json",
+      "bytes": 824,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/optimizer.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/rng_state_0.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/rng_state_1.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/scheduler.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-1/trainer_state.json",
+      "bytes": 18,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/adapter_config.json",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/adapter_model.safetensors",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/checkpoint_complete.json",
+      "bytes": 824,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/optimizer.pt",
+      "bytes": 17,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/rng_state_0.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/rng_state_1.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/scheduler.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_u0/adapter/checkpoint-2/trainer_state.json",
+      "bytes": 18,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_latest_checkpoint_skips_ucurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/.cache/memory-patch-backups/20261123T194720-47347/src/swe_study/training.py",
+      "bytes": 17531,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/cloud/nersc/env.sh",
+      "bytes": 7,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/logs/memory-patch-20261123T194720-47347.json",
+      "bytes": 846,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/logs/memory-patch-20261123T194720-47348.json",
+      "bytes": 703,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/scripts/validate_memory_loss.py",
+      "bytes": 3618,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/src/swe_study/checkpoints.py",
+      "bytes": 7,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/src/swe_study/memory_loss.py",
+      "bytes": 3290,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/src/swe_study/training.py",
+      "bytes": 20,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_i0/tests/test_memory_loss.py",
+      "bytes": 3331,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_memory_installer_backup_icurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_missing_predictions_keep_0/input.jsonl",
+      "bytes": 61,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_missing_predictions_keep_0/output.jsonl",
+      "bytes": 150,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_missing_predictions_keep_current",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_nested_parquet_records_ha0/parquet_source/data.parquet",
+      "bytes": 1190,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_nested_parquet_records_hacurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_nf4_loader_binds_to_the_w0/config.json",
+      "bytes": 2,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_nf4_loader_binds_to_the_wcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_shared_filesystem_accountcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/adapter_config.json",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/adapter_model.safetensors",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/checkpoint_complete.json",
+      "bytes": 731,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/optimizer.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/rng_state.pth",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/scheduler.pt",
+      "bytes": 15,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_rec0/adapter/checkpoint-4/trainer_state.json",
+      "bytes": 18,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_single_gpu_completion_reccurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_source_snapshot_accepts_p0/src/epoch_fixture.py",
+      "bytes": 27,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_source_snapshot_accepts_pcurrent",
+      "error": "EACCES"
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_task_token_budget_is_shar0/ledger.json",
+      "bytes": 79,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_task_token_budget_is_shar0/tasks.jsonl",
+      "bytes": 81,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": ".cache/tmp/pytest-regression-20261123T194626-3ee60d37/test_task_token_budget_is_sharcurrent",
       "error": "EACCES"
     },
     {
@@ -276933,8 +278632,8 @@
     },
     {
       "path": "cloud/README.md",
-      "bytes": 13700,
-      "sha256": "f511d9e9ebc941bebc50c25b040682525e3c71403b2d9d5548be8dba8911d62f"
+      "bytes": 15251,
+      "sha256": "94b89231f987cd4edfa8ebe2cc6eb4b80c81c1a6e9721aa50baa57876fde8fd9"
     },
     {
       "path": "cloud/run.sh",
@@ -277192,6 +278891,11 @@
       "sha256": "472e1d167615fd2d705677b513dc2dbb5a07f8eb116f92cbf1d8e9dc79f9f214"
     },
     {
+      "path": "deliverables/nersc_memory_patch.py",
+      "bytes": 33386,
+      "sha256": "8b67c416d09ae8065ea43cee1068f9843b223492d17769e1027c34eb51a62547"
+    },
+    {
       "path": "dist/swe-study-a100-nersc-20261123-zipfix.tar.gz",
       "bytes": 92973,
       "sha256": "5b8c9b20f05b86686822fc43f16ea8a37c8bed7d551c28484e98b18037fed12b"
@@ -277358,8 +279062,8 @@
     },
     {
       "path": "manifests/storage_usage.json",
-      "bytes": 315,
-      "sha256": "a95c5ebf11319639f9d3c161611e403dfff4405576c4642c56b1b290e2abc4f6"
+      "bytes": 376,
+      "sha256": "5c14c0362a6ddf686b55ef24f933bb53276574c03daa2d9439ee935e08f81173"
     },
     {
       "path": "manifests/train_packages.freeze.txt",
@@ -279332,6 +281036,96 @@
       "sha256": "67ddb7486d3b5d0db169a1764f9fa500f87c0f068de6ead5af8f12207acf14b8"
     },
     {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-001.json",
+      "bytes": 628,
+      "sha256": "29abc76d1e349fb4de168e28dd94ec20f4e5bd0d1c09a183b4fa5361173c5965"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-001.stdout.log",
+      "bytes": 40,
+      "sha256": "f5f5e757e36d191e8eb63cd6060188b7293e61db9b8919701774c9fb47ff89df"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-002.json",
+      "bytes": 620,
+      "sha256": "ae0f22bc519447a32bd1397e8142226ceb1feee66a81d2ac8ae37f19347c4145"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-002.stderr.log",
+      "bytes": 129,
+      "sha256": "fdd2a7bd5e9c1687c3e04f17010865d9a76241b59dd99cea4c1c4133aa1bed25"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-002.stdout.log",
+      "bytes": 15909,
+      "sha256": "e41db3f503d16aaea1b2fb26ffae8398305158485f103e7e72e674db16ea8cab"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-003.json",
+      "bytes": 4912,
+      "sha256": "cc18f59498b3ca7ad1af5111fc39d20b024e66ff8dd91500d1c77bb79f021e0c"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-003.stderr.log",
+      "bytes": 8755,
+      "sha256": "53d2e313b46eb0de253973544b39bd31db59050bcf02c5acab2c4c2e974657db"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-003.stdout.log",
+      "bytes": 338,
+      "sha256": "a805fa599cd9081f7d37a390a5d5d5422e7239e477e60d0390d2906a93da064c"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-004.json",
+      "bytes": 702,
+      "sha256": "771186d4d5cf58c635b5fead74ed2b72007417b48734cc4fa3d60d5ef98f01a8"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-004.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/command-004.stdout.log",
+      "bytes": 15737,
+      "sha256": "0ef0cc0ce222117d07611fcbaf95e0202c5c1596614862eaaf010129b8f98235"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/events.jsonl",
+      "bytes": 10729,
+      "sha256": "6f3595bdf6948bc845d3c2d66b4aee9c57826aec9b40c5307e6ff51382977fe1"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/run.json",
+      "bytes": 1040,
+      "sha256": "cccf4f702b4e4ede7f25eafb3be9b1c19ea0cff6379f3b75bc8b9be5a34ea3c3"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/source_snapshot.zip",
+      "bytes": 1055731,
+      "sha256": "38b36ec991f654b4d4e9a6cd7b81b372d989e4f0954f5c0231ba19fe3c23ade8"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/stdout.log",
+      "bytes": 494,
+      "sha256": "0ff12626763e918d4c16be0b861cb13d8920a3be4f9e35239cd8cdb80b13fc80"
+    },
+    {
+      "path": "results/checkpoint_resume_validation/20261123T194636-b8d15566/validation.json",
+      "bytes": 382,
+      "sha256": "60e01786464527c802908bcca68e9a01801930cef4e5f11f30ee10b2ac758181"
+    },
+    {
       "path": "results/cleanup_cache/20261019T225901-1d945a7f/command-001.json",
       "bytes": 492,
       "sha256": "0958331e2a4ad17c36b6fad1ee3c548f1b02f051c8623d91b135cb1711e8b63c"
@@ -280550,6 +282344,11 @@
       "path": "results/cloud_package/bundle-808bd19dc3084906990d5593ab7e71c7.tar.gz.json",
       "bytes": 9052,
       "sha256": "2be277034f2ac7786d70cb533666adca98a7e7d5cc48a85752c7dc8d4f16d19c"
+    },
+    {
+      "path": "results/cloud_package/bundle-8e444adef95e42438a5e4fcd7d532823.tar.gz.json",
+      "bytes": 9808,
+      "sha256": "55a62d66c46a5dc97e9ac1d18a3d1146fea39e94e7a92bc9f9b4535e0d67773c"
     },
     {
       "path": "results/cloud_package/bundle-aaab00e39a1142268a84f8f4d5c080aa.tar.gz.json",
@@ -284042,6 +285841,211 @@
       "sha256": "764701ff4471ca168ea70ab3cf3094d0d8661a0bf5fe40bd0574b2218ca11812"
     },
     {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/command-001.json",
+      "bytes": 691,
+      "sha256": "23e27548c4a04db8c40a8dc7f10ea10b3f1673c0528432114fdd7a8a3ee6815a"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/command-001.stdout.log",
+      "bytes": 100,
+      "sha256": "b45df8cbdecf78d4c99f2978c41ca60b83fcd55c8ec97ad951f628bf6772a2a7"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/events.jsonl",
+      "bytes": 1893,
+      "sha256": "e915b86e7d645145ecfe7643e31993a29a07eec718ba26a85b6da2639b11d0b8"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/run.json",
+      "bytes": 994,
+      "sha256": "a9b8fda8707906ebf7cb85f587ec62ccfbfbac6c570ab779995a7f5dafee3cc3"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/source_snapshot.zip",
+      "bytes": 1055731,
+      "sha256": "38b36ec991f654b4d4e9a6cd7b81b372d989e4f0954f5c0231ba19fe3c23ade8"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/stdout.log",
+      "bytes": 106,
+      "sha256": "a1ee15fd1fa8a1003e0d2c4d9c21bbd608225a717a530b2614b7a2b693d6a276"
+    },
+    {
+      "path": "results/memory_loss_regression/20261123T194626-3ee60d37/validation.json",
+      "bytes": 760,
+      "sha256": "819f8715e0ea295b90917f6f366a04f2b23a9d6a253c0c60ddef0ebffb00a148"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/command-001.json",
+      "bytes": 858,
+      "sha256": "9182e72714c9559d910f6de7ea0518c8525cb528724d8d78174c2541584f70b9"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/command-001.stdout.log",
+      "bytes": 2401,
+      "sha256": "c1aee9cf8482cb5c09453b44f323527a9d68fc28a4a0797bd3f2ed94f800d16c"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/events.jsonl",
+      "bytes": 2270,
+      "sha256": "c20c8e2b2bd11a1685778b6f891302d177c5b0ffccd45ee3d813fe3c69652f57"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/run.json",
+      "bytes": 1228,
+      "sha256": "e9cdbed27c052354f26a85c176d22dca6af06500bbac93a03676bf1b82c9649e"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/source_snapshot.zip",
+      "bytes": 1052382,
+      "sha256": "5b3f485d0f43cb134223f5b1aa9bb2b070aa708c2054b53f94078fdff992c365"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/stderr.log",
+      "bytes": 497,
+      "sha256": "6ab415c4ca45d1c81ff9316587fe23b448cd4d0d3cd1dfc777fad274cd21c66b"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194421-9eeabf31/stdout.log",
+      "bytes": 106,
+      "sha256": "91c7ef15cde56aa83d2fcc54173403d4914d11179fb8e2f58c2b0d27a414fcff"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/command-001.json",
+      "bytes": 726,
+      "sha256": "3c3cfaa2a93b758c9cfcb6224d8df7a8e0e62d9edb2a4fae6e9d2ff035a40332"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/command-001.stdout.log",
+      "bytes": 99,
+      "sha256": "af181967b490a0d0689755ef1f89205f13010c674ece85f7b05a4c7d8f18aa21"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/command-002.json",
+      "bytes": 550,
+      "sha256": "39a2b07e4dcedfba45e0fd2fc4733fce26ee901c5af4415c714fa4cff1b4aa25"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/command-002.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/command-002.stdout.log",
+      "bytes": 494,
+      "sha256": "0ff12626763e918d4c16be0b861cb13d8920a3be4f9e35239cd8cdb80b13fc80"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/events.jsonl",
+      "bytes": 3364,
+      "sha256": "7ea47c62ad21c09201f11b8b5c99d4b351e42a4794bd4a743b34712254572b37"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/run.json",
+      "bytes": 1079,
+      "sha256": "85784464cf2186d177b32e99ae0d88256adcd49a3d8f37f2dd9d36c426e13086"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/source_snapshot.zip",
+      "bytes": 1052410,
+      "sha256": "a8192478d64b2b5d125d071c548f7234892f572d4a071c28331c905eaf601785"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/stdout.log",
+      "bytes": 1234,
+      "sha256": "0dfa21ba4441b7f992183db43f748d6690988848a1b86cf7a209a72d009ebe32"
+    },
+    {
+      "path": "results/memory_loss_validation/20261123T194511-37b0b0ee/validation.json",
+      "bytes": 1128,
+      "sha256": "a07a5d4de9ca60760953e90c6ae74e55d41ae0246ada30b3ea4298fe2db03329"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194551-d226cf5f/build.json",
+      "bytes": 407,
+      "sha256": "51c1affbeb2715174bbf506a526b6e1e94605a6cc402da1cf5281db53d65f16a"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194551-d226cf5f/events.jsonl",
+      "bytes": 188,
+      "sha256": "567a6b13b804b0ffa3f8b03a01e1e6bc5f48ac740d117b378fe1851e9dbd697f"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194551-d226cf5f/run.json",
+      "bytes": 938,
+      "sha256": "af386e16e395485e8b84739f51ffe5a405eac52074edba5434dc668e1af63c86"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194551-d226cf5f/source_snapshot.zip",
+      "bytes": 1054406,
+      "sha256": "60eac6550f261c7e98572862723052f69f5f489d182c2b5977b0b7715f44e173"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194551-d226cf5f/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194551-d226cf5f/stdout.log",
+      "bytes": 509,
+      "sha256": "5890c68026509ff675fe64b7f928a06de2664bc56958efa47f3c68f438ad1a34"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194753-d5fe4fb4/build.json",
+      "bytes": 407,
+      "sha256": "51c1affbeb2715174bbf506a526b6e1e94605a6cc402da1cf5281db53d65f16a"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194753-d5fe4fb4/events.jsonl",
+      "bytes": 188,
+      "sha256": "b72afe2d0dc9db54d0bd156ff509b668d8d409d89d8923a1d057e5edd2d4c354"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194753-d5fe4fb4/run.json",
+      "bytes": 938,
+      "sha256": "a55a76db59da6fc24f73cc54131a6af0197fea94198bd8664e551de05dd23abb"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194753-d5fe4fb4/source_snapshot.zip",
+      "bytes": 1055811,
+      "sha256": "a5f4a4703563d2b9fbab192f36534552c024c6f8a7b7f474e3497ab9f4b81a8c"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194753-d5fe4fb4/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/memory_patch_build/20261123T194753-d5fe4fb4/stdout.log",
+      "bytes": 509,
+      "sha256": "32b2a4c31bc8c4a271ba0d10ca0e52df9278ac92d41bdc30c38ca53859043104"
+    },
+    {
       "path": "results/model_integrity/20261019T180039-a32aa4d0/events.jsonl",
       "bytes": 11080,
       "sha256": "efbea3e718f337c236ea739bf55c19036c9ef004016df66d5de0d492bf146196"
@@ -284290,6 +286294,56 @@
       "path": "results/native_inventory/20261019T230036-83193314/stdout.log",
       "bytes": 180,
       "sha256": "f6999c6cddf31a79a9fc3c884d3553bf1634c82d9e8ba24a8bfe5c546113b897"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/events.jsonl",
+      "bytes": 484,
+      "sha256": "8490c571fd28d803c1ff7e0ff4350dea2a2e3b375a2c0cbf6564b0dd0d9ac865"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/executed_indexer.js",
+      "bytes": 2780,
+      "sha256": "69f0346aa30273e7f0c27e7fc61c04b2aa0512f061af09c393c3f7f065af647c"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/execution_source.json",
+      "bytes": 320,
+      "sha256": "23eeb5584189eb263d09ff3da2362d8320305e46b96c6ba2f266e5d03a2a65fb"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/indexer.js",
+      "bytes": 2910,
+      "sha256": "1b02c42eb9a894e336d3dd338d909385ced0b3403b74daa3b91ef3da9e619601"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/native_complete.json",
+      "bytes": 75,
+      "sha256": "ba765149a20907a954e7e9f5bdcace09995900b5a72208cede1cb31aff48015f"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/native_index.json",
+      "bytes": 19936773,
+      "hash_policy": "Payload hashes/revisions are in asset manifests; runtime/cache files are inventoried by size."
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/run.json",
+      "bytes": 1130,
+      "sha256": "4e780be283dd5558bbd85ae47bb38bfe7e6045366bc93d2d8cf00a6ebf34a9e1"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/source_snapshot.zip",
+      "bytes": 1017796,
+      "sha256": "024b8fe90ec2fc8107299bc3b8983255c73884b9324412c37d1d22b29e6148c4"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/native_inventory/20261123T185158-36d34454/stdout.log",
+      "bytes": 180,
+      "sha256": "84a655ca417133aa2009a77a9b8b798c777319b58b5674527748fb4d973985c6"
     },
     {
       "path": "results/nersc_doc_qa/final_report.json",
@@ -289192,6 +291246,46 @@
       "sha256": "6089facc4e2d4742d2c4f7e5385ceb73a86b4f97769fd57eed5efe8ae24dfec7"
     },
     {
+      "path": "results/unit_command/20261123T194723-345ac675/command-001.json",
+      "bytes": 664,
+      "sha256": "0da38bf6716e300aafa896af670466979a7cdc211b963b722d1f4287f9989010"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/command-001.stdout.log",
+      "bytes": 17,
+      "sha256": "d98329241819eab5066c499cc7628fd0c9f070367be9b26c0f9f088f58a8cf1e"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/events.jsonl",
+      "bytes": 1632,
+      "sha256": "6ace477409542e38ac55032d0106a4acc16952994d28518dea822433ef63f245"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/run.json",
+      "bytes": 1233,
+      "sha256": "445e689fb6eae3bd92ac7bd763c5ad2a8d3b70f61373c7edb5393ce8da549e9c"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/source_snapshot.zip",
+      "bytes": 1055731,
+      "sha256": "38b36ec991f654b4d4e9a6cd7b81b372d989e4f0954f5c0231ba19fe3c23ade8"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_command/20261123T194723-345ac675/stdout.log",
+      "bytes": 96,
+      "sha256": "ad6837ebdfb6318468eb0160ee85ffe195403486f312c8de02ce622f89775efe"
+    },
+    {
       "path": "results/unit_epoch_snapshot/20261123T174400-e226218c/events.jsonl",
       "bytes": 188,
       "sha256": "dc5aa2596f01bdbc7e68416883d95f276c06cf951cd248d98866697739179e5f"
@@ -289315,6 +291409,31 @@
       "path": "results/unit_epoch_snapshot/20261123T184939-89b88c05/stdout.log",
       "bytes": 103,
       "sha256": "3590e2158af6a4489172b08fa05803ba4ad882e20fe94afc920867be3d470ba6"
+    },
+    {
+      "path": "results/unit_epoch_snapshot/20261123T194718-7f83f3b4/events.jsonl",
+      "bytes": 188,
+      "sha256": "a7437b66be7e60096029abb1e6f665d327a8648adc9d63e4ff0a026223929511"
+    },
+    {
+      "path": "results/unit_epoch_snapshot/20261123T194718-7f83f3b4/run.json",
+      "bytes": 1329,
+      "sha256": "33b857554cecf3c14d4a9939dc1804a0db1d2c436d1d8f74fd7b2902d79ed58d"
+    },
+    {
+      "path": "results/unit_epoch_snapshot/20261123T194718-7f83f3b4/source_snapshot.zip",
+      "bytes": 167,
+      "sha256": "cc38dbe7b4ad44a0ba9672e065724b7598039bbea80d0fd1a77eabd215623314"
+    },
+    {
+      "path": "results/unit_epoch_snapshot/20261123T194718-7f83f3b4/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_epoch_snapshot/20261123T194718-7f83f3b4/stdout.log",
+      "bytes": 103,
+      "sha256": "4495d1675dc6425d720c14da3d86ee446e35377ad08c6deab193b2f1936577f8"
     },
     {
       "path": "results/unit_export/20261019T164739-695e2f9b/events.jsonl",
@@ -290207,6 +292326,56 @@
       "sha256": "df4eaa73fcac08ef6b97ff2d35a1749c8c918b448ad8657dbc16c62a83f06dc4"
     },
     {
+      "path": "results/unit_export/20261123T194720-0b7f804e/events.jsonl",
+      "bytes": 542,
+      "sha256": "d5c29c31c185247852d55e11cba7ead7adaec280ce748621a0ff48f3ebf481e2"
+    },
+    {
+      "path": "results/unit_export/20261123T194720-0b7f804e/run.json",
+      "bytes": 1233,
+      "sha256": "2a05870d2e03baa8ceae1fb4e81bcf4b7b368c03b158501bfaee5c100b421e66"
+    },
+    {
+      "path": "results/unit_export/20261123T194720-0b7f804e/source_snapshot.zip",
+      "bytes": 1055731,
+      "sha256": "38b36ec991f654b4d4e9a6cd7b81b372d989e4f0954f5c0231ba19fe3c23ade8"
+    },
+    {
+      "path": "results/unit_export/20261123T194720-0b7f804e/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261123T194720-0b7f804e/stdout.log",
+      "bytes": 95,
+      "sha256": "b18e25d65fa7e04acdabdb18ddc9bdb5c571cf806b0d63a648f8248372df7193"
+    },
+    {
+      "path": "results/unit_export/20261123T194721-1de5fb1c/events.jsonl",
+      "bytes": 188,
+      "sha256": "92abf2f24f93bc82abac147eeaef26141cbd128038375afc27d2518ee1fbf070"
+    },
+    {
+      "path": "results/unit_export/20261123T194721-1de5fb1c/run.json",
+      "bytes": 1233,
+      "sha256": "7301e0db696b0aa0e4da3ebe955796dc7da8bed21d6527359db041ce716fdfcf"
+    },
+    {
+      "path": "results/unit_export/20261123T194721-1de5fb1c/source_snapshot.zip",
+      "bytes": 1055731,
+      "sha256": "38b36ec991f654b4d4e9a6cd7b81b372d989e4f0954f5c0231ba19fe3c23ade8"
+    },
+    {
+      "path": "results/unit_export/20261123T194721-1de5fb1c/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_export/20261123T194721-1de5fb1c/stdout.log",
+      "bytes": 95,
+      "sha256": "366e2510494dbaf3fb25b6be8e48b9ca670b461163b273d81d2bf1acd7915bd6"
+    },
+    {
       "path": "results/unit_nested_cancel/20261019T215858-abc28c17/command-001.json",
       "bytes": 888,
       "sha256": "383022a127f9331269425462b9a3b6250a396bd22bdb292ab44797e756d070af"
@@ -290485,6 +292654,46 @@
       "path": "results/unit_nested_cancel/20261123T184948-e478d1dd/stdout.log",
       "bytes": 102,
       "sha256": "3da177ff5768a9c69d01c504647876580d6cbe4d5112e0d47bcad1feb65c1aca"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/command-001.json",
+      "bytes": 910,
+      "sha256": "51a72f51a3d3f679e7d3249813708ddadd09b791e7eb686929c20fc305a57024"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/command-001.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/command-001.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/events.jsonl",
+      "bytes": 2480,
+      "sha256": "0f9ed3b857dc877a9bed339de3e340967bf4e5279ef50ab1ae7aaeaceaa5ece8"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/run.json",
+      "bytes": 1238,
+      "sha256": "7d7235ffc08e22205a626fc490a45381c6ab5542c66814e2837a5655e63e3e04"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/source_snapshot.zip",
+      "bytes": 1055731,
+      "sha256": "38b36ec991f654b4d4e9a6cd7b81b372d989e4f0954f5c0231ba19fe3c23ade8"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/unit_nested_cancel/20261123T194724-1b2518fd/stdout.log",
+      "bytes": 102,
+      "sha256": "8041da038a645b94dd8b50122d9a2d12e569ddb3397483e97929d132464408d0"
     },
     {
       "path": "results/validate-checkpoint/20261019T164921-6d5aeb86/events.jsonl",
@@ -290827,6 +293036,11 @@
       "sha256": "d1e1e109368c8434fa9777a43e23b8d1c022ebe10832ec5f359d3bb78c042301"
     },
     {
+      "path": "scripts/build_memory_patch.py",
+      "bytes": 5125,
+      "sha256": "68e09a7b0407f6cec16a65798a537beff74716fe42a7b5ce9d64a58cb878f2e8"
+    },
+    {
       "path": "scripts/build_nersc_guide.py",
       "bytes": 18830,
       "sha256": "b039204c4e5d1ae99366b4a8d1241d0a1db6f6a367fe5bc9f6eb56b4429fd0d1"
@@ -290947,6 +293161,16 @@
       "sha256": "8f8b4f76af95ade451b5f2e9d54f468b8c5e575dc7cc6c918b4dbeaae0b924d3"
     },
     {
+      "path": "scripts/validate_memory_loss.py",
+      "bytes": 3618,
+      "sha256": "e74cff93c73bc45cbd19a245bfbabc8906c01fd9658bfb426244c72891b3c231"
+    },
+    {
+      "path": "scripts/validate_memory_regression.py",
+      "bytes": 704,
+      "sha256": "c8821ce8c6f7a9a4803230b23a7510760fd72a7890f007aacd7a1ebf93b3c6ab"
+    },
+    {
       "path": "scripts/validate_model_interfaces.py",
       "bytes": 2166,
       "sha256": "0fa70f1f6d96d091b505359809bc9486ffb6becc1575c88afda16e103d03329e"
@@ -291052,6 +293276,11 @@
       "sha256": "4c920dee3f97e6c003838acb0d5a9756f3df81511b1d74c65cb26ad9ed601898"
     },
     {
+      "path": "src/swe_study/memory_loss.py",
+      "bytes": 3290,
+      "sha256": "c3e243e018d0a7146f9f8f405780358d47094d1a755b13a5098ee3854a1b6c4c"
+    },
+    {
       "path": "src/swe_study/preflight.py",
       "bytes": 3352,
       "sha256": "2f875adf5c9a003ea01e555589e15cd9896f3f5fe78c32921c80b5ab6f2e4d76"
@@ -291078,8 +293307,8 @@
     },
     {
       "path": "src/swe_study/training.py",
-      "bytes": 17531,
-      "sha256": "76130c94f7ec41a1833a56f1adf438fbaa9d5d742b94054a2fa4717fe3fe7fdd"
+      "bytes": 17910,
+      "sha256": "96e1b52e2e8c60005dea004b325412bcb68009279934d5e19c7f03da26b23a3c"
     },
     {
       "path": "tests/test_checkpoints.py",
@@ -291095,6 +293324,16 @@
       "path": "tests/test_common_atomic.py",
       "bytes": 1349,
       "sha256": "0f6bbfd0f0589ee8ad3d05963567a953b7ffd80ff41a9e1897b5f89d17e14f63"
+    },
+    {
+      "path": "tests/test_memory_loss.py",
+      "bytes": 3331,
+      "sha256": "c21ef7c98ed1b1a900cfe89914f041fef2e2159b8badcf385517f810e1171c28"
+    },
+    {
+      "path": "tests/test_memory_patch.py",
+      "bytes": 1594,
+      "sha256": "18db8866a177bd74140b4abf84d51fecc9a66b1547ceb147d9f40216c029b65d"
     },
     {
       "path": "tests/test_pipeline.py",
@@ -408793,13 +411032,13 @@
     }
   ],
   "volume_storage": {
-    "free_bytes": 233546489856,
+    "free_bytes": 231958790144,
     "conservative_volume_growth_bytes": 0,
     "reserved_bytes": 0,
-    "docker_physical_free_bytes": 233546489856,
+    "docker_physical_free_bytes": 231958790144,
     "accounting_mode": "filesystem",
     "measurement_cache_seconds": 0,
     "accounting_note": "Volume growth includes other concurrent use on this volume; Docker on another volume requires an explicit baseline before image operations."
   },
-  "execution_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/native_inventory/20261123T185158-36d34454"
+  "execution_evidence": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/native_inventory/20261123T195233-05d1dd75"
 }
