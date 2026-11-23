@@ -26,14 +26,19 @@ def main():
         labels={'cs6158.project':'local-swe-study','cs6158.condition_id':run.id}
         container=None
         try:
-            container=client.containers.run(args.image,['python','-m','http.server','8765','--bind','0.0.0.0'],
+            # Keep the object before start: a failed start must still be cleaned up.
+            container=client.containers.create(args.image,['python','-m','http.server','8765','--bind','0.0.0.0'],
                         name='openhands-runtime-cs6158-'+run.id,detach=True,labels=labels,
                         ports={'8765/tcp':('127.0.0.1',None)})
+            container.start()
             result=container.exec_run(['python','-c','from pathlib import Path; Path("/tmp/probe").write_text("ok"); print(Path("/tmp/probe").read_text())'])
             if result.exit_code or result.output.strip()!=b'ok': raise RuntimeError('Container exec/write failed')
             stream=container.get_archive('/tmp/probe')[0]
             if not sum(len(chunk) for chunk in stream): raise RuntimeError('Container archive export failed')
             container.reload();details=container.attrs
+            network=details['HostConfig'].get('NetworkMode','')
+            if __import__('os').environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc' and not network.startswith('slirp4netns'):
+                raise RuntimeError('Podman API did not apply project slirp4netns configuration; restart this project service')
             if details.get('Mounts') or details['HostConfig'].get('Privileged'):
                 raise RuntimeError('Unexpected test-container mount or privilege')
             bindings=details['NetworkSettings']['Ports']['8765/tcp']
@@ -50,6 +55,7 @@ def main():
                     if time.monotonic()>=deadline: raise
                     time.sleep(.2)
             report={'passed':True,'api_version':client.version(),'image_id':image.id,
+                    'network_mode':network,
                     'container_exec_archive_and_loopback_port':'passed',
                     'limitation':'API compatibility check only; task gold controls and real agent rollout still required'}
             write_json(run.path/'compatibility.json',report);print(json.dumps(report,indent=2))

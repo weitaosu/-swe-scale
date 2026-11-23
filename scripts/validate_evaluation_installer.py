@@ -19,6 +19,12 @@ def main():
         (project/'cloud/nersc').mkdir(parents=True)
         (project/'cloud/nersc/env.sh').write_text('# fixture\n')
         (project/'pyproject.toml').write_text('# fixture\n')
+        # Bundle creation is unrelated to runtime evaluation. Preserve any version.
+        packager=project/'scripts/package_cloud.py'
+        packager.parent.mkdir(parents=True,exist_ok=True)
+        packager.write_text('# Operator-specific bundle packager\n')
+        packager_before=packager.read_bytes()
+        assert 'scripts/package_cloud.py' not in files
         before={}
         for name,item in files.items():
             if name=='src/swe_study/memory_head.py':continue  # v2-to-evaluation upgrade creates it.
@@ -29,6 +35,7 @@ def main():
             target=project/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(probe.stdout)
         command=[sys.executable,'deliverables/nersc_evaluation_patch.py','--root',str(project)]
         run.command(command,timeout=60)
+        assert packager.read_bytes()==packager_before
         for name,item in files.items():assert (project/name).read_text()==item['text']
         for name,text in before.items():
             if text!=files[name]['text']:
@@ -52,6 +59,7 @@ def main():
         report={'passed':True,'backs_up_known_sources':True,'idempotent':True,
                 'unknown_sources_rejected_before_writes':True,'shell_syntax_and_executable_modes':True,
                 'v2_upgrade_without_head_module':'passed'}
+        report['unrelated_packager_preserved']=True
         write_json(run.path/'validation.json',report);print(json.dumps(report,indent=2))
 
 

@@ -163,11 +163,15 @@ The pinned source revisions come from `manifests/source_repositories.json`.
 Agent and official-grader dependencies stay separate from the training environment.
 Do not proceed if installation or `pip check` fails.
 
-Start a project-scoped Podman API service on that CPU node:
+Start a project-scoped Podman API service inside the compute allocation. A GPU
+allocation's CPUs can also run these preparation and grading steps; its GPU can
+later serve the model on the same node. Do not run the evaluation service on a
+login node. The launcher checks the allocation and rejects login-node startup.
 
 ```bash
 source cloud/nersc/container_env.sh
 command -v podman-hpc
+command -v slirp4netns
 podman-hpc --version
 
 bash cloud/nersc/container_service.sh \
@@ -175,6 +179,7 @@ bash cloud/nersc/container_service.sh \
 CONTAINER_SERVICE_PID=$!
 echo "Container service PID: $CONTAINER_SERVICE_PID"
 
+sleep 5
 .envs/eval/bin/python scripts/check_container_api.py
 ```
 
@@ -184,6 +189,27 @@ container. If it fails, inspect `results/container_api_check/<run-id>/` and
 `logs/container-service-<job-id>.log`. Stop here and resolve that failure before
 allocating a GPU for agent work. Podman-HPC's availability alone does not prove
 Docker API compatibility for OpenHands.
+
+The project uses `CONTAINERS_CONF_OVERRIDE` pointing to
+`cloud/nersc/containers-network.toml`. Its `[containers] netns = "slirp4netns"`
+setting preserves other site settings and avoids the Docker-compatible API's
+bridge default. That default can fail in Netavark/iptables while publishing a
+port, even when `podman-hpc` itself is installed and image pulls succeed. The
+API check must record `network_mode: slirp4netns` and pass the loopback HTTP test.
+This is a configuration fix to validate on NERSC, not a claim of a passed check.
+
+When upgrading or moving an existing project service, stop it on its old host
+before starting the replacement (including an older service on `login23`):
+
+```bash
+source cloud/nersc/container_env.sh
+.envs/eval/bin/python scripts/stop_container_service.py --stop
+```
+
+This matches only this user's Podman API-service command and exact project Unix
+socket, sends SIGTERM, and records the affected PIDs. It does not stop model
+servers or remove images. Configuration changes require a fresh API service;
+sourcing the environment in a client shell does not reconfigure an existing one.
 
 The writable graph store is explicitly scoped under
 `/tmp/<uid>_swe_study_podman/graph` on the CPU node, following Podman-HPC's node-local

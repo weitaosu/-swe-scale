@@ -12,13 +12,13 @@ from swe_study.audit import Run
 from swe_study.common import write_json
 
 NAMES=[
-    'scripts/cloud.py','scripts/package_cloud.py','src/swe_study/docker_storage.py',
+    'scripts/cloud.py','src/swe_study/docker_storage.py',
     'src/swe_study/runtime.py','src/swe_study/serving.py','src/swe_study/storage.py',
     'src/swe_study/memory_head.py','src/swe_study/benchmark.py','src/swe_study/validation.py',
-    'scripts/check_container_api.py','scripts/cloud_benchmark.py','scripts/cloud_validation.py',
+    'scripts/check_container_api.py','scripts/stop_container_service.py','scripts/cloud_benchmark.py','scripts/cloud_validation.py',
     'scripts/prepare_task_runtime.py','scripts/preserve_cloud_results.py','scripts/validate_cloud_evaluation.py',
-    'tests/test_cloud_benchmark.py','tests/test_cloud_validation.py',
-    'cloud/nersc/container_env.sh','cloud/nersc/container_service.sh','cloud/nersc/podman-bin/docker',
+    'tests/test_cloud_benchmark.py','tests/test_cloud_validation.py','tests/test_container_service.py',
+    'cloud/nersc/container_env.sh','cloud/nersc/container_service.sh','cloud/nersc/containers-network.toml','cloud/nersc/podman-bin/docker',
     'cloud/EVALUATION_NERSC.md']
 
 
@@ -59,7 +59,7 @@ def main():
         if old==item['text']:continue
         if old is not None and sha(old) not in item['allowed_before_sha256']:
             raise SystemExit('Unfamiliar source preserved: '+name)
-        if old is None and name in {'scripts/cloud.py','scripts/package_cloud.py','src/swe_study/docker_storage.py','src/swe_study/runtime.py','src/swe_study/serving.py','src/swe_study/storage.py'}:
+        if old is None and name in {'scripts/cloud.py','src/swe_study/docker_storage.py','src/swe_study/runtime.py','src/swe_study/serving.py','src/swe_study/storage.py'}:
             raise SystemExit('Required source missing: '+name)
         changes.append((name,target,old,item['text']))
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S')+'-'+str(os.getpid())
@@ -84,7 +84,7 @@ def main():
 if __name__=='__main__':main()
 '''.replace('PAYLOAD',repr(json.dumps(payload)))
         compile(installer,'nersc_evaluation_patch.py','exec');target.write_text(installer)
-        delivery=NAMES+['scripts/build_cloud_evaluation_patch.py','scripts/validate_evaluation_installer.py',
+        delivery=NAMES+['scripts/package_cloud.py','scripts/build_cloud_evaluation_patch.py','scripts/validate_evaluation_installer.py',
                         'deliverables/nersc_evaluation_patch.py','deliverables/nersc_evaluation_files.txt']
         (ROOT/'deliverables/nersc_evaluation_files.txt').write_text('\n'.join(delivery)+'\n')
         report={'installer':str(target.relative_to(ROOT)),'sha256':sha(installer),'bytes':target.stat().st_size,

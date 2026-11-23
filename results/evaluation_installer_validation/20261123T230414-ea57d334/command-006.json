@@ -1,0 +1,12 @@
+{
+  "args": [
+    "bash",
+    "-n",
+    "cloud/nersc/podman-bin/docker"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261123T230414-ea57d334/command-006.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261123T230414-ea57d334/command-006.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.25952940100251
+}

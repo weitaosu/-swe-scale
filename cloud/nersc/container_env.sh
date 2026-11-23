@@ -6,6 +6,7 @@ export SWE_STUDY_CONTAINER_ENGINE=podman-hpc
 export PODMANHPC_RUN_ROOT="/tmp/${UID}_swe_study_podman"
 export PODMANHPC_GRAPH_ROOT="$PODMANHPC_RUN_ROOT/graph"
 export PODMANHPC_CONFIG_HOME="$STUDY_ROOT/.cache/podman/config"
+export CONTAINERS_CONF_OVERRIDE="$STUDY_ROOT/cloud/nersc/containers-network.toml"
 export PODMANHPC_ADDITIONAL_STORES=""
 export SQUASH_DIR="$STUDY_ROOT/.cache/podman/squash"
 export DOCKER_HOST="unix://$PODMANHPC_RUN_ROOT/docker.sock"

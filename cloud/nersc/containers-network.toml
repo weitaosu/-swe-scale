@@ -1,0 +1,4 @@
+# Read last by this project's Podman API service and CLI; leave site defaults intact.
+# Docker-compatible requests otherwise default to a bridge and invoke Netavark/iptables.
+[containers]
+netns = "slirp4netns"
