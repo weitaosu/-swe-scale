@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/preserve_cloud_results.py",
+    "--adapter",
+    "checkpoints/step-resume",
+    "--archive"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/cloud-evaluation-20261123T223401-be431423",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_archive_validation/20261123T224627-7bec4998/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_archive_validation/20261123T224627-7bec4998/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.762869617999968
+}

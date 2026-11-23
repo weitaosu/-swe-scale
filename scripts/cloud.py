@@ -336,6 +336,9 @@ def parser():
     s.add_argument("--max-context", type=int, default=8192)
     s.add_argument("--max-new-tokens", type=int, default=2048)
     s.add_argument("--development-budget", action="store_true", help="Require frozen development task identity and budget")
+    s.add_argument("--task-budget-file", help="Project-local frozen task identity file")
+    s.add_argument("--paired", action="store_true", help="Expose base and LoRA model aliases from one adapter load")
+    s.add_argument("--budget-ledger-dir", help="Persistent project-local per-condition token ledgers")
     return p
 
 
@@ -380,8 +383,10 @@ def main():
             from swe_study.common import assert_local_port_available
             from swe_study.serving import serve
             assert_local_port_available(args.port)
+            if args.development_budget and args.task_budget_file: raise ValueError("Choose one task-budget file option")
             serve(run, model_path(args.size), args.adapter, args.port, args.max_context, args.max_new_tokens,
-                  task_file="data/metadata/dev_task_budgets.jsonl" if args.development_budget else None)
+                  task_file=args.task_budget_file or ("data/metadata/dev_task_budgets.jsonl" if args.development_budget else None),
+                  paired=args.paired,budget_ledger_dir=args.budget_ledger_dir)
 
 
 if __name__ == "__main__": main()

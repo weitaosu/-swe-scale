@@ -6,6 +6,21 @@ import time
 import uuid
 
 
+def allocation_deadline():
+    """Best-effort Slurm deadline for refusing episodes that cannot fit."""
+    import os,subprocess
+    from datetime import datetime
+    if os.environ.get('SLURM_JOB_END_TIME','').isdigit():
+        return int(os.environ['SLURM_JOB_END_TIME'])
+    job=os.environ.get('SLURM_JOB_ID')
+    if not job: return None
+    try:
+        text=subprocess.check_output(['scontrol','show','job',job,'--oneliner'],text=True,timeout=10)
+        match=re.search(r'(?:^|\s)EndTime=(\S+)',text)
+        return datetime.fromisoformat(match.group(1)).timestamp() if match else None
+    except (OSError,ValueError,subprocess.SubprocessError): return None
+
+
 def parse_tool_output(text):
     calls=[]
     pattern=r"<tool_call>\s*(.*?)\s*</tool_call>"
@@ -50,7 +65,17 @@ class TaskBudget:
         from .common import read_jsonl
         self.tasks={r["instance_id"]:re.sub(r"\s+"," ",r["problem_statement"]).strip() for _,r in read_jsonl(task_file)}
         if not self.tasks or any(not issue for issue in self.tasks.values()): raise ValueError("Task budget file has no usable problem statements")
+        from .common import canonical_hash,read_json
         self.limit=limit;self.used={key:0 for key in self.tasks};self.ledger_path=ledger_path
+        self.identity=canonical_hash(self.tasks)
+        if ledger_path.exists():
+            saved=read_json(ledger_path)
+            if saved.get("tasks_sha256")!=self.identity or saved.get("limit_per_task")!=limit:
+                raise ValueError("Existing task ledger has a different task set or limit; preserved")
+            used=saved.get("completion_tokens_by_task",{})
+            if set(used)!=set(self.tasks) or any(type(v) is not int or not 0<=v<=limit for v in used.values()):
+                raise ValueError("Invalid existing task token ledger")
+            self.used=used
     def identify(self,messages):
         from .data import text_content
         text=re.sub(r"\s+"," "," ".join(text_content(m.get("content")) for m in messages if m.get("role")=="user")).strip()
@@ -62,7 +87,7 @@ class TaskBudget:
         from .common import write_json
         if tokens<0 or tokens>self.remaining(key): raise ValueError("Generated tokens exceed remaining task budget")
         self.used[key]+=tokens
-        write_json(self.ledger_path,{"limit_per_task":self.limit,"completion_tokens_by_task":self.used})
+        write_json(self.ledger_path,{"limit_per_task":self.limit,"completion_tokens_by_task":self.used,"tasks_sha256":self.identity})
 
 
 def stream_chunks(response):
@@ -74,17 +99,25 @@ def stream_chunks(response):
     yield "data: [DONE]\n\n"
 
 
-def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=2048,quantization="nf4",task_file=None,task_token_budget=32768):
+def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=2048,quantization="nf4",task_file=None,task_token_budget=32768,paired=False,budget_ledger_dir=None):
     import torch
     import uvicorn
     from fastapi import FastAPI,HTTPException
     from fastapi.responses import StreamingResponse
     from .training import load_model
     from .storage import StorageGuard
-    budget=TaskBudget(task_file,task_token_budget,run.path/"task_tokens.json") if task_file else None
+    from contextlib import nullcontext
+    from .common import local_path,sha256_file
+    if paired and (not adapter or not task_file): raise ValueError("Paired serving requires an adapter and frozen task-budget file")
+    ledger_dir=local_path(budget_ledger_dir) if budget_ledger_dir else run.path
+    budgets={condition:TaskBudget(task_file,task_token_budget,ledger_dir/(condition+"_task_tokens.json" if paired else "task_tokens.json")) if task_file else None
+             for condition in (["base","adapter"] if paired else ["single"])}
     model,tokenizer=load_model(model_path,quantization,adapter);model.eval()
     if hasattr(model.config,"use_cache"): model.config.use_cache=True
     lock=threading.Lock();app=FastAPI(title="CS6158 local model server");name="cs6158-"+model_path.replace("\\","/").rstrip("/").split("/")[-1]
+    aliases={name+"-base":"base",name+"-lora":"adapter"} if paired else {name:"single",model_path:"single"}
+    adapter_hash=sha256_file(local_path(adapter)/"adapter_model.safetensors") if adapter else None
+    deadline=allocation_deadline() if paired else None
     @app.middleware("http")
     async def log_http(request,call_next):
         started=time.perf_counter()
@@ -96,9 +129,13 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
             run.event("http_error",method=request.method,path=request.url.path,error_type=type(exc).__name__,error=str(exc),seconds=time.perf_counter()-started)
             raise
     @app.get("/health")
-    def health(): return {"status":"ready","model":name,"adapter":adapter,"quantization":quantization,"max_context":max_context}
+    def health(): return {"status":"ready","model":name,"adapter":adapter,"quantization":quantization,"max_context":max_context,
+                          "paired":paired,"models":list(aliases) if paired else [name],"adapter_weights_sha256":adapter_hash,
+                          "task_token_budget":task_token_budget if task_file else None,"max_new_tokens":max_new_tokens,
+                          "task_set_sha256":next(iter(budgets.values())).identity if task_file else None,
+                          "allocation_deadline_unix":deadline}
     @app.get("/v1/models")
-    def models(): return {"object":"list","data":[{"id":name,"object":"model","owned_by":"local"}]}
+    def models(): return {"object":"list","data":[{"id":key,"object":"model","owned_by":"local"} for key in (aliases if paired else [name])]}
     @app.post("/v1/chat/completions")
     def completion(body:dict):
         with lock:
@@ -106,7 +143,8 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
             request_id=uuid.uuid4().hex
             run.event("completion_request",request_id=request_id,request=body)
             requested_model=body.get("model",name)
-            if requested_model not in {name,model_path}: raise HTTPException(404,"Requested model does not match the loaded checkpoint")
+            if requested_model not in aliases: raise HTTPException(404,"Requested model does not match the loaded checkpoint")
+            condition=aliases[requested_model];budget=budgets[condition]
             if int(body.get("n",1))!=1: raise HTTPException(400,"Only one completion per request is supported")
             tools=body.get("tools") or None
             from .data import text_content
@@ -123,12 +161,14 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
             if output_cap<=0 or prompt_count+output_cap>max_context:
                 raise HTTPException(413,"Prompt plus requested output exceeds the frozen context budget; no silent truncation is applied")
             temperature=float(body.get("temperature",0));kwargs={"max_new_tokens":output_cap,"do_sample":temperature>0,"pad_token_id":tokenizer.pad_token_id}
+            if paired and temperature!=0: raise HTTPException(400,"Paired benchmark serving requires temperature 0")
             if temperature>0: kwargs["temperature"]=temperature
             try: stops=normalize_stops(body.get("stop"))
             except ValueError as e: raise HTTPException(400,str(e))
             if stops: kwargs.update(stop_strings=stops,tokenizer=tokenizer)
             torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();start=time.perf_counter()
-            with torch.inference_mode(), torch.autocast("cuda",dtype=torch.bfloat16): output=model.generate(**inputs,**kwargs)
+            with model.disable_adapter() if paired and condition=="base" else nullcontext():
+                with torch.inference_mode(), torch.autocast("cuda",dtype=torch.bfloat16): output=model.generate(**inputs,**kwargs)
             torch.cuda.synchronize();duration=time.perf_counter()-start
             generated=output[0,prompt_count:];text=tokenizer.decode(generated,skip_special_tokens=True)
             raw_text=text
@@ -137,12 +177,12 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
             try: content,calls=format_model_output(text,tools)
             except (ValueError,KeyError) as e:
                 run.event("tool_parse_error",request_id=request_id,error=str(e));content=text;calls=[]
-            response={"id":"chatcmpl-"+request_id,"object":"chat.completion","created":int(time.time()),"model":name,
+            response={"id":"chatcmpl-"+request_id,"object":"chat.completion","created":int(time.time()),"model":requested_model if paired else name,
               "choices":[{"index":0,"message":{"role":"assistant","content":content or None,**({"tool_calls":calls} if calls else {})},"finish_reason":"tool_calls" if calls else "length" if len(generated)>=output_cap and not stopped else "stop"}],
               "usage":{"prompt_tokens":prompt_count,"completion_tokens":len(generated),"total_tokens":prompt_count+len(generated)}}
-            run.event("completion",request_id=request_id,task_id=task_key,remaining_task_tokens=budget.remaining(task_key) if budget else None,request=body,response=response,raw_output=raw_text,matched_stop=stopped,seconds=duration,peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved())
+            run.event("completion",request_id=request_id,condition=condition,task_id=task_key,remaining_task_tokens=budget.remaining(task_key) if budget else None,request=body,response=response,raw_output=raw_text,matched_stop=stopped,seconds=duration,peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved())
             if body.get("stream"):
                 return StreamingResponse(stream_chunks(response),media_type="text/event-stream")
             return response
-    run.event("server_start",model=model_path,adapter=adapter,port=port,max_context=max_context,quantization=quantization,task_file=task_file,task_token_budget=task_token_budget if budget else None)
+    run.event("server_start",model=model_path,adapter=adapter,port=port,max_context=max_context,quantization=quantization,task_file=task_file,task_token_budget=task_token_budget if task_file else None,paired=paired,budget_ledger_dir=str(ledger_dir))
     uvicorn.run(app,host="127.0.0.1",port=port,log_level="info")

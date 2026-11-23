@@ -1,0 +1,29 @@
+{
+  "installer": "deliverables/nersc_evaluation_patch.py",
+  "sha256": "32a506659f9e55256d39b0824793d0e16f4aa55000556473102ad8b8e3b933d9",
+  "bytes": 155471,
+  "files": [
+    "scripts/cloud.py",
+    "scripts/package_cloud.py",
+    "src/swe_study/docker_storage.py",
+    "src/swe_study/runtime.py",
+    "src/swe_study/serving.py",
+    "src/swe_study/storage.py",
+    "src/swe_study/memory_head.py",
+    "src/swe_study/benchmark.py",
+    "src/swe_study/validation.py",
+    "scripts/check_container_api.py",
+    "scripts/cloud_benchmark.py",
+    "scripts/cloud_validation.py",
+    "scripts/prepare_task_runtime.py",
+    "scripts/preserve_cloud_results.py",
+    "scripts/validate_cloud_evaluation.py",
+    "tests/test_cloud_benchmark.py",
+    "tests/test_cloud_validation.py",
+    "cloud/nersc/container_env.sh",
+    "cloud/nersc/container_service.sh",
+    "cloud/nersc/podman-bin/docker",
+    "cloud/EVALUATION_NERSC.md"
+  ],
+  "note": "Container compatibility and real 3B results require NERSC execution"
+}

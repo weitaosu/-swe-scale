@@ -16,6 +16,16 @@ def _json_command(args):
 
 
 def docker_identity():
+    if os.environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc':
+        info=_json_command(['podman-hpc','info','--format','json'])
+        root=Path(info['store']['graphRoot']).resolve()
+        expected=Path('/tmp')/(str(os.getuid())+'_swe_study_podman')/'graph'
+        if root!=expected: raise RuntimeError('Podman graph root differs from the explicitly scoped node-local evaluation store')
+        endpoint=os.environ.get('DOCKER_HOST','')
+        if not endpoint.startswith('unix://'): raise RuntimeError('Podman evaluation requires a local Unix socket')
+        return {'server_id':'study-podman:'+str(root),'server_version':info['version']['Version'],
+                'docker_root':str(root),'operating_system':'Linux podman-hpc',
+                'context':'study-podman-hpc','endpoint':endpoint,'backend':'podman-hpc','hostname':platform.node()}
     info=_json_command(["docker","info","--format","json"])
     if not info.get("ServerVersion") or info.get("ServerErrors"):
         raise RuntimeError("Docker client is installed but the daemon is unavailable: "+str(info.get("ServerErrors")))
@@ -33,7 +43,7 @@ def record_storage(run,backing_file=None):
     if backing_file and not physical.is_file(): raise ValueError("The Docker backing file must exist")
     folder=physical if physical.is_dir() else physical.parent
     data={"identity":identity,"physical_storage_path":str(physical),"mapping_basis":"operator supplied VM backing file" if backing_file else "native local daemon DockerRootDir", "initial_physical_free_bytes":shutil.disk_usage(folder).free,"same_volume_as_project":folder.stat().st_dev==ROOT.stat().st_dev,"recorded_at":utc()}
-    target=local_path("manifests/docker_storage.json")
+    target=local_path(os.environ.get("SWE_STUDY_CONTAINER_STORAGE_MANIFEST","manifests/docker_storage.json"))
     if target.exists():
         existing=read_json(target)
         if existing["physical_storage_path"]!=data["physical_storage_path"] or existing["identity"]["context"]!=identity["context"]:
@@ -46,9 +56,9 @@ def record_storage(run,backing_file=None):
 
 
 def require_storage():
-    target=local_path("manifests/docker_storage.json")
+    target=local_path(os.environ.get("SWE_STUDY_CONTAINER_STORAGE_MANIFEST","manifests/docker_storage.json"))
     if not target.exists(): raise RuntimeError("Run docker-storage before image operations; the physical Docker storage baseline is missing")
     stored=read_json(target);current=docker_identity()
-    for key in ["server_id","context","endpoint","docker_root"]:
+    for key in ["server_id","context","endpoint","docker_root","hostname"]:
         if stored["identity"].get(key)!=current.get(key): raise RuntimeError("Docker daemon/context differs from the recorded storage baseline")
     return stored

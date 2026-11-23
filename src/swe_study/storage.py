@@ -43,7 +43,7 @@ class StorageGuard:
         project_accounting = self.baseline.get("accounting_mode") == "project"
         growth = (max(0, project_bytes() - self.baseline["project_initial_bytes"]) if project_accounting
                   else max(0, self.baseline["initial_free_bytes"] - free))
-        docker_path=local_path("manifests/docker_storage.json")
+        docker_path=local_path(os.environ.get("SWE_STUDY_CONTAINER_STORAGE_MANIFEST","manifests/docker_storage.json"))
         docker_free=None
         if docker_path.exists():
             docker=read_json(docker_path)

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Project-local CLI compatibility. Python clients use the Podman Docker API.
+set -euo pipefail
+if [[ "${SWE_STUDY_CONTAINER_ENGINE:-}" != podman-hpc ]]; then
+  echo 'Source cloud/nersc/container_env.sh before using this project-local shim.' >&2
+  exit 1
+fi
+if [[ "${1:-}" == buildx ]]; then
+  echo 'This NERSC path uses podman-hpc build; Docker Buildx is unavailable.' >&2
+  exit 1
+fi
+exec podman-hpc "$@"

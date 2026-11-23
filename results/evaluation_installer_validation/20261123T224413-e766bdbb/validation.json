@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "backs_up_known_sources": true,
+  "idempotent": true,
+  "unknown_sources_rejected_before_writes": true,
+  "shell_syntax_and_executable_modes": true,
+  "v2_upgrade_without_head_module": "passed"
+}

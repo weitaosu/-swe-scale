@@ -1,0 +1,109 @@
+from contextlib import contextmanager, nullcontext
+import json
+from types import SimpleNamespace
+import pytest
+import torch
+from fastapi.testclient import TestClient
+from swe_study.benchmark import study_summary, initialize_study
+from swe_study.serving import TaskBudget, serve
+
+
+def test_summary_keeps_missing_tasks_in_the_denominator(tmp_path,monkeypatch):
+    import swe_study.benchmark as module
+    monkeypatch.setattr(module,'record_path',lambda state,suite,key,condition=None:tmp_path/(key+'-'+str(condition)+'.json'))
+    (tmp_path/'one-base.json').write_text(json.dumps({'status':'graded','resolved':True}))
+    (tmp_path/'one-adapter.json').write_text(json.dumps({'status':'predicted'}))
+    result=study_summary('unused','development',['one','two'])
+    assert not result['complete'] and result['denominator']==2
+    assert result['base']['resolved_percent_of_frozen_tasks']==50
+    assert result['adapter']['incomplete_ids']==['one','two']
+    assert 'adapter_minus_base_percentage_points' not in result
+
+
+def test_protocol_drift_and_final_without_development_are_rejected(tmp_path,monkeypatch):
+    import swe_study.benchmark as module
+    identity={'frozen_development_ids':['d'+str(i) for i in range(5)],
+              'frozen_final_ids':['f'+str(i) for i in range(100)],'adapter_weights_sha256':'first'}
+    monkeypatch.setattr(module,'protocol_identity',lambda adapter:dict(identity))
+    monkeypatch.setattr(module,'suite_rows',lambda suite:[{'instance_id':key,'problem_statement':'Issue '+key}
+                         for key in identity['frozen_development_ids' if suite=='development' else 'frozen_final_ids']])
+    state=tmp_path/'state'
+    initialize_study(state,'adapter','development')
+    with pytest.raises(ValueError,match='frozen-five'):
+        initialize_study(state,'adapter','final')
+    identity['adapter_weights_sha256']='changed'
+    with pytest.raises(ValueError,match='protocol changed'):
+        initialize_study(state,'adapter','development')
+
+
+def test_token_ledgers_survive_restart_and_reject_changed_task_set(tmp_path):
+    tasks=tmp_path/'tasks.jsonl';tasks.write_text(json.dumps({'instance_id':'one','problem_statement':'Fix widget'})+'\n')
+    ledger=tmp_path/'ledger.json'
+    budget=TaskBudget(tasks,10,ledger);budget.record('one',7)
+    assert TaskBudget(tasks,10,ledger).remaining('one')==3
+    with pytest.raises(ValueError,match='different task set or limit'):
+        TaskBudget(tasks,11,ledger)
+    tasks.write_text(json.dumps({'instance_id':'two','problem_statement':'Fix another widget'})+'\n')
+    with pytest.raises(ValueError,match='different task set or limit'):
+        TaskBudget(tasks,10,ledger)
+
+
+def test_paired_server_switches_adapter_and_has_separate_persistent_budgets(tmp_path,monkeypatch):
+    import swe_study.training as training
+    import swe_study.storage as storage
+    import uvicorn
+    class Batch(dict):
+        def to(self,device): return self
+    class Tokenizer:
+        pad_token_id=0
+        def apply_chat_template(self,*args,**kwargs): return 'prompt'
+        def __call__(self,*args,**kwargs): return Batch(input_ids=torch.tensor([[3,4]]))
+        def decode(self,tokens,**kwargs): return str(tokens.tolist())
+    class Model:
+        config=SimpleNamespace(use_cache=False)
+        disabled=False
+        def eval(self): return self
+        @contextmanager
+        def disable_adapter(self):
+            self.disabled=True
+            try: yield
+            finally: self.disabled=False
+        def generate(self,**kwargs):
+            return torch.tensor([[3,4,5 if self.disabled else 6]])
+    model=Model();monkeypatch.setattr(training,'load_model',lambda *args:(model,Tokenizer()))
+    monkeypatch.setattr(storage,'StorageGuard',lambda:SimpleNamespace(check=lambda:None))
+    for name in ['reset_peak_memory_stats','synchronize']:
+        monkeypatch.setattr(torch.cuda,name,lambda:None)
+    for name in ['max_memory_allocated','max_memory_reserved']:
+        monkeypatch.setattr(torch.cuda,name,lambda:0)
+    monkeypatch.setattr(torch,'autocast',lambda *args,**kwargs:nullcontext())
+    apps=[];monkeypatch.setattr(uvicorn,'run',lambda app,**kwargs:apps.append(app))
+    adapter=tmp_path/'adapter';adapter.mkdir();(adapter/'adapter_model.safetensors').write_bytes(b'fixture')
+    tasks=tmp_path/'tasks.jsonl';tasks.write_text(json.dumps({'instance_id':'one','problem_statement':'Fix widget'})+'\n')
+    run=SimpleNamespace(path=tmp_path,event=lambda *args,**kwargs:None)
+    serve(run,'models/Qwen2.5-Coder-3B-Instruct',str(adapter),max_context=32,max_new_tokens=4,
+          task_file=tasks,task_token_budget=8,paired=True,budget_ledger_dir=tmp_path/'ledgers')
+    with TestClient(apps[0]) as client:
+        aliases=client.get('/health').json()['models']
+        body={'messages':[{'role':'user','content':'Fix widget'}],'max_tokens':4,'temperature':0}
+        assert client.post('/v1/chat/completions',json={**body,'model':aliases[0]}).json()['choices'][0]['message']['content']=='[5]'
+        assert client.post('/v1/chat/completions',json={**body,'model':aliases[1]}).json()['choices'][0]['message']['content']=='[6]'
+        assert not model.disabled
+        assert client.post('/v1/chat/completions',json={**body,'model':aliases[0],'temperature':.5}).status_code==400
+        assert client.post('/v1/chat/completions',json={**body,'model':'wrong'}).status_code==404
+    for condition in ['base','adapter']:
+        assert json.loads((tmp_path/'ledgers'/(condition+'_task_tokens.json')).read_text())['completion_tokens_by_task']['one']==1
+
+
+def test_podman_identity_rejects_unscoped_graph_store(monkeypatch):
+    import os
+    import swe_study.docker_storage as module
+    monkeypatch.setenv('SWE_STUDY_CONTAINER_ENGINE','podman-hpc')
+    monkeypatch.setenv('DOCKER_HOST','unix:///tmp/scoped.sock')
+    info={'store':{'graphRoot':'/tmp/'+str(os.getuid())+'_swe_study_podman/graph'},'version':{'Version':'5.4.0'}}
+    monkeypatch.setattr(module,'_json_command',lambda args:info)
+    result=module.docker_identity()
+    assert result['backend']=='podman-hpc' and result['hostname']
+    info['store']['graphRoot']='/tmp/unrelated-existing-store'
+    with pytest.raises(RuntimeError,match='explicitly scoped'):
+        module.docker_identity()

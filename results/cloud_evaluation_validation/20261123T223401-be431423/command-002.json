@@ -1,0 +1,14 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/cloud.py",
+    "init",
+    "--storage-accounting",
+    "project"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/cloud-evaluation-20261123T223401-be431423",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_evaluation_validation/20261123T223401-be431423/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_evaluation_validation/20261123T223401-be431423/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.7566174540006614
+}

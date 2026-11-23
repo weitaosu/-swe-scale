@@ -15,9 +15,11 @@ def loopback_ports(ports):
 
 def configure_runtime(log_dir):
     log_dir=Path(log_dir);log_dir.mkdir(parents=True,exist_ok=True)
-    buildx=read_json('manifests/buildx.json')
-    if sha256_file(Path(buildx['path']))!=buildx['sha256']: raise ValueError('Project Buildx changed')
-    os.environ['DOCKER_CONFIG']=buildx['docker_config']
+    podman=os.environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc'
+    if not podman:
+        buildx=read_json('manifests/buildx.json')
+        if sha256_file(Path(buildx['path']))!=buildx['sha256']: raise ValueError('Project Buildx changed')
+        os.environ['DOCKER_CONFIG']=buildx['docker_config']
     os.environ['OH_RUNTIME_RUNTIME_IMAGE_REPO']='cs6158/runtime'
     import openhands.runtime.impl.eventstream.eventstream_runtime as runtime_module
     atexit.unregister(runtime_module.remove_all_runtime_containers)
@@ -27,7 +29,7 @@ def configure_runtime(log_dir):
     from .storage import StorageGuard
     def audited_build(self,path,tags,platform=None,use_local_cache=False,extra_build_args=None):
         if not tags: raise ValueError('No runtime image tags')
-        command=['docker','buildx','build','--progress=plain','--load']
+        command=['docker','build'] if podman else ['docker','buildx','build','--progress=plain','--load']
         for tag in tags: command.extend(['--tag',tag])
         if platform: command.extend(['--platform',platform])
         command.extend(extra_build_args or []);command.append(path)
@@ -54,7 +56,7 @@ def configure_runtime(log_dir):
             raise
     ContainerCollection.run=loopback_container
     allowed=set()
-    for task_id in read_json('manifests/dev_tasks.json')['instance_ids']:
+    for task_id in read_json('manifests/dev_tasks.json')['instance_ids']+read_json('manifests/eval_100.json')['instance_ids']:
         allowed.add(yaml.safe_load((ROOT/'vendor/swe-bench-tasks/tasks'/task_id/'task.yaml').read_text())['image'])
     def audited_image_exists(self,image_name,pull_from_repo=True):
         try:
@@ -111,6 +113,7 @@ def configure_task_images(rows,log_dir,run_id):
     from openhands.runtime.impl.eventstream.eventstream_runtime import EventStreamRuntime
     repairs=read_json('manifests/image_overrides.json')['overrides'] if (ROOT/'manifests/image_overrides.json').exists() else {}
     mapping={};runtime_images={}
+    cache=read_json('manifests/runtime_cache.json') if (ROOT/'manifests/runtime_cache.json').exists() else {}
     for row in rows:
         task=yaml.safe_load((ROOT/'vendor/swe-bench-tasks/tasks'/row['instance_id']/'task.yaml').read_text())
         if any(task.get(k)!=row.get(k) for k in ['instance_id','repo','base_commit']): raise ValueError('Public runtime task identity mismatch')
@@ -122,6 +125,11 @@ def configure_task_images(rows,log_dir,run_id):
             image=repair['image']
         legacy=('docker.io/xingyaoww/sweb.eval.x86_64.'+row['instance_id'].replace('__','_s_')).lower()
         mapping[legacy]=image
+        cached=cache.get(row['instance_id'])
+        if cached and cached['base_image']==image:
+            image_id=subprocess.check_output(['docker','image','inspect','--format','{{.Id}}',cached['runtime_image']],text=True).strip()
+            if image_id!=cached['runtime_image_id']: raise ValueError('Prepared runtime image identity changed')
+            runtime_images[legacy]=cached['runtime_image']
         if repair and repair.get("runtime_image"):
             runtime_image=repair["runtime_image"]
             runtime_id=subprocess.check_output(['docker','image','inspect','--format','{{.Id}}',runtime_image],text=True).strip()

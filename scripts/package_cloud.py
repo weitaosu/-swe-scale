@@ -20,7 +20,7 @@ def bundle_files():
     files = {}
     for name in sorted(FOLDERS):
         for path in sorted((ROOT / name).rglob("*")):
-            if path.is_file() and not path.is_symlink() and path.suffix in SUFFIXES and "__pycache__" not in path.parts:
+            if path.is_file() and not path.is_symlink() and (path.suffix in SUFFIXES or path.relative_to(ROOT).as_posix()=="cloud/nersc/podman-bin/docker") and "__pycache__" not in path.parts:
                 files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     for name in MANIFESTS:
         path = ROOT / "manifests" / name
@@ -50,7 +50,7 @@ def main():
         for name, data in sorted(files.items()):
             info = tarfile.TarInfo("swe-study-a100/" + name)
             info.size = len(data)
-            info.mode = 0o755 if name.endswith((".sh", ".slurm")) else 0o644
+            info.mode = 0o755 if name.endswith((".sh", ".slurm", "/podman-bin/docker")) else 0o644
             # TarInfo defaults to epoch 0 (1970), which breaks later ZIP snapshots.
             # A fixed 2000-01-01 UTC also avoids timezone-dependent 1980 boundaries.
             info.mtime = 946684800

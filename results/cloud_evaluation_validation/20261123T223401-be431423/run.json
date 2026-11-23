@@ -1,0 +1,26 @@
+{
+  "run_id": "20261123T223401-be431423",
+  "stage": "cloud_evaluation_validation",
+  "started_at": "2026-11-23T22:34:01.794379+00:00",
+  "status": "passed",
+  "config": {
+    "gpu_fixture": ".cache/tmp/mlp-resume-20261123T204742-189893f2"
+  },
+  "config_sha256": "5fa2d48c1b36df0ed2a40f74169f01f5593e8e702239078ea3a84869bc5705f5",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_cloud_evaluation.py",
+    "--gpu-fixture",
+    ".cache/tmp/mlp-resume-20261123T204742-189893f2"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 88362,
+  "parent_pid": 88356,
+  "condition_id": null,
+  "source_snapshot_sha256": "7f933cb4e7feacd6b3b282e084650065ea0881d30eec639f3de5260f0bb6d0f3",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T22:35:46.290028+00:00",
+  "elapsed_seconds": 103.31003937899732
+}
