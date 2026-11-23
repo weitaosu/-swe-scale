@@ -1,0 +1,3 @@
+{"time": "2026-11-23T20:51:48.734357+00:00", "event": "run_started", "config": {"backend": "native Windows filesystem through Node REPL", "indexer_sha256": "1b02c42eb9a894e336d3dd338d909385ced0b3403b74daa3b91ef3da9e619601"}}
+{"time": "2026-11-23T20:52:12.706563+00:00", "event": "inventory_written", "file_count": 83215, "logical_file_bytes": 38030993994, "scan_seconds": 1.391}
+{"time": "2026-11-23T20:52:12.707744+00:00", "event": "run_finished", "status": "passed", "error": null}

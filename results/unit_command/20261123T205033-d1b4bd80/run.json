@@ -1,0 +1,28 @@
+{
+  "run_id": "20261123T205033-d1b4bd80",
+  "stage": "unit_command",
+  "started_at": "2026-11-23T20:50:33.399237+00:00",
+  "status": "passed",
+  "config": {},
+  "config_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/lib/python3.12/site-packages/pytest/__main__.py",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-regression-20261123T204920-6245efbf"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 63542,
+  "parent_pid": 63482,
+  "condition_id": null,
+  "source_snapshot_sha256": "9d6572cc5229205a8cc1ae574d06fdbf7e7fff9b45565e4433589a5d0ca22bec",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T20:50:34.846512+00:00",
+  "elapsed_seconds": 0.3213498909990449
+}

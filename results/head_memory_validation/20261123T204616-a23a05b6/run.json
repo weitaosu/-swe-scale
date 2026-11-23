@@ -1,0 +1,27 @@
+{
+  "run_id": "20261123T204616-a23a05b6",
+  "stage": "head_memory_validation",
+  "started_at": "2026-11-23T20:46:16.704112+00:00",
+  "status": "passed",
+  "config": {
+    "gpu": false,
+    "cpu_ddp": true,
+    "resume_fixture": null
+  },
+  "config_sha256": "e2d27494294a214b315099adcee37ab6c505e9fabd763ba67c0eee0a0396e0d1",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_head_memory.py",
+    "--cpu-ddp"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 62582,
+  "parent_pid": 62579,
+  "condition_id": null,
+  "source_snapshot_sha256": "2e6288d3cd52dca6b35f4d162b32d884de827bd301806381d54d8ac6c3d3624e",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T20:48:13.856861+00:00",
+  "elapsed_seconds": 116.40882370100007
+}

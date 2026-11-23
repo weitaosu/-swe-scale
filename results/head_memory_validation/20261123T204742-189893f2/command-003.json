@@ -1,0 +1,18 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "scripts/cloud.py",
+    "train",
+    "--gpus",
+    "1",
+    "--config",
+    "configs/cloud/synthetic_step_resume.yaml",
+    "--resume",
+    "latest"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/mlp-resume-20261123T204742-189893f2",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/head_memory_validation/20261123T204742-189893f2/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/head_memory_validation/20261123T204742-189893f2/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 147.82693051600108
+}

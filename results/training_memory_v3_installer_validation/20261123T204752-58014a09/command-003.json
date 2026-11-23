@@ -1,0 +1,15 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "deliverables/nersc_training_memory_patch_v3.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/installer-v3-20261123T204752-58014a09"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/training_memory_v3_installer_validation/20261123T204752-58014a09/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/training_memory_v3_installer_validation/20261123T204752-58014a09/command-003.stderr.log",
+  "returncode": 1,
+  "error_type": "RuntimeError",
+  "error": "Command failed (1): /usr/bin/python3\nUnfamiliar source preserved: scripts/validate_head_memory.py. Stop and share this message.\n",
+  "elapsed_seconds": 0.516030941000281
+}

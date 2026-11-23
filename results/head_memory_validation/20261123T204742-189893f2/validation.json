@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "synthetic_fixture": true,
+  "versions": {
+    "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "packages": {
+      "torch": "2.9.1",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": null,
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "loss_all_gradients_generation_and_state_keys": "passed",
+  "limitation": "Synthetic models and isolated real-size head; no full 7B A100 feasibility claim",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "real_size_frozen_qwen_7b_head": [
+    {
+      "optimized": false,
+      "target_positions": 14720,
+      "vocab_size": 152064,
+      "hidden_size": 3584,
+      "head_parameter_dtype": "torch.float32",
+      "loss": 12.098172187805176,
+      "peak_allocated_bytes": 16963313664,
+      "peak_reserved_bytes": 17205035008
+    },
+    {
+      "optimized": true,
+      "target_positions": 14720,
+      "vocab_size": 152064,
+      "hidden_size": 3584,
+      "head_parameter_dtype": "torch.float32",
+      "loss": 12.098172187805176,
+      "peak_allocated_bytes": 3945242624,
+      "peak_reserved_bytes": 4875878400
+    }
+  ],
+  "old_optimizer_checkpoint_resume_and_fresh_reload": {
+    "passed": true,
+    "project": ".cache/tmp/mlp-resume-20261123T204742-189893f2",
+    "from_step": 2,
+    "to_step": 4
+  }
+}

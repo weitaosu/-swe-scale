@@ -98,7 +98,12 @@ def train(run,config_path,resume=None):
     model=get_peft_model(model,LoraConfig(r=cfg.get("lora_rank",16),lora_alpha=cfg.get("lora_alpha",32),lora_dropout=cfg.get("lora_dropout",0.05),target_modules=modules,bias="none",task_type="CAUSAL_LM"))
     model.config.use_cache=False
     chunk_tokens=int(os.environ.get("SWE_STUDY_LOSS_CHUNK_TOKENS", "0"))
-    if chunk_tokens:
+    head_chunk_tokens=int(os.environ.get("SWE_STUDY_HEAD_CHUNK_TOKENS", "0"))
+    if head_chunk_tokens:
+        from .memory_head import enable_chunked_head_loss
+        enable_chunked_head_loss(model,head_chunk_tokens)
+        run.event("chunked_head_loss_enabled",chunk_tokens=head_chunk_tokens,objective="unchanged assistant causal cross-entropy",full_vocabulary_logits_materialized=False)
+    elif chunk_tokens:
         from .memory_loss import enable_chunked_loss
         enable_chunked_loss(model,chunk_tokens)
         run.event("chunked_loss_enabled",chunk_tokens=chunk_tokens,objective="unchanged assistant causal cross-entropy",labeled_logits_returned=False)
@@ -227,7 +232,7 @@ def train(run,config_path,resume=None):
       "effective_batch_size":world_size*cfg.get("gradient_accumulation_steps",8),
       "steady_state_tokens_per_second":world_size*token_counts["post_warmup_tokens"]/token_counts["post_warmup_seconds"] if token_counts["post_warmup_seconds"] else None,"peak_allocated_bytes":torch.cuda.max_memory_allocated(),"peak_reserved_bytes":torch.cuda.max_memory_reserved(),"memory_metrics_scope":"rank_0; per-rank peaks are in training_microbatch events",
       "train_source_sha256":sha256_file(local_path(cfg["train_file"])),"validation_source_sha256":sha256_file(local_path(cfg["validation_file"])),"train_examples":len(train_rows),"validation_examples":len(eval_rows),
-      "best_checkpoint":trainer.state.best_model_checkpoint,"best_eval_loss":trainer.state.best_metric,"global_step":trainer.state.global_step,"resume_from_checkpoint":resume,"optimizer_state_entries":len(trainer.optimizer.state),"training_result":result.metrics,"log_history":trainer.state.log_history,"synthetic_fixture":cfg.get("synthetic_fixture",False),"loss_chunk_tokens":chunk_tokens,"mlp_chunk_tokens":mlp_chunk_tokens}
+      "best_checkpoint":trainer.state.best_model_checkpoint,"best_eval_loss":trainer.state.best_metric,"global_step":trainer.state.global_step,"resume_from_checkpoint":resume,"optimizer_state_entries":len(trainer.optimizer.state),"training_result":result.metrics,"log_history":trainer.state.log_history,"synthetic_fixture":cfg.get("synthetic_fixture",False),"loss_chunk_tokens":chunk_tokens if not head_chunk_tokens else 0,"head_chunk_tokens":head_chunk_tokens,"mlp_chunk_tokens":mlp_chunk_tokens}
     write_json(output/"experiment.json",metadata);write_json(run.path/"metrics.json",metadata)
     print(json.dumps({"output":str(output),"adapter_updated":metadata["adapter_updated"],"gpu_hours":elapsed/3600,"tokens":token_counts},indent=2))
     del trainer,model;gc.collect();torch.cuda.empty_cache()

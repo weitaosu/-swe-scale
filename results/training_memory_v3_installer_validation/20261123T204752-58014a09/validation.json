@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "backup": "verified",
+  "idempotence": "verified",
+  "unknown_sources": "rejected before any writes",
+  "project": ".cache/tmp/installer-v3-20261123T204752-58014a09"
+}

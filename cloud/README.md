@@ -325,6 +325,36 @@ adapters; `--gpu` compares a random NF4/rank-16 Qwen 7B-sized MLP block at 32K i
 18 GiB is free, otherwise 8K. These are compatibility/memory checks, not evidence
 of full-model NCCL feasibility or task quality. Real A100 validation is separate.
 
+The v3 head-loss path also avoids a full `[assistant tokens, vocabulary]` logits
+tensor and its backward gradient. The earlier CE-only patch still materializes
+that tensor, which can consume several GiB for long assistant histories. V3
+checkpoints the output projection and cross-entropy together in each token chunk.
+It keeps the existing FP32 unquantized head, BF16 autocast, assistant causal
+targets and loss denominator. Generation uses the original forward path.
+
+After installing `deliverables/nersc_training_memory_patch_v3.py` over v2:
+
+```bash
+unset PYTORCH_CUDA_ALLOC_CONF SWE_STUDY_LOSS_CHUNK_TOKENS
+export PYTORCH_ALLOC_CONF=expandable_segments:True
+export SWE_STUDY_HEAD_CHUNK_TOKENS=128
+export SWE_STUDY_MLP_CHUNK_TOKENS=1024
+bash cloud/run.sh train --size 7B --gpus 2 \
+  --config configs/cloud/qlora_7b_step_resume.yaml --resume latest
+```
+
+Head loss takes priority if the old CE chunk variable is also set. Keep the
+original configuration and two-GPU count when resuming; parameter names and
+checkpoint/optimizer formats remain compatible. Worker events record
+`chunked_head_loss_enabled`, and final metadata includes `head_chunk_tokens`.
+`scripts/validate_head_memory.py --cpu-ddp --gpu` checks loss/gradients, generation,
+distributed accumulation and the isolated 7B-sized output head. Its optional
+`--resume-fixture` accepts an older one-GPU synthetic fixture under `.cache/tmp`.
+On NERSC, run the existing `scripts/validate_checkpoint_resume.py --gpus 2` with
+head/MLP chunk sizes 2 for a quick NF4/LoRA/NCCL save/resume diagnostic. These
+checks do not establish full-model A100 feasibility; confirm real checkpoint
+progress beyond the previously failing step before treating the issue resolved.
+
 ## Outputs and checks
 
 - `results/cloud_*/<run-id>/`: command records, stdout/stderr, events and source snapshots.

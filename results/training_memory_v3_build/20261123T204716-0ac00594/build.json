@@ -1,0 +1,17 @@
+{
+  "output": "deliverables/nersc_training_memory_patch_v3.py",
+  "bytes": 86315,
+  "sha256": "6dfcd5820fb9f05ad6d9f270ed3f5a70a45cfdeaeff00e0c7f19d3132769db5f",
+  "files": [
+    "src/swe_study/training.py",
+    "scripts/cloud.py",
+    "src/swe_study/memory_mlp.py",
+    "src/swe_study/memory_loss.py",
+    "tests/test_memory_mlp.py",
+    "scripts/validate_mlp_memory.py",
+    "src/swe_study/memory_head.py",
+    "tests/test_memory_head.py",
+    "scripts/validate_head_memory.py"
+  ],
+  "upgrade_from": "memory v2"
+}
