@@ -1,0 +1,18 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nnodes=1",
+    "--nproc-per-node=2",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/scripts/validate_distributed_validation.py",
+    "--worker",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/distributed-validation-20261123T233953-65fa436d"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/distributed_validation_regression/20261123T233953-65fa436d/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/distributed_validation_regression/20261123T233953-65fa436d/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 53.529723170999205
+}

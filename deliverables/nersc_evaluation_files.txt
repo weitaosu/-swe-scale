@@ -13,6 +13,7 @@ scripts/cloud_validation.py
 scripts/prepare_task_runtime.py
 scripts/preserve_cloud_results.py
 scripts/validate_cloud_evaluation.py
+scripts/validate_distributed_validation.py
 tests/test_cloud_benchmark.py
 tests/test_cloud_validation.py
 tests/test_container_service.py

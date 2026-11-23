@@ -135,6 +135,17 @@ Expected real-run count: **43**. The LoRA loss should reproduce approximately
 `results/cloud_validation/<run-id>/comparison.json` records both losses, their
 difference, selection hash, precision, versions and the reproduction check.
 
+For adapters trained on multiple GPUs, the original Trainer 5.5.3 evaluation
+uses cross-rank token normalization within each step. This can differ from the
+canonical single-GPU mean over the same histories. The evaluator saves each
+history's loss/count and reconstructs the original multi-GPU aggregation,
+including padded final rank batches. Require
+`training_metric_reproduction.passed: true`. The direct
+`adapter_matches_recorded_loss` can be false for these runs; that fact remains
+visible in the report. A failed reconstructed check still stops evaluation.
+Never change the saved training loss or loosen the tolerance to force a pass.
+Compare model sizes using their canonical base/adapter history means.
+
 Interpret `relative_loss_reduction_percent`: positive means the adapter predicts
 held-out assistant responses better. It is not issue-resolution accuracy. The
 original validation pass took about 47 seconds; this command does two passes plus

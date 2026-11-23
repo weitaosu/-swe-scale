@@ -4,6 +4,26 @@ import math
 from .common import ROOT, canonical_hash, local_path, read_json, read_jsonl, sha256_file, write_json
 
 
+def recorded_trainer_loss(histories, world_size):
+    """Reconstruct Trainer 5.5.3's microbatch-1, cross-rank token-normalized metric.
+
+    Accelerate pads each final rank batch using the first histories, then drops
+    the duplicate *loss entries*. Their token counts still entered the shared
+    denominator before gathering. Preserve that historical aggregation exactly.
+    """
+    if type(world_size) is not int or world_size<1 or not histories:
+        raise ValueError('Need histories and a positive training GPU count')
+    if any(row['target_tokens']<=0 or not math.isfinite(row['loss']) for row in histories):
+        raise ValueError('Invalid per-history loss or target count')
+    total=0.0;size=len(histories)
+    for start in range(0,size,world_size):
+        group=[histories[(start+rank)%size] for rank in range(world_size)]
+        denominator=sum(row['target_tokens'] for row in group)
+        retained=min(world_size,size-start)
+        total+=sum(world_size*row['loss']*row['target_tokens']/denominator for row in group[:retained])
+    return total/size
+
+
 def validation_metadata(adapter):
     adapter = local_path(adapter)
     metadata = read_json(adapter / "experiment.json")
@@ -29,9 +49,14 @@ def evaluate_conditions(run, model, tokenizer, rows, *, use_cpu=False):
 
     class ValidationTrainer(Trainer):
         def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
-            return super().compute_loss(model, assistant_target_inputs(inputs),
-                                        return_outputs=return_outputs,
-                                        num_items_in_batch=num_items_in_batch)
+            count=int((inputs['labels']!=-100).sum().item())
+            result=super().compute_loss(model, assistant_target_inputs(inputs),
+                                       return_outputs=return_outputs,
+                                       num_items_in_batch=num_items_in_batch)
+            loss=result[0] if return_outputs else result
+            histories.append({'history_index':len(histories),'target_tokens':count,
+                              'loss':float(loss.detach().float().mean().cpu())})
+            return result
 
     args = TrainingArguments(output_dir=str(run.path / "trainer"), use_cpu=use_cpu,
                              bf16=not use_cpu, per_device_eval_batch_size=1,
@@ -45,6 +70,7 @@ def evaluate_conditions(run, model, tokenizer, rows, *, use_cpu=False):
     # disable_adapter restores the original frozen base weights, including the
     # same unquantized-layer precision, without loading a second model copy.
     for condition in ("base", "adapter"):
+        histories=[]
         run.event("validation_condition_started", condition=condition, examples=len(rows))
         print(f"Evaluating {condition}: {len(rows)} complete validation histories", flush=True)
         with model.disable_adapter() if condition == "base" else nullcontext():
@@ -52,7 +78,10 @@ def evaluate_conditions(run, model, tokenizer, rows, *, use_cpu=False):
         value = metrics[f"{condition}_loss"]
         if not math.isfinite(value):
             raise ValueError("Non-finite validation loss")
-        results[condition] = metrics
+        results[condition] = dict(metrics)
+        if len(histories)!=len(rows):raise ValueError('Per-history validation coverage differs')
+        write_json(run.path / f"{condition}_history_losses.json",histories)
+        results[condition]['history_losses']=histories
         write_json(run.path / f"{condition}_metrics.json", metrics)
         run.event("validation_condition_finished", condition=condition, metrics=metrics)
     if trainer.optimizer is not None or trainer.state.global_step != 0:
@@ -95,15 +124,25 @@ def run_validation(run, adapter, allow_synthetic=False):
     base, adapted = results["base"]["base_loss"], results["adapter"]["adapter_loss"]
     recorded = metadata.get("best_eval_loss")
     matches = recorded is not None and math.isclose(adapted, recorded, rel_tol=.001, abs_tol=.0002)
+    world_size=int(metadata.get('gpu_count',cfg.get('world_size',1)))
+    reconstructed=recorded_trainer_loss(results['adapter']['history_losses'],world_size)
+    reproduced=recorded is not None and math.isclose(reconstructed,recorded,rel_tol=.001,abs_tol=.0002)
+    reference={'passed':reproduced,'training_gpu_count':world_size,
+               'recorded_loss':recorded,'reconstructed_training_aggregation_loss':reconstructed,
+               'canonical_single_gpu_history_mean':adapted,
+               'explanation':'Trainer 5.5.3 averages tokens across ranks within each evaluation step; single-GPU results use a mean over histories. Final padded ranks affect the historical denominator.'}
+    write_json(run.path/'training_metric_reproduction.json',reference)
     report = {**identity, "base_validation_loss": base, "adapter_validation_loss": adapted,
               "adapter_minus_base": adapted-base,
               "relative_loss_reduction_percent": 100*(base-adapted)/base,
               "recorded_training_best_eval_loss": recorded, "adapter_matches_recorded_loss": matches,
+              "training_metric_reproduction":reference,
               "comparison_scope": "Held-out assistant response prediction; not a SWE-bench score",
-              "condition_metrics": results}
+              "condition_metrics": {key:{k:v for k,v in metrics.items() if k!='history_losses'}
+                                    for key,metrics in results.items()}}
     write_json(run.path / "comparison.json", report)
     print(__import__("json").dumps(report, indent=2), flush=True)
     guard.snapshot()
-    if not matches:
-        raise ValueError("Adapter validation differs from its recorded best loss; inspect before comparing quality")
+    if not reproduced:
+        raise ValueError("Adapter validation does not reproduce its recorded training metric after matching GPU aggregation; inspect before comparing quality")
     return report

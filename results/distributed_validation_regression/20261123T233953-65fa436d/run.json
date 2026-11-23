@@ -1,0 +1,22 @@
+{
+  "run_id": "20261123T233953-65fa436d",
+  "stage": "distributed_validation_regression",
+  "started_at": "2026-11-23T23:39:53.998994+00:00",
+  "status": "passed",
+  "config": {},
+  "config_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_distributed_validation.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 104561,
+  "parent_pid": 104554,
+  "condition_id": null,
+  "source_snapshot_sha256": "af109d8a4069e6a7df1de2d93935ae498632258ac30fad08bbddcd2df9416b58",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T23:41:40.354253+00:00",
+  "elapsed_seconds": 105.61297307999848
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "synthetic_fixture": true,
+  "examples": 43,
+  "world_size": 2,
+  "canonical_history_mean": 4.097834576007932,
+  "actual_distributed_trainer_loss": 4.096031188964844,
+  "reconstructed_loss": 4.096030980445801
+}

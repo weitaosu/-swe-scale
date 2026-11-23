@@ -8,7 +8,7 @@ from peft import LoraConfig, get_peft_model
 from transformers import Qwen2Config, Qwen2ForCausalLM
 from swe_study.memory_head import enable_chunked_head_loss
 from swe_study.training import assistant_target_inputs
-from swe_study.validation import evaluate_conditions, validation_metadata
+from swe_study.validation import evaluate_conditions, validation_metadata, recorded_trainer_loss
 
 
 def test_paired_trainer_matches_history_mean_and_preserves_weights(tmp_path):
@@ -59,3 +59,14 @@ def test_changed_validation_source_is_rejected_before_gpu_load(tmp_path,monkeypa
         "config":{"validation_file":"validation.jsonl"},"validation_source_sha256":"wrong"}))
     with pytest.raises(ValueError,match="differs"):
         validation_metadata("adapter")
+
+
+def test_training_metric_preserves_cross_rank_token_weighting_and_final_padding():
+    histories=[{'loss':1.0,'target_tokens':2},{'loss':3.0,'target_tokens':6},
+               {'loss':2.0,'target_tokens':4}]
+    assert recorded_trainer_loss(histories,1)==pytest.approx(2.0)
+    # First pair: losses 2*2/8 and 2*18/8. Last rank pairs history 2 with
+    # padded history 0: 2*8/6 is retained, padded history 0's loss is dropped.
+    expected=(.5+4.5+16/6)/3
+    assert recorded_trainer_loss(histories,2)==pytest.approx(expected)
+    assert recorded_trainer_loss(histories,2)!=pytest.approx(2.0)
