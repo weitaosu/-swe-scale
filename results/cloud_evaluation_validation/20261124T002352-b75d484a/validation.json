@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "cpu_validation": "passed",
+  "synthetic_fixture": true,
+  "limitation": "No NERSC Podman service or real 43-history model result is claimed"
+}

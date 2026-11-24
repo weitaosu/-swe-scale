@@ -25,6 +25,12 @@ for name in ["SWE-bench","swe-bench-tasks"]:
     if entry.get("commit")!=head: raise ValueError(f"{name} checkout differs from its pinned manifest")
     subprocess.run(["git","diff","--quiet","HEAD"],cwd=repo,check=True)
 sys.path.insert(0,str(root/"vendor/SWE-bench"))
+# Rootless Podman cannot chown tar entries to arbitrary host UID/GID values.
+# Apply only in this grader process; keep vendor source and patch bytes intact.
+if os.environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc':
+    import swebench.harness.docker_utils as grader_docker_utils
+    from swe_study.container_archives import copy_to_container
+    grader_docker_utils.copy_to_container=copy_to_container
 # Label only this grader run's containers for supervised cleanup.
 import docker.models.containers
 run_id=forward[forward.index('--run_id')+1] if '--run_id' in forward else None

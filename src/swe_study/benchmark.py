@@ -40,6 +40,7 @@ def protocol_identity(adapter):
             "container_environment_sha256":sha256_file(local_path("cloud/nersc/container_env.sh")),
             "container_network_sha256":sha256_file(local_path("cloud/nersc/containers-network.toml")),
             "container_options_sha256":sha256_file(local_path("src/swe_study/container_options.py")),
+            "container_archives_sha256":sha256_file(local_path("src/swe_study/container_archives.py")),
             "container_cli_sha256":sha256_file(local_path("cloud/nersc/podman-bin/docker")),
             "agent_entry_sha256":sha256_file(local_path("scripts/openhands_entry.py")),
             "grader_entry_sha256":sha256_file(local_path("scripts/swebench_entry.py")),
@@ -92,6 +93,26 @@ def study_summary(state,suite,ids):
     return result
 
 
+def grader_failure_details(run,reason,report=None):
+    """Surface the official per-instance failure instead of hiding it in a summary."""
+    root=run.path.resolve();logs=[]
+    candidates=sorted(run.path.rglob('run_instance.log'))+sorted(run.path.rglob('test_output.txt'))
+    candidates += sorted(run.path.glob('command-*.stderr.log'))+sorted(run.path.glob('command-*.stdout.log'))
+    for path in candidates[:12]:
+        if not path.resolve().is_relative_to(root) or not path.is_file(): continue
+        # Bound reads as well as printed output; test logs can be very large.
+        with path.open('rb') as handle:
+            handle.seek(0,2);handle.seek(max(0,handle.tell()-16000))
+            tail='\n'.join(handle.read().decode('utf-8',errors='replace').splitlines()[-60:])[-8000:]
+        if tail.strip(): logs.append({'path':str(path.relative_to(run.path)),'tail':tail})
+    details={'reason':str(reason),'official_summary':report,'log_tails':logs,
+             'scope':'Grader diagnostics only; no retries or changes to scoring'}
+    write_json(run.path/'grader_failure.json',details)
+    print('Official grader failure details:')
+    print(json.dumps(details,indent=2))
+    run.event('official_grader_failed',reason=str(reason),diagnostic_file=str(run.path/'grader_failure.json'))
+
+
 def grade_one(run,row,prediction,control=None):
     """Use the pinned official task-repository grader, keeping gold grader-only."""
     dataset=run.path/"grading_dataset.json";write_json(dataset,[row])
@@ -100,14 +121,22 @@ def grade_one(run,row,prediction,control=None):
              "--dataset_name",str(dataset),"--predictions_path",str(predictions),
              "--max_workers","1","--run_id",run.id,"--instance_ids",row["instance_id"]]
     from .storage import StorageGuard
-    run.command(command,cwd=run.path,guard=StorageGuard(),timeout=3600)
+    try: run.command(command,cwd=run.path,guard=StorageGuard(),timeout=3600)
+    except RuntimeError as exc:
+        grader_failure_details(run,exc)
+        raise
     reports=[]
     for candidate in run.path.rglob("*.json"):
         try: value=json.loads(candidate.read_text())
         except (ValueError,UnicodeDecodeError): continue
         if isinstance(value,dict) and "resolved_ids" in value and "total_instances" in value:
             reports.append((candidate,value))
-    if len(reports)!=1: raise ValueError("Expected one official grader summary")
-    summary=validate_grader_report(reports[0][1],{row["instance_id"]},control)
+    if len(reports)!=1:
+        grader_failure_details(run,'Expected one official grader summary')
+        raise ValueError("Expected one official grader summary; inspect grader_failure.json")
+    try: summary=validate_grader_report(reports[0][1],{row["instance_id"]},control)
+    except ValueError as exc:
+        grader_failure_details(run,exc,reports[0][1])
+        raise ValueError(str(exc)+'; inspect '+str(run.path/'grader_failure.json')) from exc
     write_json(run.path/"grade_validation.json",summary)
     return summary

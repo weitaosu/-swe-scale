@@ -98,6 +98,36 @@ def test_network_override_preserves_site_settings_and_selects_userspace_network(
                     'network':{'default_rootless_network_cmd':'slirp4netns'}}
 
 
+def test_archive_upload_replaces_host_ownership_and_preserves_bytes_and_mode(tmp_path):
+    import io,tarfile
+    from swe_study.container_archives import copy_to_container,container_owner
+    member=tarfile.TarInfo('patch.diff');member.uid=member.gid=115408;member.mode=0o755
+    member.pax_headers={'uid':'115408','gid':'115408','uname':'ws535','gname':'users','mtime':'123.5'}
+    normalized=container_owner(member)
+    assert (normalized.uid,normalized.gid,normalized.uname,normalized.gname)==(0,0,'root','root')
+    assert normalized.pax_headers=={'mtime':'123.5'} and normalized.mode==0o755
+    source=tmp_path/'patch.diff';content=b'diff --git a/file b/file\n+binary\x00payload\n'
+    source.write_bytes(content);source.chmod(0o755)
+    uploads=[];commands=[]
+    container=SimpleNamespace(exec_run=lambda command:(commands.append(command) or SimpleNamespace(exit_code=0)),
+                              put_archive=lambda path,data:(uploads.append((path,data)) or True))
+    copy_to_container(container,source,'/tmp/upload/patch.diff')
+    assert commands==[['mkdir','-p','/tmp/upload']] and uploads[0][0]=='/tmp/upload'
+    with tarfile.open(fileobj=io.BytesIO(uploads[0][1])) as archive:
+        entry=archive.getmembers()[0]
+        assert entry.name=='patch.diff' and entry.mode==(source.stat().st_mode&0o7777) and entry.uid==entry.gid==0
+        assert archive.extractfile(entry).read()==content
+    assert source.read_bytes()==content
+
+
+def test_archive_upload_failure_is_not_reported_as_success(tmp_path):
+    from swe_study.container_archives import copy_to_container
+    source=tmp_path/'patch';source.write_text('reference patch')
+    container=SimpleNamespace(exec_run=lambda command:SimpleNamespace(exit_code=0),put_archive=lambda *args:False)
+    with pytest.raises(RuntimeError,match='archive upload failed'):
+        copy_to_container(container,source,'/tmp/patch')
+
+
 @pytest.mark.parametrize('image,expected',[
     ('swebench/task:latest','docker.io/swebench/task:latest'),
     ('python:3.12-slim','docker.io/library/python:3.12-slim'),

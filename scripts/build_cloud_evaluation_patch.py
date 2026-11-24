@@ -14,7 +14,7 @@ from swe_study.common import write_json
 NAMES=[
     'scripts/cloud.py','src/swe_study/docker_storage.py',
     'src/swe_study/runtime.py','src/swe_study/serving.py','src/swe_study/storage.py',
-    'src/swe_study/memory_head.py','src/swe_study/benchmark.py','src/swe_study/validation.py','src/swe_study/container_options.py','src/swe_study/evaluation.py',
+    'src/swe_study/memory_head.py','src/swe_study/benchmark.py','src/swe_study/validation.py','src/swe_study/container_options.py','src/swe_study/container_archives.py','src/swe_study/evaluation.py',
     'scripts/check_container_api.py','scripts/stop_container_service.py','scripts/cloud_benchmark.py','scripts/cloud_validation.py',
     'scripts/prepare_task_runtime.py','scripts/preserve_cloud_results.py','scripts/validate_cloud_evaluation.py','scripts/validate_distributed_validation.py','scripts/swebench_entry.py','scripts/validate_task_metadata.py',
     'tests/test_cloud_benchmark.py','tests/test_cloud_validation.py','tests/test_container_service.py',

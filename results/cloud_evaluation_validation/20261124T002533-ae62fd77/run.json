@@ -1,0 +1,28 @@
+{
+  "run_id": "20261124T002533-ae62fd77",
+  "stage": "cloud_evaluation_validation",
+  "started_at": "2026-11-24T00:25:33.881742+00:00",
+  "status": "failed",
+  "config": {
+    "gpu_fixture": null
+  },
+  "config_sha256": "fa15f7b4bab5a9d742e43f2ec88359abfdf81bbbee1cc40d081309a02cbd255a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    "scripts/validate_cloud_evaluation.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 116161,
+  "parent_pid": 116160,
+  "condition_id": null,
+  "source_snapshot_sha256": "540c17eba4c840f05c2872ca7f4887f12c92b787818edfd7d3c7d75d8e81c173",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-24T00:26:33.205840+00:00",
+  "elapsed_seconds": 58.60450037099872,
+  "error": {
+    "type": "RuntimeError",
+    "message": "Command failed (1): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\n"
+  }
+}

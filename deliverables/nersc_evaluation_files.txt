@@ -7,6 +7,7 @@ src/swe_study/memory_head.py
 src/swe_study/benchmark.py
 src/swe_study/validation.py
 src/swe_study/container_options.py
+src/swe_study/container_archives.py
 src/swe_study/evaluation.py
 scripts/check_container_api.py
 scripts/stop_container_service.py

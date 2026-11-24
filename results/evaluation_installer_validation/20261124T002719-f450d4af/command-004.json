@@ -1,0 +1,12 @@
+{
+  "args": [
+    "bash",
+    "-n",
+    "cloud/nersc/container_env.sh"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261124T002719-f450d4af/command-004.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261124T002719-f450d4af/command-004.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.26772386399898096
+}

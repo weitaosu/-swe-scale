@@ -265,6 +265,16 @@ sending Docker Hub task names to `registry.suse.com`. Frozen task metadata is
 unchanged. After a code upgrade changes the recorded protocol, preserve the old
 study directory and use a fresh `--state` for both plan and subsequent commands.
 
+The compatibility probe also uploads a file with the same tar-copy helper used
+by the grader, verifies its bytes and container UID/GID 0, then checks export and
+loopback networking. The grader's default tar copy preserves host ownership;
+on rootless Podman, a host ID such as 115408 can be unmapped and fail with
+`lchown ... invalid argument`. The project Podman overlay changes upload tar
+ownership to container root, retaining file bytes, names and permission modes.
+It does not change host ownership, user mappings, vendor sources or native Docker
+grading. Failed gold controls print bounded official log tails and save
+`grader_failure.json`; execution errors continue to block model evaluation.
+
 The first frozen task is `pvlib__pvlib-python-807`. Historical pvlib images failed
 under NumPy 2 in the workstation check. If its gold control fails with that same
 diagnosed dependency issue, retain the failed control and apply the existing

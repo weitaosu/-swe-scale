@@ -13,6 +13,7 @@ from swe_study.common import setup_environment,write_json
 from swe_study.storage import StorageGuard
 from swe_study.docker_storage import record_storage,require_storage
 from swe_study.container_options import container_options,pull_reference
+from swe_study.container_archives import copy_to_container
 
 
 def require_compute_allocation():
@@ -49,6 +50,10 @@ def main():
             if os.environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc' and not network.startswith('slirp4netns'):
                 raise RuntimeError('Existing Podman API service selected '+repr(network)+'; restart it with the project slirp4netns configuration before running containers')
             container.start()
+            uploaded=run.path/'archive_upload_probe.txt';uploaded.write_bytes(b'project archive upload\n')
+            copy_to_container(container,uploaded,'/tmp/archive_upload_probe.txt')
+            result=container.exec_run(['python','-c','from pathlib import Path; p=Path("/tmp/archive_upload_probe.txt"); assert p.read_bytes()==b"project archive upload\\n"; s=p.stat(); assert (s.st_uid,s.st_gid)==(0,0); print("upload-ok")'])
+            if result.exit_code or result.output.strip()!=b'upload-ok': raise RuntimeError('Container archive upload/content/ownership failed')
             result=container.exec_run(['python','-c','from pathlib import Path; Path("/tmp/probe").write_text("ok"); print(Path("/tmp/probe").read_text())'])
             if result.exit_code or result.output.strip()!=b'ok': raise RuntimeError('Container exec/write failed')
             stream=container.get_archive('/tmp/probe')[0]
@@ -75,6 +80,7 @@ def main():
             report={'passed':True,'api_version':client.version(),'image_id':image.id,
                     'network_mode':network,
                     'container_exec_archive_and_loopback_port':'passed',
+                    'container_archive_upload_content_and_root_ownership':'passed',
                     'limitation':'API compatibility check only; task gold controls and real agent rollout still required'}
             write_json(run.path/'compatibility.json',report);print(json.dumps(report,indent=2))
         finally:

@@ -8,6 +8,30 @@ from swe_study.benchmark import study_summary, initialize_study
 from swe_study.serving import TaskBudget, serve
 
 
+def test_failed_gold_control_surfaces_official_logs_without_changing_result(tmp_path,monkeypatch,capsys):
+    import swe_study.benchmark as benchmark
+    import swe_study.storage as storage
+    official=tmp_path/'logs/evaluation/run/gold-control/example__repo-1'
+    official.mkdir(parents=True)
+    (official/'run_instance.log').write_text('Traceback: container startup failed: example diagnostic\n')
+    report={'total_instances':1,'submitted_ids':['example__repo-1'],'resolved_ids':[],
+            'error_instances':1,'error_ids':['example__repo-1'],'incomplete_ids':[]}
+    (official.parent.parent/'results.json').write_text(json.dumps(report))
+    commands=[];events=[]
+    run=SimpleNamespace(path=tmp_path,id='run',command=lambda *args,**kwargs:commands.append(args),
+                        event=lambda *args,**kwargs:events.append(args))
+    monkeypatch.setattr(storage,'StorageGuard',lambda:None)
+    with pytest.raises(ValueError,match='Official grader reported execution errors'):
+        benchmark.grade_one(run,{'instance_id':'example__repo-1'},
+                            {'instance_id':'example__repo-1','model_patch':'gold'},'gold')
+    details=json.loads((tmp_path/'grader_failure.json').read_text())
+    assert details['official_summary']==report
+    assert 'example diagnostic' in capsys.readouterr().out
+    assert len(commands)==1 and events==[('official_grader_failed',)]
+    assert json.loads((official.parent.parent/'results.json').read_text())==report
+    assert not (tmp_path/'grade_validation.json').exists()
+
+
 @pytest.mark.parametrize('changed_patch',[False,True])
 def test_preparation_loads_split_task_files_and_preserves_identity_check(tmp_path,monkeypatch,changed_patch):
     import importlib.util
