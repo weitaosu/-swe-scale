@@ -12,7 +12,7 @@ from swe_study.audit import Run
 from swe_study.common import setup_environment,write_json
 from swe_study.storage import StorageGuard
 from swe_study.docker_storage import record_storage,require_storage
-from swe_study.container_options import container_options
+from swe_study.container_options import container_options,pull_reference
 
 
 def require_compute_allocation():
@@ -31,7 +31,7 @@ def main():
         import docker
         client=docker.from_env(timeout=120)
         if not client.ping(): raise RuntimeError('Container Docker-compatible API did not respond')
-        run.command(['docker','pull',args.image],guard=guard,timeout=900)
+        run.command(['docker','pull',pull_reference(args.image)],guard=guard,timeout=900)
         image=client.images.get(args.image)
         labels={'cs6158.project':'local-swe-study','cs6158.condition_id':run.id}
         container=None

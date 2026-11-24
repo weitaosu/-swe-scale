@@ -14,7 +14,7 @@ root=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(root/"src"))
 from swe_study.common import setup_environment,read_json,write_json,local_path
 from swe_study.evaluation import merge_grading_metadata
-from swe_study.container_options import container_options
+from swe_study.container_options import container_options,pull_reference
 setup_environment()
 parser=argparse.ArgumentParser();parser.add_argument("--dataset_name",required=True)
 args,forward=parser.parse_known_args()
@@ -55,5 +55,13 @@ if override_path.exists():
     write_json(local_path(Path(args.dataset_name).with_name("applied_image_overrides.json")),overrides)
 enriched=local_path(Path(args.dataset_name).with_name("grading_dataset_enriched.json"))
 write_json(enriched,combined)
+# Qualify only selected task pulls; preserve the pinned metadata and local tags.
+import docker.models.images
+selected_images={row['image'] for row in combined}
+original_pull=docker.models.images.ImageCollection.pull
+def scoped_pull(self,repository,*pos,**kw):
+    if repository in selected_images: repository=pull_reference(repository)
+    return original_pull(self,repository,*pos,**kw)
+docker.models.images.ImageCollection.pull=scoped_pull
 sys.argv=["swebench.harness.run_evaluation","--dataset_name",str(enriched),*forward]
 runpy.run_module("swebench.harness.run_evaluation",run_name="__main__")

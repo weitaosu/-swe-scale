@@ -257,6 +257,14 @@ the pinned official loader: `task.yaml` contains only short metadata, while
 provide the remaining fields. Comparing the YAML alone incorrectly treats the
 absent patch as a mismatch. Actual dataset/task differences still stop the run.
 
+On Podman-HPC, project CLI pulls and selected-task grader API pulls explicitly
+qualify Docker Hub images: `swebench/...` becomes `docker.io/swebench/...`, and
+`python:...` becomes `docker.io/library/python:...`. Explicit registries and
+digests are preserved. This prevents the site's unqualified-name search from
+sending Docker Hub task names to `registry.suse.com`. Frozen task metadata is
+unchanged. After a code upgrade changes the recorded protocol, preserve the old
+study directory and use a fresh `--state` for both plan and subsequent commands.
+
 The first frozen task is `pvlib__pvlib-python-807`. Historical pvlib images failed
 under NumPy 2 in the workstation check. If its gold control fails with that same
 diagnosed dependency issue, retain the failed control and apply the existing

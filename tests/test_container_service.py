@@ -98,6 +98,25 @@ def test_network_override_preserves_site_settings_and_selects_userspace_network(
                     'network':{'default_rootless_network_cmd':'slirp4netns'}}
 
 
+@pytest.mark.parametrize('image,expected',[
+    ('swebench/task:latest','docker.io/swebench/task:latest'),
+    ('python:3.12-slim','docker.io/library/python:3.12-slim'),
+    ('swebench/task@sha256:abc','docker.io/swebench/task@sha256:abc'),
+    ('docker.io/swebench/task:latest','docker.io/swebench/task:latest'),
+    ('ghcr.io/owner/task:tag','ghcr.io/owner/task:tag'),
+    ('registry.example:5000/owner/task:tag','registry.example:5000/owner/task:tag'),
+    ('localhost/task:tag','localhost/task:tag'),
+    ('docker://docker.io/swebench/task:tag','docker://docker.io/swebench/task:tag'),
+    ('sha256:abc','sha256:abc'),
+])
+def test_podman_pull_uses_docker_hub_for_unqualified_names(monkeypatch,image,expected):
+    from swe_study.container_options import pull_reference
+    monkeypatch.setenv('SWE_STUDY_CONTAINER_ENGINE','podman-hpc')
+    assert pull_reference(image)==expected
+    monkeypatch.delenv('SWE_STUDY_CONTAINER_ENGINE')
+    assert pull_reference(image)==image
+
+
 def test_explicit_podman_network_preserves_docker_and_rejects_host_network(monkeypatch):
     from swe_study.container_options import container_options
     original={'ports':{'8765/tcp':('127.0.0.1',None)},'network_mode':None}

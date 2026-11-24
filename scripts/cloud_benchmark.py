@@ -16,6 +16,7 @@ from swe_study.common import local_path,read_json,read_jsonl,setup_environment,w
 from swe_study.benchmark import initialize_study,record_path,study_summary,grade_one
 from swe_study.evaluation import public_instance,merge_grading_metadata,export_predictions,load_grading_task
 from swe_study.storage import StorageGuard
+from swe_study.container_options import pull_reference
 
 
 @contextmanager
@@ -76,7 +77,7 @@ def prepare(run,row,state,suite):
         try: base=client.images.get(image)
         except docker.errors.ImageNotFound:
             guard.check(15*10**9)
-            run.command(['docker','pull',image],guard=guard,timeout=1800)
+            run.command(['docker','pull',pull_reference(image)],guard=guard,timeout=1800)
             base=client.images.get(image)
         gold={'instance_id':key,'model_name_or_path':'gold-control','model_patch':row['patch']}
         with Run('benchmark_gold_control',{'instance_id':key,'suite':suite}) as gold_run:

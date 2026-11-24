@@ -69,7 +69,8 @@ def configure_runtime(log_dir):
         try:
             with Run('runtime_image_pull',{'image':image_name}) as pull_run:
                 guard=StorageGuard();guard.check(15*10**9)
-                pull_run.command(['docker','pull',image_name],guard=guard,timeout=1200)
+                from .container_options import pull_reference
+                pull_run.command(['docker','pull',pull_reference(image_name)],guard=guard,timeout=1200)
                 image=self.docker_client.images.get(image_name)
                 write_json(pull_run.path/'image.json',{'id':image.id,'image':image_name,'repo_digests':image.attrs.get('RepoDigests'),'expanded_bytes':image.attrs.get('Size')})
             return True
