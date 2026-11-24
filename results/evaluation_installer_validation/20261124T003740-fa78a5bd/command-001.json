@@ -1,0 +1,13 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "deliverables/nersc_evaluation_patch.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/evaluation-installer-20261124T003740-fa78a5bd"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261124T003740-fa78a5bd/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261124T003740-fa78a5bd/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.7672666399994341
+}

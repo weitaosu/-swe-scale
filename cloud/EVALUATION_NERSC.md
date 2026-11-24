@@ -275,6 +275,27 @@ It does not change host ownership, user mappings, vendor sources or native Docke
 grading. Failed gold controls print bounded official log tails and save
 `grader_failure.json`; execution errors continue to block model evaluation.
 
+Before the first image repair or runtime build, also exercise a Dockerfile RUN:
+
+```bash
+.envs/eval/bin/python scripts/check_container_api.py --build-probe
+```
+
+Require `build_probe.passed: true` in addition to the API checks. This builds a
+unique small image from the already pulled Python image, executes an uncached
+RUN, records its identity and removes only that probe image. On Podman-HPC the
+project CLI shim places Buildah temporary root filesystems under
+`/tmp/<uid>_swe_study_podman/build-tmp` with mode 700. The Python setup helper
+restores `TMPDIR` to the project, so exporting a different TMPDIR in the outer
+shell alone does not fix builds. The shim changes TMPDIR/TEMP/TMP for the build
+child only; model/data/Python caches and audited build contexts stay in scratch.
+This avoids rootless build mounts on Lustre and applies to dependency repairs
+as well as OpenHands runtime builds. No API service restart is needed for this
+CLI-only change.
+Local build tags also use Docker-compatible `docker.io/...` names so the CLI and
+Docker-compatible API inspect the same locally built image. Explicit registry
+names are retained; assigning a tag does not upload an image.
+
 The first frozen task is `pvlib__pvlib-python-807`. Historical pvlib images failed
 under NumPy 2 in the workstation check. If its gold control fails with that same
 diagnosed dependency issue, retain the failed control and apply the existing

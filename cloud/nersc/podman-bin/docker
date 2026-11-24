@@ -9,4 +9,41 @@ if [[ "${1:-}" == buildx ]]; then
   echo 'This NERSC path uses podman-hpc build; Docker Buildx is unavailable.' >&2
   exit 1
 fi
+# setup_environment() deliberately restores project-local Python temp paths.
+# Override only the container build child: rootless Buildah RUN mounts need a
+# node-local filesystem that supports its user namespace, rather than Lustre.
+if [[ "${1:-}" == build || ( "${1:-}" == image && "${2:-}" == build ) ]]; then
+  export TMPDIR="/tmp/${UID}_swe_study_podman/build-tmp"
+  export TEMP="$TMPDIR" TMP="$TMPDIR"
+  mkdir -p "$TMPDIR"
+  chmod 700 "$TMPDIR"
+  # The Docker-compatible API normalizes short image tags to docker.io, while
+  # a native Podman build otherwise tags them under localhost.
+  qualify_tag() {
+    local name="$1" registry
+    if [[ "$name" != */* ]]; then
+      printf 'docker.io/library/%s\n' "$name"
+    else
+      registry="${name%%/*}"
+      if [[ "$registry" == *.* || "$registry" == *:* || "$registry" == localhost ]]; then
+        printf '%s\n' "$name"
+      else
+        printf 'docker.io/%s\n' "$name"
+      fi
+    fi
+  }
+  build_args=("$@")
+  for ((index=1; index<${#build_args[@]}; index++)); do
+    case "${build_args[index]}" in
+      --tag|-t)
+        index=$((index+1))
+        if ((index>=${#build_args[@]})); then echo 'Missing build tag.' >&2; exit 1; fi
+        build_args[index]="$(qualify_tag "${build_args[index]}")"
+        ;;
+      --tag=*) build_args[index]="--tag=$(qualify_tag "${build_args[index]#--tag=}")" ;;
+      -t?*) build_args[index]="-t$(qualify_tag "${build_args[index]#-t}")" ;;
+    esac
+  done
+  exec podman-hpc "${build_args[@]}"
+fi
 exec podman-hpc "$@"

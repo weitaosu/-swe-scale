@@ -98,6 +98,41 @@ def test_network_override_preserves_site_settings_and_selects_userspace_network(
                     'network':{'default_rootless_network_cmd':'slirp4netns'}}
 
 
+@pytest.mark.parametrize('args,expected_args',[
+    (['build','--tag','cs6158/probe:test','.'],['build','--tag','docker.io/cs6158/probe:test','.']),
+    (['image','build','.'],['image','build','.']),
+    (['build','--tag=project:test','-tghcr.io/owner/probe:test','.'],
+     ['build','--tag=docker.io/library/project:test','-tghcr.io/owner/probe:test','.'])])
+def test_build_shim_overrides_project_tmp_only_for_build_child(tmp_path,args,expected_args):
+    bins=tmp_path/'bin';bins.mkdir()
+    for name in ('mkdir','chmod'):
+        path=bins/name;path.write_text('#!/bin/sh\nexit 0\n');path.chmod(0o755)
+    engine=bins/'podman-hpc'
+    engine.write_text('#!/bin/sh\nprintf "%s\\n" "$TMPDIR" "$TEMP" "$TMP" "$@"\n');engine.chmod(0o755)
+    original=str(tmp_path/'project-temp')
+    env=dict(os.environ,PATH=str(bins)+':'+os.environ['PATH'],SWE_STUDY_CONTAINER_ENGINE='podman-hpc',
+             TMPDIR=original,TEMP=original,TMP=original)
+    shim=ROOT/'cloud/nersc/podman-bin/docker'
+    result=subprocess.run(['bash',str(shim),*args],env=env,text=True,capture_output=True,check=True)
+    expected='/tmp/'+str(os.getuid())+'_swe_study_podman/build-tmp'
+    assert result.stdout.splitlines()==[expected]*3+expected_args
+    query=subprocess.run(['bash',str(shim),'image','inspect','project:test'],env=env,text=True,capture_output=True,check=True)
+    assert query.stdout.splitlines()==[original]*3+['image','inspect','project:test']
+
+
+def test_build_probe_executes_uncached_run_and_removes_only_its_image(tmp_path):
+    module=load_script('check_container_api');commands=[];removed=[]
+    built=SimpleNamespace(id='sha256:probe')
+    client=SimpleNamespace(images=SimpleNamespace(get=lambda name:built,
+        remove=lambda image,**kwargs:removed.append((image,kwargs))))
+    run=SimpleNamespace(path=tmp_path,id='unique-probe',command=lambda args,**kwargs:commands.append(args))
+    report=module.check_container_build(run,client,SimpleNamespace(id='sha256:base'),None)
+    assert report['passed'] and report['base_image_id']=='sha256:base'
+    assert commands[0][:5]==['docker','build','--no-cache','--tag','cs6158/build-probe:unique-probe']
+    assert 'RUN python -c' in (tmp_path/'build_probe/Dockerfile').read_text()
+    assert removed==[('sha256:probe',{'force':False})]
+
+
 def test_archive_upload_replaces_host_ownership_and_preserves_bytes_and_mode(tmp_path):
     import io,tarfile
     from swe_study.container_archives import copy_to_container,container_owner

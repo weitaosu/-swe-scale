@@ -1,0 +1,15 @@
+{
+  "args": [
+    "/usr/bin/python3",
+    "deliverables/nersc_evaluation_patch.py",
+    "--root",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/evaluation-installer-20261124T003740-fa78a5bd"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261124T003740-fa78a5bd/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261124T003740-fa78a5bd/command-003.stderr.log",
+  "returncode": 1,
+  "error_type": "RuntimeError",
+  "error": "Command failed (1): /usr/bin/python3\nUnfamiliar source preserved: cloud/EVALUATION_NERSC.md\n",
+  "elapsed_seconds": 0.7664274430026126
+}

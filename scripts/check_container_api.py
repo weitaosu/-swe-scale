@@ -22,9 +22,28 @@ def require_compute_allocation():
         raise RuntimeError('Enter a Slurm compute-node shell with srun before this container check; current host: '+socket.gethostname())
 
 
+def check_container_build(run,client,image,guard):
+    folder=run.path/'build_probe';folder.mkdir()
+    # Unique RUN content plus --no-cache proves that a build container executes.
+    (folder/'Dockerfile').write_text('FROM '+image.id+'\nRUN python -c '+json.dumps('print('+repr('build-run-ok-'+run.id)+')')+'\n')
+    tag='cs6158/build-probe:'+run.id.lower();built=None
+    try:
+        run.command(['docker','build','--no-cache','--tag',tag,str(folder)],guard=guard,timeout=600)
+        built=client.images.get(tag)
+        report={'passed':True,'image_id':built.id,'base_image_id':image.id,
+                'stage':'Dockerfile RUN execution',
+                'podman_build_tmpdir':('/tmp/'+str(os.getuid())+'_swe_study_podman/build-tmp'
+                    if os.environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc' else None)}
+        write_json(run.path/'build_probe.json',report)
+        return report
+    finally:
+        if built is not None: client.images.remove(built.id,force=False)
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--image',default='docker.io/library/python:3.12-slim')
+    parser.add_argument('--build-probe',action='store_true',help='Also execute a small Dockerfile RUN and remove its unique probe image')
     args=parser.parse_args();setup_environment()
     with Run('container_api_check',vars(args)) as run:
         require_compute_allocation()
@@ -82,6 +101,7 @@ def main():
                     'container_exec_archive_and_loopback_port':'passed',
                     'container_archive_upload_content_and_root_ownership':'passed',
                     'limitation':'API compatibility check only; task gold controls and real agent rollout still required'}
+            if args.build_probe: report['build_probe']=check_container_build(run,client,image,guard)
             write_json(run.path/'compatibility.json',report);print(json.dumps(report,indent=2))
         finally:
             if container is not None: container.remove(force=True)
