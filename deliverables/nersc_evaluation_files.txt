@@ -14,6 +14,7 @@ scripts/stop_container_service.py
 scripts/cloud_benchmark.py
 scripts/cloud_validation.py
 scripts/prepare_task_runtime.py
+scripts/review_prestart_failure.py
 scripts/preserve_cloud_results.py
 scripts/validate_cloud_evaluation.py
 scripts/validate_distributed_validation.py

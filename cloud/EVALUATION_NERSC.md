@@ -347,6 +347,22 @@ permits, before requesting a GPU. Start with one task to validate the workflow.
 
 ## 4. Run the five paired development tasks
 
+If startup stops at `Prepared runtime image identity changed`, inspect the complete
+IDs through both interfaces before replacing any image. Podman's CLI can return
+64 hexadecimal characters while the Docker API returns `sha256:` followed by the
+same characters. The runtime compares these complete hashes after normalizing
+only that prefix; different or abbreviated hashes still fail.
+
+For the recognized failure before `configure_task_images` returns, the read-only
+`scripts/review_prestart_failure.py --state OLD_STATE --agent-run FAILED_AGENT_RUN`
+checks the failed source snapshot, startup traceback, prepared image identities,
+absence of agent outputs and zero recorded task tokens. Only after it passes,
+create a new study state for the corrected protocol and repeat preparation.
+Preserve the old interrupted record. Keep a running paired server and its original
+token ledgers; when restarting it, continue using that same ledger directory even
+if the controller uses a new study state. Do not reset budgets or apply this
+startup-only recovery to an episode that reached model generation.
+
 ### 4a. Start a paired model server — GPU terminal
 
 Only request this GPU after CPU preparation passes. Use a separate login terminal

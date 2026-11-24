@@ -3,6 +3,21 @@ from pathlib import Path
 import atexit,hashlib,json,os,shutil,tomllib
 from .common import ROOT,read_json,write_json,sha256_file
 
+
+def canonical_image_id(value):
+    """Compare complete image hashes across Docker API and Podman CLI spelling."""
+    import re
+    if not isinstance(value,str): raise ValueError('Expected a complete SHA-256 image ID')
+    digest=value.removeprefix('sha256:')
+    if not re.fullmatch('[0-9a-f]{64}',digest):
+        raise ValueError('Expected a complete SHA-256 image ID: '+repr(value))
+    return 'sha256:'+digest
+
+
+def require_image_identity(actual,expected,message):
+    if canonical_image_id(actual)!=canonical_image_id(expected):
+        raise ValueError(message+'; expected '+repr(expected)+', observed '+repr(actual))
+
 def loopback_ports(ports):
     result={}
     for key,value in (ports or {}).items():
@@ -140,19 +155,19 @@ def configure_task_images(rows,log_dir,run_id):
         if repair:
             if repair['base_image']!=image or repair['status']!='gold_and_blank_controls_passed': raise ValueError('Runtime image repair is unvalidated')
             actual=subprocess.check_output(['docker','image','inspect','--format','{{.Id}}',repair['image']],text=True).strip()
-            if actual!=repair['image_id']: raise ValueError('Runtime repaired image changed')
+            require_image_identity(actual,repair['image_id'],'Runtime repaired image changed')
             image=repair['image']
         legacy=('docker.io/xingyaoww/sweb.eval.x86_64.'+row['instance_id'].replace('__','_s_')).lower()
         mapping[legacy]=image
         cached=cache.get(row['instance_id'])
         if cached and cached['base_image']==image:
             image_id=subprocess.check_output(['docker','image','inspect','--format','{{.Id}}',cached['runtime_image']],text=True).strip()
-            if image_id!=cached['runtime_image_id']: raise ValueError('Prepared runtime image identity changed')
+            require_image_identity(image_id,cached['runtime_image_id'],'Prepared runtime image identity changed')
             runtime_images[legacy]=cached['runtime_image']
         if repair and repair.get("runtime_image"):
             runtime_image=repair["runtime_image"]
             runtime_id=subprocess.check_output(['docker','image','inspect','--format','{{.Id}}',runtime_image],text=True).strip()
-            if runtime_id!=repair.get("runtime_image_id",repair["image_id"]): raise ValueError('Cached runtime identity changed')
+            require_image_identity(runtime_id,repair.get("runtime_image_id",repair["image_id"]),'Cached runtime identity changed')
             runtime_images[legacy]=runtime_image
     original_sandbox=SandboxConfig.__init__
     def sandbox(self,*args,**kwargs):

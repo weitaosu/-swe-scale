@@ -1,5 +1,6 @@
 """Recovery checks for Podman compatibility and precisely scoped API shutdown."""
 import importlib.util
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -10,6 +11,60 @@ import tomllib
 import pytest
 
 ROOT=Path(__file__).resolve().parents[1]
+
+
+def test_runtime_image_identity_accepts_full_podman_and_api_forms_only():
+    from swe_study.runtime import canonical_image_id,require_image_identity
+    digest='95d37f7b50011ef65bad32c6ed900f716cdd2a3c588070b65e5eb7702997efdd'
+    assert canonical_image_id(digest)==canonical_image_id('sha256:'+digest)
+    require_image_identity(digest,'sha256:'+digest,'Prepared runtime image identity changed')
+    require_image_identity('sha256:'+digest,digest,'Prepared runtime image identity changed')
+    with pytest.raises(ValueError,match='Prepared runtime image identity changed'):
+        require_image_identity('0'*64,'sha256:'+digest,'Prepared runtime image identity changed')
+    for invalid in (digest[:12],'sha256:'+digest[:12],'other:'+digest,'','latest',None):
+        with pytest.raises(ValueError,match='complete SHA-256'):
+            require_image_identity(invalid,'sha256:'+digest,'Image changed')
+
+
+@pytest.mark.parametrize('problem',[None,'tokens','changed_image','agent_output','wrong_trace','source_drift'])
+def test_prestart_review_preserves_records_and_rejects_used_or_changed_runs(tmp_path,monkeypatch,problem):
+    import hashlib,zipfile
+    module=load_script('review_prestart_failure')
+    monkeypatch.setattr(module,'ROOT',tmp_path)
+    monkeypatch.setattr(module,'local_path',lambda p:(tmp_path/p).resolve())
+    monkeypatch.setattr(module,'read_json',lambda p:json.loads((tmp_path/p).read_text()))
+    state=tmp_path/'state';key='example__repo-1';task=state/'development/tasks'/key
+    task.mkdir(parents=True);agent=tmp_path/'results/benchmark_agent/failed';agent.mkdir(parents=True)
+    def save(path,value):
+        path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(value))
+    source='configure_task_images(rows,args.output,args.run_id)\nrunpy.run_path("evaluator")\n'
+    entry=tmp_path/'scripts/openhands_entry.py';entry.parent.mkdir();entry.write_text(source)
+    old_runtime=b'original runtime source\n'
+    with zipfile.ZipFile(agent/'source_snapshot.zip','w') as archive:
+        archive.writestr('scripts/openhands_entry.py',source)
+        archive.writestr('src/swe_study/runtime.py',old_runtime)
+    save(agent/'run.json',{'stage':'benchmark_agent','status':'failed'})
+    (agent/'command-001.stderr.log').write_text('File "/project/scripts/openhands_entry.py", line 1, in <module>\n'
+        '    configure_task_images(rows,args.output,args.run_id)\nValueError: Prepared runtime image identity changed\n')
+    save(task/'base.json',{'status':'interrupted','agent_run':str(agent)})
+    save(state/'protocol.json',{'runtime_overlay_sha256':hashlib.sha256(old_runtime).hexdigest()})
+    digest='a'*64
+    save(task/'prepared.json',{'base_image':'base','runtime_image':'runtime',
+                              'base_image_id':'sha256:'+'b'*64,'runtime_image_id':'sha256:'+digest})
+    save(tmp_path/'manifests/runtime_cache.json',{key:{'runtime_image':'runtime','runtime_image_id':digest}})
+    if problem=='tokens':save(state/'development/token_ledgers/base_task_tokens.json',{'completion_tokens_by_task':{key:1}})
+    if problem=='agent_output':(agent/'output.jsonl').write_text('{}\n')
+    if problem=='wrong_trace':(agent/'command-001.stderr.log').write_text('Some other failure')
+    if problem=='source_drift':entry.write_text(source+'# changed\n')
+    image=lambda name:SimpleNamespace(id='sha256:'+('b'*64 if name=='base' else 'c'*64 if problem=='changed_image' else digest))
+    client=SimpleNamespace(images=SimpleNamespace(get=image))
+    before={p:p.read_bytes() for root in (state,agent) for p in root.rglob('*') if p.is_file()}
+    if problem:
+        with pytest.raises(ValueError):module.review(state,agent,key,client)
+    else:
+        report=module.review(state,agent,key,client)
+        assert report['passed'] and report['records_modified'] is False
+    assert before=={p:p.read_bytes() for p in before}
 
 
 def load_script(name):
