@@ -4,12 +4,35 @@ import argparse
 import asyncio
 import json
 from pathlib import Path
+import re
+import shlex
 import sys
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 sys.path.insert(0,str(ROOT/'vendor/SWE-Gym-OpenHands'))
 from swe_study.audit import Run
 from swe_study.common import read_json,setup_environment,write_json
+
+
+def control_action(run,runtime,action):
+    action.timeout=60
+    if hasattr(action,'blocking'): action.blocking=True
+    observation=runtime.run_action(action)
+    record={'action':type(action).__name__,'command':getattr(action,'command',None),
+            'observation':type(observation).__name__,'content':getattr(observation,'content',''),
+            'exit_code':getattr(observation,'exit_code',None)}
+    run.event('runtime_control_action',**record)
+    return observation,record
+
+
+def checkout_command(base_commit,repository='/testbed'):
+    if not re.fullmatch('[0-9a-f]{40}',base_commit): raise ValueError('Expected the frozen full Git base commit')
+    git='git -c '+shlex.quote('safe.directory='+str(repository))+' -C '+shlex.quote(str(repository))
+    return (git+' rev-parse HEAD && '+git+' cat-file -e '+base_commit+'^{commit} && '+
+            git+' diff --exit-code '+base_commit+' HEAD -- && '+
+            git+' diff --exit-code '+base_commit+' -- && '+
+            git+' diff --cached --exit-code '+base_commit+' -- && '+
+            "printf 'SWE_STUDY_CHECKOUT_OK\\n'")
 
 
 def main():
@@ -49,10 +72,12 @@ def main():
             for bindings in details['HostConfig'].get('PortBindings',{}).values():
                 if any(b.get('HostIp')!='127.0.0.1' for b in bindings): raise ValueError('Runtime port is not loopback-only')
             # This executes the agent's command tool, independently of model quality.
-            action=CmdRunAction(command='git -C /testbed rev-parse HEAD');action.timeout=60
-            observation=runtime.run_action(action)
-            if getattr(observation,'exit_code',None)!=0 or rows[0]['base_commit'] not in observation.content:
-                raise ValueError('Runtime task checkout/command execution failed')
+            action=CmdRunAction(command=checkout_command(rows[0]['base_commit']),blocking=True,keep_prompt=False)
+            observation,checkout=control_action(run,runtime,action)
+            write_json(run.path/'checkout.json',{**checkout,'expected_base_commit':rows[0]['base_commit']})
+            if getattr(observation,'exit_code',None)!=0 or 'SWE_STUDY_CHECKOUT_OK' not in observation.content:
+                print(json.dumps(checkout,indent=2))
+                raise ValueError('Runtime task checkout/command execution failed; inspect '+str(run.path/'checkout.json'))
             marker='/testbed/.swe_study_probe_'+run.id.replace('-','_')
             actions=[IPythonRunCellAction(code='print(file_editor(command="create", path='+repr(marker)+', file_text="before\\n"))'),
                      IPythonRunCellAction(code='print(file_editor(command="view", path='+repr(marker)+'))'),
@@ -61,16 +86,23 @@ def main():
                      CmdRunAction(command='git -C /testbed add -- '+marker),
                      CmdRunAction(command='git -C /testbed diff --cached -- '+marker)]
             for action in actions:
-                action.timeout=60;observation=runtime.run_action(action)
-                run.event('runtime_control_action',action=type(action).__name__,content=getattr(observation,'content',''),exit_code=getattr(observation,'exit_code',None))
+                observation,record=control_action(run,runtime,action)
                 if getattr(observation,'exit_code',None) not in (None,0) or 'Error' in type(observation).__name__:
+                    print(json.dumps(record,indent=2))
                     raise ValueError('Runtime view/edit/test control failed')
             if '+after' not in observation.content: raise ValueError('Runtime patch export failed')
             write_json(run.path/'runtime.json',{'passed':True,'instance_id':rows[0]['instance_id'],
                          'base_image':image,'runtime_image':details['Config']['Image'],
-                         'runtime_image_id':details['Image'],'tool_execution':'view/edit/test/patch passed'})
+                         'runtime_image_id':details['Image'],'tool_execution':'view/edit/test/patch passed',
+                         'checkout_validation':'HEAD tree, index and tracked working tree match frozen base; image setup commit IDs may differ'})
         finally:
-            if runtime.container is not None: runtime.close()
+            if runtime.container is not None:
+                try:
+                    (run.path/'container.stdout.log').write_bytes(runtime.container.logs(stdout=True,stderr=False))
+                    (run.path/'container.stderr.log').write_bytes(runtime.container.logs(stdout=False,stderr=True))
+                    runtime.container.reload();write_json(run.path/'container_final_state.json',runtime.container.attrs['State'])
+                except Exception as exc: run.event('container_log_error',error=str(exc))
+                runtime.close(rm_all_containers=False)
 
 
 if __name__=='__main__':main()

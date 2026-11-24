@@ -98,6 +98,26 @@ def test_network_override_preserves_site_settings_and_selects_userspace_network(
                     'network':{'default_rootless_network_cmd':'slirp4netns'}}
 
 
+@pytest.mark.parametrize('condition',['empty_setup','working_tree','index','changed_head','missing_base'])
+def test_checkout_accepts_setup_commit_but_rejects_changed_source(tmp_path,condition):
+    module=load_script('prepare_task_runtime')
+    def git(*args):
+        return subprocess.run(['git','-c','user.name=Fixture','-c','user.email=fixture@example.invalid',*args],
+                              cwd=tmp_path,check=True,text=True,capture_output=True).stdout.strip()
+    git('init','-q');(tmp_path/'source.py').write_text('original\n');git('add','source.py');git('commit','-qm','base')
+    base=git('rev-parse','HEAD');git('commit','--allow-empty','-qm','SWE-bench setup')
+    assert git('rev-parse','HEAD')!=base
+    if condition in {'working_tree','index','changed_head'}:
+        (tmp_path/'source.py').write_text('changed\n')
+    if condition in {'index','changed_head'}:git('add','source.py')
+    if condition=='index':(tmp_path/'source.py').write_text('original\n')
+    if condition=='changed_head':git('commit','-qm','changed source')
+    if condition=='missing_base':base='0'*40
+    result=subprocess.run(['bash','-c',module.checkout_command(base,tmp_path)],text=True,capture_output=True)
+    assert (result.returncode==0)==(condition=='empty_setup')
+    assert ('SWE_STUDY_CHECKOUT_OK' in result.stdout)==(condition=='empty_setup')
+
+
 def test_podman_builder_uses_engine_identity_and_initializes_required_state(monkeypatch):
     from swe_study.runtime import configure_builder_backend
     class Builder:

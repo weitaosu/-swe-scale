@@ -311,6 +311,15 @@ This reproduces the original error and checks corrected initialization using a
 simulated Podman version response; real runtime construction and tool replay
 remain required in `cloud_benchmark.py prepare`.
 
+Runtime checkout checks compare the HEAD tree, index and tracked working files
+with the frozen dataset base commit. The task Dockerfile can create an empty
+setup commit, so the HEAD commit ID itself need not be the base commit ID.
+Changed tracked source is rejected. Checks use blocking command actions and
+save the first command observation in `checkout.json`. On failure, command
+output is printed and container stdout/stderr and final state are retained.
+Only the diagnostic runtime's own uniquely named container is closed. The
+already built image remains available for the retry.
+
 The first frozen task is `pvlib__pvlib-python-807`. Historical pvlib images failed
 under NumPy 2 in the workstation check. If its gold control fails with that same
 diagnosed dependency issue, retain the failed control and apply the existing
