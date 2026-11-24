@@ -375,8 +375,9 @@ resumption of the earlier agent episode. Give that new experiment its own ledger
 directory and keep the earlier results. Do not overwrite a frozen study protocol
 or silently rerun only a failed condition. No model retraining is required.
 
-A completed `Agent got stuck in a loop` episode remains an agent error and an
-unresolved model outcome; it does not block final evaluation after full development
+A completed `Agent got stuck in a loop` episode, or reaching the configured
+iteration cap, remains a recorded bounded agent outcome; the official grader still
+determines whether its patch resolves the task. It does not block final evaluation after full development
 coverage. Other API/protocol errors remain blocking. Summaries retain every error
 and distinguish `model_failures`, `blocking_agent_errors` and `valid_comparison`.
 Fixing context handling does not establish issue-resolution quality.

@@ -86,7 +86,13 @@ def test_summary_keeps_missing_tasks_in_the_denominator(tmp_path,monkeypatch):
     assert 'adapter_minus_base_percentage_points' not in result
 
 
-@pytest.mark.parametrize('error,valid',[('Agent got stuck in a loop',True),('API error: 413',False)])
+@pytest.mark.parametrize('error,valid',[
+    ('Agent got stuck in a loop',True),
+    ('Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00',True),
+    ('Agent reached maximum iteration in headless mode. Current iteration: 31, max iteration: 30',True),
+    ('Agent reached maximum iteration in headless mode. Current iteration: 29, max iteration: 30',False),
+    ('API error: 413',False),
+    ('RuntimeError: Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00',False)])
 def test_model_loop_is_a_recorded_failure_but_context_error_blocks_comparison(tmp_path,monkeypatch,error,valid):
     import swe_study.benchmark as module
     monkeypatch.setattr(module,'record_path',lambda state,suite,key,condition=None:tmp_path/(key+'-'+str(condition)+'.json'))
@@ -98,6 +104,14 @@ def test_model_loop_is_a_recorded_failure_but_context_error_blocks_comparison(tm
     assert bool(result['base']['model_failures']) is valid
     assert bool(result['base']['blocking_agent_errors']) is not valid
     assert ('adapter_minus_base_percentage_points' in result) is valid
+    identity={'frozen_development_ids':['one'],'frozen_final_ids':['final']}
+    monkeypatch.setattr(module,'protocol_identity',lambda adapter:identity)
+    monkeypatch.setattr(module,'suite_rows',lambda suite:[])
+    # Final admission must retain bounded failures, and reject API errors.
+    if valid:module.initialize_study(tmp_path/'study','adapter','final')
+    else:
+        with pytest.raises(ValueError,match='inspect its errors'):
+            module.initialize_study(tmp_path/'study','adapter','final')
 
 
 def test_protocol_drift_and_final_without_development_are_rejected(tmp_path,monkeypatch):

@@ -71,6 +71,15 @@ def record_path(state,suite,task_id,condition=None):
     return local_path(state)/suite/"tasks"/task_id/(condition+".json" if condition else "prepared.json")
 
 
+def is_model_failure(error):
+    """Recognize bounded agent outcomes without masking API/tool failures."""
+    import re
+    if error=='Agent got stuck in a loop':return True
+    if not isinstance(error,str):return False
+    limit=re.fullmatch(r'Agent reached maximum iteration in headless mode\. Current iteration: ([0-9]+(?:\.[0-9]+)?), max iteration: ([0-9]+(?:\.[0-9]+)?)',error)
+    return bool(limit and float(limit[1])>=float(limit[2])>0)
+
+
 def study_summary(state,suite,ids):
     result={"suite":suite,"denominator":len(ids),"complete":True}
     for condition in ("base","adapter"):
@@ -85,8 +94,8 @@ def study_summary(state,suite,ids):
                 if row.get("agent_error"): errors.append({"instance_id":key,"error":row["agent_error"]})
         result[condition]={"completed":len(completed),"resolved":len(resolved),"resolved_ids":resolved,
                            "incomplete_ids":incomplete,"agent_errors":errors,
-                           "model_failures":[item for item in errors if item['error']=='Agent got stuck in a loop'],
-                           "blocking_agent_errors":[item for item in errors if item['error']!='Agent got stuck in a loop'],
+                           "model_failures":[item for item in errors if is_model_failure(item['error'])],
+                           "blocking_agent_errors":[item for item in errors if not is_model_failure(item['error'])],
                            "resolved_percent_of_frozen_tasks":100*len(resolved)/len(ids)}
         result["complete"] &= not incomplete
     result['valid_comparison']=bool(result['complete'] and not any(result[c]['blocking_agent_errors'] for c in ('base','adapter')))
