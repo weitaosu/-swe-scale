@@ -129,6 +129,7 @@ def predict(run,row,state,suite,identity,base_url):
             or health.get('quantization')!='nf4' or health.get('task_set_sha256')!=canonical_hash(tasks)
             or health['max_context']!=cfg['max_context_tokens']
             or health.get('task_token_budget')!=cfg['max_generated_tokens_per_task']
+            or health.get('context_policy','reject')!=cfg.get('context_policy','reject')
             or health.get('max_new_tokens')!=cfg['max_new_tokens']):
         raise ValueError('Paired model server does not match the frozen study protocol')
     import time
@@ -150,6 +151,7 @@ def predict(run,row,state,suite,identity,base_url):
             config=agent_run.path/'config.toml'
             text='[llm.cs6158]\nmodel = '+json.dumps('openai/'+model)+'\nbase_url = '+json.dumps(base_url)+'\napi_key = "local-only"\ntemperature = 0.0\nlog_completions = true\nmax_input_tokens = '+str(cfg['max_context_tokens']-cfg['max_new_tokens'])+'\nmax_output_tokens = '+str(cfg['max_new_tokens'])+'\n'
             config.write_text(text)
+            with config.open('a') as stream:stream.write('num_retries = '+str(cfg.get('api_attempts',1))+'\n')
             try:
                 agent_run.command([ROOT/'.envs/agent/bin/python',ROOT/'scripts/openhands_entry.py',
                                    '--tasks',public,'--output',agent_run.path/'openhands','--run-id',agent_run.id,

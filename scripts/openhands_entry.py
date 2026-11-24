@@ -26,6 +26,13 @@ if head!=pinned["commit"]:raise ValueError("OpenHands checkout differs from its 
 subprocess.run(["git","diff","--quiet","HEAD"],cwd=vendor,check=True)
 sys.path.insert(0,str(vendor));os.chdir(vendor)
 os.environ.update(USE_HINT_TEXT="false",USE_INSTANCE_IMAGE="true",RUN_WITH_BROWSING="false")
+# OpenHands owns the single-attempt policy; disable the nested SDK retry layer.
+import openai
+original_openai_init=openai.OpenAI.__init__
+def single_attempt_openai(self,*pos,**kw):
+    kw['max_retries']=0
+    original_openai_init(self,*pos,**kw)
+openai.OpenAI.__init__=single_attempt_openai
 import datasets
 rows=[json.loads(line) for line in Path(args.tasks).read_text(encoding="utf-8").splitlines() if line.strip()]
 if any(r.get("patch") or r.get("test_patch") or r.get("hints_text") for r in rows): raise ValueError("Agent task view contains gold or hint material")

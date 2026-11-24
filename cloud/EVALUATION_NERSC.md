@@ -347,6 +347,76 @@ permits, before requesting a GPU. Start with one task to validate the workflow.
 
 ## 4. Run the five paired development tasks
 
+### Context-budget protocol and completed agent failures
+
+The configured `history-window-v1` policy keeps the total context at 8,192 tokens
+and reserves up to 2,048 output tokens. The pinned agent's `max_input_tokens`
+setting does not enforce that bound by itself. Start paired servers with
+`--context-policy history-window-v1`; prediction checks the health response against
+the frozen study policy and refuses a mismatched server.
+
+The server counts the exact model chat template, preserves the system/issue
+prefix and latest action/observation exchange, and removes oldest complete
+exchanges only when necessary. If one recent observation alone is too large,
+it retains its head/tail around an explicit clipping marker. It never clips the
+initial issue or assistant action/tool-call data. Original requests, effective
+windowed messages, removed indices, clipping hashes and token counts are saved
+in the server's `events.jsonl`. A protected prefix/action that still cannot fit
+is rejected. Both model aliases use the same policy.
+
+`api_attempts: 1` means one OpenHands call and zero retries in this pinned fork.
+The project entry point also disables OpenAI SDK retries. This prevents repeated
+413 requests from waiting through exponential backoff.
+
+After upgrading from the reject-only context policy, preserve previous studies
+and token ledgers and start a fresh development state, for example
+`results/benchmark_15b_window_v1`. This is a changed development protocol, not
+resumption of the earlier agent episode. Give that new experiment its own ledger
+directory and keep the earlier results. Do not overwrite a frozen study protocol
+or silently rerun only a failed condition. No model retraining is required.
+
+A completed `Agent got stuck in a loop` episode remains an agent error and an
+unresolved model outcome; it does not block final evaluation after full development
+coverage. Other API/protocol errors remain blocking. Summaries retain every error
+and distinguish `model_failures`, `blocking_agent_errors` and `valid_comparison`.
+Fixing context handling does not establish issue-resolution quality.
+
+Optional CPU verification uses all three local Qwen tokenizers, the pinned tool
+prompt and synthetic long histories, plus mocked SDK failures (no model calls):
+
+```bash
+.envs/agent/bin/python scripts/validate_context_window.py
+```
+
+Monitor an already-running batch from a second CPU shell, without restarting it:
+
+```bash
+cd "$SCRATCH/swe-study-a100"
+python3 scripts/benchmark_progress.py \
+  --state results/benchmark_15b_imageid_v1 --max-tasks 1 --watch
+```
+
+The dependency-free monitor reads saved records and bounded log tails every five
+seconds. It shows preparation, prediction and grading bars, interrupted attempts,
+recorded active stages, agent step counters and log age. Step counters measure
+the step budget used, not completion percentage or an ETA. A quiet log or a saved
+`running` flag alone does not establish that a process is healthy or still alive.
+Omit `--max-tasks 1` to show all five development tasks; repeat `--state` for 3B
+and 7B studies. `--json` emits machine-readable snapshots. Ctrl+C stops only the
+monitor; it does not signal the benchmark or model server. No Docker or GPU is
+needed, and the monitor never changes protocol, predictions, ledgers or logs.
+
+Task containers and gold/runtime controls do not depend on the model size. While
+one study predicts or grades, another model can reuse its prepared task on the
+same CPU node with `scripts/reuse_task_preparation.py --from-state SOURCE_STATE
+--state DESTINATION_STATE --adapter DESTINATION_ADAPTER --max-tasks 1`. The helper
+checks matching environment protocols, passing controls and exact local image IDs,
+then writes only the destination's preparation record. It does not run containers,
+rewrite shared caches, copy model predictions or reset token budgets. Keep the
+shared images: do not run the source study's image cleanup until every borrowing
+study has finished using them. GPU model servers still need separate allocated
+GPUs to run simultaneously; otherwise serve models sequentially.
+
 If startup stops at `Prepared runtime image identity changed`, inspect the complete
 IDs through both interfaces before replacing any image. Podman's CLI can return
 64 hexadecimal characters while the Docker API returns `sha256:` followed by the
@@ -389,6 +459,7 @@ export PYTORCH_ALLOC_CONF=expandable_segments:True
 bash cloud/run.sh serve --size 3B \
   --adapter checkpoints/cloud/qwen-3b-32k-1gpu-step-resume-v1 \
   --paired --max-context 8192 --max-new-tokens 2048 --port 8615 \
+  --context-policy history-window-v1 \
   --task-budget-file results/benchmark_3b/development/task_budgets.jsonl \
   --budget-ledger-dir results/benchmark_3b/development/token_ledgers
 ```
@@ -491,7 +562,8 @@ proceeding. A one-task setup diagnostic is not a five-task comparison.
 ## 5. Freeze and run the final 100-task comparison
 
 The final runner refuses to start until both conditions have completed the frozen
-five development tasks and their agent errors have been resolved. It preserves
+five development tasks and blocking API/protocol errors have been resolved. Recorded
+model-loop failures remain unresolved results and are retained in the report. It preserves
 the same adapter hash, agent configuration, source revisions, context and limits.
 Changing that protocol requires a separate study directory and development run.
 
@@ -511,6 +583,7 @@ Start a fresh paired GPU server using 4a, changing only its task-budget paths:
 bash cloud/run.sh serve --size 3B \
   --adapter checkpoints/cloud/qwen-3b-32k-1gpu-step-resume-v1 \
   --paired --max-context 8192 --max-new-tokens 2048 --port 8615 \
+  --context-policy history-window-v1 \
   --task-budget-file results/benchmark_3b/final/task_budgets.jsonl \
   --budget-ledger-dir results/benchmark_3b/final/token_ledgers
 ```

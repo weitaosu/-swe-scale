@@ -339,6 +339,7 @@ def parser():
     s.add_argument("--task-budget-file", help="Project-local frozen task identity file")
     s.add_argument("--paired", action="store_true", help="Expose base and LoRA model aliases from one adapter load")
     s.add_argument("--budget-ledger-dir", help="Persistent project-local per-condition token ledgers")
+    s.add_argument('--context-policy',choices=['reject','history-window-v1'],default='reject',help='Explicit recorded history handling for frozen-task serving')
     return p
 
 
@@ -386,7 +387,7 @@ def main():
             if args.development_budget and args.task_budget_file: raise ValueError("Choose one task-budget file option")
             serve(run, model_path(args.size), args.adapter, args.port, args.max_context, args.max_new_tokens,
                   task_file=args.task_budget_file or ("data/metadata/dev_task_budgets.jsonl" if args.development_budget else None),
-                  paired=args.paired,budget_ledger_dir=args.budget_ledger_dir)
+                  paired=args.paired,budget_ledger_dir=args.budget_ledger_dir,context_policy=args.context_policy)
 
 
 if __name__ == "__main__": main()

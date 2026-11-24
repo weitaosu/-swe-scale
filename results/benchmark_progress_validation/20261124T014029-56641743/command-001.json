@@ -1,0 +1,21 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_container_service.py",
+    "-k",
+    "progress",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-progress-20261124T014029-56641743"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/benchmark_progress_validation/20261124T014029-56641743/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/benchmark_progress_validation/20261124T014029-56641743/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 3.76600042499922
+}

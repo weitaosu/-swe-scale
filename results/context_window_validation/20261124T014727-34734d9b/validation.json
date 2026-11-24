@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "real_local_tokenizers": {
+    "1.5B": {
+      "initial_prompt_tokens": 3352,
+      "windowed_tokens": 5778,
+      "dropped_messages": 32,
+      "clipped_observation_prompt_tokens": 6144
+    },
+    "3B": {
+      "initial_prompt_tokens": 3352,
+      "windowed_tokens": 5778,
+      "dropped_messages": 32,
+      "clipped_observation_prompt_tokens": 6144
+    },
+    "7B": {
+      "initial_prompt_tokens": 3352,
+      "windowed_tokens": 5778,
+      "dropped_messages": 32,
+      "clipped_observation_prompt_tokens": 6144
+    }
+  },
+  "pinned_mock_tool_prompt": true,
+  "sdk_requests_on_413": 1,
+  "openhands_attempts": 1,
+  "synthetic_histories": true,
+  "limitation": "CPU tokenization and mocked API errors; no GPU performance or agent-resolution claim"
+}

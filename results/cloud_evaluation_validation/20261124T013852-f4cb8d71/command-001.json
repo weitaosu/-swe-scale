@@ -1,0 +1,21 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_cloud_validation.py",
+    "tests/test_cloud_benchmark.py",
+    "tests/test_container_service.py",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-cloud-eval-20261124T013852-f4cb8d71"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_evaluation_validation/20261124T013852-f4cb8d71/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/cloud_evaluation_validation/20261124T013852-f4cb8d71/command-001.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 64.7876683559989
+}

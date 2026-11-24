@@ -2,6 +2,9 @@ scaffold: SWE-Gym/OpenHands
 agent: CodeActAgent
 max_steps: 30
 max_context_tokens: 8192
+context_policy: history-window-v1
+# The pinned fork counts attempts, so 1 means one call and zero retries.
+api_attempts: 1
 max_new_tokens: 2048
 max_generated_tokens_per_task: 32768
 task_timeout_seconds: 1800

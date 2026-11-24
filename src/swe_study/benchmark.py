@@ -37,6 +37,7 @@ def protocol_identity(adapter):
             "agent_environment_sha256":sha256_file(local_path("manifests/agent_packages.freeze.txt")),
             "grader_environment_sha256":sha256_file(local_path("manifests/eval_packages.freeze.txt")),
             "server_sha256":sha256_file(local_path("src/swe_study/serving.py")),
+            "context_window_sha256":sha256_file(local_path("src/swe_study/context_window.py")),
             "container_environment_sha256":sha256_file(local_path("cloud/nersc/container_env.sh")),
             "container_network_sha256":sha256_file(local_path("cloud/nersc/containers-network.toml")),
             "container_options_sha256":sha256_file(local_path("src/swe_study/container_options.py")),
@@ -61,7 +62,7 @@ def initialize_study(state,adapter,suite):
     if not budgets.exists(): budgets.write_text(content)
     if suite=="final":
         dev=study_summary(state,"development",identity["frozen_development_ids"])
-        if not dev["complete"] or any(dev[condition]["agent_errors"] for condition in ("base","adapter")):
+        if not dev["complete"] or any(dev[condition]["blocking_agent_errors"] for condition in ("base","adapter")):
             raise ValueError("Complete the frozen-five paired development run and inspect its errors before final evaluation")
     return identity,rows,budgets
 
@@ -84,12 +85,16 @@ def study_summary(state,suite,ids):
                 if row.get("agent_error"): errors.append({"instance_id":key,"error":row["agent_error"]})
         result[condition]={"completed":len(completed),"resolved":len(resolved),"resolved_ids":resolved,
                            "incomplete_ids":incomplete,"agent_errors":errors,
+                           "model_failures":[item for item in errors if item['error']=='Agent got stuck in a loop'],
+                           "blocking_agent_errors":[item for item in errors if item['error']!='Agent got stuck in a loop'],
                            "resolved_percent_of_frozen_tasks":100*len(resolved)/len(ids)}
         result["complete"] &= not incomplete
-    if result["complete"]:
+    result['valid_comparison']=bool(result['complete'] and not any(result[c]['blocking_agent_errors'] for c in ('base','adapter')))
+    if result["valid_comparison"]:
         result["adapter_minus_base_percentage_points"]=result["adapter"]["resolved_percent_of_frozen_tasks"]-result["base"]["resolved_percent_of_frozen_tasks"]
-    else:
+    elif not result['complete']:
         result["note"]="Partial run. Do not report these counts as a completed benchmark result."
+    else:result['note']='Coverage is complete but blocking agent/protocol errors require review; do not report this as a validated comparison.'
     return result
 
 

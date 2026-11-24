@@ -13,6 +13,61 @@ import pytest
 ROOT=Path(__file__).resolve().parents[1]
 
 
+@pytest.mark.parametrize('in_process',[False,True])
+def test_live_progress_correlates_existing_agent_logs_and_keeps_real_denominators(tmp_path,monkeypatch,in_process):
+    module=load_script('benchmark_progress');monkeypatch.setattr(module,'ROOT',tmp_path)
+    def save(path,record):
+        path=tmp_path/path;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(record));return path
+    save('study/protocol.json',{'frozen_development_ids':['one','two'],'agent_config':{'max_steps':30}})
+    save('study/development/tasks/one/prepared.json',{'passed':True})
+    parent='results/cloud_benchmark_predict/parent'
+    save(parent+'/run.json',{'pid':31,'status':'running','started_at':'2026-11-24T01:00:00+00:00',
+                            'config':{'state':'study','suite':'development'}})
+    save('study/development/tasks/one/base.json',{'status':'predicted','agent_error':'tool failure'})
+    save('study/development/tasks/one/adapter.json',{'status':'started','run':parent})
+    for name,pid,step in [('ours',31,7),('other-study',32,29)]:
+        agent='results/benchmark_agent/'+name
+        save(agent+'/run.json',{'pid':31 if in_process else pid+100,'parent_pid':999 if in_process else pid,
+                               'status':'running','started_at':'2026-11-24T01:01:00+00:00',
+                               'config':{'instance_id':'one','condition':'adapter','suite':'development'}})
+        log=tmp_path/agent/'openhands/dataset/CodeActAgent/model/infer_logs/instance_one.log'
+        log.parent.mkdir(parents=True);log.write_text('LEVEL 0 LOCAL STEP 1 GLOBAL STEP '+str(step)+'\n')
+    (tmp_path/parent/'stdout.log').write_text('Run log: '+str(tmp_path/'results/benchmark_agent/ours')+'\n')
+    save('results/cloud_benchmark_grade/grade-parent/run.json',{'pid':41,'status':'running',
+         'started_at':'2026-11-24T01:00:00+00:00','config':{'state':'study','suite':'development'}})
+    save('results/benchmark_grade/grader/run.json',{'pid':41 if in_process else 141,'parent_pid':999 if in_process else 41,'status':'running',
+         'started_at':'2026-11-24T01:02:00+00:00','config':{'instance_id':'one','condition':'base'}})
+    (tmp_path/'results/cloud_benchmark_grade/grade-parent/stdout.log').write_text(
+        'Run log: '+str(tmp_path/'results/benchmark_grade/grader')+'\n')
+    before={p:p.read_bytes() for p in tmp_path.rglob('*') if p.is_file()}
+    report=module.snapshot('study')
+    assert report['episode_count']==4 and report['counts']=={
+        'prepared':1,'predictions':1,'graded':0,'interrupted':0,'agent_errors':1}
+    assert report['episodes'][1]['agent']['reported_step']==7
+    assert report['episodes'][1]['agent']['run'].endswith('/ours')
+    assert report['episodes'][0]['grader']['recorded_status']=='running'
+    assert module.snapshot('study',max_tasks=1)['episode_count']==2
+    rendered=module.render(report)
+    assert '7/30 (step budget, not completion %)' in rendered
+    assert 'grading running (recorded)' in rendered and 'no ETA' in rendered
+    assert before=={p:p.read_bytes() for p in before}
+
+
+def test_progress_does_not_invent_steps_or_mark_interrupted_attempts_complete(tmp_path,monkeypatch):
+    module=load_script('benchmark_progress');monkeypatch.setattr(module,'ROOT',tmp_path)
+    state=tmp_path/'study';state.mkdir()
+    (state/'protocol.json').write_text(json.dumps({'frozen_development_ids':['one']}))
+    task=state/'development/tasks/one';task.mkdir(parents=True)
+    (task/'base.json').write_text(json.dumps({'status':'interrupted'}))
+    (task/'adapter.json').write_text('{partial')
+    report=module.snapshot('study')
+    assert report['counts']['predictions']==report['counts']['graded']==0
+    assert report['counts']['interrupted']==1
+    assert all(row['agent'] is None for row in report['episodes'])
+    assert 'Reported step' not in module.render(report)
+    assert module.snapshot('missing')['error']
+
+
 def test_runtime_image_identity_accepts_full_podman_and_api_forms_only():
     from swe_study.runtime import canonical_image_id,require_image_identity
     digest='95d37f7b50011ef65bad32c6ed900f716cdd2a3c588070b65e5eb7702997efdd'
@@ -24,6 +79,49 @@ def test_runtime_image_identity_accepts_full_podman_and_api_forms_only():
     for invalid in (digest[:12],'sha256:'+digest[:12],'other:'+digest,'','latest',None):
         with pytest.raises(ValueError,match='complete SHA-256'):
             require_image_identity(invalid,'sha256:'+digest,'Image changed')
+
+
+@pytest.mark.parametrize('problem',[None,'protocol','image','gold','runtime','cache','attempt'])
+def test_preparation_reuse_is_model_independent_and_preserves_shared_state(tmp_path,monkeypatch,problem):
+    module=load_script('reuse_task_preparation');monkeypatch.setattr(module,'ROOT',tmp_path)
+    monkeypatch.setattr(module,'local_path',lambda p:(tmp_path/p).resolve())
+    monkeypatch.setattr(module,'read_json',lambda p:json.loads((tmp_path/p).read_text()))
+    def save(path,value):
+        path=tmp_path/path;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(value))
+    monkeypatch.setattr(module,'write_json',save)
+    monkeypatch.setattr(module,'record_path',lambda state,suite,key,condition=None:
+                        tmp_path/state/suite/'tasks'/key/((condition or 'prepared')+'.json'))
+    source=tmp_path/'source';dest=tmp_path/'dest';key='example__repo-1'
+    identity={'adapter':'three','model':'3B','adapter_weights_sha256':'three','runtime_overlay_sha256':'same'}
+    save(source/'protocol.json',{**identity,'adapter':'one','model':'1.5B','adapter_weights_sha256':'one',
+                                'runtime_overlay_sha256':'different' if problem=='protocol' else 'same'})
+    for control in ('gold','blank'):
+        save(tmp_path/control/'grade_validation.json',{'passed':problem!='gold' or control!='gold','control':control,
+                'total_instances':1,'resolved_ids':[key] if control=='gold' else []})
+    runtime={'passed':problem!='runtime','instance_id':key,'base_image':'base','runtime_image':'runtime',
+             'runtime_image_id':'sha256:'+'a'*64}
+    save(tmp_path/'runtime-check/runtime.json',runtime)
+    save(tmp_path/'manifests/runtime_cache.json',{key:{**runtime,'runtime_image':'other' if problem=='cache' else 'runtime'}})
+    item={**runtime,'passed':True,'base_image_id':'sha256:'+'b'*64,'gold_passed':True,
+          'gold_control':'gold','blank_control':'blank','runtime_run':'runtime-check','new_image_ids':['owned-by-source']}
+    old=module.record_path(source,'development',key);save(old,item)
+    if problem=='attempt':save(module.record_path(dest,'development',key,'base'),{'status':'started'})
+    events=[];run=SimpleNamespace(path=tmp_path/'review',event=lambda *a,**k:events.append((a,k)))
+    client=SimpleNamespace(images=SimpleNamespace(get=lambda name:SimpleNamespace(
+        id='sha256:'+('b'*64 if name=='base' else 'c'*64 if problem=='image' else 'a'*64))))
+    before={p:p.read_bytes() for root in (source,tmp_path/'manifests') for p in root.rglob('*') if p.is_file()}
+    target=module.record_path(dest,'development',key)
+    if problem:
+        with pytest.raises(ValueError):module.reuse(run,client,source,dest,'development',key,identity)
+        assert not target.exists()
+    else:
+        module.reuse(run,client,source,dest,'development',key,identity)
+        copied=json.loads(target.read_text())
+        assert copied['new_image_ids']==[] and copied['runtime_image_id']==item['runtime_image_id']
+        assert copied['reused_preparation']['source_sha256']==module.sha256_file(old)
+        assert not module.record_path(dest,'development',key,'base').exists()
+        assert len(events)==1
+    assert before=={p:p.read_bytes() for p in before}
 
 
 @pytest.mark.parametrize('problem',[None,'tokens','changed_image','agent_output','wrong_trace','source_drift'])

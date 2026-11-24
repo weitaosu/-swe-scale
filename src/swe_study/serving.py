@@ -99,7 +99,7 @@ def stream_chunks(response):
     yield "data: [DONE]\n\n"
 
 
-def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=2048,quantization="nf4",task_file=None,task_token_budget=32768,paired=False,budget_ledger_dir=None):
+def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=2048,quantization="nf4",task_file=None,task_token_budget=32768,paired=False,budget_ledger_dir=None,context_policy='reject'):
     import torch
     import uvicorn
     from fastapi import FastAPI,HTTPException
@@ -108,6 +108,8 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
     from .storage import StorageGuard
     from contextlib import nullcontext
     from .common import local_path,sha256_file
+    if context_policy not in ('reject','history-window-v1'):raise ValueError('Unknown context policy')
+    if context_policy!='reject' and not task_file:raise ValueError('History window requires frozen task identities')
     if paired and (not adapter or not task_file): raise ValueError("Paired serving requires an adapter and frozen task-budget file")
     ledger_dir=local_path(budget_ledger_dir) if budget_ledger_dir else run.path
     budgets={condition:TaskBudget(task_file,task_token_budget,ledger_dir/(condition+"_task_tokens.json" if paired else "task_tokens.json")) if task_file else None
@@ -133,7 +135,7 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
                           "paired":paired,"models":list(aliases) if paired else [name],"adapter_weights_sha256":adapter_hash,
                           "task_token_budget":task_token_budget if task_file else None,"max_new_tokens":max_new_tokens,
                           "task_set_sha256":next(iter(budgets.values())).identity if task_file else None,
-                          "allocation_deadline_unix":deadline}
+                          "allocation_deadline_unix":deadline,"context_policy":context_policy}
     @app.get("/v1/models")
     def models(): return {"object":"list","data":[{"id":key,"object":"model","owned_by":"local"} for key in (aliases if paired else [name])]}
     @app.post("/v1/chat/completions")
@@ -150,15 +152,26 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
             from .data import text_content
             try: messages=[{**m,"content":text_content(m.get("content"))} for m in body.get("messages") or []]
             except (ValueError,TypeError) as e: raise HTTPException(400,str(e))
-            prompt=tokenizer.apply_chat_template(messages,tools=tools,tokenize=False,add_generation_prompt=True)
-            inputs=tokenizer(prompt,add_special_tokens=False,return_tensors="pt").to("cuda")
-            prompt_count=inputs["input_ids"].shape[1]
             try: task_key=budget.identify(messages) if budget else None
             except ValueError as e: raise HTTPException(400,str(e))
             if budget and budget.remaining(task_key)==0: raise HTTPException(429,"Frozen task completion-token budget exhausted")
             output_cap=min(int(body.get("max_tokens",body.get("max_completion_tokens",max_new_tokens))),max_new_tokens)
             if budget: output_cap=min(output_cap,budget.remaining(task_key))
+            if context_policy=='history-window-v1':
+                from .context_window import fit_history
+                try:
+                    messages,window=fit_history(messages,tools,tokenizer,max_context-output_cap,budget.tasks[task_key])
+                except ValueError as exc:
+                    run.event('context_rejected',request_id=request_id,condition=condition,task_id=task_key,policy=context_policy,error=str(exc))
+                    raise HTTPException(413,str(exc))
+                run.event('context_window',request_id=request_id,condition=condition,task_id=task_key,
+                          effective_messages=messages if window['changed'] else None,**window)
+            prompt=tokenizer.apply_chat_template(messages,tools=tools,tokenize=False,add_generation_prompt=True)
+            inputs=tokenizer(prompt,add_special_tokens=False,return_tensors="pt").to("cuda")
+            prompt_count=inputs["input_ids"].shape[1]
             if output_cap<=0 or prompt_count+output_cap>max_context:
+                run.event('context_rejected',request_id=request_id,condition=condition,task_id=task_key,policy=context_policy,
+                          prompt_tokens=prompt_count,requested_output_tokens=output_cap,max_context=max_context)
                 raise HTTPException(413,"Prompt plus requested output exceeds the frozen context budget; no silent truncation is applied")
             temperature=float(body.get("temperature",0));kwargs={"max_new_tokens":output_cap,"do_sample":temperature>0,"pad_token_id":tokenizer.pad_token_id}
             if paired and temperature!=0: raise HTTPException(400,"Paired benchmark serving requires temperature 0")
@@ -184,5 +197,5 @@ def serve(run,model_path,adapter=None,port=8615,max_context=8192,max_new_tokens=
             if body.get("stream"):
                 return StreamingResponse(stream_chunks(response),media_type="text/event-stream")
             return response
-    run.event("server_start",model=model_path,adapter=adapter,port=port,max_context=max_context,quantization=quantization,task_file=task_file,task_token_budget=task_token_budget if task_file else None,paired=paired,budget_ledger_dir=str(ledger_dir))
+    run.event("server_start",model=model_path,adapter=adapter,port=port,max_context=max_context,quantization=quantization,task_file=task_file,task_token_budget=task_token_budget if task_file else None,paired=paired,budget_ledger_dir=str(ledger_dir),context_policy=context_policy)
     uvicorn.run(app,host="127.0.0.1",port=port,log_level="info")
