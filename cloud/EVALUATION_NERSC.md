@@ -427,8 +427,8 @@ Monitor an already-running batch from a second CPU shell, without restarting it:
 
 ```bash
 cd "$SCRATCH/swe-study-a100"
-python3 scripts/benchmark_progress.py \
-  --state results/benchmark_15b_imageid_v1 --max-tasks 1 --watch
+.envs/eval/bin/python scripts/benchmark_progress.py \
+  --state results/benchmark_15b_window_v1 --max-tasks 1 --watch
 ```
 
 The dependency-free monitor reads saved records and bounded log tails every five
@@ -440,6 +440,9 @@ Omit `--max-tasks 1` to show all five development tasks; repeat `--state` for 3B
 and 7B studies. `--json` emits machine-readable snapshots. Ctrl+C stops only the
 monitor; it does not signal the benchmark or model server. No Docker or GPU is
 needed, and the monitor never changes protocol, predictions, ledgers or logs.
+
+Use the project interpreter even for this dependency-free script: old system
+Python versions do not provide `Path.is_relative_to`.
 
 Task containers and gold/runtime controls do not depend on the model size. While
 one study predicts or grades, another model can reuse its prepared task on the

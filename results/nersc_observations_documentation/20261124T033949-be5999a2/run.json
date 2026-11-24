@@ -1,0 +1,25 @@
+{
+  "run_id": "20261124T033949-be5999a2",
+  "stage": "nersc_observations_documentation",
+  "started_at": "2026-11-24T03:39:49.881350+00:00",
+  "status": "passed",
+  "config": {
+    "review": "results/nersc_results_review/20261124T032614-36127ffd/review.json",
+    "export_as_of": "2026-11-24T03:16:13+00:00"
+  },
+  "config_sha256": "e98cda2981a09f94494b765dff20fa58524eda124daa0e2382780278544da08c",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/usr/bin/python3",
+  "argv": [
+    ".cache/tmp/record_nersc_docs.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 165339,
+  "parent_pid": 165334,
+  "condition_id": null,
+  "source_snapshot_sha256": "bf7e01198f6a5acfbfba461c8971638e691d0dfbe3bba99e15d4ef3c754f6da2",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-24T03:39:51.036122+00:00",
+  "elapsed_seconds": 0.2566166239994345
+}

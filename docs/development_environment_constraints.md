@@ -1,5 +1,13 @@
 # Development environment constraints
 
+This page preserves **2026-10-19 workstation measurements**. The later NERSC
+export records successful pvlib 807 and pydicom 1048 preparation; pydicom needed
+pytest 7.4.4. The complete NERSC development suite remains unfinished. See
+[current findings and challenges](nersc_results_and_challenges.md) and the
+[NERSC status record](../manifests/nersc_status.json). Historical registry results
+and workstation disk measurements below must not be presented as live NERSC
+checks.
+
 Updated 2026-10-19. GPU training feasibility is validated for all three model sizes under the measured NF4/LoRA 8K settings. The outstanding five-task integration work is constrained by Docker environments and disk space.
 
 ## Validated and unavailable images

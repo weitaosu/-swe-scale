@@ -1,0 +1,2 @@
+{"time": "2026-11-24T03:19:45.210491+00:00", "event": "run_started", "config": {"import_directory": "results/nersc_uploaded/20261124T031613Z", "scope": "Read imported JSON; no GPU calls or source record changes"}}
+{"time": "2026-11-24T03:19:46.241705+00:00", "event": "run_finished", "status": "passed", "error": null}

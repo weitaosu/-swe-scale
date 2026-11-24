@@ -256,5 +256,7 @@
     "protected_file_count": 54926,
     "inventory": "results/native_inventory/20261019T230036-83193314/native_index.json",
     "completed_at": "2026-10-19T23:03:05.480Z"
-  }
+  },
+  "record_type": "historical_workstation_snapshot",
+  "current_nersc_status": "manifests/nersc_status.json"
 }

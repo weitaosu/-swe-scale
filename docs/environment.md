@@ -1,6 +1,14 @@
 # Environment record
 
-Updated 2026-10-19. Use the existing Ubuntu 24.04.2 WSL2 installation for all future execution. Persistent instructions are in [AGENTS.md](../AGENTS.md).
+This is the historical **workstation/WSL** environment record. Native NERSC work
+uses separate node allocations, Podman-HPC and its own project environments.
+Current NERSC results and solved environment problems are in
+[NERSC results and challenges](nersc_results_and_challenges.md) and the
+[evaluation operations guide](../cloud/EVALUATION_NERSC.md). Do not interpret
+the workstation's old free-space or runtime-gate observations as current NERSC
+measurements.
+
+Updated 2026-10-19. Use the existing Ubuntu 24.04.2 WSL2 installation for workstation execution. Persistent instructions are in [AGENTS.md](../AGENTS.md).
 
 ## Default execution
 

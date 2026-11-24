@@ -1,0 +1,853 @@
+{
+  "source": "results/nersc_uploaded/20261124T031613Z",
+  "imported_json_files": 38,
+  "input_sha256": {
+    "benchmark_15b_window_v1/development/summary.json": "671f7269ace458be780f5fb2404eed768b87f9c90090a453c5739f681b1eeed3",
+    "benchmark_15b_window_v1/development/tasks/pvlib__pvlib-python-807/adapter.json": "368b7ac0924d3a18b609f8972cd05a5f2338bcfe0b7d419d86c343d1cd4d2286",
+    "benchmark_15b_window_v1/development/tasks/pvlib__pvlib-python-807/base.json": "27c0307d89a180bf2398c5b81650f880d0c24943f76d5fc29933fdac84ac4c85",
+    "benchmark_15b_window_v1/development/tasks/pvlib__pvlib-python-807/prepared.json": "16710f75f956b030c7bcd9f422470b062653adb69c8931679ba930b91019b59d",
+    "benchmark_15b_window_v1/development/tasks/pydicom__pydicom-1048/prepared.json": "e5cd711f7ea3a10d0277024f26f812b8e31b5ec6b5b60f79d9461a5478cf59bc",
+    "benchmark_15b_window_v1/development/token_ledgers/adapter_task_tokens.json": "c8f7b03cdb3972da05864e8810dd92cefaa1e15eca40f3758f2555469f4c2d84",
+    "benchmark_15b_window_v1/development/token_ledgers/base_task_tokens.json": "c42b34ddc0bca5505b3e5b951e2948a8bcf879f8a32a50db308719e759b65d06",
+    "benchmark_15b_window_v1/protocol.json": "5427a4ae2a907380c9b8b11d739dec9458c4ff7eef34baf174322189cfacc870",
+    "cloud_validation/20261123T231347-efe31c72/adapter_metrics.json": "32c2f3fd71a205f63d4aaf7009901d6e827ac1dd89d31a5643977aead0a332a9",
+    "cloud_validation/20261123T231347-efe31c72/base_metrics.json": "213c0a9a802a77772c599f1402bdac7e8d5e7cb29e4c6e09de32c642c4d51047",
+    "cloud_validation/20261123T231347-efe31c72/comparison.json": "b1d5fd52714cf24bd173dbca19210d413cc05b9ab6b353f15e497e6a156dbe01",
+    "cloud_validation/20261123T231347-efe31c72/evaluation_identity.json": "bd2229e719ba3dc8d218cec19205c83ee9dd56b2273800ebdcf3ffbe91ef6d89",
+    "cloud_validation/20261123T231347-efe31c72/run.json": "02e16af0f8b325f40c2c120c3ab4b2a198be0f81e0ef99b7cee93b546153b512",
+    "cloud_validation/20261123T231347-efe31c72/validation_selection.json": "df70523657fb016889702afcca649a82fb6ccb4a2cbbb7187bcb3dfcc903a5ef",
+    "cloud_validation/20261123T232136-88a293aa/adapter_metrics.json": "c86ce46a649bf41a6af43d269b4752dc1c7afd6198391e91227fda5c1457900a",
+    "cloud_validation/20261123T232136-88a293aa/base_metrics.json": "3136b6b37bc8aed56af39fdcee2c48259f2dd3582cc218ebc0bb5fa9aa77f13f",
+    "cloud_validation/20261123T232136-88a293aa/comparison.json": "8678a303395e35dae2077b003a1d4ffec8b0d3bb334562e3f2e204cc277fc5ab",
+    "cloud_validation/20261123T232136-88a293aa/evaluation_identity.json": "4b4a2ebecb38c5a884f1697caba0123f703790b9b26c49e11c3348b0c8c2b335",
+    "cloud_validation/20261123T232136-88a293aa/run.json": "08ffc117c7b79e1d04ab7fcd867e3d0f094d74a7826768cbb351cbd6dbb9d29a",
+    "cloud_validation/20261123T232136-88a293aa/validation_selection.json": "df70523657fb016889702afcca649a82fb6ccb4a2cbbb7187bcb3dfcc903a5ef",
+    "cloud_validation/20261123T232346-e49123ae/adapter_metrics.json": "5605902888d1de891a56dfb68aee07d554a94bc7415227fea0b8beb587d36d53",
+    "cloud_validation/20261123T232346-e49123ae/base_metrics.json": "61254c59defe666b6e71a7e7d58598b21595ce426462979cafa868533e00e922",
+    "cloud_validation/20261123T232346-e49123ae/comparison.json": "f92491735c479b828368e4ce07a37ecdf34eae6dbc66117e523f3294314e8548",
+    "cloud_validation/20261123T232346-e49123ae/evaluation_identity.json": "9ef79e0d8f06a4ce1edb5dfdcf546cb8979436faed9265fc86961631863125d0",
+    "cloud_validation/20261123T232346-e49123ae/run.json": "ded44c4e0097f3ec2f426fc83f71260bfa7775e82e25da5192689a42431226c2",
+    "cloud_validation/20261123T232346-e49123ae/validation_selection.json": "df70523657fb016889702afcca649a82fb6ccb4a2cbbb7187bcb3dfcc903a5ef",
+    "cloud_validation/20261123T234356-8986d78a/adapter_history_losses.json": "d990491976d8856750873dab00fe41b1fabf8ac31e7de095f1e60d0aef84b516",
+    "cloud_validation/20261123T234356-8986d78a/adapter_metrics.json": "b3f2f388cbbc1fa6ce25d4998e8b8d55d712854b145014dc702e037dacc285bc",
+    "cloud_validation/20261123T234356-8986d78a/base_history_losses.json": "cd9a82ef63fab8b061aae9dfff029744e6305fcdf8226653fa53a3ae55fb1ac1",
+    "cloud_validation/20261123T234356-8986d78a/base_metrics.json": "50ad7b7edba219f95322901e8ffc76b7704339d46fd9ec678199663eb4dd3a66",
+    "cloud_validation/20261123T234356-8986d78a/comparison.json": "8897e58f010dadbea78e719ab7252606c9e1736ae64d6c3204fafeab6bf6ae20",
+    "cloud_validation/20261123T234356-8986d78a/evaluation_identity.json": "9ef79e0d8f06a4ce1edb5dfdcf546cb8979436faed9265fc86961631863125d0",
+    "cloud_validation/20261123T234356-8986d78a/run.json": "5a416a82c12d425dc09c2e6c0de15689d629eb31f4ceeb1426a6c3a278a96214",
+    "cloud_validation/20261123T234356-8986d78a/training_metric_reproduction.json": "f0fe98382d9a1143ae33b1af5a275b20f7466ef3fe16287d8e70a2f8ef9e30ea",
+    "cloud_validation/20261123T234356-8986d78a/validation_selection.json": "df70523657fb016889702afcca649a82fb6ccb4a2cbbb7187bcb3dfcc903a5ef",
+    "training/qwen-1.5b-32k-61871419/experiment.json": "aafc00c0fc2b3f1b900022fb32899e37d665e6049b7dfb8a9fb0122afd4d1165",
+    "training/qwen-3b-32k-1gpu-step-resume-v1/experiment.json": "617d9849e133b7ae1d583b3ac66e17bb9d30b94e8aa246fbf718417f678ce0d4",
+    "training/qwen-7b-32k-2gpu-step-resume-v1/experiment.json": "9ebddef888ade6e814e11aa2f4ec1f9d78ddefa726cc3750f3eafa33577bd500"
+  },
+  "all_consistency_checks_passed": false,
+  "checks": [
+    {
+      "check": "qwen-1.5b-32k-61871419: complete training steps",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: finite logged losses",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: finite nonzero adapter gradients",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: batch and epoch accounting",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: selected final checkpoint is best",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: epoch coverage",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: segment token count",
+      "passed": true
+    },
+    {
+      "check": "qwen-1.5b-32k-61871419: segment GPU-hour arithmetic",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: complete training steps",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: finite logged losses",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: finite nonzero adapter gradients",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: batch and epoch accounting",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: selected final checkpoint is best",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: epoch coverage",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: segment token count",
+      "passed": true
+    },
+    {
+      "check": "qwen-3b-32k-1gpu-step-resume-v1: segment GPU-hour arithmetic",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: complete training steps",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: finite logged losses",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: finite nonzero adapter gradients",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: batch and epoch accounting",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: selected final checkpoint is best",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: epoch coverage",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: segment token count",
+      "passed": true
+    },
+    {
+      "check": "qwen-7b-32k-2gpu-step-resume-v1: segment GPU-hour arithmetic",
+      "passed": true
+    },
+    {
+      "check": "identical training source across sizes",
+      "passed": true
+    },
+    {
+      "check": "identical validation source across sizes",
+      "passed": true
+    },
+    {
+      "check": "20261123T231347-efe31c72: selection identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T231347-efe31c72: comparison identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T231347-efe31c72: reduction arithmetic",
+      "passed": true
+    },
+    {
+      "check": "20261123T231347-efe31c72: held-out context bounds",
+      "passed": true
+    },
+    {
+      "check": "20261123T231347-efe31c72: training reference loss",
+      "passed": true
+    },
+    {
+      "check": "20261123T232136-88a293aa: selection identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T232136-88a293aa: comparison identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T232136-88a293aa: reduction arithmetic",
+      "passed": true
+    },
+    {
+      "check": "20261123T232136-88a293aa: held-out context bounds",
+      "passed": true
+    },
+    {
+      "check": "20261123T232136-88a293aa: training reference loss",
+      "passed": true
+    },
+    {
+      "check": "20261123T232346-e49123ae: selection identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T232346-e49123ae: comparison identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T232346-e49123ae: reduction arithmetic",
+      "passed": true
+    },
+    {
+      "check": "20261123T232346-e49123ae: held-out context bounds",
+      "passed": true
+    },
+    {
+      "check": "20261123T232346-e49123ae: training reference loss",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: selection identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: comparison identity",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: reduction arithmetic",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: held-out context bounds",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: training reference loss",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: paired per-history coverage",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: per-history means",
+      "passed": true
+    },
+    {
+      "check": "20261123T234356-8986d78a: distributed training metric reconstruction",
+      "passed": true
+    },
+    {
+      "check": "three model sizes have passed validation",
+      "passed": true
+    },
+    {
+      "check": "same retained validation histories across sizes",
+      "passed": true
+    },
+    {
+      "check": "validation histories have distinct issue IDs",
+      "passed": false
+    },
+    {
+      "check": "local data confirms task-disjoint training and validation",
+      "passed": true
+    },
+    {
+      "check": "local data confirms validation selection/exclusions",
+      "passed": true
+    },
+    {
+      "check": "benchmark summary matches saved episode records",
+      "passed": true
+    },
+    {
+      "check": "benchmark frozen denominators",
+      "passed": true
+    },
+    {
+      "check": "benchmark and validation name the same adapter weights",
+      "passed": true
+    },
+    {
+      "check": "pvlib__pvlib-python-807: preparation accepted",
+      "passed": true
+    },
+    {
+      "check": "pvlib__pvlib-python-807/base: paired environment identity",
+      "passed": true
+    },
+    {
+      "check": "pvlib__pvlib-python-807/adapter: paired environment identity",
+      "passed": true
+    },
+    {
+      "check": "pydicom__pydicom-1048: preparation accepted",
+      "passed": true
+    },
+    {
+      "check": "paired ledger identities and bounds",
+      "passed": true
+    },
+    {
+      "check": "local data confirms no training or validation overlap with benchmark tasks",
+      "passed": true
+    }
+  ],
+  "training": [
+    {
+      "adapter": "qwen-1.5b-32k-61871419",
+      "epochs": [
+        {
+          "epoch": 1.0,
+          "step": 50,
+          "eval_loss": 0.47613826394081116
+        },
+        {
+          "epoch": 2.0,
+          "step": 100,
+          "eval_loss": 0.45235487818717957
+        },
+        {
+          "epoch": 3.0,
+          "step": 150,
+          "eval_loss": 0.44650956988334656
+        }
+      ],
+      "resumed_at_step": 0,
+      "steps_in_final_segment": 150,
+      "reported_gpu_hours": 1.0113839915349996,
+      "reported_train_loss": 0.5419250830014547,
+      "mean_logged_step_loss_full_history": 0.5419250830014547,
+      "mean_logged_step_loss_final_segment": 0.5419250830014547,
+      "epoch_2_to_3_relative_eval_improvement_percent": 1.2921952621044317
+    },
+    {
+      "adapter": "qwen-3b-32k-1gpu-step-resume-v1",
+      "epochs": [
+        {
+          "epoch": 1.0,
+          "step": 50,
+          "eval_loss": 0.4327474534511566
+        },
+        {
+          "epoch": 2.0,
+          "step": 100,
+          "eval_loss": 0.4139462411403656
+        },
+        {
+          "epoch": 3.0,
+          "step": 150,
+          "eval_loss": 0.4088096618652344
+        }
+      ],
+      "resumed_at_step": 13,
+      "steps_in_final_segment": 137,
+      "reported_gpu_hours": 1.642991131948333,
+      "reported_train_loss": 0.4462438553571701,
+      "mean_logged_step_loss_full_history": 0.4952285401026408,
+      "mean_logged_step_loss_final_segment": 0.48858816279982126,
+      "epoch_2_to_3_relative_eval_improvement_percent": 1.2408807629175829
+    },
+    {
+      "adapter": "qwen-7b-32k-2gpu-step-resume-v1",
+      "epochs": [
+        {
+          "epoch": 1.0,
+          "step": 50,
+          "eval_loss": 0.4056685268878937
+        },
+        {
+          "epoch": 2.0,
+          "step": 100,
+          "eval_loss": 0.3885945975780487
+        },
+        {
+          "epoch": 3.0,
+          "step": 150,
+          "eval_loss": 0.3849271237850189
+        }
+      ],
+      "resumed_at_step": 147,
+      "steps_in_final_segment": 3,
+      "reported_gpu_hours": 0.14513112764278452,
+      "reported_train_loss": 0.00925366759300232,
+      "mean_logged_step_loss_full_history": 0.4498733997344971,
+      "mean_logged_step_loss_final_segment": 0.46268337965011597,
+      "epoch_2_to_3_relative_eval_improvement_percent": 0.943778893450308
+    }
+  ],
+  "validations": [
+    {
+      "run": "20261123T231347-efe31c72",
+      "model": "models/Qwen2.5-Coder-3B-Instruct",
+      "status": "passed",
+      "base_loss": 0.5856928825378418,
+      "adapter_loss": 0.4088096618652344,
+      "relative_reduction_percent": 30.20067785460564,
+      "selection_sha256": "a0e4b56a761399750ffea62da861cb7d7194f4ba5c34bce1d79a90f164b9a81d",
+      "direct_training_match": true
+    },
+    {
+      "run": "20261123T232136-88a293aa",
+      "model": "models/Qwen2.5-Coder-1.5B-Instruct",
+      "status": "passed",
+      "base_loss": 0.6833639144897461,
+      "adapter_loss": 0.44650956988334656,
+      "relative_reduction_percent": 34.66006026719363,
+      "selection_sha256": "a0e4b56a761399750ffea62da861cb7d7194f4ba5c34bce1d79a90f164b9a81d",
+      "direct_training_match": true
+    },
+    {
+      "run": "20261123T232346-e49123ae",
+      "model": "models/Qwen2.5-Coder-7B-Instruct",
+      "status": "failed",
+      "base_loss": 0.5476832985877991,
+      "adapter_loss": 0.372860312461853,
+      "relative_reduction_percent": 31.920452308245835,
+      "selection_sha256": "a0e4b56a761399750ffea62da861cb7d7194f4ba5c34bce1d79a90f164b9a81d",
+      "direct_training_match": false
+    },
+    {
+      "run": "20261123T234356-8986d78a",
+      "model": "models/Qwen2.5-Coder-7B-Instruct",
+      "status": "passed",
+      "base_loss": 0.5476832985877991,
+      "adapter_loss": 0.372860312461853,
+      "relative_reduction_percent": 31.920452308245835,
+      "selection_sha256": "a0e4b56a761399750ffea62da861cb7d7194f4ba5c34bce1d79a90f164b9a81d",
+      "direct_training_match": false,
+      "reconstructed_training_loss": 0.3849271638166578,
+      "absolute_training_reconstruction_error": 4.003163889265693e-08,
+      "histories_with_lower_adapter_loss": 43
+    }
+  ],
+  "local_data": {
+    "train": {
+      "local_sha256": "187ac220eb2547019653d55a4c9387eb2e8c77350bbfabce324640dee7460731",
+      "matches_imported_hash": true,
+      "raw_history_count": 439,
+      "instance_ids": [
+        "Project-MONAI__MONAI-1571",
+        "Project-MONAI__MONAI-1884",
+        "Project-MONAI__MONAI-2010",
+        "Project-MONAI__MONAI-2238",
+        "Project-MONAI__MONAI-2446",
+        "Project-MONAI__MONAI-2454",
+        "Project-MONAI__MONAI-2553",
+        "Project-MONAI__MONAI-2696",
+        "Project-MONAI__MONAI-3384",
+        "Project-MONAI__MONAI-3403",
+        "Project-MONAI__MONAI-3478",
+        "Project-MONAI__MONAI-3547",
+        "Project-MONAI__MONAI-3619",
+        "Project-MONAI__MONAI-3675",
+        "Project-MONAI__MONAI-3690",
+        "Project-MONAI__MONAI-3952",
+        "Project-MONAI__MONAI-4109",
+        "Project-MONAI__MONAI-4186",
+        "Project-MONAI__MONAI-4297",
+        "Project-MONAI__MONAI-4344",
+        "Project-MONAI__MONAI-440",
+        "Project-MONAI__MONAI-4583",
+        "Project-MONAI__MONAI-4662",
+        "Project-MONAI__MONAI-4745",
+        "Project-MONAI__MONAI-4775",
+        "Project-MONAI__MONAI-4796",
+        "Project-MONAI__MONAI-4800",
+        "Project-MONAI__MONAI-4847",
+        "Project-MONAI__MONAI-5093",
+        "Project-MONAI__MONAI-5182",
+        "Project-MONAI__MONAI-5183",
+        "Project-MONAI__MONAI-5423",
+        "Project-MONAI__MONAI-5543",
+        "Project-MONAI__MONAI-5640",
+        "Project-MONAI__MONAI-5686",
+        "Project-MONAI__MONAI-5908",
+        "Project-MONAI__MONAI-5932",
+        "Project-MONAI__MONAI-6034",
+        "Project-MONAI__MONAI-6090",
+        "Project-MONAI__MONAI-6147",
+        "Project-MONAI__MONAI-6446",
+        "Project-MONAI__MONAI-646",
+        "Project-MONAI__MONAI-6523",
+        "Project-MONAI__MONAI-6560",
+        "Project-MONAI__MONAI-6756",
+        "Project-MONAI__MONAI-6849",
+        "Project-MONAI__MONAI-6895",
+        "Project-MONAI__MONAI-6924",
+        "Project-MONAI__MONAI-7548",
+        "Project-MONAI__MONAI-907",
+        "bokeh__bokeh-13289",
+        "bokeh__bokeh-13636",
+        "conan-io__conan-10959",
+        "conan-io__conan-13403",
+        "conan-io__conan-13721",
+        "conan-io__conan-14164",
+        "conan-io__conan-14397",
+        "conan-io__conan-14795",
+        "conan-io__conan-15109",
+        "conan-io__conan-15121",
+        "conan-io__conan-15422",
+        "conan-io__conan-15699",
+        "conan-io__conan-15931",
+        "conan-io__conan-9431",
+        "dask__dask-10422",
+        "dask__dask-10441",
+        "dask__dask-10521",
+        "dask__dask-10972",
+        "dask__dask-6749",
+        "dask__dask-6809",
+        "dask__dask-6911",
+        "dask__dask-7138",
+        "dask__dask-7191",
+        "dask__dask-7656",
+        "dask__dask-7894",
+        "dask__dask-8185",
+        "dask__dask-8484",
+        "dask__dask-8501",
+        "dask__dask-8597",
+        "dask__dask-8686",
+        "dask__dask-8860",
+        "dask__dask-8903",
+        "dask__dask-8920",
+        "dask__dask-8925",
+        "dask__dask-8954",
+        "dask__dask-9027",
+        "dask__dask-9212",
+        "dask__dask-9213",
+        "dask__dask-9235",
+        "dask__dask-9240",
+        "dask__dask-9378",
+        "dask__dask-9627",
+        "facebookresearch__hydra-1551",
+        "facebookresearch__hydra-1783",
+        "facebookresearch__hydra-1915",
+        "getmoto__moto-4860",
+        "getmoto__moto-4918",
+        "getmoto__moto-4950",
+        "getmoto__moto-4969",
+        "getmoto__moto-4972",
+        "getmoto__moto-4986",
+        "getmoto__moto-4990",
+        "getmoto__moto-5020",
+        "getmoto__moto-5109",
+        "getmoto__moto-5110",
+        "getmoto__moto-5134",
+        "getmoto__moto-5155",
+        "getmoto__moto-5200",
+        "getmoto__moto-5286",
+        "getmoto__moto-5321",
+        "getmoto__moto-5348",
+        "getmoto__moto-5406",
+        "getmoto__moto-5478",
+        "getmoto__moto-5515",
+        "getmoto__moto-5516",
+        "getmoto__moto-5587",
+        "getmoto__moto-5601",
+        "getmoto__moto-5794",
+        "getmoto__moto-5862",
+        "getmoto__moto-5865",
+        "getmoto__moto-5899",
+        "getmoto__moto-5959",
+        "getmoto__moto-5960",
+        "getmoto__moto-5980",
+        "getmoto__moto-6114",
+        "getmoto__moto-6159",
+        "getmoto__moto-6178",
+        "getmoto__moto-6204",
+        "getmoto__moto-6226",
+        "getmoto__moto-6299",
+        "getmoto__moto-6352",
+        "getmoto__moto-6355",
+        "getmoto__moto-6374",
+        "getmoto__moto-6387",
+        "getmoto__moto-6469",
+        "getmoto__moto-6509",
+        "getmoto__moto-6536",
+        "getmoto__moto-6567",
+        "getmoto__moto-6585",
+        "getmoto__moto-6724",
+        "getmoto__moto-6802",
+        "getmoto__moto-6854",
+        "getmoto__moto-6913",
+        "getmoto__moto-7023",
+        "getmoto__moto-7061",
+        "getmoto__moto-7081",
+        "getmoto__moto-7105",
+        "getmoto__moto-7111",
+        "getmoto__moto-7148",
+        "getmoto__moto-7167",
+        "getmoto__moto-7212",
+        "getmoto__moto-7317",
+        "getmoto__moto-7365",
+        "getmoto__moto-7490",
+        "getmoto__moto-7524",
+        "getmoto__moto-7635",
+        "iterative__dvc-1651",
+        "iterative__dvc-1809",
+        "iterative__dvc-2190",
+        "iterative__dvc-2254",
+        "iterative__dvc-3576",
+        "iterative__dvc-3727",
+        "iterative__dvc-3891",
+        "iterative__dvc-3914",
+        "iterative__dvc-4075",
+        "iterative__dvc-4124",
+        "iterative__dvc-4623",
+        "iterative__dvc-4778",
+        "iterative__dvc-4785",
+        "iterative__dvc-5004",
+        "iterative__dvc-5188",
+        "iterative__dvc-5839",
+        "iterative__dvc-5888",
+        "iterative__dvc-6600",
+        "iterative__dvc-6683",
+        "iterative__dvc-6954",
+        "iterative__dvc-8380",
+        "modin-project__modin-7189",
+        "modin-project__modin-7225",
+        "pandas-dev__pandas-47780",
+        "pandas-dev__pandas-47804",
+        "pandas-dev__pandas-47927",
+        "pandas-dev__pandas-48176",
+        "pandas-dev__pandas-48619",
+        "pandas-dev__pandas-48736",
+        "pandas-dev__pandas-48797",
+        "pandas-dev__pandas-48966",
+        "pandas-dev__pandas-48995",
+        "pandas-dev__pandas-49011",
+        "pandas-dev__pandas-49118",
+        "pandas-dev__pandas-49395",
+        "pandas-dev__pandas-49766",
+        "pandas-dev__pandas-50173",
+        "pandas-dev__pandas-50232",
+        "pandas-dev__pandas-50331",
+        "pandas-dev__pandas-50713",
+        "pandas-dev__pandas-50773",
+        "pandas-dev__pandas-50844",
+        "pandas-dev__pandas-51401",
+        "pandas-dev__pandas-51605",
+        "pandas-dev__pandas-51741",
+        "pandas-dev__pandas-51793",
+        "pandas-dev__pandas-51936",
+        "pandas-dev__pandas-52076",
+        "pandas-dev__pandas-52077",
+        "pandas-dev__pandas-52194",
+        "pandas-dev__pandas-52516",
+        "pandas-dev__pandas-52528",
+        "pandas-dev__pandas-53118",
+        "pandas-dev__pandas-53418",
+        "pandas-dev__pandas-53495",
+        "pandas-dev__pandas-53652",
+        "pandas-dev__pandas-53709",
+        "pandas-dev__pandas-53856",
+        "pandas-dev__pandas-54087",
+        "pandas-dev__pandas-54186",
+        "pandas-dev__pandas-54189",
+        "pandas-dev__pandas-54687",
+        "pandas-dev__pandas-56194",
+        "pandas-dev__pandas-56522",
+        "pandas-dev__pandas-57018",
+        "pandas-dev__pandas-57058",
+        "pandas-dev__pandas-57089",
+        "pandas-dev__pandas-57116",
+        "pandas-dev__pandas-57173",
+        "pandas-dev__pandas-57488",
+        "pandas-dev__pandas-57489",
+        "pandas-dev__pandas-57758",
+        "pandas-dev__pandas-58028",
+        "pandas-dev__pandas-58549",
+        "pydantic__pydantic-8004",
+        "pydantic__pydantic-8072",
+        "pydantic__pydantic-8316",
+        "pydantic__pydantic-8511",
+        "pydantic__pydantic-8567",
+        "pydantic__pydantic-8965",
+        "pydantic__pydantic-9193",
+        "python__mypy-10036",
+        "python__mypy-10174",
+        "python__mypy-10308",
+        "python__mypy-10392",
+        "python__mypy-10401",
+        "python__mypy-10424",
+        "python__mypy-10430",
+        "python__mypy-10683",
+        "python__mypy-11134",
+        "python__mypy-11135",
+        "python__mypy-11567",
+        "python__mypy-11632",
+        "python__mypy-11824",
+        "python__mypy-11972",
+        "python__mypy-12548",
+        "python__mypy-12943",
+        "python__mypy-12951",
+        "python__mypy-15155",
+        "python__mypy-15184",
+        "python__mypy-15392",
+        "python__mypy-15976",
+        "python__mypy-16061",
+        "python__mypy-16203",
+        "python__mypy-16781",
+        "python__mypy-16906",
+        "python__mypy-5617"
+      ]
+    },
+    "validation": {
+      "local_sha256": "ed191bd1a06f0e34ff4e34540d217f677bef4462d2a127d67c88cfe4c6b0c092",
+      "matches_imported_hash": true,
+      "raw_history_count": 50,
+      "instance_ids": [
+        "Project-MONAI__MONAI-2645",
+        "Project-MONAI__MONAI-3715",
+        "Project-MONAI__MONAI-6975",
+        "dask__dask-8685",
+        "facebookresearch__hydra-1560",
+        "facebookresearch__hydra-2543",
+        "getmoto__moto-5043",
+        "getmoto__moto-5072",
+        "getmoto__moto-5258",
+        "getmoto__moto-5502",
+        "getmoto__moto-5582",
+        "getmoto__moto-5620",
+        "getmoto__moto-5699",
+        "getmoto__moto-6212",
+        "getmoto__moto-6410",
+        "iterative__dvc-1782",
+        "iterative__dvc-2231",
+        "iterative__dvc-4613",
+        "pandas-dev__pandas-47504",
+        "pandas-dev__pandas-48686",
+        "pandas-dev__pandas-48970",
+        "pandas-dev__pandas-50988",
+        "pandas-dev__pandas-52518",
+        "pandas-dev__pandas-53122",
+        "pandas-dev__pandas-55807",
+        "pandas-dev__pandas-57121",
+        "pandas-dev__pandas-57957",
+        "pandas-dev__pandas-58335",
+        "python__mypy-16869"
+      ]
+    }
+  },
+  "benchmark": {
+    "prepared_tasks": [
+      "pvlib__pvlib-python-807",
+      "pydicom__pydicom-1048"
+    ],
+    "episodes": [
+      {
+        "task": "pvlib__pvlib-python-807",
+        "condition": "base",
+        "status": "graded",
+        "resolved": false,
+        "agent_error": "Agent got stuck in a loop",
+        "empty_patch": true,
+        "patch_lines": 0,
+        "placeholder_implementation": false
+      },
+      {
+        "task": "pvlib__pvlib-python-807",
+        "condition": "adapter",
+        "status": "graded",
+        "resolved": false,
+        "agent_error": "Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00",
+        "empty_patch": false,
+        "patch_lines": 33,
+        "placeholder_implementation": true
+      }
+    ],
+    "summary": {
+      "suite": "development",
+      "denominator": 5,
+      "complete": false,
+      "base": {
+        "completed": 1,
+        "resolved": 0,
+        "resolved_ids": [],
+        "incomplete_ids": [
+          "pydicom__pydicom-1048",
+          "sqlfluff__sqlfluff-2907",
+          "pylint-dev__astroid-1741",
+          "pvlib__pvlib-python-1048"
+        ],
+        "agent_errors": [
+          {
+            "instance_id": "pvlib__pvlib-python-807",
+            "error": "Agent got stuck in a loop"
+          }
+        ],
+        "model_failures": [
+          {
+            "instance_id": "pvlib__pvlib-python-807",
+            "error": "Agent got stuck in a loop"
+          }
+        ],
+        "blocking_agent_errors": [],
+        "resolved_percent_of_frozen_tasks": 0.0
+      },
+      "adapter": {
+        "completed": 1,
+        "resolved": 0,
+        "resolved_ids": [],
+        "incomplete_ids": [
+          "pydicom__pydicom-1048",
+          "sqlfluff__sqlfluff-2907",
+          "pylint-dev__astroid-1741",
+          "pvlib__pvlib-python-1048"
+        ],
+        "agent_errors": [
+          {
+            "instance_id": "pvlib__pvlib-python-807",
+            "error": "Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00"
+          }
+        ],
+        "model_failures": [
+          {
+            "instance_id": "pvlib__pvlib-python-807",
+            "error": "Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00"
+          }
+        ],
+        "blocking_agent_errors": [],
+        "resolved_percent_of_frozen_tasks": 0.0
+      },
+      "valid_comparison": false,
+      "note": "Partial run. Do not report these counts as a completed benchmark result."
+    },
+    "ledgers": {
+      "base": {
+        "limit_per_task": 32768,
+        "completion_tokens_by_task": {
+          "pvlib__pvlib-python-807": 375,
+          "pydicom__pydicom-1048": 0,
+          "sqlfluff__sqlfluff-2907": 0,
+          "pylint-dev__astroid-1741": 0,
+          "pvlib__pvlib-python-1048": 0
+        },
+        "tasks_sha256": "c78957f3d453c3b902bfabed531b3aec0e97b7e03dea79749bce1f8dd08e4861"
+      },
+      "adapter": {
+        "limit_per_task": 32768,
+        "completion_tokens_by_task": {
+          "pvlib__pvlib-python-807": 2567,
+          "pydicom__pydicom-1048": 0,
+          "sqlfluff__sqlfluff-2907": 0,
+          "pylint-dev__astroid-1741": 0,
+          "pvlib__pvlib-python-1048": 0
+        },
+        "tasks_sha256": "c78957f3d453c3b902bfabed531b3aec0e97b7e03dea79749bce1f8dd08e4861"
+      }
+    }
+  },
+  "limitations_and_reporting_issues": [
+    "qwen-3b-32k-1gpu-step-resume-v1: GPU hours, wall time, peak memory and token counters describe the last resumed segment; aggregate previous and failed runs for total costs.",
+    "qwen-3b-32k-1gpu-step-resume-v1: Trainer train_loss after resume is not a full-training mean; compare per-step history or held-out evaluation instead.",
+    "qwen-7b-32k-2gpu-step-resume-v1: GPU hours, wall time, peak memory and token counters describe the last resumed segment; aggregate previous and failed runs for total costs.",
+    "qwen-7b-32k-2gpu-step-resume-v1: Trainer train_loss after resume is not a full-training mean; compare per-step history or held-out evaluation instead.",
+    "Only 43 of 50 original validation histories fit the recorded 32K context; the seven exclusions are consistent across model sizes.",
+    "Validation was used to select checkpoints; these losses do not establish SWE-bench issue-resolution improvement.",
+    "Raw NERSC adapter/model weights, runtime images, full agent event logs and official grading reports were not included; this audit checks uploaded records and arithmetic."
+  ]
+}

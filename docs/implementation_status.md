@@ -1,6 +1,32 @@
 # Current project progress
 
-Updated 2026-10-19. Asset setup, real-data preparation, and GPU training/checkpoint validation have passed. **Both milestones remain incomplete. Full five-task development execution is gated by Docker image access and the approved storage allowance; cached single-task integration diagnostics have completed.**
+## NERSC status as of 2026-11-24 UTC
+
+The imported NERSC snapshot records completed three-epoch, 150-step training for
+1.5B, 3B and 7B on 400 retained histories, with matched validation on 43 histories
+covering 25 issues. Base-to-LoRA loss reductions are 34.66%, 30.20% and 31.92%.
+The later 7B comparison passes after reproducing its original two-GPU reduction.
+
+The 1.5B development study has two prepared environments and two graded episodes
+out of ten. Both episodes concern pvlib 807 and are unresolved; pydicom is
+prepared but has no prediction in the export. Other NERSC task environments,
+the complete three-size development comparison and final 100-task evaluation
+remain pending. These results do not complete the full agent acceptance gates.
+
+The latest CPU cloud regression passed 91 tests; this is separate from real
+benchmark task results. Resumed 3B/7B timing and loss summaries must not be used
+as full-training totals. See the [README](../README.md),
+[detailed challenges and findings](nersc_results_and_challenges.md),
+[NERSC status record](../manifests/nersc_status.json) and
+[numerical audit](../results/nersc_results_review/20261124T032614-36127ffd/review.json).
+
+## Historical workstation status from 2026-10-19
+
+The record below describes the original RTX 4090 setup and its measured gates.
+Its live-space values and short-probe limits are historical workstation facts,
+not the current NERSC state.
+
+Updated 2026-10-19. Asset setup, real-data preparation, and GPU training/checkpoint validation passed. Both milestones still required their full agent acceptance checks.
 
 
 | Area                | Completed                                                                                                                                                                       | Remaining                                                               |
