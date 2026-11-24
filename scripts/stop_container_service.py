@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import signal
+import socket
 import sys
 import time
 
@@ -24,12 +25,24 @@ def matching_service(path,uid,endpoint):
                    (executable.startswith('python') and len(argv)>1 and Path(argv[1]).name=='podman-hpc'))
         operations={'system','run','create','exec','container','build','stop','rm','ps','inspect','pull','unshare'}
         command=next((i for i,arg in enumerate(argv[1:],1) if arg in operations),len(argv))
-        return is_podman and endpoint in argv and argv[command:command+2]==['system','service']
+        # Podman-HPC inserts inherited flags between "system" and "service".
+        subcommands={'check','connection','df','events','info','migrate','prune','renumber','reset','service'}
+        subcommand=next((arg for arg in argv[command+1:] if arg in subcommands),None)
+        return is_podman and endpoint in argv and argv[command:command+1]==['system'] and subcommand=='service'
     except (OSError,StopIteration,ValueError):return False
 
 
 def service_pids(uid,endpoint,proc=Path('/proc')):
     return sorted(int(p.name) for p in proc.iterdir() if p.name.isdigit() and matching_service(p,uid,endpoint))
+
+
+def endpoint_responds(endpoint):
+    try:
+        with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as client:
+            client.settimeout(1);client.connect(endpoint.removeprefix('unix://'))
+            client.sendall(b'GET /_ping HTTP/1.0\r\nHost: localhost\r\n\r\n')
+            return bool(client.recv(1024))
+    except OSError:return False
 
 
 def main():
@@ -53,8 +66,11 @@ def main():
             deadline=time.monotonic()+10
             while service_pids(uid,endpoint) and time.monotonic()<deadline:time.sleep(.2)
             report['remaining_pids']=service_pids(uid,endpoint)
+            report['endpoint_still_responding']=endpoint_responds(endpoint)
         write_json(run.path/'service.json',report);print(json.dumps(report,indent=2))
         if report.get('remaining_pids'):raise RuntimeError('Project service still running; inspect before restarting')
+        if report.get('endpoint_still_responding'):
+            raise RuntimeError('Project API still responds but its process was not identified. Preserve it and inspect ps -u "$USER" -o pid,ppid,args before restarting.')
 
 
 if __name__=='__main__':main()

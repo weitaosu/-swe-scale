@@ -51,7 +51,7 @@ def main():
         except RuntimeError:pass
         else:raise AssertionError('Unknown source was not preserved')
         assert snapshot=={name:(project/name).read_bytes() for name in files}
-        for name in ['cloud/nersc/container_env.sh','cloud/nersc/container_service.sh','cloud/nersc/podman-bin/docker']:
+        for name in ['cloud/nersc/container_env.sh','cloud/nersc/container_service.sh','cloud/nersc/recover_containers.sh','cloud/nersc/podman-bin/docker']:
             run.command(['bash','-n',name],timeout=30)
             assert (project/name).stat().st_mode&0o111
         for name in (ROOT/'deliverables/nersc_evaluation_files.txt').read_text().splitlines():

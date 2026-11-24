@@ -1,0 +1,24 @@
+{
+  "run_id": "20261123T234748-6b50edc7",
+  "stage": "container_network_regression",
+  "started_at": "2026-11-23T23:47:48.849897+00:00",
+  "status": "passed",
+  "config": {
+    "driver_source": "from pathlib import Path\nimport sys\nroot=Path(__file__).resolve().parents[1];sys.path.insert(0,str(root/'src'))\nfrom swe_study.audit import Run\nwith Run('container_network_regression',{'driver_source':Path(__file__).read_text()}) as run:\n    run.command([sys.executable,'-m','pytest','tests/test_container_service.py','-q','--capture=sys',\n                 '-p','no:cacheprovider','--basetemp',root/'.cache/tmp'/('container-network-'+run.id)],timeout=120)\n"
+  },
+  "config_sha256": "7acad4c9757f4cda33786b1ae316bbb084346037827644b3b0e9628c645aa58a",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "platform": "Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "executable": "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+  "argv": [
+    ".cache/run_container_network_tests.py"
+  ],
+  "project_root": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "pid": 106603,
+  "parent_pid": 106602,
+  "condition_id": null,
+  "source_snapshot_sha256": "65589f531f8c4ce5c8e8a740a303b7319c36a09dc7d2923d5e3d48d09ae34574",
+  "source_snapshot_timestamp_policy": "Out-of-range filesystem mtimes are clamped to ZIP-supported dates; file contents are unchanged.",
+  "ended_at": "2026-11-23T23:47:53.340958+00:00",
+  "elapsed_seconds": 3.302438197999436
+}

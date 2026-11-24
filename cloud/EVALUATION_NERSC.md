@@ -185,19 +185,13 @@ command -v podman-hpc
 command -v slirp4netns
 podman-hpc --version
 
-bash cloud/nersc/container_service.sh \
-  > "logs/container-service-${SLURM_JOB_ID}.log" 2>&1 &
-CONTAINER_SERVICE_PID=$!
-echo "Container service PID: $CONTAINER_SERVICE_PID"
-
-sleep 5
-.envs/eval/bin/python scripts/check_container_api.py
+bash cloud/nersc/recover_containers.sh
 ```
 
 The API check must print `passed: true`. It checks container creation, command
 execution, file export and a loopback-published port, then removes its own test
 container. If it fails, inspect `results/container_api_check/<run-id>/` and
-`logs/container-service-<job-id>.log`. Stop here and resolve that failure before
+`logs/container-service-<job-id>-<host>-<timestamp>.log`. Stop here and resolve that failure before
 allocating a GPU for agent work. Podman-HPC's availability alone does not prove
 Docker API compatibility for OpenHands.
 
@@ -206,8 +200,18 @@ The project uses `CONTAINERS_CONF_OVERRIDE` pointing to
 setting preserves other site settings and avoids the Docker-compatible API's
 bridge default. That default can fail in Netavark/iptables while publishing a
 port, even when `podman-hpc` itself is installed and image pulls succeed. The
+`[network] default_rootless_network_cmd = "slirp4netns"` setting also selects
+Slirp for the shared rootless network instead of Pasta. The check saves the
+API-created container's network mode before starting it; a mismatch points to an
+existing service that has not loaded the intended configuration. The
 API check must record `network_mode: slirp4netns` and pass the loopback HTTP test.
 This is a configuration fix to validate on NERSC, not a claim of a passed check.
+The probe, OpenHands runtime, and grader also explicitly request Slirp in the
+Docker-compatible API call. Native Docker requests retain their existing network
+settings. The recovery command stops only the matching project API service,
+starts it with the current configuration, waits for its ping response and runs
+the compatibility check. If a reachable service cannot be identified safely,
+recovery stops for inspection rather than signaling unrelated processes.
 
 When upgrading or moving an existing project service, stop it on its old host
 before starting the replacement (including an older service on `login23`):

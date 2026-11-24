@@ -50,6 +50,8 @@ def configure_runtime(log_dir):
             labels=dict(kwargs.get('labels') or {})
             labels.update({'cs6158.project':'local-swe-study','cs6158.condition_id':os.environ.get('CS6158_CONDITION_ID',log_dir.name)})
             kwargs['labels']=labels
+            from .container_options import container_options
+            kwargs=container_options(kwargs)
         try: return original_container_run(self,*args,**kwargs)
         except Exception as exc:
             write_json(log_dir/'container_create_error.json',{'error_type':type(exc).__name__,'error':str(exc),'name':kwargs.get('name'),'ports':kwargs.get('ports')})

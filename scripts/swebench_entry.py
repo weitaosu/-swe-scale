@@ -14,6 +14,7 @@ root=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(root/"src"))
 from swe_study.common import setup_environment,read_json,write_json,local_path
 from swe_study.evaluation import merge_grading_metadata
+from swe_study.container_options import container_options
 setup_environment()
 parser=argparse.ArgumentParser();parser.add_argument("--dataset_name",required=True)
 args,forward=parser.parse_known_args()
@@ -34,6 +35,7 @@ def scoped_create(self,*pos,**kw):
         labels=dict(kw.get('labels') or {})
         labels.update({'cs6158.project':'local-swe-study','cs6158.condition_id':os.environ.get('CS6158_CONDITION_ID',run_id)})
         kw['labels']=labels
+        kw=container_options(kw)
     return original_create(self,*pos,**kw)
 docker.models.containers.ContainerCollection.create=scoped_create
 from swebench.task.repo import load_task_repo

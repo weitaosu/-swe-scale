@@ -1,0 +1,12 @@
+{
+  "args": [
+    "bash",
+    "-n",
+    "cloud/nersc/recover_containers.sh"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261123T235832-1ce70bb3/command-006.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/evaluation_installer_validation/20261123T235832-1ce70bb3/command-006.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.2569851909975114
+}

@@ -39,6 +39,7 @@ def protocol_identity(adapter):
             "server_sha256":sha256_file(local_path("src/swe_study/serving.py")),
             "container_environment_sha256":sha256_file(local_path("cloud/nersc/container_env.sh")),
             "container_network_sha256":sha256_file(local_path("cloud/nersc/containers-network.toml")),
+            "container_options_sha256":sha256_file(local_path("src/swe_study/container_options.py")),
             "container_cli_sha256":sha256_file(local_path("cloud/nersc/podman-bin/docker")),
             "agent_entry_sha256":sha256_file(local_path("scripts/openhands_entry.py")),
             "grader_entry_sha256":sha256_file(local_path("scripts/swebench_entry.py")),

@@ -2,3 +2,7 @@
 # Docker-compatible requests otherwise default to a bridge and invoke Netavark/iptables.
 [containers]
 netns = "slirp4netns"
+
+# The shared rootless network can otherwise invoke Pasta independently.
+[network]
+default_rootless_network_cmd = "slirp4netns"
