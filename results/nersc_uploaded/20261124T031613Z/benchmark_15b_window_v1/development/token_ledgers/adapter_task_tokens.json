@@ -1,0 +1,11 @@
+{
+  "limit_per_task": 32768,
+  "completion_tokens_by_task": {
+    "pvlib__pvlib-python-807": 2567,
+    "pydicom__pydicom-1048": 0,
+    "sqlfluff__sqlfluff-2907": 0,
+    "pylint-dev__astroid-1741": 0,
+    "pvlib__pvlib-python-1048": 0
+  },
+  "tasks_sha256": "c78957f3d453c3b902bfabed531b3aec0e97b7e03dea79749bce1f8dd08e4861"
+}

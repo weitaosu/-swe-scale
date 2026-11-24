@@ -1,0 +1,30 @@
+{
+  "run_id": "20261123T232346-e49123ae",
+  "stage": "cloud_validation",
+  "started_at": "2026-11-23T23:23:46.987654+00:00",
+  "status": "failed",
+  "config": {
+    "adapter": "checkpoints/cloud/qwen-7b-32k-2gpu-step-resume-v1",
+    "allow_synthetic": false
+  },
+  "config_sha256": "11d2ee3c706f169979ea371a3314dfe2ab63aeaeff65880dbed3a4922d9d6759",
+  "python": "3.12.16 (main, Oct 26 2026, 11:37:43) [GCC 15.3.0]",
+  "platform": "Linux-6.4.0-150600.23.143_15.0.50-cray_shasta_c-x86_64-with-glibc2.38",
+  "executable": "/pscratch/sd/w/ws535/swe-study-a100/.envs/train/bin/python",
+  "argv": [
+    "scripts/cloud_validation.py",
+    "--adapter",
+    "checkpoints/cloud/qwen-7b-32k-2gpu-step-resume-v1"
+  ],
+  "project_root": "/pscratch/sd/w/ws535/swe-study-a100",
+  "pid": 1027100,
+  "parent_pid": 838527,
+  "condition_id": null,
+  "source_snapshot_sha256": "4309bc2ae17265f368baf9b0bc3c4fedef95c6b595056b61204a41a28b341925",
+  "ended_at": "2026-11-23T23:26:48.464011+00:00",
+  "elapsed_seconds": 181.4117323430255,
+  "error": {
+    "type": "ValueError",
+    "message": "Adapter validation differs from its recorded best loss; inspect before comparing quality"
+  }
+}

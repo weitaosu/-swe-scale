@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "training_gpu_count": 2,
+  "recorded_loss": 0.3849271237850189,
+  "reconstructed_training_aggregation_loss": 0.3849271638166578,
+  "canonical_single_gpu_history_mean": 0.372860312461853,
+  "explanation": "Trainer 5.5.3 averages tokens across ranks within each evaluation step; single-GPU results use a mean over histories. Final padded ranks affect the historical denominator."
+}

@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "instance_id": "pydicom__pydicom-1048",
+  "base_image": "cs6158/pydicom__pydicom-1048-pytest-7.4.4",
+  "runtime_image": "docker.io/cs6158/runtime:oh_v0.13.1_ap6fe882d4wk8vtg_y766p9z6jyxsud5c",
+  "runtime_image_id": "sha256:76e43934a60f3965841369a2c48d3c98a65d8adf681dbcd6a0c24865fb89a695",
+  "tool_execution": "view/edit/test/patch passed",
+  "checkout_validation": "HEAD tree, index and tracked working tree match frozen base; image setup commit IDs may differ",
+  "base_image_id": "sha256:4ae17a290f6c5396785db247ab1044ff043002b9d9f77b4d1a0794c17fce4b18",
+  "base_repo_digests": [
+    "docker.io/cs6158/pydicom__pydicom-1048-pytest-7.4.4@sha256:5c914c85fcfdadf3cba760000dfd426114a3b6f5dd938c32738d8bf59ecf2dd2"
+  ],
+  "gold_control": "results/benchmark_gold_control/20261124T024511-471b0e3a",
+  "gold_passed": true,
+  "blank_control": "results/benchmark_blank_control/20261124T024537-a1f2fbd2",
+  "new_image_ids": [
+    "sha256:01c882dff6abc8df246979ce7f702390c8b3851895d0185e5cb3ac51c04bb239",
+    "sha256:1612ff218c51f6ef7eee927105d0e604e5176fb3e8a6b8530a9d434f5ad9bd7f",
+    "sha256:28616db46805df71f52011b93131eeef7d77bc40ea3652d482a9479693e3f3c1",
+    "sha256:2d8e70ee485da0f5e54227fe481eee2aa9771bd9d6bb170b6cdf5d527c238655",
+    "sha256:345c6412e31be94787ad171bd7e43f570c840dfcbec242c7065a27e7eae78c30",
+    "sha256:358e35924a2b326887e7c0ee9d06efd4577f5424e9389477d9d9f8066cc2d84c",
+    "sha256:3b8c8fdedd3beff95b31a7cfc4676078634b5e6b54fe57780cf21a48dae0996b",
+    "sha256:4ea82bd3eb8badc2b8087e9ec149c0d5d16cb193507df1d0190e19f9a6af6b99",
+    "sha256:62f223f955a86a3af60a494ce52a1ba380a1e776be53476765808edfdd348074",
+    "sha256:6cfed9fcafb5d5f8cb3b1cc23d7118be4140e4efb45fe20dd611e3123951f671",
+    "sha256:76e43934a60f3965841369a2c48d3c98a65d8adf681dbcd6a0c24865fb89a695",
+    "sha256:852ec379580466a2cdaf4552ecf90e0c1bd074b93a8a06e65190ac13c5fe98bb",
+    "sha256:8c153f3a108f6c14c83f9aeeb369f76f2088a70cb1fe21269877728dc84c357f",
+    "sha256:9a511b3f6d757dc7793f910c642b0be38eac05abbb0c5854c9cbcb9ea0b95d6b",
+    "sha256:aaab1a8993155fd67b55693b1294ae18321ec6af36c7f2a36191f058ed77a99f",
+    "sha256:d76c55966885a52af975b1ee7781e04daf8596f666552421e80951cbd235a2ed",
+    "sha256:dacf8ec667c195603b90e81ac72e9c6dfb41f8d0411c67b568397ff0e57b2520",
+    "sha256:e07e5f13835739d0bf623dfe004a51284bff5eca2d6278782d79dd83955d34e9",
+    "sha256:ea9c3b21b3ce5ae71fef33283f6f4d8b89cee3df9905cfa03cf2b795d5f468b8",
+    "sha256:efa29eaaabc6e128d55813e1f2048ba9206bff03a84bb59955ad5afa11ca6db2"
+  ],
+  "runtime_run": "results/benchmark_runtime_prepare/20261124T024541-75404913"
+}

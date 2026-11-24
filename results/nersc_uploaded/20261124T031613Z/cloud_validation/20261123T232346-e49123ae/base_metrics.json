@@ -1,0 +1,8 @@
+{
+  "base_loss": 0.5476832985877991,
+  "base_model_preparation_time": 0.0185,
+  "base_runtime": 58.5142,
+  "base_samples_per_second": 0.735,
+  "base_steps_per_second": 0.735,
+  "epoch": 0
+}

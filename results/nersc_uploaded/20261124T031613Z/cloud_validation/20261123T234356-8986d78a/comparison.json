@@ -1,0 +1,63 @@
+{
+  "validation_source_sha256": "ed191bd1a06f0e34ff4e34540d217f677bef4462d2a127d67c88cfe4c6b0c092",
+  "selection_sha256": "a0e4b56a761399750ffea62da861cb7d7194f4ba5c34bce1d79a90f164b9a81d",
+  "examples": 43,
+  "max_length": 32768,
+  "seed": 6158,
+  "aggregation": "Trainer mean over histories; per-history assistant causal cross-entropy",
+  "model": "models/Qwen2.5-Coder-7B-Instruct",
+  "adapter": "checkpoints/cloud/qwen-7b-32k-2gpu-step-resume-v1",
+  "adapter_weights_sha256": "d569190773a1a634a4434caec333ff005979a11d6cb47e4e4c0a71b5c10e5394",
+  "synthetic_fixture": false,
+  "versions": {
+    "python": "3.12.16 (main, Oct 26 2026, 11:37:43) [GCC 15.3.0]",
+    "executable": "/pscratch/sd/w/ws535/swe-study-a100/.envs/train/bin/python",
+    "packages": {
+      "torch": "2.9.1+cu126",
+      "transformers": "5.5.3",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2",
+      "accelerate": "1.13.0",
+      "huggingface-hub": "1.12.0",
+      "datasets": null,
+      "pyarrow": "23.0.1",
+      "tokenizers": "0.22.2",
+      "fastapi": "0.136.1",
+      "uvicorn": "0.46.0",
+      "pytest": "9.0.2"
+    }
+  },
+  "base_validation_loss": 0.5476832985877991,
+  "adapter_validation_loss": 0.372860312461853,
+  "adapter_minus_base": -0.17482298612594604,
+  "relative_loss_reduction_percent": 31.920452308245835,
+  "recorded_training_best_eval_loss": 0.3849271237850189,
+  "adapter_matches_recorded_loss": false,
+  "training_metric_reproduction": {
+    "passed": true,
+    "training_gpu_count": 2,
+    "recorded_loss": 0.3849271237850189,
+    "reconstructed_training_aggregation_loss": 0.3849271638166578,
+    "canonical_single_gpu_history_mean": 0.372860312461853,
+    "explanation": "Trainer 5.5.3 averages tokens across ranks within each evaluation step; single-GPU results use a mean over histories. Final padded ranks affect the historical denominator."
+  },
+  "comparison_scope": "Held-out assistant response prediction; not a SWE-bench score",
+  "condition_metrics": {
+    "base": {
+      "base_loss": 0.5476832985877991,
+      "base_model_preparation_time": 0.0177,
+      "base_runtime": 58.5462,
+      "base_samples_per_second": 0.734,
+      "base_steps_per_second": 0.734,
+      "epoch": 0
+    },
+    "adapter": {
+      "adapter_loss": 0.372860312461853,
+      "adapter_model_preparation_time": 0.0177,
+      "adapter_runtime": 75.612,
+      "adapter_samples_per_second": 0.569,
+      "adapter_steps_per_second": 0.569,
+      "epoch": 0
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "adapter_loss": 0.4088096618652344,
+  "adapter_model_preparation_time": 0.0278,
+  "adapter_runtime": 48.0408,
+  "adapter_samples_per_second": 0.895,
+  "adapter_steps_per_second": 0.895,
+  "epoch": 0
+}

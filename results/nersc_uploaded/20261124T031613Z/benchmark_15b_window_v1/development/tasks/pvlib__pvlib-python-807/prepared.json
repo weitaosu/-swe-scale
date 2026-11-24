@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "instance_id": "pvlib__pvlib-python-807",
+  "base_image": "cs6158/pvlib__pvlib-python-807-numpy-1.26.4",
+  "runtime_image": "docker.io/cs6158/runtime:oh_v0.13.1_c2m8tqkmmwf9cvps_y766p9z6jyxsud5c",
+  "runtime_image_id": "sha256:95d37f7b50011ef65bad32c6ed900f716cdd2a3c588070b65e5eb7702997efdd",
+  "tool_execution": "view/edit/test/patch passed",
+  "checkout_validation": "HEAD tree, index and tracked working tree match frozen base; image setup commit IDs may differ",
+  "base_image_id": "sha256:9e1cbb9295c5eb95f584d9f57d52f7095ab485b952e61def97d13fe23fb85c18",
+  "base_repo_digests": [
+    "docker.io/cs6158/pvlib__pvlib-python-807-numpy-1.26.4@sha256:092815bee90dc230cf2d3a2b69496c7773a1ba974d2b85cb88ed0437fd803db6"
+  ],
+  "gold_control": "results/benchmark_gold_control/20261124T015406-1b97e04a",
+  "gold_passed": true,
+  "blank_control": "results/benchmark_blank_control/20261124T015435-20816f74",
+  "new_image_ids": [],
+  "runtime_run": "results/benchmark_runtime_prepare/20261124T015439-5a4841a3"
+}

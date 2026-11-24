@@ -1,0 +1,57 @@
+{
+  "suite": "development",
+  "denominator": 5,
+  "complete": false,
+  "base": {
+    "completed": 1,
+    "resolved": 0,
+    "resolved_ids": [],
+    "incomplete_ids": [
+      "pydicom__pydicom-1048",
+      "sqlfluff__sqlfluff-2907",
+      "pylint-dev__astroid-1741",
+      "pvlib__pvlib-python-1048"
+    ],
+    "agent_errors": [
+      {
+        "instance_id": "pvlib__pvlib-python-807",
+        "error": "Agent got stuck in a loop"
+      }
+    ],
+    "model_failures": [
+      {
+        "instance_id": "pvlib__pvlib-python-807",
+        "error": "Agent got stuck in a loop"
+      }
+    ],
+    "blocking_agent_errors": [],
+    "resolved_percent_of_frozen_tasks": 0.0
+  },
+  "adapter": {
+    "completed": 1,
+    "resolved": 0,
+    "resolved_ids": [],
+    "incomplete_ids": [
+      "pydicom__pydicom-1048",
+      "sqlfluff__sqlfluff-2907",
+      "pylint-dev__astroid-1741",
+      "pvlib__pvlib-python-1048"
+    ],
+    "agent_errors": [
+      {
+        "instance_id": "pvlib__pvlib-python-807",
+        "error": "Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00"
+      }
+    ],
+    "model_failures": [
+      {
+        "instance_id": "pvlib__pvlib-python-807",
+        "error": "Agent reached maximum iteration in headless mode. Current iteration: 30.00, max iteration: 30.00"
+      }
+    ],
+    "blocking_agent_errors": [],
+    "resolved_percent_of_frozen_tasks": 0.0
+  },
+  "valid_comparison": false,
+  "note": "Partial run. Do not report these counts as a completed benchmark result."
+}
