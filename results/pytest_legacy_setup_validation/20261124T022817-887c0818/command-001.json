@@ -1,0 +1,21 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-m",
+    "pytest",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-legacy-20261124T022817-887c0818/test_legacy.py",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-legacy-20261124T022817-887c0818/modern-temp"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/pytest_legacy_setup_validation/20261124T022817-887c0818/command-001.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/pytest_legacy_setup_validation/20261124T022817-887c0818/command-001.stderr.log",
+  "returncode": 1,
+  "error_type": "RuntimeError",
+  "error": "Command failed (1): /mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python\n",
+  "elapsed_seconds": 2.767691368004307
+}

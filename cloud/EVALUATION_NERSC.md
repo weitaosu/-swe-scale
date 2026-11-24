@@ -338,7 +338,32 @@ dependency-only repair, replacing `FAILED_GOLD_RUN` with the printed run path:
 Use `.envs/eval/bin/python` instead of `.envs/train/bin/python` for that repair if
 Docker's Python SDK is unavailable in the training environment; the repair itself
 uses the installed grader for its reference controls. Do not apply this repair
-to unrelated failures. SQLFluff's published image previously returned HTTP 401;
+to unrelated failures.
+
+For `pydicom__pydicom-1048`, a failed gold control with many missing test-instance
+attributes (`file_out`, `fp`, `testfile_name`) indicates that legacy `setup()` and
+`teardown()` methods may not be running. Pytest removed this nose compatibility
+in version 8. The task image originally installed unpinned pytest. Retain the
+failure evidence and pin pytest inside this task image, leaving the host agent
+and evaluator environments unchanged:
+
+```bash
+.envs/eval/bin/python scripts/repair_task_environment.py \
+  --instance-id pydicom__pydicom-1048 \
+  --pytest-version 7.4.4 \
+  --evidence results/benchmark_gold_control/20261124T022045-319e08fd
+```
+
+The helper records package versions before/after, builds from the inspected
+parent image ID, and accepts the override only after gold and blank controls
+validate. A failed gold control leaves a pending candidate that benchmark
+preparation refuses. Blank controls check empty-prediction handling, not an
+executed negative test. Once the repair passes, resume `prepare` in the existing
+study; no agent episode ran for this task before its preparation failed. Reuse
+the repaired environment for all model sizes. Do not pin pytest globally or
+change the task's tests, source, or scoring.
+
+SQLFluff's published image previously returned HTTP 401;
 access/build problems must be resolved using its pinned task source. Keep the
 frozen task list; do not replace failing environments or score them as model errors.
 

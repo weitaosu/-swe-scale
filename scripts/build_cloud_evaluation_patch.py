@@ -16,8 +16,8 @@ NAMES=[
     'src/swe_study/runtime.py','src/swe_study/serving.py','src/swe_study/storage.py',
     'src/swe_study/memory_head.py','src/swe_study/benchmark.py','src/swe_study/validation.py','src/swe_study/container_options.py','src/swe_study/container_archives.py','src/swe_study/evaluation.py',
     'scripts/check_container_api.py','scripts/stop_container_service.py','scripts/cloud_benchmark.py','scripts/benchmark_progress.py','scripts/cloud_validation.py','scripts/validate_context_window.py','scripts/openhands_entry.py',
-    'scripts/prepare_task_runtime.py','scripts/review_prestart_failure.py','scripts/reuse_task_preparation.py','scripts/preserve_cloud_results.py','scripts/validate_cloud_evaluation.py','scripts/validate_distributed_validation.py','scripts/swebench_entry.py','scripts/validate_task_metadata.py','scripts/validate_podman_builder.py',
-    'tests/test_cloud_benchmark.py','tests/test_cloud_validation.py','tests/test_container_service.py','tests/test_context_window.py',
+    'scripts/prepare_task_runtime.py','scripts/repair_task_environment.py','scripts/validate_pytest_legacy_setup.py','scripts/review_prestart_failure.py','scripts/reuse_task_preparation.py','scripts/preserve_cloud_results.py','scripts/validate_cloud_evaluation.py','scripts/validate_distributed_validation.py','scripts/swebench_entry.py','scripts/validate_task_metadata.py','scripts/validate_podman_builder.py',
+    'tests/test_cloud_benchmark.py','tests/test_cloud_validation.py','tests/test_container_service.py','tests/test_context_window.py','tests/test_task_environment.py',
     'cloud/nersc/container_env.sh','cloud/nersc/container_service.sh','cloud/nersc/recover_containers.sh','cloud/nersc/containers-network.toml','cloud/nersc/podman-bin/docker',
     'cloud/EVALUATION_NERSC.md']
 

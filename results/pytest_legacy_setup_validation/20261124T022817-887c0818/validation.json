@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "modern_pytest": "9.0.2",
+  "pinned_pytest": "7.4.4",
+  "missing_file_out_reproduced": true,
+  "legacy_setup_teardown_pin_check": "passed",
+  "scope": "Minimal compatibility fixture only; real NERSC pydicom gold control remains required"
+}

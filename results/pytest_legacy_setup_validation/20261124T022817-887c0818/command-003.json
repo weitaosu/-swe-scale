@@ -1,0 +1,19 @@
+{
+  "args": [
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.envs/train/bin/python",
+    "-m",
+    "pytest",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-legacy-20261124T022817-887c0818/test_legacy.py",
+    "-q",
+    "--capture=sys",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/mnt/c/Users/weita/Desktop/SE in AI/proj/.cache/tmp/pytest-legacy-20261124T022817-887c0818/legacy-temp"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/pytest_legacy_setup_validation/20261124T022817-887c0818/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/pytest_legacy_setup_validation/20261124T022817-887c0818/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 2.0238040379990707
+}

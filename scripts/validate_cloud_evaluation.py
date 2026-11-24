@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--gpu-fixture',type=Path)
     args=parser.parse_args();setup_environment()
     with Run('cloud_evaluation_validation',{'gpu_fixture':str(args.gpu_fixture) if args.gpu_fixture else None}) as run:
-        run.command([sys.executable,'-m','pytest','tests/test_cloud_validation.py','tests/test_cloud_benchmark.py','tests/test_container_service.py','tests/test_context_window.py',
+        run.command([sys.executable,'-m','pytest','tests/test_cloud_validation.py','tests/test_cloud_benchmark.py','tests/test_container_service.py','tests/test_context_window.py','tests/test_task_environment.py',
                      '-q','--capture=sys','-p','no:cacheprovider','--basetemp',ROOT/'.cache/tmp'/('pytest-cloud-eval-'+run.id)],timeout=300)
         report={'passed':True,'cpu_validation':'passed','synthetic_fixture':True,
                 'limitation':'No NERSC Podman service or real 43-history model result is claimed'}
