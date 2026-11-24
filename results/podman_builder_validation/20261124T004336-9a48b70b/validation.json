@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "original_error_reproduced": "Docker server version must be >= 18.09 to use BuildKit",
+  "pinned_builder_initialized": "passed",
+  "reported_engine_version": {
+    "Version": "5.8.2",
+    "ApiVersion": "1.44",
+    "Components": [
+      {
+        "Name": "Podman Engine",
+        "Version": "5.8.2"
+      }
+    ]
+  },
+  "limitation": "Real pinned OpenHands imports and overlay with a simulated Podman response; no container build or agent rollout"
+}

@@ -98,6 +98,26 @@ def test_network_override_preserves_site_settings_and_selects_userspace_network(
                     'network':{'default_rootless_network_cmd':'slirp4netns'}}
 
 
+def test_podman_builder_uses_engine_identity_and_initializes_required_state(monkeypatch):
+    from swe_study.runtime import configure_builder_backend
+    class Builder:
+        def __init__(self,client):raise RuntimeError('Docker version guard')
+    logger=lambda **kwargs:SimpleNamespace(**kwargs)
+    original=Builder.__init__
+    monkeypatch.delenv('SWE_STUDY_CONTAINER_ENGINE',raising=False)
+    configure_builder_backend(Builder,logger)
+    assert Builder.__init__ is original
+    monkeypatch.setenv('SWE_STUDY_CONTAINER_ENGINE','podman-hpc')
+    version={'Version':'5.8.2','Components':[{'Name':'Podman Engine','Version':'5.8.2'}]}
+    client=SimpleNamespace(version=lambda:version)
+    configure_builder_backend(Builder,logger)
+    instance=Builder(client)
+    assert instance.docker_client is client and instance.rolling_logger.max_lines==10
+    assert version['Version']=='5.8.2'
+    with pytest.raises(RuntimeError,match='does not identify a Podman engine'):
+        Builder(SimpleNamespace(version=lambda:{'Version':'5.8.2','Components':[{'Name':'Docker Engine'}]}))
+
+
 @pytest.mark.parametrize('args,expected_args',[
     (['build','--tag','cs6158/probe:test','.'],['build','--tag','docker.io/cs6158/probe:test','.']),
     (['image','build','.'],['image','build','.']),

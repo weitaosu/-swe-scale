@@ -296,6 +296,21 @@ Local build tags also use Docker-compatible `docker.io/...` names so the CLI and
 Docker-compatible API inspect the same locally built image. Explicit registry
 names are retained; assigning a tag does not upload an image.
 
+The pinned OpenHands builder applies a Docker `>=18.09` version check in its
+constructor. Podman `5.8.2` uses a different version scheme. The project overlay
+initializes the builder for the audited Podman build path after checking that the
+endpoint identifies a Podman engine, and initializes its client and rolling
+logger. Native Docker retains the original constructor. Check the actual pinned
+imports and overlay without running containers:
+
+```bash
+.envs/agent/bin/python scripts/validate_podman_builder.py
+```
+
+This reproduces the original error and checks corrected initialization using a
+simulated Podman version response; real runtime construction and tool replay
+remain required in `cloud_benchmark.py prepare`.
+
 The first frozen task is `pvlib__pvlib-python-807`. Historical pvlib images failed
 under NumPy 2 in the workstation check. If its gold control fails with that same
 diagnosed dependency issue, retain the failed control and apply the existing

@@ -13,6 +13,19 @@ def loopback_ports(ports):
     return result
 
 
+def configure_builder_backend(builder_class,logger_class):
+    """Initialize the Podman builder without applying Docker's version scheme."""
+    if os.environ.get('SWE_STUDY_CONTAINER_ENGINE')!='podman-hpc': return
+    def initialize(self,docker_client):
+        version=docker_client.version()
+        components=version.get('Components') or []
+        if not any(str(item.get('Name','')).lower().startswith('podman') for item in components):
+            raise RuntimeError('Configured Podman builder endpoint does not identify a Podman engine')
+        self.docker_client=docker_client
+        self.rolling_logger=logger_class(max_lines=10)
+    builder_class.__init__=initialize
+
+
 def configure_runtime(log_dir):
     log_dir=Path(log_dir);log_dir.mkdir(parents=True,exist_ok=True)
     podman=os.environ.get('SWE_STUDY_CONTAINER_ENGINE')=='podman-hpc'
@@ -24,7 +37,8 @@ def configure_runtime(log_dir):
     import openhands.runtime.impl.eventstream.eventstream_runtime as runtime_module
     atexit.unregister(runtime_module.remove_all_runtime_containers)
     import openhands.runtime.utils.runtime_build as rb
-    from openhands.runtime.builder.docker import DockerRuntimeBuilder
+    from openhands.runtime.builder.docker import DockerRuntimeBuilder,RollingLogger
+    configure_builder_backend(DockerRuntimeBuilder,RollingLogger)
     from .audit import Run
     from .storage import StorageGuard
     def audited_build(self,path,tags,platform=None,use_local_cache=False,extra_build_args=None):
@@ -105,6 +119,8 @@ def configure_runtime(log_dir):
     previous=rb.get_hash_for_lock_files
     rb.get_hash_for_lock_files=lambda base:rb.truncate_hash(hashlib.md5((previous(base)+fingerprint).encode()).hexdigest())
     details={'fingerprint':fingerprint,'changes':['main/runtime dependencies pinned from source lock with recorded LiteLLM 1.53.1 override','Chromium installed because the fork initializes its browser unconditionally; browsing tools disabled','project-local Buildx and Docker client config','broad atexit runtime cleanup disabled'],'vendor_sources_modified':False}
+    details['container_build_backend']='podman-hpc build' if podman else 'Docker Buildx'
+    details['builder_version_policy']='Require Podman engine identity; initialize for audited Podman builds' if podman else 'Pinned Docker version check'
     write_json(log_dir/'runtime_overlay.json',details)
     return details
 
