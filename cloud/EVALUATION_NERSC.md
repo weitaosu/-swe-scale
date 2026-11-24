@@ -236,6 +236,8 @@ No global Podman/Docker configuration or unrelated images are modified.
 Initialize the frozen study and prepare its first development task:
 
 ```bash
+.envs/eval/bin/python scripts/validate_task_metadata.py &&
+
 .envs/eval/bin/python scripts/cloud_benchmark.py plan \
   --suite development --state results/benchmark_3b
 
@@ -247,6 +249,13 @@ Preparation pulls only the needed image, runs the reference-patch gold control,
 checks the blank-patch report, builds the OpenHands runtime and replays view,
 edit, command/test and patch-export operations. The blank control checks empty
 handling; the official grader short-circuits it instead of executing tests.
+
+The metadata check compares all five development and 100 final tasks against
+the frozen datasets without pulling images or running a model. Preparation uses
+the pinned official loader: `task.yaml` contains only short metadata, while
+`gold.patch`, `test.patch`, `problem_statement.md`, `tests.json` and `eval.sh`
+provide the remaining fields. Comparing the YAML alone incorrectly treats the
+absent patch as a mismatch. Actual dataset/task differences still stop the run.
 
 The first frozen task is `pvlib__pvlib-python-807`. Historical pvlib images failed
 under NumPy 2 in the workstation check. If its gold control fails with that same

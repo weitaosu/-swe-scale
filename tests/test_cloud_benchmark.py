@@ -8,6 +8,48 @@ from swe_study.benchmark import study_summary, initialize_study
 from swe_study.serving import TaskBudget, serve
 
 
+@pytest.mark.parametrize('changed_patch',[False,True])
+def test_preparation_loads_split_task_files_and_preserves_identity_check(tmp_path,monkeypatch,changed_patch):
+    import importlib.util
+    import yaml
+    import swe_study.evaluation as evaluation
+    import swe_study.docker_storage as storage
+    # Use the pinned official loader with an actual split-file task layout.
+    source_root=evaluation.ROOT
+    monkeypatch.syspath_prepend(str(source_root/'vendor/SWE-bench'))
+    key='example__repo-1';folder=tmp_path/'vendor/swe-bench-tasks/tasks'/key
+    folder.mkdir(parents=True)
+    original={'instance_id':key,'repo':'example/repo','base_commit':'abc',
+              'problem_statement':'Fix widget','patch':'diff gold\n','test_patch':'diff tests\n'}
+    metadata={k:original[k] for k in ('instance_id','repo','base_commit')}
+    metadata.update(image='official/image:tag',eval_type='pass_and_fail',log_parser='parse_log')
+    (folder/'task.yaml').write_text(yaml.safe_dump(metadata))
+    for name,text in [('gold.patch','different fix\n' if changed_patch else original['patch']),
+                      ('test.patch',original['test_patch']),('problem_statement.md',original['problem_statement']),
+                      ('eval.sh','pytest\n'),('tests.json',json.dumps({'FAIL_TO_PASS':['test_widget'],'PASS_TO_PASS':[]}))]:
+        (folder/name).write_text(text)
+    monkeypatch.setattr(evaluation,'ROOT',tmp_path)
+    spec=importlib.util.spec_from_file_location('cloud_benchmark_split_task_test',source_root/'scripts/cloud_benchmark.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    monkeypatch.setattr(module,'ROOT',tmp_path)
+    monkeypatch.setattr(module,'record_path',lambda *args:tmp_path/'state/not_prepared.json')
+    monkeypatch.setattr(storage,'require_storage',lambda:None)
+    monkeypatch.setattr(module,'StorageGuard',lambda:None)
+    class ReachedImagePreparation(Exception):pass
+    def images_list(**kwargs):raise ReachedImagePreparation()
+    closed=[]
+    client=SimpleNamespace(images=SimpleNamespace(list=images_list),close=lambda:closed.append(True))
+    import sys
+    monkeypatch.setitem(sys.modules,'docker',SimpleNamespace(from_env=lambda **kwargs:client))
+    if changed_patch:
+        with pytest.raises(ValueError,match='disagree on patch'):
+            module.prepare(None,original,'unused','development')
+    else:
+        with pytest.raises(ReachedImagePreparation):
+            module.prepare(None,original,'unused','development')
+    assert closed==[True]
+
+
 def test_summary_keeps_missing_tasks_in_the_denominator(tmp_path,monkeypatch):
     import swe_study.benchmark as module
     monkeypatch.setattr(module,'record_path',lambda state,suite,key,condition=None:tmp_path/(key+'-'+str(condition)+'.json'))

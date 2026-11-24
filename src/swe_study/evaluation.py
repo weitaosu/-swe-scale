@@ -42,6 +42,17 @@ def export_predictions(run,input_path,output_path,model_name,expected_ids=None):
     return converted
 
 
+def load_grading_task(instance_id):
+    """Load the complete pinned task, including its separate patches and tests."""
+    if not isinstance(instance_id,str) or not instance_id or Path(instance_id).name!=instance_id or instance_id in {'.','..'}:
+        raise ValueError("Invalid task instance ID")
+    sys.path.insert(0,str(ROOT/"vendor/SWE-bench"))
+    from swebench.task.repo import load_task
+    task=load_task(ROOT/"vendor/swe-bench-tasks/tasks"/instance_id)
+    if task.get("instance_id")!=instance_id: raise ValueError("Task directory and instance ID disagree")
+    return task
+
+
 def merge_grading_metadata(original,task):
     for field in ["instance_id","repo","base_commit"]:
         if original.get(field)!=task.get(field): raise ValueError(f"Task repository and dataset disagree on {field}")

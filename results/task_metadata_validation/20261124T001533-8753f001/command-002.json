@@ -1,0 +1,16 @@
+{
+  "args": [
+    "git",
+    "diff",
+    "--quiet",
+    "HEAD",
+    "--",
+    "swebench/__init__.py",
+    "swebench/task"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/SWE-bench",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_metadata_validation/20261124T001533-8753f001/command-002.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_metadata_validation/20261124T001533-8753f001/command-002.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.26460334100192995
+}

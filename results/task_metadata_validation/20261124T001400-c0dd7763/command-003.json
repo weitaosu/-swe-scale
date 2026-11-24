@@ -1,0 +1,12 @@
+{
+  "args": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/mnt/c/Users/weita/Desktop/SE in AI/proj/vendor/swe-bench-tasks",
+  "stdout_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_metadata_validation/20261124T001400-c0dd7763/command-003.stdout.log",
+  "stderr_path": "/mnt/c/Users/weita/Desktop/SE in AI/proj/results/task_metadata_validation/20261124T001400-c0dd7763/command-003.stderr.log",
+  "returncode": 0,
+  "elapsed_seconds": 0.26877729600164457
+}

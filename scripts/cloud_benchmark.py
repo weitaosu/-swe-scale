@@ -14,7 +14,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from swe_study.audit import Run
 from swe_study.common import local_path,read_json,read_jsonl,setup_environment,write_json,write_jsonl
 from swe_study.benchmark import initialize_study,record_path,study_summary,grade_one
-from swe_study.evaluation import public_instance,merge_grading_metadata,export_predictions
+from swe_study.evaluation import public_instance,merge_grading_metadata,export_predictions,load_grading_task
 from swe_study.storage import StorageGuard
 
 
@@ -49,7 +49,7 @@ def containers_for_run(run_id):
 def prepare(run,row,state,suite):
     from swe_study.docker_storage import require_storage
     require_storage();guard=StorageGuard()
-    import docker,yaml
+    import docker
     client=docker.from_env(timeout=120)
     try:
         key=row['instance_id'];path=record_path(state,suite,key)
@@ -63,7 +63,7 @@ def prepare(run,row,state,suite):
             attempt=record_path(state,suite,key,condition)
             if attempt.exists():
                 raise ValueError('A task with recorded predictions lost its prepared images; preserve/restore the exact image IDs before continuing')
-        task=yaml.safe_load((ROOT/'vendor/swe-bench-tasks/tasks'/key/'task.yaml').read_text())
+        task=load_grading_task(key)
         merge_grading_metadata(row,task)
         overrides=ROOT/'manifests/image_overrides.json'
         if not overrides.exists(): write_json(overrides,{'overrides':{}})
