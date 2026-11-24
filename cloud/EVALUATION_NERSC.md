@@ -363,6 +363,15 @@ study; no agent episode ran for this task before its preparation failed. Reuse
 the repaired environment for all model sizes. Do not pin pytest globally or
 change the task's tests, source, or scoring.
 
+If a repair stopped with `Control did not record exactly one run`, the old
+helper counted the CLI's two identical start/completion messages as two runs.
+After installing the corrected helper, recover that candidate with the same
+arguments plus `--resume-repair results/task_environment_repair/FAILED_REPAIR_ID`.
+Recovery verifies the recorded failure, arguments, original and repaired image
+identities, pinned versions and validated control reports. It reuses the
+completed control and runs only missing controls, without rebuilding the image.
+Failed controls or changed repair identities are never accepted by recovery.
+
 SQLFluff's published image previously returned HTTP 401;
 access/build problems must be resolved using its pinned task source. Keep the
 frozen task list; do not replace failing environments or score them as model errors.

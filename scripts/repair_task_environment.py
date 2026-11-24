@@ -3,7 +3,7 @@
 from pathlib import Path
 import argparse,os,re,sys,json
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
-from swe_study.common import local_path,setup_environment,read_json,write_json
+from swe_study.common import local_path,setup_environment,read_json,write_json,sha256_file
 from swe_study.audit import Run
 from swe_study.storage import StorageGuard
 from swe_study.docker_storage import require_storage
@@ -38,11 +38,59 @@ def probe_versions(client,image_id,run,label):
     finally: container.remove(force=True)
 
 
+def validate_control_result(result,control,instance_id):
+    # CLI prints its one run both on entry and after successful completion.
+    paths={Path(line[len('Run log: '):]).resolve()
+           for line in Path(result['stdout_path']).read_text().splitlines()
+           if line.startswith('Run log: '+str(ROOT/'results/grade')+'/')}
+    if len(paths)!=1: raise ValueError('Control did not record exactly one distinct run')
+    validation=paths.pop()/'grade_validation.json';report=read_json(validation)
+    if report.get('passed') is not True or report.get('control')!=control or report.get('total_instances')!=1:
+        raise ValueError('Repair control was not validated')
+    if report.get('resolved_ids')!=([instance_id] if control=='gold' else []):
+        raise ValueError('Repair control resolved IDs disagree')
+    return str(validation)
+
+
+def resume_candidate(args,pins,manifest,source):
+    """Recover only the known post-control bookkeeping failure, preserving evidence."""
+    folder=local_path(args.resume_repair)
+    meta=read_json(folder/'run.json')
+    if (meta.get('stage')!='task_environment_repair' or meta.get('status')!='failed'
+        or meta.get('error',{}).get('message')!='Control did not record exactly one run'):
+        raise ValueError('Resume accepts only the recorded duplicate-run-path failure')
+    fields=('instance_id','numpy_version','pytest_version','runtime_parent','evidence')
+    if any(meta['config'].get(key)!=getattr(args,key) for key in fields):
+        raise ValueError('Resume repair arguments differ from the failed repair')
+    entry=json.loads(json.dumps(manifest['overrides'].get(args.instance_id,{})))
+    if (entry.get('status')!='candidate_pending_controls' or entry.get('dependency_pins')!=pins
+        or local_path(entry.get('run',''))!=folder or entry.get('base_image_id')!=source['Id']):
+        raise ValueError('Pending repair image provenance differs from the failed repair')
+    results={};command_evidence=[]
+    for path in sorted(folder.glob('command-*.json')):
+        result=read_json(path);command=result.get('args',[])
+        for control in ('gold','blank'):
+            expected=list(map(str,[ROOT/'.envs/train/bin/python',ROOT/'scripts/study.py','grade',
+                                  '--control',control,'--instance-id',args.instance_id,
+                                  '--python','.envs/eval/bin/python']))
+            if command!=expected:continue
+            if result.get('returncode')!=0 or result.get('error'):
+                raise ValueError('Failed control commands cannot be reused')
+            if control in results:raise ValueError('Ambiguous repeated control commands preserved')
+            # Verify the report now, even when its stdout repeats the same path.
+            validate_control_result(result,control,args.instance_id)
+            results[control]=result
+            command_evidence.append({'path':str(path),'sha256':sha256_file(path)})
+    if not results:raise ValueError('No completed control command found in the failed repair')
+    return entry,results,command_evidence
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--instance-id',required=True)
     p.add_argument('--numpy-version');p.add_argument('--pytest-version')
     p.add_argument('--runtime-parent');p.add_argument('--evidence',required=True)
+    p.add_argument('--resume-repair',help='Reuse an image/control from the recorded duplicate-run-path failure')
     a=p.parse_args(argv);pins=dependency_pins(a.numpy_version,a.pytest_version)
     setup_environment()
     with Run('task_environment_repair',vars(a)) as run:
@@ -57,6 +105,25 @@ def main(argv=None):
         original=task['image']
         record=run.command(['docker','image','inspect',original],timeout=20)
         source=json.loads(Path(record['stdout_path']).read_text())[0]
+        manifest=read_json('manifests/image_overrides.json')
+        if a.resume_repair:
+            entry,reused_results,command_evidence=resume_candidate(a,pins,manifest,source)
+            record=run.command(['docker','image','inspect',entry['image']],timeout=20)
+            current=json.loads(Path(record['stdout_path']).read_text())[0]
+            if current['Id']!=entry['image_id']:
+                raise ValueError('Repaired image identity changed; pending repair preserved')
+            client=docker.from_env(timeout=120)
+            try:after=probe_versions(client,current['Id'],run,'resumed')
+            finally:client.close()
+            if any(after['packages'].get(name)!=version for name,version in pins.items()):
+                raise ValueError('Pending repair no longer has the requested dependency versions')
+            write_json(run.path/'previous_image_override.json',entry)
+            entry.update(run=str(run.path),resumed_from=str(local_path(a.resume_repair)),
+                         versions_after_resume=after,resumed_control_commands=command_evidence)
+            manifest['overrides'][a.instance_id]=entry
+            write_json('manifests/image_overrides.json',manifest)
+            finish_controls(run,a,entry,manifest,guard,reused_results)
+            return
         parent=a.runtime_parent or original;parent_info=source
         if a.runtime_parent:
             if not parent.startswith('cs6158/runtime:'): raise ValueError('Runtime parent must be a project image')
@@ -82,7 +149,6 @@ def main(argv=None):
         finally: client.close()
         if any(after['packages'].get(name)!=version for name,version in pins.items()):
             raise ValueError('Repaired task image did not retain the requested dependency versions')
-        manifest=read_json('manifests/image_overrides.json')
         previous=manifest['overrides'].get(a.instance_id)
         if previous is not None: write_json(run.path/'previous_image_override.json',previous)
         entry={'base_image':original,'base_image_id':source['Id'],
@@ -94,24 +160,25 @@ def main(argv=None):
                'status':'candidate_pending_controls','failed_control':a.evidence,'run':str(run.path)}
         if a.runtime_parent: entry.update(runtime_image=tag,runtime_image_id=info['Id'])
         manifest['overrides'][a.instance_id]=entry;write_json('manifests/image_overrides.json',manifest)
-        controls={}
-        for control in ['gold','blank']:
+        finish_controls(run,a,entry,manifest,guard)
+
+
+def finish_controls(run,args,entry,manifest,guard,reused_results=None):
+    controls={};reused_results=reused_results or {}
+    for control in ['gold','blank']:
+        result=reused_results.get(control)
+        if result is None:
             result=run.command([ROOT/'.envs/train/bin/python',ROOT/'scripts/study.py','grade',
-                                '--control',control,'--instance-id',a.instance_id,
+                                '--control',control,'--instance-id',args.instance_id,
                                 '--python','.envs/eval/bin/python'],guard=guard,timeout=1200)
-            paths=[Path(line[len('Run log: '):]) for line in Path(result['stdout_path']).read_text().splitlines()
-                   if line.startswith('Run log: '+str(ROOT/'results/grade')+'/')]
-            if len(paths)!=1: raise ValueError('Control did not record exactly one run')
-            validation=paths[0]/'grade_validation.json';report=read_json(validation)
-            if report.get('passed') is not True or report.get('control')!=control or report.get('total_instances')!=1:
-                raise ValueError('Repair control was not validated')
-            if report.get('resolved_ids')!=([a.instance_id] if control=='gold' else []):
-                raise ValueError('Repair control resolved IDs disagree')
-            controls[control]=str(validation)
-        controls['blank_note']='Official harness short-circuits empty predictions; this checks denominator/empty handling, not an executed test-negative control.'
-        entry.update(status='gold_and_blank_controls_passed',controls=controls)
-        write_json('manifests/image_overrides.json',manifest);write_json(run.path/'repair_validation.json',entry)
-        print(json.dumps(entry,indent=2))
+        else:print('Reusing validated '+control+' control from '+str(args.resume_repair))
+        controls[control]=validate_control_result(result,control,args.instance_id)
+        entry['controls']=dict(controls)
+        write_json('manifests/image_overrides.json',manifest)
+    controls['blank_note']='Official harness short-circuits empty predictions; this checks denominator/empty handling, not an executed test-negative control.'
+    entry.update(status='gold_and_blank_controls_passed',controls=controls)
+    write_json('manifests/image_overrides.json',manifest);write_json(run.path/'repair_validation.json',entry)
+    print(json.dumps(entry,indent=2))
 
 
 if __name__=='__main__':main()
